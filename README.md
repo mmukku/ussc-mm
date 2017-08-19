@@ -1,2 +1,2 @@
 # ussc
-swingtech-ussc-mobile-json
+swingtech ussc mobile site
