@@ -1,7 +1,23 @@
 # ussc
 swingtech ussc mobile site
 
-## src/data 
+## src
+
+    prototype for offline sentencing calculator
+    ussc.manifest - describes app cache manifest
+
+### src/css
+
+    style sheets
+
+### src/js
+    scripts
+
+### src/js/vendor 
+    3rd party js scripts
+
+
+### src/data 
 
     All 4 documents of Appendix C extracted pdf -> txt -> json -> html
 
