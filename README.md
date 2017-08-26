@@ -1,36 +1,34 @@
 # ussc
-swingtech ussc mobile site
+Swingtech ussc mobile site
 
 ## src
 
-    prototype for offline sentencing calculator
-    ussc.manifest - describes app cache manifest
+### src/components
 
-### src/css
+    all layouts and reusable components
 
-    style sheets
+### src/pages
+    all pages
 
-### src/js
-    scripts
-
-### src/js/vendor 
-    3rd party js scripts
+### src/utils
+    code that effects the site
 
 
 ### src/data 
 
-    All 4 documents of Appendix C extracted pdf -> txt -> json -> html
+    JSON data files that drive site content
 
-    Appendix C PDF: Original PDF files
-    Appendix C TXT: Text from original pdf files
-    Appendix C JSON: JSON data extracted from txt files
-    Appendix C HTML: HTML files construted from JSON data
+## static
 
-    This folder also has other pdf file in queue for extraction
+    contains image assets
 
 ## tools
 
     source code used for extraction.  pdf -> txt source is not included, we need licensed copies of devex
+
+    Documents transformed pdf -> txt -> json -> html
+
+    This folder also has other pdf file in queue for extraction
 
 ## design
 
@@ -38,5 +36,5 @@ swingtech ussc mobile site
 
 ## docs
 
-    All USSC/Swintech communication and USSC guide line source docs in word format
+    All USSC/Swingtech communication and USSC guide line source docs in word format
 
