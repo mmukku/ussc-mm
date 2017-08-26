@@ -28,7 +28,7 @@ class SentencingCalculator extends Component {
             if(sentence == "life") {
                 description = sentence;
             }
-            results = <h4>{description} imprisonment</h4>
+            results = <div className="usa-alert usa-alert-info"><div className="usa-alert-body"> <h4 className="usa-alert-heading">{description} imprisonment</h4></div></div>
         }
         return (<Container>
         <h2>Sentencing Calculator</h2>

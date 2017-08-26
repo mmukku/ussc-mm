@@ -1,7 +1,11 @@
 import React from "react"
 import "uswds/dist/css/uswds.min.css"
 import "uswds"
-import logo from './logo.png'
+import logo from './img/logo.png'
+import favicon from './img/favicon-57.png'
+import icondotgov from './img/icon-dot-gov.svg'
+import iconhttps from './img/icon-https.svg'
+import close from './img/close.svg'
 
 class Container extends React.Component {
     render() {
@@ -12,7 +16,7 @@ class Container extends React.Component {
           <div className="usa-accordion">
             <header className="usa-banner-header">
               <div className="usa-grid usa-banner-inner">
-              <img src="/assets/img/favicons/favicon-57.png" alt="U.S. flag" />
+              <img src={favicon} alt="U.S. flag" />
               <p>An official website of the United States government</p>
               <button className="usa-accordion-button usa-banner-button"
                 aria-expanded="false" aria-controls="gov-banner">
@@ -22,7 +26,7 @@ class Container extends React.Component {
             </header>
             <div className="usa-banner-content usa-grid usa-accordion-content" id="gov-banner">
               <div className="usa-banner-guidance-gov usa-width-one-half">
-                <img className="usa-banner-icon usa-media_block-img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov" />
+                <img className="usa-banner-icon usa-media_block-img" src={icondotgov} alt="Dot gov" />
                 <div className="usa-media_block-body">
                   <p>
                     <strong>The .gov means it’s official.</strong>
@@ -32,7 +36,7 @@ class Container extends React.Component {
                 </div>
               </div>
               <div className="usa-banner-guidance-ssl usa-width-one-half">
-                <img className="usa-banner-icon usa-media_block-img" src="/assets/img/icon-https.svg" alt="SSL" />
+                <img className="usa-banner-icon usa-media_block-img" src={iconhttps} alt="SSL" />
                 <div className="usa-media_block-body">
                   <p>This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.</p>
                 </div>
@@ -52,7 +56,7 @@ class Container extends React.Component {
           </div>
           <nav role="navigation" className="usa-nav">
             <button className="usa-nav-close">
-              <img src="/assets/img/close.svg" alt="close" />
+              <img src={close} alt="close" />
             </button>
             <ul className="usa-nav-primary usa-accordion">
               <li>
