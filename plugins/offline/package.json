@@ -1,0 +1,9 @@
+{
+  "name": "offline",
+  "version": "",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "offline-plugin": "^4.8.3"
+  }
+}
