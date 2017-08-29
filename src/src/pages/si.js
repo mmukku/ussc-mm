@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
-import data from '../data/appendix-a.json'
-import Container from '../components/container';
+import data from '../data/si.json'
 
 const uniqueTitles = Array.from(new Set(data.map(t => t.Title)));
 
@@ -9,7 +7,7 @@ const titleOptionList = uniqueTitles.map((t) =>
     <option key={t}>{t}</option>
 );
 
-class AppendixA extends Component {
+class SI extends Component {
     constructor() {
         super()
         this.state = { title: '', 
@@ -26,7 +24,7 @@ class AppendixA extends Component {
                         <ul>{this.state.guidelines}</ul>
                         </section>);
         };
-        return(<Container>
+        return(<div>
             <h2>Statutory Index</h2>
 	    <p>This index specifies the offense guideline section(s) in Chapter Two (Offense Conduct) applicable to the statute of conviction. If more than one guideline section is referenced for the particular statute, use the guideline most appropriate for the offense conduct charged in the count of which the defendant was convicted. For the rules governing the determination of the offense guideline section(s) from Chapter Two, and for any exceptions to those rules, see §1B1.2 (Applicable Guidelines). </p>
         <section>
@@ -45,27 +43,27 @@ class AppendixA extends Component {
             <button onClick={this.search.bind(this)}>Go</button>
             </section>
             {results}
-        </Container>);
+        </div>);
     }
 
     cascadestatute(e)  { 
         let title = e.target.value;
+        // eslint-disable-next-line
         let statuteOptions = data.filter(d => d.Title == title)
                         .map(x => <option key={x.Statute}>{x.Statute}</option>);
         this.setState({title: title, statuteOptionList: statuteOptions}) ;
     }
 
     search() {
-        
-        let results =  data.find(d => d.Title == this.state.title &&
-            d.Statute == this.state.statute);
-        if(results == undefined) return;
+        // eslint-disable-next-line
+        let results =  data.find(d => d.Title == this.state.title && d.Statute == this.state.statute);
+        if(results === undefined) return;
        
         let guidelines = results.Guidelines.split(",")
-            .map(gl => <li key={gl}><a href='#'>{gl}</a></li>
+            .map(gl => <li key={gl}><a href='/sc/'>{gl}</a></li>
         );
         this.setState({guidelines: guidelines});
     }
 }
 
-export default AppendixA;
+export default SI;

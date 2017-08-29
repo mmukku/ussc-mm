@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
-import data from '../data/sentencing-table.json'
-import Container from '../components/container'
+import data from '../data/sc.json';
 
 const offenseLevelsList = Array.from(new Set(data.map(t => t.offenseLevel)))
 .map(ol =>
@@ -12,7 +10,7 @@ const categoryList = ["I", "II", "III", "IV", "V", "VI"].map(c =>
     <option key={c}>{c}</option>
 );
 
-class SentencingCalculator extends Component {
+class SC extends Component {
     constructor() {
         super()
         this.state = { offenseLevel: '', 
@@ -25,12 +23,13 @@ class SentencingCalculator extends Component {
         if(this.state.sentence) {
             let sentence = this.state.sentence;
             let description = sentence + " months of";
-            if(sentence == "life") {
+
+            if(sentence === "life") {
                 description = sentence;
             }
             results = <div className="usa-alert usa-alert-info"><div className="usa-alert-body"> <h4 className="usa-alert-heading">{description} imprisonment</h4></div></div>
         }
-        return (<Container>
+        return (<div>
         <h2>Sentencing Calculator</h2>
         <section>
         <p>
@@ -56,17 +55,18 @@ class SentencingCalculator extends Component {
             </select>
             <button onClick={this.calculate.bind(this)}>Go</button>
         </section>
-    </Container>);
+    </div>);
     }
 
     calculate(e) {
         let s = data.find(x =>  
+            // eslint-disable-next-line
             x.offenseLevel == this.state.offenseLevel);
-        if(s != undefined) {
+        if(s !== undefined) {
             this.setState({sentence: s[this.state.category]});
         }
        
     }
 }
 
-export default SentencingCalculator;
+export default SC;
