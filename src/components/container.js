@@ -5,6 +5,7 @@ import favicon from 'uswds/dist/img/favicons/favicon-57.png';
 import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
 import iconhttps from 'uswds/dist/img/icon-https.svg';
 import close from 'uswds/dist/img/close.svg';
+import { Link } from 'react-router-dom';
 
 class Container extends Component {
   render() {
@@ -103,22 +104,26 @@ class Container extends Component {
                   </button>
                   <ul id="side-nav-1" className="usa-nav-submenu">
                     <li>
-                      <a href="/">Appendix B</a>
+                      <Link to="/" className="usa-nav-link">
+                        <span>Appendix B</span>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/">Amendments</a>
+                      <Link to="/" className="usa-nav-link">
+                        <span>Amendments</span>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/sc/">
+                  <Link to="/sc" className="usa-nav-link">
                     <span>Sentencing Calculator</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/si/">
+                  <Link to="/si" className="usa-nav-link">
                     <span>Statutory Index</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="usa-search usa-search-small">
@@ -144,7 +149,9 @@ class Container extends Component {
         </main>
         <footer className="usa-footer usa-footer-medium" role="contentinfo">
           <div className="usa-grid usa-footer-return-to-top">
-            <a href="/">Return to top</a>
+            <Link to="/" className="usa-nav-link">
+              <span>Return to Home</span>
+            </Link>
           </div>
           <div className="usa-footer-primary-section">
             <div className="usa-grid-full">

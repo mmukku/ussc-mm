@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import data from '../data/si.json';
+import _ from 'lodash';
 
-const uniqueTitles = Array.from(new Set(data.map(t => t.Title)));
-
-const titleOptionList = uniqueTitles.map(t => <option key={t}>{t}</option>);
+const titleOptionList = _.uniqBy(data, 'Title').map(t => (
+  <option key={t.Title}>{t.Title}</option>
+));
 
 class SI extends Component {
   constructor() {
@@ -76,7 +77,8 @@ class SI extends Component {
 
   search() {
     // eslint-disable-next-line
-    let results = data.find(
+    let results = _.find(
+      data,
       d => d.Title == this.state.title && d.Statute == this.state.statute
     );
     if (results === undefined) return;

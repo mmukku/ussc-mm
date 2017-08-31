@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import data from '../data/sc.json';
+import _ from 'lodash';
 
-const offenseLevelsList = Array.from(
-  new Set(data.map(t => t.offenseLevel))
-).map(ol => <option key={ol}>{ol}</option>);
+const offenseLevelsList = _.uniqBy(data, 'offenseLevel').map(ol => (
+  <option key={ol.offenseLevel}>{ol.offenseLevel}</option>
+));
 
 const categoryList = ['I', 'II', 'III', 'IV', 'V', 'VI'].map(c => (
   <option key={c}>{c}</option>
@@ -78,7 +79,8 @@ class SC extends Component {
   }
 
   calculate(e) {
-    let s = data.find(
+    let s = _.find(
+      data,
       x =>
         // eslint-disable-next-line
         x.offenseLevel == this.state.offenseLevel

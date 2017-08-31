@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import Container from './components/container';
 import Home from './pages/home';
@@ -8,36 +8,15 @@ import SI from './pages/si';
 
 const title = 'USSC Guidelines';
 
-const routes = [
-  {
-    title: 'Home',
-    path: '/',
-    component: Home,
-    exact: true
-  },
-  {
-    title: 'Sentencing Calculator',
-    path: '/sc',
-    component: SC,
-    exact: true
-  },
-  {
-    title: 'Statutory Index',
-    path: '/si',
-    component: SI,
-    exact: true
-  }
-];
-
 class App extends Component {
   render() {
     return (
       <Router>
         <Container>
           <Helmet titleTemplate={`%s - ${title}`} />
-          <Switch>
-            {routes.map((route, i) => <Route key={i} {...route} />)}
-          </Switch>
+          <Route exact path="/" component={Home} title="Home" />
+          <Route path="/sc" component={SC} title="Sentencing Calculator" />
+          <Route path="/si" component={SI} title="Statutory Index" />
         </Container>
       </Router>
     );
