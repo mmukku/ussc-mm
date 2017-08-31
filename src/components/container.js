@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 //import Helmet from 'react-helmet';
-import logo from "../img/logo.png";
-import favicon from "uswds/dist/img/favicons/favicon-57.png";
-import icondotgov from "uswds/dist/img/icon-dot-gov.svg";
-import iconhttps from "uswds/dist/img/icon-https.svg";
-import close from "uswds/dist/img/close.svg";
+import logo from '../img/logo.png';
+import favicon from 'uswds/dist/img/favicons/favicon-57.png';
+import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
+import iconhttps from 'uswds/dist/img/icon-https.svg';
+import close from 'uswds/dist/img/close.svg';
 
 class Container extends Component {
   render() {
     return (
-      <div style={{ marginBottom: "5.9rem" }}>
+      <div style={{ marginBottom: '5.9rem' }}>
         <a className="usa-skipnav" href="#main-content">
           Skip to main content
         </a>

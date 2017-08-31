@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "appcache-manifest": "^2.1.0",
+    "appcache-nanny": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "prettier": "^1.6.0",
@@ -16,21 +16,19 @@
     "styled-components": "^2.1.2",
     "uswds": "^1.3.1"
   },
+  "devDependencies": {
+    "appcache-manifest": "^2.1.0"
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
       "git add"
     ]
   },
-  "reactSnapshot": {
-    "exclude": [
-      "appcache/*.*"
-    ]
-  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot && appcache-manifest build/**/*.{html,css,js,png,svg} -o build/appcache/manifest.appcache && cpx appcache/appcache-manifest.html build/appcache",
+    "build": "react-scripts build && react-snapshot && appcache-manifest build/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
