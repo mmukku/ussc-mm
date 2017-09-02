@@ -27,7 +27,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
-    "build": "react-scripts build && appcache-manifest --stamp build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache && file-merge -i public/manifest.appcache,build/manifest.appcache -o build/manifest.appcache",
+    "build": "react-scripts build && appcache-manifest --stamp -p /static build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
