@@ -21,26 +21,33 @@ class Amendments extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Amendments</h2>
+      <div className="usa-section">
+        <div>
+          <div className="usa-width-one-half">
+            <h2>Amendments</h2>
+          </div>
+          <div className="usa-width-one-half">
+            <Pagination
+              items={this.state.exampleItems}
+              onChangePage={this.onChangePage}
+              pageSize={1}
+            />
+          </div>
+        </div>
+
         {this.state.pageOfItems.map((item, idx) => (
           <div key={idx}>
-            <h4>
-              {item.Title}{' '}
-              <span style={{ textAlign: 'right' }}>{item.EffectiveDate}</span>
-            </h4>
+            <section className="usa-section">
+              <div className="usa-width-one-half">
+                <h4>{item.Title}</h4>
+              </div>
+              <div className="usa-width-one-half">{item.EffectiveDate}</div>
+            </section>
             <section>{item.Text}</section>
             <h4>Reason for Amendment</h4>
             <section>{item.Reason}</section>
           </div>
         ))}
-        <section>
-          <Pagination
-            items={this.state.exampleItems}
-            onChangePage={this.onChangePage}
-            pageSize={1}
-          />
-        </section>
       </div>
     );
   }
