@@ -68,17 +68,18 @@ class SI extends Component {
 
   cascadestatute(e) {
     let title = e.target.value;
-    // eslint-disable-next-line
+
     let statuteOptions = data
+      // eslint-disable-next-line
       .filter(d => d.Title == title)
       .map(x => <option key={x.Statute}>{x.Statute}</option>);
     this.setState({ title: title, statuteOptionList: statuteOptions });
   }
 
   search() {
-    // eslint-disable-next-line
     let results = _.find(
       data,
+      // eslint-disable-next-line
       d => d.Title == this.state.title && d.Statute == this.state.statute
     );
     if (results === undefined) return;

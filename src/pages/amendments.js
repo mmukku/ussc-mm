@@ -22,19 +22,25 @@ class Amendments extends React.Component {
   render() {
     return (
       <div>
-        <h1>Amendments</h1>
-        {this.state.pageOfItems.map(item => (
-          <div key={item.id}>
-            <h4>{item.Title}</h4>
-            <h5>{item.EffectiveDate}</h5>
-            <p>{item.Text}</p> <br />
-            <p>{item.Reason}</p> <br />
+        <h2>Amendments</h2>
+        {this.state.pageOfItems.map((item, idx) => (
+          <div key={idx}>
+            <h4>
+              {item.Title}{' '}
+              <span style={{ textAlign: 'right' }}>{item.EffectiveDate}</span>
+            </h4>
+            <section>{item.Text}</section>
+            <h4>Reason for Amendment</h4>
+            <section>{item.Reason}</section>
           </div>
         ))}
-        <Pagination
-          items={this.state.exampleItems}
-          onChangePage={this.onChangePage}
-        />
+        <section>
+          <Pagination
+            items={this.state.exampleItems}
+            onChangePage={this.onChangePage}
+            pageSize={1}
+          />
+        </section>
       </div>
     );
   }

@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "appcache-manifest": "^2.1.0",
-    "cpx": "^1.5.0"
+    "cpx": "^1.5.0",
+    "insert-line": "^1.1.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -31,7 +32,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
-    "build": "react-scripts build && appcache-manifest build/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
+    "build": "react-scripts build && appcache-manifest --stamp build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache && file-merge -i public/manifest.appcache,build/manifest.appcache -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

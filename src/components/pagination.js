@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
+import '../index.css';
 
 const propTypes = {
   items: PropTypes.array.isRequired,
   onChangePage: PropTypes.func.isRequired,
-  initialPage: PropTypes.number
+  initialPage: PropTypes.number,
+  pageSize: PropTypes.number
 };
 
 const defaultProps = {
@@ -34,13 +36,14 @@ class Pagination extends React.Component {
   setPage(page) {
     var items = this.props.items;
     var pager = this.state.pager;
+    var pageSize = this.props.pageSize;
 
     if (page < 1 || page > pager.totalPages) {
       return;
     }
 
     // get new pager object for specified page
-    pager = this.getPager(items.length, page);
+    pager = this.getPager(items.length, page, pageSize);
 
     // get new page of items from items array
     var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
@@ -143,4 +146,5 @@ class Pagination extends React.Component {
 
 Pagination.propTypes = propTypes;
 Pagination.defaultProps;
+
 export default Pagination;
