@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import Container from './components/container';
-import Home from './pages/home';
-import SC from './pages/sc';
-import SI from './pages/si';
-import Amendments from './pages/amendments';
+import asyncComponent from './components/asyncComponent';
 
+const AsyncHome = asyncComponent(() => import('./pages/home'));
+const AsyncSC = asyncComponent(() => import('./pages/sc'));
+const AsyncSI = asyncComponent(() => import('./pages/si'));
+const AsyncAmendments  = asyncComponent(() => import('./pages/amendments'));
 const title = 'USSC Guidelines';
 
 class App extends Component {
@@ -15,10 +16,10 @@ class App extends Component {
       <Router>
         <Container>
           <Helmet titleTemplate={`%s - ${title}`} />
-          <Route exact path="/" component={Home} title="Home" />
-          <Route path="/sc" component={SC} title="Sentencing Calculator" />
-          <Route path="/si" component={SI} title="Statutory Index" />
-          <Route path="/amendments" component={Amendments} title="Amendments" />
+          <Route exact path="/" component={AsyncHome} title="Home" />
+          <Route path="/sc" component={AsyncSC} title="Sentencing Calculator" />
+          <Route path="/si" component={AsyncSI} title="Statutory Index" />
+          <Route path="/amendments" component={AsyncAmendments} title="Amendments" />
         </Container>
       </Router>
     );
