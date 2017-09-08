@@ -10,13 +10,21 @@ const categoryList = ['I', 'II', 'III', 'IV', 'V', 'VI'].map(c => (
   <option key={c}>{c}</option>
 ));
 
+const zones = [
+  { min: 0, max: 6, zone: 'A' },
+  { min: 4, max: 15, zone: 'B' },
+  { min: 10, max: 18, zone: 'C' },
+  { min: 15, max: 100, zone: 'D' }
+];
+
 class SC extends Component {
   constructor() {
     super();
     this.state = {
       offenseLevel: '',
       category: '',
-      sentence: null
+      sentence: null,
+      zone: 'D'
     };
   }
 
@@ -24,16 +32,18 @@ class SC extends Component {
     let results = '';
     if (this.state.sentence) {
       let sentence = this.state.sentence;
-      let description = sentence + ' months of';
+      let description = `${sentence} months of`;
 
       if (sentence === 'life') {
         description = sentence;
       }
+
+      description = `${description} imprisonment. Zone ${this.state.zone}.`;
+
       results = (
         <div className="usa-alert usa-alert-info">
           <div className="usa-alert-body">
-            {' '}
-            <h4 className="usa-alert-heading">{description} imprisonment</h4>
+            <h4 className="usa-alert-heading">{description}</h4>
           </div>
         </div>
       );
@@ -86,7 +96,19 @@ class SC extends Component {
         x.offenseLevel == this.state.offenseLevel
     );
     if (s !== undefined) {
-      this.setState({ sentence: s[this.state.category] });
+      let zone = 'D';
+      let sentence = s[this.state.category];
+      let pair = sentence.split('-');
+      let min = Number(pair[0]);
+      let max = Number(pair[1]);
+
+      let zn = _.find(zones, z => min >= z.min && max <= z.max);
+
+      if (zn !== undefined) {
+        zone = zn.zone;
+      }
+
+      this.setState({ sentence: sentence, zone: zone });
     }
   }
 }
