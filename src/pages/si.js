@@ -1,11 +1,57 @@
 import React, { Component } from 'react';
 import data from '../data/si.json';
 import _ from 'lodash';
+import Autosuggest from 'react-autosuggest';
 
 const titleOptionList = _.uniqBy(data, 'Title').map(t => (
   <option key={t.Title}>{t.Title}</option>
 ));
 
+const getSuggestionValue = suggestion => suggestion;
+const shouldRenderSuggestions = () => true;
+
+const renderSuggestion = suggestion => <div>{suggestion}</div>;
+const theme = {
+  container: {
+    position: 'relative'
+  },
+  inputFocused: {
+    outline: 'none'
+  },
+  inputOpen: {
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0
+  },
+  suggestionsContainer: {
+    display: 'none'
+  },
+  suggestionsContainerOpen: {
+    display: 'block',
+    position: 'absolute',
+    top: 51,
+    width: 280,
+    border: '1px solid #aaa',
+    backgroundColor: '#fff',
+    fontFamily: 'Helvetica, sans-serif',
+    fontWeight: 300,
+    fontSize: 16,
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
+    zIndex: 2
+  },
+  suggestionsList: {
+    margin: 0,
+    padding: 0,
+    listStyleType: 'none'
+  },
+  suggestion: {
+    cursor: 'pointer',
+    padding: '10px 20px'
+  },
+  suggestionHighlighted: {
+    backgroundColor: '#ddd'
+  }
+};
 class SI extends Component {
   constructor() {
     super();
@@ -13,11 +59,20 @@ class SI extends Component {
       title: '',
       statute: '',
       guidelines: [],
-      statuteOptionList: null
+      statuteOptions: []
     };
   }
 
   render() {
+    const value = this.state.statute;
+    const statuteOptions = this.state.statuteOptions;
+
+    const inputProps = {
+      placeholder: 'Type Statute',
+      value,
+      onChange: this.onChange
+    };
+
     let results = '';
     if (this.state.guidelines.length > 0) {
       results = (
@@ -51,14 +106,16 @@ class SI extends Component {
             {titleOptionList}
           </select>
           <label htmlFor="statute">Statute</label>
-          <select
-            id="statute"
-            value={this.state.statute}
-            onChange={e => this.setState({ statute: e.target.value })}
-          >
-            <option>Select</option>
-            {this.state.statuteOptionList}
-          </select>
+          <Autosuggest
+            suggestions={statuteOptions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            shouldRenderSuggestions={shouldRenderSuggestions}
+            renderSuggestion={renderSuggestion}
+            inputProps={inputProps}
+            theme={theme}
+          />
           <button onClick={this.search.bind(this)}>Go</button>
         </section>
         {results}
@@ -67,14 +124,42 @@ class SI extends Component {
   }
 
   cascadestatute(e) {
-    let title = e.target.value;
+    this.setState({ title: e.target.value, statute: '' });
+  }
+
+  getSuggestions(value) {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
 
     let statuteOptions = data
       // eslint-disable-next-line
-      .filter(d => d.Title == title)
-      .map(x => <option key={x.Statute}>{x.Statute}</option>);
-    this.setState({ title: title, statuteOptionList: statuteOptions });
+      .filter(d => d.Title == this.state.title)
+      .map(x => x.Statute);
+
+    return inputLength === 0
+      ? statuteOptions
+      : statuteOptions.filter(
+          s => s.toLowerCase().slice(0, inputLength) === inputValue
+        );
   }
+
+  onChange = (event, { newValue }) => {
+    this.setState({
+      statute: newValue
+    });
+  };
+
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      statuteOptions: this.getSuggestions(value)
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      statuteOptions: []
+    });
+  };
 
   search() {
     let results = _.find(
