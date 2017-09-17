@@ -38,3 +38,16 @@ Swingtech ussc mobile site
 
     All USSC/Swingtech communication and USSC guide line source docs in word format
 
+
+## manifest
+/
+/index.html
+/chapter1.html
+/chapter2.html
+/chapter3.html
+/chapter4.html
+/chapter5.html
+/chapter6.html
+/chapter7.html
+/chapter8.html
+

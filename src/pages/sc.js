@@ -52,16 +52,14 @@ class SC extends Component {
       <div>
         <h2>Sentencing Calculator</h2>
         <section>
-          <p>
-            This index specifies the offense guideline section(s) in Chapter Two
-            (Offense Conduct) applicable to the statute of conviction. If more
-            than one guideline section is referenced for the particular statute,
-            use the guideline most appropriate for the offense conduct charged
-            in the count of which the defendant was convicted. For the rules
-            governing the determination of the offense guideline section(s) from
-            Chapter Two, and for any exceptions to those rules, see §1B1.2
-            (Applicable Guidelines).
-          </p>
+          This index specifies the offense guideline section(s) in Chapter Two
+          (Offense Conduct) applicable to the statute of conviction. If more
+          than one guideline section is referenced for the particular statute,
+          use the guideline most appropriate for the offense conduct charged in
+          the count of which the defendant was convicted. For the rules
+          governing the determination of the offense guideline section(s) from
+          Chapter Two, and for any exceptions to those rules, see §1B1.2
+          (Applicable Guidelines).
         </section>
         <section>{results}</section>
         <section>

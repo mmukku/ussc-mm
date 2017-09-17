@@ -105,6 +105,11 @@ class Container extends Component {
                   <ul id="side-nav-1" className="usa-nav-submenu">
                     <li>
                       <Link to="/" className="usa-nav-link">
+                        <span>2016</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className="usa-nav-link">
                         <span>Appendix B</span>
                       </Link>
                     </li>

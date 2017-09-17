@@ -1,12 +1,21 @@
 CACHE MANIFEST
 /
 /index.html
+/chapter1.html
+/chapter2.html
+/chapter3.html
+/chapter4.html
+/chapter5.html
+/chapter6.html
+/chapter7.html
+/chapter8.html
 /static/css/main.f89d30a0.css
-/static/js/0.a11dfc38.chunk.js
-/static/js/1.4c670cc4.chunk.js
-/static/js/2.e4a6e125.chunk.js
-/static/js/3.f13366b9.chunk.js
-/static/js/main.582dd01f.js
+/static/js/0.61515468.chunk.js
+/static/js/1.29df071d.chunk.js
+/static/js/2.49346690.chunk.js
+/static/js/3.7998102f.chunk.js
+/static/js/4.0c83a474.chunk.js
+/static/js/main.dc6e5398.js
 /static/media/angle-arrow-down-hover.53c1cd25.png
 /static/media/angle-arrow-down-hover.a3ee995e.svg
 /static/media/angle-arrow-down-primary-hover.2c1f3745.png
@@ -32,7 +41,7 @@ CACHE MANIFEST
 /static/media/icon-dot-gov.cdd13dd3.svg
 /static/media/icon-https.c7c1e46f.svg
 /static/media/info.f6fcba34.svg
-/static/media/logo.b201080b.png
+/static/media/logo.080c2ba1.png
 /static/media/minus-alt.8816fd01.svg
 /static/media/minus-alt.b9b1e818.png
 /static/media/minus.5a7e9c37.svg
@@ -47,4 +56,4 @@ CACHE MANIFEST
 /static/media/twitter16.0168b3b6.svg
 /static/media/warning.4ba1d198.svg
 /static/media/youtube15.bededcff.svg
-# Created at 2017-09-09T03:11:18.788Z
+# Created at 2017-09-17T19:08:42.104Z

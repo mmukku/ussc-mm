@@ -85,7 +85,7 @@ class SI extends Component {
     return (
       <div>
         <h2>Statutory Index</h2>
-        <p>
+        <section>
           This index specifies the offense guideline section(s) in Chapter Two
           (Offense Conduct) applicable to the statute of conviction. If more
           than one guideline section is referenced for the particular statute,
@@ -93,8 +93,8 @@ class SI extends Component {
           the count of which the defendant was convicted. For the rules
           governing the determination of the offense guideline section(s) from
           Chapter Two, and for any exceptions to those rules, see §1B1.2
-          (Applicable Guidelines).{' '}
-        </p>
+          (Applicable Guidelines).
+        </section>
         <section>
           <label htmlFor="title">Title</label>
           <select
