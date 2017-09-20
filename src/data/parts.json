@@ -1,0 +1,234 @@
+[
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "1",
+    "title": "INTRODUCTION AND AUTHORITY"
+  },
+  {
+    "id": "B",
+    "type": "part",
+    "chapter": "1",
+    "title": "GENERAL APPLICATION PRINCIPLES"
+  },
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES AGAINST THE PERSON"
+  },
+  {
+    "id": "B",
+    "type": "part",
+    "chapter": "2",
+    "title": "BASIC ECONOMIC OFFENSES"
+  },
+  {
+    "id": "C",
+    "type": "part",
+    "chapter": "2",
+    "title":
+      "OFFENSES INVOLVING PUBLIC OFFICIALS AND VIOLATION OF FEDERAL ELECTION CAMPAIGN LAWS"
+  },
+  {
+    "id": "D",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING DRUGS AND NARCO-TERRORISM"
+  },
+  {
+    "id": "E",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING CRIMINAL ENTERPRISES AND RACKETEERING"
+  },
+  { "id": "F", "type": "part", "chapter": "2", "title": "[DELETED]" },
+  {
+    "id": "G",
+    "type": "part",
+    "chapter": "2",
+    "title":
+      "OFFENSES INVOLVING COMMERCIAL SEX ACTS, SEXUAL EXPLOITATION OF MINORS, AND OBSCENITY"
+  },
+  {
+    "id": "H",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING INDIVIDUAL RIGHTS"
+  },
+  { "id": "I", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  {
+    "id": "J",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING THE ADMINISTRATION OF JUSTICE"
+  },
+  {
+    "id": "K",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING PUBLIC SAFETY"
+  },
+  {
+    "id": "L",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING IMMIGRATION, NATURALIZATION, AND PASSPORTS"
+  },
+  {
+    "id": "M",
+    "type": "part",
+    "chapter": "2",
+    "title":
+      "OFFENSES INVOLVING NATIONAL DEFENSE AND WEAPONS OF MASS DESTRUCTION"
+  },
+  {
+    "id": "N",
+    "type": "part",
+    "chapter": "2",
+    "title":
+      "OFFENSES INVOLVING FOOD, DRUGS, AGRICULTURAL PRODUCTS, AND ODOMETER LAWS"
+  },
+  { "id": "O", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  {
+    "id": "P",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING PRISONS AND CORRECTIONAL FACILITIES"
+  },
+  {
+    "id": "Q",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING THE ENVIRONMENT"
+  },
+  { "id": "R", "type": "part", "chapter": "2", "title": "ANTITRUST OFFENSES" },
+  {
+    "id": "S",
+    "type": "part",
+    "chapter": "2",
+    "part": "S",
+    "title": "MONEY LAUNDERING AND MONETARY TRANSACTION REPORTING"
+  },
+  {
+    "id": "T",
+    "type": "part",
+    "chapter": "2",
+    "title": "OFFENSES INVOLVING TAXATION"
+  },
+  { "id": "U", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  { "id": "V", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  { "id": "W", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  { "id": "X", "type": "part", "chapter": "2", "title": "OTHER OFFENSES" },
+  { "id": "Y", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  { "id": "Z", "type": "part", "chapter": "2", "title": "[NOT USED]" },
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "3",
+    "title": "VICTIM-RELATED ADJUSTMENTS"
+  },
+  { "id": "B", "type": "part", "chapter": "3", "title": "ROLE IN THE OFFENSE" },
+  {
+    "id": "C",
+    "type": "part",
+    "chapter": "3",
+    "title": "OBSTRUCTION AND RELATED ADJUSTMENTS"
+  },
+  { "id": "D", "type": "part", "chapter": "3", "title": "MULTIPLE COUNTS" },
+  {
+    "id": "E",
+    "type": "part",
+    "chapter": "3",
+    "title": "ACCEPTANCE OF RESPONSIBILITY"
+  },
+  { "id": "A", "type": "part", "chapter": "4", "title": "CRIMINAL HISTORY" },
+  {
+    "id": "B",
+    "type": "part",
+    "chapter": "4",
+    "title": "CAREER OFFENDERS AND CRIMINAL LIVELIHOOD"
+  },
+  { "id": "A", "type": "part", "chapter": "5", "title": "SENTENCING TABLE" },
+  { "id": "B", "type": "part", "chapter": "5", "title": "PROBATION" },
+  { "id": "C", "type": "part", "chapter": "5", "title": "IMPRISONMENT" },
+  { "id": "D", "type": "part", "chapter": "5", "title": "SUPERVISED RELEASE" },
+  {
+    "id": "E",
+    "type": "part",
+    "chapter": "5",
+    "title": "RESTITUTION, FINES, ASSESSMENTS, FORFEITURES"
+  },
+  { "id": "F", "type": "part", "chapter": "5", "title": "SENTENCING OPTIONS" },
+  {
+    "id": "G",
+    "type": "part",
+    "chapter": "5",
+    "title": "IMPLEMENTING THE TOTAL SENTENCE OF IMPRISONMENT"
+  },
+  {
+    "id": "H",
+    "type": "part",
+    "chapter": "5",
+    "title": "SPECIFIC OFFENDER CHARACTERISTICS"
+  },
+  { "id": "I", "type": "part", "chapter": "5", "title": "[NOT USED]" },
+  {
+    "id": "J",
+    "type": "part",
+    "chapter": "5",
+    "title": "RELIEF FROM DISABILITY"
+  },
+  { "id": "K", "type": "part", "chapter": "5", "title": "DEPARTURES" },
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "6",
+    "title": "SENTENCING PROCEDURES"
+  },
+  { "id": "B", "type": "part", "chapter": "6", "title": "PLEA AGREEMENTS" },
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "7",
+    "title": "INTRODUCTION TO CHAPTER SEVEN"
+  },
+  {
+    "id": "B",
+    "type": "part",
+    "chapter": "7",
+    "title": "PROBATION AND SUPERVISED RELEASE VIOLATIONS"
+  },
+  {
+    "id": "A",
+    "type": "part",
+    "chapter": "8",
+    "title": "GENERAL APPLICATION PRINCIPLES"
+  },
+  {
+    "id": "B",
+    "type": "part",
+    "chapter": "8",
+    "title":
+      "REMEDYING HARM FROM CRIMINAL CONDUCT, AND EFFECTIVE COMPLIANCE AND ETHICS PROGRAM"
+  },
+  { "id": "C", "type": "part", "chapter": "8", "title": "FINES" },
+  {
+    "id": "D",
+    "type": "part",
+    "chapter": "6",
+    "title": "ORGANIZATIONAL PROBATION"
+  },
+  {
+    "id": "E",
+    "type": "part",
+    "chapter": "8",
+    "title": "SPECIAL ASSESSMENTS, FORFEITURES, AND COSTS"
+  },
+  {
+    "id": "F",
+    "type": "part",
+    "chapter": "8",
+    "title": "VIOLATIONS OF PROBATION -ORGANIZATIONS"
+  }
+]

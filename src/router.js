@@ -11,10 +11,14 @@ import Container from './components/container';
 import asyncComponent from './components/asyncComponent';
 
 const AsyncHome = asyncComponent(() => import('./pages/home'));
-const AsyncChapter = asyncComponent(() => import('./pages/chapter'));
 const AsyncSC = asyncComponent(() => import('./pages/sc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncAmendments = asyncComponent(() => import('./pages/amendments'));
+const AsyncParts = asyncComponent(() => import('./pages/parts'));
+const AsyncSections = asyncComponent(() => import('./pages/sections'));
+const AsyncGuidelines = asyncComponent(() => import('./pages/guidelines'));
+const AsyncGuideline = asyncComponent(() => import('./pages/guideline'));
+
 const title = 'USSC Guidelines';
 
 class USSCRouter extends Component {
@@ -27,9 +31,39 @@ class USSCRouter extends Component {
             <Route exact path="/" component={AsyncHome} title="Home" />
             <Route
               exact
-              path="/chapters/:id"
-              component={AsyncChapter}
+              path="/chapters"
+              component={AsyncHome}
               title="Chapters"
+            />
+            <Route
+              exact
+              path="/chapters/:chapterId/parts"
+              component={AsyncParts}
+              title="Parts"
+            />
+            <Route
+              exact
+              path="/chapters/:chapterId/parts/:part/sections"
+              component={AsyncSections}
+              title="Sections"
+            />
+            <Route
+              exact
+              path="/chapters/:chapterId/parts/:part/sections/:sectionId/guidelines"
+              component={AsyncGuidelines}
+              title="GuideLines"
+            />
+            <Route
+              exact
+              path="/chapters/:chapterId/parts/:part/guidelines"
+              component={AsyncGuidelines}
+              title="GuideLines"
+            />
+            <Route
+              exact
+              path="/chapters/:chapterId/parts/:part/sections/:sectionId/guidelines/:id"
+              component={AsyncGuideline}
+              title="GuideLine"
             />
             <Route
               exact

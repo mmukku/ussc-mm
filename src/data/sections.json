@@ -1,0 +1,486 @@
+[
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title": "Homicide"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title": "Assault"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title":
+      "Criminal Sexual Abuse and Offenses Related to Registration as a Sex Offender"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title": "Kidnapping, Abduction, or Unlawful Restraint"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title": "Air Piracy and Offenses Against Mass Transportation Systems"
+  },
+  {
+    "id": "6",
+    "type": "section",
+    "chapter": "2",
+    "part": "A",
+    "title":
+      "Threatening or Harassing Communications, Hoaxes, Stalking, and Domestic Violence"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title":
+      "Theft, Embezzlement, Receipt of Stolen Property, Property Destruction and Offenses Involving Fraud or Deceit"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title": "Burglary and Trespass"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title": "Robbery, Extortion, and Blackmail"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title": "Commercial Bribery and Kickbacks"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title": "Counterfeiting and Infringement of Copyright or Trademark"
+  },
+  {
+    "id": "6",
+    "type": "section",
+    "chapter": "2",
+    "part": "B",
+    "title": "Motor Vehicle dentification Numbers"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "D",
+    "title":
+      "Unlawful Manufacturing, Importing, Exporting, Trafficking, or Possession; Continuing Criminal Enterprise"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "D",
+    "title": "Unlawful Possession"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "D",
+    "title": "Regulatory Violations"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "E",
+    "title": "Racketeering"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "E",
+    "title": "Extortionate Extension of Credit"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "E",
+    "title": "Gambling"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "E",
+    "title": "Trafficking in Contraband Cigarettes and Smokeless Tobacco"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "2",
+    "part": "E",
+    "title": "Labor Racketeering"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "G",
+    "title": "Promoting a Commercial Sex Act or Prohibited Sexual Conduct"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "G",
+    "title": "Sexual Exploitation of a Minor"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "G",
+    "title": "Obscenity"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "H",
+    "title": "Civil Rights"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "H",
+    "title": "Political Rights"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "H",
+    "title": "Privacy and Eavesdropping"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "H",
+    "title": "Peonage, Involuntary Servitude, and Slave Trade"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "K",
+    "title": "Explosives and Arson"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "K",
+    "title": "Firearms"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "K",
+    "title": "Mailing Injurious Articles"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "L",
+    "title": "Immigration"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "L",
+    "title": "Naturalization and Passports"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title": "Treason"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title": "Sabotage"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title": "Espionage and Related Offenses"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title": "Evasion of Military Service"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title":
+      "Prohibited Financial Transactions and Exports, and Providing Material Support to Designated Foreign Terrorist Organizations"
+  },
+  {
+    "id": "6",
+    "type": "section",
+    "chapter": "2",
+    "part": "M",
+    "title":
+      "Nuclear, Biological, and Chemical Weapons and Materials, and Other Weapons of Mass Destruction"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "N",
+    "title": "Tampering with Consumer Products"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "N",
+    "title": "Food, Drugs, and Agricultural Products"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "N",
+    "title": "Odometer Laws and Regulations"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "Q",
+    "title": "Environment"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "Q",
+    "title": "Conservation and Wildlife"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "T",
+    "title":
+      "Income Taxes, Employment Taxes, Estate Taxes, Gift Taxes, and Excise Taxes (Other Than Alcohol, Tobacco, and Customs Taxes)"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "T",
+    "title": "Alcohol and Tobacco Taxes"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "T",
+    "title": "Customs Taxes"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "T",
+    "title": "Tax Table"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "Conspiracies, Attempts, Solicitations"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "Aiding and Abetting"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "Accessory After the Fact"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "Misprision of Felony"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "All Other Offenses"
+  },
+  {
+    "id": "6",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title": "Offenses Involving Use of a Minor in a Crime of Violence"
+  },
+  {
+    "id": "7",
+    "type": "section",
+    "chapter": "2",
+    "part": "X",
+    "title":
+      "Offenses Involving Border Tunnels and Submersible and Semi-Submersible Vessels"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "5",
+    "part": "K",
+    "title": "Substantial Assistance to Authorities"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "5",
+    "part": "K",
+    "title": "Other Grounds for Departure"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "5",
+    "part": "K",
+    "title": "Early Disposition Programs"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "7",
+    "part": "A",
+    "title": "Authority"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "7",
+    "part": "A",
+    "title": "Background"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "7",
+    "part": "A",
+    "title": "Resolution of Major Issues"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "7",
+    "part": "A",
+    "title": "The Basic Approach"
+  },
+  {
+    "id": "5",
+    "type": "section",
+    "chapter": "7",
+    "part": "A",
+    "title": "A Concluding Note"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "8",
+    "part": "B",
+    "title": "Remedying Harm from Criminal Conduct"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "8",
+    "part": "B",
+    "title": "Effective Compliance and Ethics Program"
+  },
+  {
+    "id": "1",
+    "type": "section",
+    "chapter": "8",
+    "part": "C",
+    "title": "Determining the Fine - Criminal Purpose Organizations"
+  },
+  {
+    "id": "2",
+    "type": "section",
+    "chapter": "8",
+    "part": "C",
+    "title": "Determining the Fine - Other Organizations"
+  },
+  {
+    "id": "3",
+    "type": "section",
+    "chapter": "8",
+    "part": "C",
+    "title": "Implementing the Sentence of a Fine"
+  },
+  {
+    "id": "4",
+    "type": "section",
+    "chapter": "8",
+    "part": "C",
+    "title": "Departures from the Guideline Fine Range"
+  }
+]

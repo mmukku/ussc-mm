@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "type": "chapter",
+    "title": "INTRODUCTION, AUTHORITY, AND GENERAL APPLICATION PRINCIPLES"
+  },
+  { "id": "2", "type": "chapter", "title": "OFFENSE CONDUCT" },
+  { "id": "3", "type": "chapter", "title": "ADJUSTMENTS" },
+  {
+    "id": "4",
+    "type": "chapter",
+    "title": "CRIMINAL HISTORY AND CRIMINAL LIVELIHOOD"
+  },
+  { "id": "5", "type": "chapter", "title": "DETERMINING THE SENTENCE" },
+  {
+    "id": "6",
+    "type": "chapter",
+    "title": "SENTENCING PROCEDURES, PLEA AGREEMENTS AND CRIME VICTIMS' RIGHTS"
+  },
+  {
+    "id": "7",
+    "type": "chapter",
+    "title": "VIOLATIONS OF PROBATION AND SUPERVISED RELEASE"
+  },
+  { "id": "8", "type": "chapter", "title": "SENTENCING OF ORGANIZATIONS" }
+]
