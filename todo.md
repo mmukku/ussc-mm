@@ -1,4 +1,5 @@
 1. Automatically generate the guideline metadata from .md files,  use the front matter.
+   Need to propose to the client on formatting of the content.
 
 2. Full-text Search
 
@@ -14,4 +15,12 @@
 
 8. Fix Amnendment content formatting
 
-9. 
+9. Fix guideline formatting
+
+10. Highlighting/Notes/Bookmarks feature
+
+11. Fix navigation
+
+12. Fix refresh problem on updates.
+
+
