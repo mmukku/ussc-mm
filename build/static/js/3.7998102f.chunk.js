@@ -1,2 +1,0 @@
-webpackJsonp([3],{253:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a=t(5),l=t.n(a),r=t(59),u=[1,2,3,4,5,6,7,8].map(function(e){return l.a.createElement("li",{key:e},l.a.createElement(r.b,{to:"/chapters/"+e,className:"usa-nav-link"},l.a.createElement("span",null,"Chapter ",e)))});n.default=function(){return l.a.createElement("div",null,l.a.createElement("h3",null,"Guidelines"),l.a.createElement("ul",null,u))}}});
-//# sourceMappingURL=3.7998102f.chunk.js.map

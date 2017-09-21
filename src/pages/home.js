@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import chapters from '../data/chapters.json';
+import PartsLink from '../components/partsLink';
 
 const chapterList = chapters.map(c => (
   <li key={c.id}>
-    <Link to={`/chapters/${c.id}/parts`} className="usa-nav-link">
-      <span>
-        Chapter {c.id} - {c.title}
-      </span>
-    </Link>
+    <PartsLink chapterId={c.id}>
+      Chapter {c.id} - {c.title}
+    </PartsLink>
   </li>
 ));
 

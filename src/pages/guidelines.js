@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import guideLines from '../data/guidelines.json';
+import HomeLink from '../components/homeLink';
+import PartsLink from '../components/partsLink';
+import SectionsLink from '../components/sectionsLink';
+import GuidelineLink from '../components/guidelineLink';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -9,6 +12,7 @@ export default props => {
   if (sectionId === undefined) {
     sectionId = '1';
   }
+  console.log(props.match.params);
   console.dir(
     guideLines.filter(
       gl =>
@@ -26,28 +30,38 @@ export default props => {
     )
     .map(gl => (
       <li key={gl.id}>
-        <Link
-          to={`/chapters/${chapterId}/parts/${partId}/sections/${sectionId}/guidelines/${gl.id}`}
-          className="usa-nav-link"
+        <GuidelineLink
+          chapterId={chapterId}
+          partId={partId}
+          sectionId={sectionId}
+          id={gl.id}
         >
-          <span>
-            {gl.id} -{gl.title}
-          </span>
-        </Link>
+          {gl.id} -{gl.title}
+        </GuidelineLink>
       </li>
     ));
-  let bc = `/chapters/${chapterId}/parts/${partId}/sections`;
-  if (sectionId === '1') {
-    bc = `/chapters/${chapterId}/parts/`;
+
+  var bc = undefined;
+  var text = <span>{`Part ${partId}`}</span>;
+  if (props.match.params.sectionId !== undefined) {
+    bc = (
+      <SectionsLink chapterId={chapterId} partId={partId}>
+        Part {partId}
+      </SectionsLink>
+    );
+    text = <span>&nbsp; > &nbsp; {`Section ${sectionId}`}</span>;
   }
+
   return (
     <div>
       <h6>
-        <Link to="/" className="usa-nav-link">
-          <span>Home&nbsp;</span>
-        </Link>&nbsp; > &nbsp;<Link to={bc} className="usa-nav-link">
-          <span>Chapter {chapterId}</span>
-        </Link>&nbsp; > &nbsp;Part {partId}
+        <div className="usa-width-one-half">
+          <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
+            Chapter {chapterId}
+          </PartsLink>{' '}
+          &nbsp; > &nbsp; {bc} {text}
+        </div>
+        <div className="usa-width-one-half">&lt; Prev | Next &gt;</div>
       </h6>
       <h3>
         Chapter {chapterId} - Part {partId}

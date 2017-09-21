@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import sections from '../data/sections.json';
+import HomeLink from '../components/homeLink';
+import PartsLink from '../components/partsLink';
+import GuideLinesLink from '../components/guidelinesLink';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -9,30 +11,23 @@ export default props => {
     .filter(s => s.chapter === chapterId && s.part === partId)
     .map(s => (
       <li key={s.id}>
-        <Link
-          to={`/chapters/${chapterId}/parts/${s.id}/sections/${s.section ===
-          undefined
-            ? 1
-            : s.section}/guidelines`}
-          className="usa-nav-link"
-        >
+        <GuideLinesLink chapterId={chapterId} partId={partId} sectionId={s.id}>
           <span>
             {s.id} - {s.title}
           </span>
-        </Link>
+        </GuideLinesLink>
       </li>
     ));
   return (
     <div>
       <h6>
-        <Link to="/" className="usa-nav-link">
-          <span>Home&nbsp;</span>
-        </Link>&nbsp; > &nbsp;<Link
-          to={`/chapters/${chapterId}/parts`}
-          className="usa-nav-link"
-        >
-          <span>Chapter {chapterId}</span>
-        </Link>&nbsp; > &nbsp;Part {partId}
+        <div className="usa-width-one-half">
+          <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
+            Chapter {chapterId}
+          </PartsLink>{' '}
+          &nbsp; > &nbsp;Part {partId}
+        </div>
+        <div className="usa-width-one-half">&lt; Prev | Next &gt;</div>
       </h6>
       <h3>
         Chapter {chapterId} - Part {partId}
