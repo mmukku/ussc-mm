@@ -1,5 +1,6 @@
 import React from 'react';
 import sections from '../data/sections.json';
+import Parts from '../data/parts.json';
 import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
@@ -10,14 +11,27 @@ export default props => {
   let sectionList = sections
     .filter(s => s.chapter === chapterId && s.part === partId)
     .map(s => (
-      <li key={s.id}>
+      <p key={s.id}>
         <GuideLinesLink chapterId={chapterId} partId={partId} sectionId={s.id}>
           <span>
             {s.id} - {s.title}
           </span>
         </GuideLinesLink>
-      </li>
+      </p>
     ));
+
+  const partList = Parts.filter(p => p.chapter === chapterId).map(p => {
+    if (p.id !== partId)
+      return (
+        <option
+          key={p.id}
+          value={`/chapters/${chapterId}/parts/${p.id}/sections`}
+        >
+          Part {p.id}
+        </option>
+      );
+  });
+
   return (
     <div>
       <h6>
@@ -27,12 +41,18 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp;Part {partId}
         </div>
-        <div className="usa-width-one-half">&lt; Prev | Next &gt;</div>
+        <select onChange={e => (window.location = e.target.value)}>
+          <option>Go to</option>
+          {partList}
+        </select>
       </h6>
-      <h3>
-        Chapter {chapterId} - Part {partId}
-      </h3>
-      <ul>{sectionList}</ul>
+      <div className="usa-section">
+        <h3>
+          Chapter {chapterId} - Part {partId}
+        </h3>
+
+        <div>{sectionList}</div>
+      </div>
     </div>
   );
 };

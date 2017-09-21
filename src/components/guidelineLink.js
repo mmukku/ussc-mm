@@ -7,7 +7,7 @@ export default props => {
     link = `/chapters/${props.chapterId}/parts/${props.partId}/sections/${props.sectionId}/guidelines/${props.id}`;
   }
   return (
-    <Link to={link} className="usa-nav-link">
+    <Link to={link}>
       <span>{props.children}</span>
     </Link>
   );

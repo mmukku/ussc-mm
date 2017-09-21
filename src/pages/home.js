@@ -4,16 +4,16 @@ import chapters from '../data/chapters.json';
 import PartsLink from '../components/partsLink';
 
 const chapterList = chapters.map(c => (
-  <li key={c.id}>
+  <p key={c.id}>
     <PartsLink chapterId={c.id}>
       Chapter {c.id} - {c.title}
     </PartsLink>
-  </li>
+  </p>
 ));
 
 export default () => (
   <div>
     <h3>Chapters</h3>
-    <ul>{chapterList}</ul>
+    {chapterList}
   </div>
 );

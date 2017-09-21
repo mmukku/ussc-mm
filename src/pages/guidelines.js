@@ -4,6 +4,8 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import SectionsLink from '../components/sectionsLink';
 import GuidelineLink from '../components/guidelineLink';
+import Sections from '../data/sections.json';
+import Parts from '../data/parts.json';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -12,37 +14,27 @@ export default props => {
   if (sectionId === undefined) {
     sectionId = '1';
   }
-  console.log(props.match.params);
-  console.dir(
-    guideLines.filter(
-      gl =>
-        gl.chapter === chapterId &&
-        gl.part === partId &&
-        gl.section === sectionId
-    )
-  );
-  let guidelineList = guideLines
-    .filter(
-      gl =>
-        gl.chapter === chapterId &&
-        gl.part === partId &&
-        gl.section === sectionId
-    )
-    .map(gl => (
-      <li key={gl.id}>
-        <GuidelineLink
-          chapterId={chapterId}
-          partId={partId}
-          sectionId={sectionId}
-          id={gl.id}
-        >
-          {gl.id} -{gl.title}
-        </GuidelineLink>
-      </li>
-    ));
 
-  var bc = undefined;
+  const filtered = guideLines.filter(
+    gl =>
+      gl.chapter === chapterId && gl.part === partId && gl.section === sectionId
+  );
+  let guidelineList = filtered.map(gl => (
+    <p key={gl.id}>
+      <GuidelineLink
+        chapterId={chapterId}
+        partId={partId}
+        sectionId={sectionId}
+        id={gl.id}
+      >
+        {gl.id} -{gl.title}
+      </GuidelineLink>
+    </p>
+  ));
+
+  let bc;
   var text = <span>{`Part ${partId}`}</span>;
+  let navList;
   if (props.match.params.sectionId !== undefined) {
     bc = (
       <SectionsLink chapterId={chapterId} partId={partId}>
@@ -50,6 +42,32 @@ export default props => {
       </SectionsLink>
     );
     text = <span>&nbsp; > &nbsp; {`Section ${sectionId}`}</span>;
+    navList = Sections.filter(
+      s => s.chapter === chapterId && s.part === partId
+    ).map(s => {
+      if (s.id !== sectionId) {
+        return (
+          <option
+            key={s.id}
+            value={`/chapters/${chapterId}/parts/${partId}/sections/${s.id}/guidelines`}
+          >
+            Section {s.id}
+          </option>
+        );
+      }
+    });
+  } else {
+    navList = Parts.filter(p => p.chapter === chapterId).map(p => {
+      if (p.id !== partId)
+        return (
+          <option
+            key={p.id}
+            value={`/chapters/${chapterId}/parts/${p.id}/guidelines`}
+          >
+            Part {p.id}
+          </option>
+        );
+    });
   }
 
   return (
@@ -61,12 +79,19 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp; {bc} {text}
         </div>
-        <div className="usa-width-one-half">&lt; Prev | Next &gt;</div>
+        <div className="usa-width-one-half">
+          <select onChange={e => (window.location = e.target.value)}>
+            <option>Go to</option>
+            {navList}
+          </select>
+        </div>
       </h6>
-      <h3>
-        Chapter {chapterId} - Part {partId}
-      </h3>
-      <ul>{guidelineList}</ul>
+      <div className="usa-section">
+        <h3>
+          Chapter {chapterId} - Part {partId}
+        </h3>
+        <div>{guidelineList}</div>
+      </div>
     </div>
   );
 };

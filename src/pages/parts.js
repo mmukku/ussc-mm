@@ -5,6 +5,7 @@ import sections from '../data/sections.json';
 import HomeLink from '../components/homeLink';
 import SectionsLink from '../components/sectionsLink';
 import GuideLinesLink from '../components/guidelinesLink';
+import Chapters from '../data/chapters.json';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -15,21 +16,30 @@ export default props => {
 
     if (hasSections) {
       return (
-        <li key={p.id}>
+        <p key={p.id}>
           <SectionsLink chapterId={chapterId} partId={p.id}>
             Part {p.id} - {p.title}
           </SectionsLink>
-        </li>
+        </p>
       );
     } else {
       return (
-        <li key={p.id}>
+        <p key={p.id}>
           <GuideLinesLink chapterId={chapterId} partId={p.id}>
             Part {p.id} - {p.title}
           </GuideLinesLink>
-        </li>
+        </p>
       );
     }
+  });
+
+  const chapterList = Chapters.map(c => {
+    if (c.id !== chapterId)
+      return (
+        <option key={c.id} value={`/chapters/${c.id}/parts`}>
+          Chapter {c.id}
+        </option>
+      );
   });
 
   return (
@@ -38,11 +48,15 @@ export default props => {
         <span className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;Chapter {chapterId}
         </span>
-        <span className="usa-width-one-half">&lt; Prev | Next &gt;</span>
+        <select onChange={e => (window.location = e.target.value)}>
+          <option>Go to</option>
+          {chapterList}
+        </select>
       </h6>
-
-      <h3>Chapter {chapterId}</h3>
-      <ul>{partsList}</ul>
+      <div className="usa-section">
+        <h3>Chapter {chapterId}</h3>
+        <div>{partsList}</div>
+      </div>
     </div>
   );
 };
