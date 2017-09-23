@@ -48,9 +48,9 @@ export default props => {
       </p>
       <p>
         7 ► Determine the applicable guideline range in{' '}
-        <a href="/chapters/5/parts/A/guidelines">Part A of Chapter Five</a> by
-        locating the cell in the Sentencing Table that is at the intersection of
-        the offense level and criminal history category determined above.
+        <a href="/guidelines/§5A1.1">Part A of Chapter Five</a> by locating the
+        cell in the Sentencing Table that is at the intersection of the offense
+        level and criminal history category determined above.
       </p>
       <p>
         8 ► For the applicable guideline range, determine from{' '}

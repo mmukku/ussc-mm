@@ -39,6 +39,13 @@ export default props => {
     }
   });
 
+  let content = <p>{id} content goes here.</p>;
+  const gl = guideLines.filter(gl => gl.id === id)[0];
+  if (gl.img != undefined) {
+    let img = require(`../img/${gl.img}`);
+    content = <img src={img} alt="{gl.title}" />;
+  }
+
   return (
     <div>
       <h6>
@@ -66,7 +73,7 @@ export default props => {
         <h3>
           Chapter {chapterId} - Part {partId} - {sectionId} GuideLine- {id}
         </h3>
-        <p>{id} content goes here.</p>
+        {content}
       </div>
     </div>
   );
