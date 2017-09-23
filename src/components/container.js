@@ -110,6 +110,11 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
+                      <Link to="/ai" className="usa-nav-link">
+                        <span>Application Instructions</span>
+                      </Link>
+                    </li>
+                    <li>
                       <Link to="/" className="usa-nav-link">
                         <span>Appendix B</span>
                       </Link>
@@ -117,6 +122,11 @@ class Container extends Component {
                     <li>
                       <Link to="/amendments" className="usa-nav-link">
                         <span>Amendments</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/archives" className="usa-nav-link">
+                        <span>Archives</span>
                       </Link>
                     </li>
                   </ul>

@@ -19,6 +19,8 @@ const AsyncParts = asyncComponent(() => import('./pages/parts'));
 const AsyncSections = asyncComponent(() => import('./pages/sections'));
 const AsyncGuidelines = asyncComponent(() => import('./pages/guidelines'));
 const AsyncGuideline = asyncComponent(() => import('./pages/guideline'));
+const AsyncApplicationInstructions = asyncComponent(() => import('./pages/ai'));
+const AsyncArchives = asyncComponent(() => import('./pages/archives'));
 
 const title = 'USSC Guidelines';
 
@@ -68,6 +70,12 @@ class USSCRouter extends Component {
             />
             <Route
               exact
+              path="/guidelines/:id"
+              component={AsyncGuideline}
+              title="GuideLine"
+            />
+            <Route
+              exact
               path="/sc"
               component={AsyncSC}
               title="Sentencing Calculator"
@@ -89,6 +97,18 @@ class USSCRouter extends Component {
               path="/amendments"
               component={AsyncAmendments}
               title="Amendments"
+            />
+            <Route
+              exact
+              path="/archives"
+              component={AsyncArchives}
+              title="Archives"
+            />
+            <Route
+              exact
+              path="/ai"
+              component={AsyncApplicationInstructions}
+              title="Appliation Instructions"
             />
           </Switch>
         </Container>

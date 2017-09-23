@@ -10,6 +10,12 @@ export default props => {
   let sectionId = props.match.params.sectionId;
   let id = props.match.params.id;
 
+  if (chapterId == undefined) {
+    chapterId = id[1];
+    partId = id[2];
+    sectionId = id[3];
+  }
+
   let filtered = guideLines.filter(
     gl => gl.chapter === chapterId && gl.part === partId
   );
