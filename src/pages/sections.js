@@ -41,10 +41,12 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp;Part {partId}
         </div>
-        <select onChange={e => (window.location = e.target.value)}>
-          <option>Go to</option>
-          {partList}
-        </select>
+        <div className="usa-width-one-half">
+          <select onChange={e => (window.location = e.target.value)}>
+            <option>Go to</option>
+            {partList}
+          </select>
+        </div>
       </h6>
       <div className="usa-section">
         <h3>

@@ -13,6 +13,7 @@ import asyncComponent from './components/asyncComponent';
 const AsyncHome = asyncComponent(() => import('./pages/home'));
 const AsyncSC = asyncComponent(() => import('./pages/sc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
+const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncAmendments = asyncComponent(() => import('./pages/amendments'));
 const AsyncParts = asyncComponent(() => import('./pages/parts'));
 const AsyncSections = asyncComponent(() => import('./pages/sections'));
@@ -76,6 +77,12 @@ class USSCRouter extends Component {
               path="/si"
               component={AsyncSI}
               title="Statutory Index"
+            />
+            <Route
+              exact
+              path="/dol"
+              component={AsyncDOL}
+              title="Drug Qunatity Calculator"
             />
             <Route
               exact

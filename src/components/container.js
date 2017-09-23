@@ -127,6 +127,11 @@ class Container extends Component {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/dol" className="usa-nav-link">
+                    <span>Drug Quantity Calculator</span>
+                  </Link>
+                </li>
+                <li>
                   <Link to="/si" className="usa-nav-link">
                     <span>Statutory Index</span>
                   </Link>
