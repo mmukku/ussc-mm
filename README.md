@@ -42,6 +42,11 @@ Swingtech ussc mobile site
 ## manifest
 /
 /index.html
+/§2B1.1.md
+/§5A1.1.md
+/§7B1.4.md
+/§8C2.4.md
+
 /chapter1.html
 /chapter2.html
 /chapter3.html

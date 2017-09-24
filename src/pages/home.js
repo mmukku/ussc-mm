@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import chapters from '../data/chapters.json';
 import PartsLink from '../components/partsLink';
 

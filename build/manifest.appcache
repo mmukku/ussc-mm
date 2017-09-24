@@ -1,19 +1,23 @@
 CACHE MANIFEST
 /
 /index.html
+/§2B1.1.md
+/§5A1.1.md
+/§7B1.4.md
+/§8C2.4.md
 /static/css/main.f89d30a0.css
-/static/js/0.8d92ce7a.chunk.js
-/static/js/1.e8d90cc2.chunk.js
-/static/js/10.4cc9092a.chunk.js
-/static/js/2.83880fcc.chunk.js
-/static/js/3.09c72f03.chunk.js
-/static/js/4.608da18b.chunk.js
-/static/js/5.4f6f5b0d.chunk.js
-/static/js/6.496cacd9.chunk.js
-/static/js/7.080a0114.chunk.js
-/static/js/8.da4fe7b1.chunk.js
-/static/js/9.16a375b5.chunk.js
-/static/js/main.de6b6f06.js
+/static/js/0.7ec5c4e1.chunk.js
+/static/js/1.a1b5721f.chunk.js
+/static/js/10.ea7aee4a.chunk.js
+/static/js/2.ed4f001c.chunk.js
+/static/js/3.b01b090d.chunk.js
+/static/js/4.89d04e25.chunk.js
+/static/js/5.d6bb99de.chunk.js
+/static/js/6.137f169f.chunk.js
+/static/js/7.b9e65b3b.chunk.js
+/static/js/8.3db6ac7f.chunk.js
+/static/js/9.17be7731.chunk.js
+/static/js/main.77ef7518.js
 /static/media/angle-arrow-down-hover.53c1cd25.png
 /static/media/angle-arrow-down-hover.a3ee995e.svg
 /static/media/angle-arrow-down-primary-hover.2c1f3745.png
@@ -25,6 +29,9 @@ CACHE MANIFEST
 /static/media/angle-arrow-up-primary.7f380f79.svg
 /static/media/arrow-down.134ee96f.svg
 /static/media/arrow-right.1483e055.svg
+/static/media/bottom-slide-1.c68400f1.png
+/static/media/bottom-slide-2.171cdcd9.png
+/static/media/bottom-slide-3.84569cfd.png
 /static/media/close.6db4149d.svg
 /static/media/correct8.944de30f.svg
 /static/media/correct9.1d70e405.svg
@@ -35,6 +42,7 @@ CACHE MANIFEST
 /static/media/external-link-hover.f09ec858.svg
 /static/media/external-link.bdcbd439.svg
 /static/media/facebook25.37c061f7.svg
+/static/media/gd-icon.896ed1c7.png
 /static/media/hero.94a10c56.png
 /static/media/icon-dot-gov.cdd13dd3.svg
 /static/media/icon-https.c7c1e46f.svg
@@ -46,12 +54,17 @@ CACHE MANIFEST
 /static/media/plus-alt.1c26be1a.svg
 /static/media/plus-alt.d92cb517.png
 /static/media/plus.eb771fb8.svg
+/static/media/research-data-bg.d1864527.png
+/static/media/rss-icon.e46800ba.png
 /static/media/rss25.ad09b321.svg
 /static/media/search-alt.37d9028e.svg
 /static/media/search-alt.953243e6.png
 /static/media/search.06982348.svg
 /static/media/success.2eb47a3f.svg
+/static/media/top-slide.e8a7cb07.png
+/static/media/tw-icon.902bafbd.png
 /static/media/twitter16.0168b3b6.svg
 /static/media/warning.4ba1d198.svg
 /static/media/youtube15.bededcff.svg
-# Created at 2017-09-23T12:12:18.804Z
+/static/media/yt-icon.65e96ce4.png
+# Created at 2017-09-24T01:27:04.037Z

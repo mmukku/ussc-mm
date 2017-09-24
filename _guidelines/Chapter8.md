@@ -288,17 +288,67 @@ CommentaryApplication Notes:1. In determining the offense level under this secti
  
  Effective November 1, 1991 (amendment 422). Amended effective November 1, 2011 (amendment 758).
 
-§8C2.4. Base Fine(a) The base fine is the greatest of:(1) the amount from the table in subsection (d) below corresponding to the offense level determined under §8C2.3 (OffenseLevel); or(2) the pecuniary gain to the organization from the offense; or(3) the pecuniary loss from the offense caused by the organization, to the extent the loss was caused intentionally, knowingly, orrecklessly.
+§8C2.4. Base Fine
+
+(a) The base fine is the greatest of:
+    (1) the amount from the table in subsection (d) below corresponding to the offense level determined under §8C2.3 (OffenseLevel); or
+
+    (2) the pecuniary gain to the organization from the offense; or
+
+    (3) the pecuniary loss from the offense caused by the organization, to the extent the loss was caused intentionally, knowingly, or recklessly.
 
 (b) Provided, that if the applicable offense guideline in Chapter Twoincludes a special instruction for organizational fines, that specialinstruction shall be applied, as appropriate.
 
 (c) Provided, further, that to the extent the calculation of either pecuniary gain or pecuniary loss would unduly complicate or prolong the sentencing process, that amount, i.e., gain or loss as appropriate, shall not be used for the determination of the base fine.
 
-§8C2.4(d) OFFENSE LEVEL FINE TABLEOffense Level Amount6 or less $8,5007 $15,0008 $15,0009 $25,00010 $35,00011 $50,00012 $70,00013 $100,00014 $150,00015 $200,00016 $300,00017 $450,00018 $600,00019 $850,00020 $1,000,00021 $1,500,00022 $2,000,00023 $3,000,00024 $3,500,00025 $5,000,00026 $6,500,00027 $8,500,00028 $10,000,00029 $15,000,00030 $20,000,00031 $25,000,00032 $30,000,00033 $40,000,00034 $50,000,00035 $65,000,00036 $80,000,00037 $100,000,00038 or more $150,000,000.
+(d) 
 
-(e) Special Instruction(1) For offenses committed prior to November 1, 2015, use the offense level fine table that was set forth in the version of§8C2.4(d) that was in effect on November 1, 2014, rather than the offense level fine table set forth in subsection (d) above.
+OFFENSE LEVEL FINE TABLE
 
-§8C2.4CommentaryApplication Notes:1. “Pecuniary gain,” “pecuniary loss,” and “offense” are defined in the Commentary to§8A1.2 (Application Instructions ― Organizations). Note that subsections (a)(2) and (a)(3)contain certain limitations as to the use of pecuniary gain and pecuniary loss in determining the base fine. Under subsection (a)(2), the pecuniary gain used to determine the base fine is the pecuniary gain to the organization from the offense. Under subsection(a)(3), the pecuniary loss used to determine the base fine is the pecuniary loss from the offense caused by the organization, to the extent that such loss was caused intentionally, knowingly, or recklessly.
+Offense Level | Amount
+-------------   ------
+6 or less | $8,500
+7 | $15,000
+8 | $15,000
+9 | $25,00010 $35,000
+11 | $50,000
+12 | $70,000
+13 | $100,000
+14 | $150,000
+15 | $200,000
+16 | $300,000
+17 | $450,000
+18 | $600,000
+19 | $850,000
+20 | $1,000,000
+21 | $1,500,000
+22 | $2,000,000
+23 | $3,000,000
+24 | $3,500,000
+25 | $5,000,000
+26 | $6,500,000
+27 | $8,500,000
+28 | $10,000,000
+29 | $15,000,000
+30 | $20,000,000
+31 | $25,000,000
+32 | $30,000,000
+33 | $40,000,000
+34 | $50,000,000
+35 | $65,000,000
+36 | $80,000,000
+37 | $100,000,000
+38 or more | $150,000,000
+
+(e) Special Instruction
+
+(1) For offenses committed prior to November 1, 2015, use the offense level fine table that was set forth in the version of§8C2.4(d) that was in effect on November 1, 2014, rather than the offense level fine table set forth in subsection (d) above.
+
+Commentary
+
+Application Notes:
+
+1. “Pecuniary gain,” “pecuniary loss,” and “offense” are defined in the Commentary to§8A1.2 (Application Instructions ― Organizations). Note that subsections (a)(2) and (a)(3)contain certain limitations as to the use of pecuniary gain and pecuniary loss in determining the base fine. Under subsection (a)(2), the pecuniary gain used to determine the base fine is the pecuniary gain to the organization from the offense. Under subsection(a)(3), the pecuniary loss used to determine the base fine is the pecuniary loss from the offense caused by the organization, to the extent that such loss was caused intentionally, knowingly, or recklessly.
 
 2. Under 18 U.S.C. § 3571(d), the court is not required to calculate pecuniary loss or pecuniary gain to the extent that determination of loss or gain would unduly complicate orprolong the sentencing process. Nevertheless, the court may need to approximate loss inorder to calculate offense levels under Chapter Two. See Commentary to §2B1.1 (Theft, Property Destruction, and Fraud). If loss is approximated for purposes of determiningthe applicable offense level, the court should use that approximation as the starting pointfor calculating pecuniary loss under this section.
 

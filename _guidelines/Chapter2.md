@@ -612,17 +612,50 @@ Multiple counts involving different victims are not to be grouped under §3D1.2 
  
  Effective November 1, 1997 (amendment 549). Amended effective November 1, 2001 (amendment 616); November 1, 2009 (amendment 737); November 1, 2014 (amendment 781).
 
-§2B1.1PART B ― BASIC ECONOMIC OFFENSES1. THEFT, EMBEZZLEMENT, RECEIPT OF STOLEN PROPERTY, PROPERTYDESTRUCTION, AND OFFENSES INVOLVING FRAUD OR DECEITIntroductory CommentaryThese sections address basic forms of property offenses: theft, embezzlement, fraud, forgery, counterfeiting (other than offenses involving altered or counterfeit bearer obligations ofthe United States), insider trading, transactions in stolen goods, and simple property damageor destruction. (Arson is dealt with separately in Chapter Two, Part K (Offenses InvolvingPublic Safety)). These guidelines apply to offenses prosecuted under a wide variety of federal statutes, as well as offenses that arise under the Assimilative Crimes Act.
+§2B1.1
+
+PART B ― BASIC ECONOMIC OFFENSES1. THEFT, EMBEZZLEMENT, RECEIPT OF STOLEN PROPERTY, PROPERTYDESTRUCTION, AND OFFENSES INVOLVING FRAUD OR DECEITIntroductory CommentaryThese sections address basic forms of property offenses: theft, embezzlement, fraud, forgery, counterfeiting (other than offenses involving altered or counterfeit bearer obligations ofthe United States), insider trading, transactions in stolen goods, and simple property damageor destruction. (Arson is dealt with separately in Chapter Two, Part K (Offenses InvolvingPublic Safety)). These guidelines apply to offenses prosecuted under a wide variety of federal statutes, as well as offenses that arise under the Assimilative Crimes Act.
 
 ###### Historical Note 
  
  Effective November 1, 1987. Amended effective November 1, 1989 (amendment 303); November 1, 2001(amendment 617).
 
-§2B1.1. Larceny, Embezzlement, and Other Forms of Theft; Offenses InvolvingStolen Property; Property Damage or Destruction; Fraud and Deceit;Forgery; Offenses Involving Altered or Counterfeit Instruments Otherthan Counterfeit Bearer Obligations of the United States(a) Base Offense Level:(1) 7, if (A) the defendant was convicted of an offense referenced tothis guideline; and (B) that offense of conviction has a statutorymaximum term of imprisonment of 20 years or more; or(2) 6, otherwise.
+§2B1.1. Larceny, Embezzlement, and Other Forms of Theft; Offenses InvolvingStolen Property; Property Damage or Destruction; Fraud and Deceit;Forgery; Offenses Involving Altered or Counterfeit Instruments Otherthan Counterfeit Bearer Obligations of the United States(a) Base Offense Level:
 
-(b) Specific Offense Characteristics(1) If the loss exceeded $6,500, increase the offense level as follows:LOSS (APPLY THE GREATEST) INCREASE IN LEVEL(A) $6,500 or less no increase(B) More than $6,500 add 2(C) More than $15,000 add 4(D) More than $40,000 add 6(E) More than $95,000 add 8(F) More than $150,000 add 10(G) More than $250,000 add 12(H) More than $550,000 add 14(I) More than $1,500,000 add 16§2B1.1(J) More than $3,500,000 add 18(K) More than $9,500,000 add 20(L) More than $25,000,000 add 22(M) More than $65,000,000 add 24(N) More than $150,000,000 add 26(O) More than $250,000,000 add 28(P) More than $550,000,000 add 30.
+(1) 7, if (A) the defendant was convicted of an offense referenced tothis guideline; and (B) that offense of conviction has a statutorymaximum term of imprisonment of 20 years or more; or
 
-(2) (Apply the greatest) If the offense—(A) (i) involved 10 or more victims; (ii) was committed throughmass-marketing; or (iii) resulted in substantial financialhardship to one or more victims, increase by 2 levels;(B) resulted in substantial financial hardship to five or morevictims, increase by 4 levels; or(C) resulted in substantial financial hardship to 25 or morevictims, increase by 6 levels.
+(2) 6, otherwise.
+
+(b) Specific Offense Characteristics
+
+(1) If the loss exceeded $6,500, increase the offense level as follows:
+
+LOSS (APPLY THE GREATEST) | INCREASE IN LEVEL
+------------------------- | -----------------
+(A) $6,500 or less | no increase
+(B) More than $6,500 | add 2
+(C) More than $15,000 | add 4
+(D) More than $40,000 | add 6
+(E) More than $95,000 | add 8
+(F) More than $150,000 | add 10
+(G) More than $250,000 | add 12
+(H) More than $550,000 | add 14
+(I) More than $1,500,000 | add 16
+(J) More than $3,500,000 | add 18
+(K) More than $9,500,000 | add 20
+(L) More than $25,000,000 | add 22
+(M) More than $65,000,000 | add 24
+(N) More than $150,000,000 | add 26
+(O) More than $250,000,000 | add 28
+(P) More than $550,000,000 | add 30.
+
+(2) (Apply the greatest) If the offense—
+
+    (A) (i) involved 10 or more victims; (ii) was committed throughmass-marketing; or (iii) resulted in substantial financialhardship to one or more victims, increase by 2 levels;
+
+    (B) resulted in substantial financial hardship to five or morevictims, increase by 4 levels; or
+
+    (C) resulted in substantial financial hardship to 25 or morevictims, increase by 6 levels.
 
 (3) If the offense involved a theft from the person of another, increase by 2 levels.
 
@@ -630,8 +663,7 @@ Multiple counts involving different victims are not to be grouped under §3D1.2 
 
 (5) If the offense involved theft of, damage to, destruction of, ortrafficking in, property from a national cemetery or veterans’memorial, increase by 2 levels.
 
-(6) If (A) the defendant was convicted of an offense under 18 U.S.C.
-
+(6) If (A) the defendant was convicted of an offense under 18 U.S.C. 
 § 1037; and (B) the offense involved obtaining electronic mailaddresses through improper means, increase by 2 levels.
 
 (7) If (A) the defendant was convicted of a Federal health care offense involving a Government health care program; and (B) the loss under subsection (b)(1) to the Government health care program was (i) more than $1,000,000, increase by 2 levels;(ii) more than $7,000,000, increase by 3 levels; or (iii) morethan $20,000,000, increase by 4 levels.
@@ -648,7 +680,9 @@ If the resulting offense level is less than level 12, increase tolevel 12.
 
 (12) If the offense involved conduct described in 18 U.S.C. § 1040, increase by 2 levels. If the resulting offense level is less than level 12, increase to level 12.
 
-(13) (Apply the greater) If the offense involved misappropriation ofa trade secret and the defendant knew or intended—(A) that the trade secret would be transported or transmittedout of the United States, increase by 2 levels; or§2B1.1(B) that the offense would benefit a foreign government, foreign instrumentality, or foreign agent, increase by 4 levels.
+(13) (Apply the greater) If the offense involved misappropriation ofa trade secret and the defendant knew or intended—
+    (A) that the trade secret would be transported or transmittedout of the United States, increase by 2 levels; or
+    (B) that the offense would benefit a foreign government, foreign instrumentality, or foreign agent, increase by 4 levels.
 
 If subparagraph (B) applies and the resulting offense level is less than level 14, increase to level 14.
 
@@ -656,77 +690,88 @@ If subparagraph (B) applies and the resulting offense level is less than level 1
 
 (15) If the offense involved (A) the conscious or reckless risk ofdeath or serious bodily injury; or (B) possession of a dangerousweapon (including a firearm) in connection with the offense, increase by 2 levels. If the resulting offense level is less than level 14, increase to level 14.
 
-(16) (Apply the greater) If—(A) the defendant derived more than $1,000,000 in gross receipts from one or more financial institutions as a resultof the offense, increase by 2 levels; or(B) the offense (i) substantially jeopardized the safety andsoundness of a financial institution; or (ii) substantiallyendangered the solvency or financial security of an organization that, at any time during the offense, (I) was a publicly traded company; or (II) had 1,000 or more employees, increase by 4 levels.
+(16) (Apply the greater) If—
+    (A) the defendant derived more than $1,000,000 in gross receipts from one or more financial institutions as a resultof the offense, increase by 2 levels; or
+    (B) the offense (i) substantially jeopardized the safety andsoundness of a financial institution; or (ii) substantiallyendangered the solvency or financial security of an organization that, at any time during the offense, (I) was a publicly traded company; or (II) had 1,000 or more employees, increase by 4 levels.
+    (C) The cumulative adjustments from application of both subsections (b)(2) and (b)(16)(B) shall not exceed 8 levels, except as provided in subdivision (D).
+    (D) If the resulting offense level determined under subdivision(A) or (B) is less than level 24, increase to level 24.
 
-(C) The cumulative adjustments from application of both subsections (b)(2) and (b)(16)(B) shall not exceed 8 levels, except as provided in subdivision (D).
+(17) If (A) the defendant was convicted of an offense under 18 U.S.C. § 1030, and the offense involved an intent to obtain personalinformation, or (B) the offense involved the unauthorized public dissemination of personal information, increase by 2 levels.
 
-(D) If the resulting offense level determined under subdivision(A) or (B) is less than level 24, increase to level 24.
+(18) (A) (Apply the greatest) If the defendant was convicted of anoffense under:
 
-(17) If (A) the defendant was convicted of an offense under 18 U.S.C.
+    (i) 18 U.S.C. § 1030, and the offense involved a computersystem used to maintain or operate a critical infrastructure, or used by or for a government entity infurtherance of the administration of justice, nationaldefense, or national security, increase by 2 levels.
 
-§ 1030, and the offense involved an intent to obtain personalinformation, or (B) the offense involved the unauthorized public dissemination of personal information, increase by 2 levels.
+    (ii) 18 U.S.C. § 1030(a)(5)(A), increase by 4 levels.
 
-§2B1.1(18) (A) (Apply the greatest) If the defendant was convicted of anoffense under:(i) 18 U.S.C. § 1030, and the offense involved a computersystem used to maintain or operate a critical infrastructure, or used by or for a government entity infurtherance of the administration of justice, nationaldefense, or national security, increase by 2 levels.
+    (iii) 18 U.S.C. § 1030, and the offense caused a substantial disruption of a critical infrastructure, increase by 6 levels.
 
-(ii) 18 U.S.C. § 1030(a)(5)(A), increase by 4 levels.
+    (B) If subdivision (A)(iii) applies, and the offense level is lessthan level 24, increase to level 24.
 
-(iii) 18 U.S.C. § 1030, and the offense caused a substantial disruption of a critical infrastructure, increase by6 levels.
+(19) If the offense involved—
+    (A) a violation of securities law and, at the time of the offense, the defendant was (i) an officer or a director of a publiclytraded company; (ii) a registered broker or dealer, or a person associated with a broker or dealer; or (iii) an investment adviser, or a person associated with an investmentadviser; or
+    (B) a violation of commodities law and, at the time of the offense, the defendant was (i) an officer or a director of a futures commission merchant or an introducing broker;(ii) a commodities trading advisor; or (iii) a commoditypool operator, increase by 4 levels.
 
-(B) If subdivision (A)(iii) applies, and the offense level is lessthan level 24, increase to level 24.
+    (c) Cross References
+    
+    (1) If (A) a firearm, destructive device, explosive material, or controlled substance was taken, or the taking of any such item wasan object of the offense; or (B) the stolen property received, transported, transferred, transmitted, or possessed was a firearm, destructive device, explosive material, or controlled substance, apply §2D1.1 (Unlawful Manufacturing, Importing, Exporting, or Trafficking (Including Possession with Intent toCommit These Offenses); Attempt or Conspiracy), §2D2.1 (Unlawful Possession; Attempt or Conspiracy), §2K1.3 (UnlawfulReceipt, Possession, or Transportation of Explosive Materials;§2B1.1Prohibited Transactions Involving Explosive Materials), or§2K2.1 (Unlawful Receipt, Possession, or Transportation ofFirearms or Ammunition; Prohibited Transactions InvolvingFirearms or Ammunition), as appropriate.
 
-(19) If the offense involved—(A) a violation of securities law and, at the time of the offense, the defendant was (i) an officer or a director of a publiclytraded company; (ii) a registered broker or dealer, or a person associated with a broker or dealer; or (iii) an investment adviser, or a person associated with an investmentadviser; or(B) a violation of commodities law and, at the time of the offense, the defendant was (i) an officer or a director of a futures commission merchant or an introducing broker;(ii) a commodities trading advisor; or (iii) a commoditypool operator, increase by 4 levels.
+    (2) If the offense involved arson, or property damage by use of explosives, apply §2K1.4 (Arson; Property Damage by Use of Explosives), if the resulting offense level is greater than that determined above.
 
-(c) Cross References(1) If (A) a firearm, destructive device, explosive material, or controlled substance was taken, or the taking of any such item wasan object of the offense; or (B) the stolen property received, transported, transferred, transmitted, or possessed was a firearm, destructive device, explosive material, or controlled substance, apply §2D1.1 (Unlawful Manufacturing, Importing, Exporting, or Trafficking (Including Possession with Intent toCommit These Offenses); Attempt or Conspiracy), §2D2.1 (Unlawful Possession; Attempt or Conspiracy), §2K1.3 (UnlawfulReceipt, Possession, or Transportation of Explosive Materials;§2B1.1Prohibited Transactions Involving Explosive Materials), or§2K2.1 (Unlawful Receipt, Possession, or Transportation ofFirearms or Ammunition; Prohibited Transactions InvolvingFirearms or Ammunition), as appropriate.
+    (3) If (A) neither subdivision (1) nor (2) of this subsection applies;(B) the defendant was convicted under a statute proscribingfalse, fictitious, or fraudulent statements or representationsgenerally (e.g., 18 U.S.C. § 1001, § 1341, § 1342, or § 1343); and(C) the conduct set forth in the count of conviction establishesan offense specifically covered by another guideline in ChapterTwo (Offense Conduct), apply that other guideline.
 
-(2) If the offense involved arson, or property damage by use of explosives, apply §2K1.4 (Arson; Property Damage by Use of Explosives), if the resulting offense level is greater than that determined above.
+    (4) If the offense involved a cultural heritage resource or a paleontological resource, apply §2B1.5 (Theft of, Damage to, or Destruction of, Cultural Heritage Resources or PaleontologicalResources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources), if the resulting offense level is greater than that determined above.
 
-(3) If (A) neither subdivision (1) nor (2) of this subsection applies;(B) the defendant was convicted under a statute proscribingfalse, fictitious, or fraudulent statements or representationsgenerally (e.g., 18 U.S.C. § 1001, § 1341, § 1342, or § 1343); and(C) the conduct set forth in the count of conviction establishesan offense specifically covered by another guideline in ChapterTwo (Offense Conduct), apply that other guideline.
+Commentary
 
-(4) If the offense involved a cultural heritage resource or a paleontological resource, apply §2B1.5 (Theft of, Damage to, or Destruction of, Cultural Heritage Resources or PaleontologicalResources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources), if the resulting offense level is greater than that determined above.
-
-CommentaryStatutory Provisions: 7 U.S.C. §§ 6, 6b, 6c, 6h, 6o, 13, 23; 15 U.S.C. §§ 50, 77e, 77q, 77x, 78j, 78ff, 80b-6, 1644, 6821; 18 U.S.C. §§ 38, 225, 285–289, 471–473, 500, 510, 553(a)(1), 641, 656, 657, 659, 662, 664, 1001–1008, 1010–1014, 1016–1022, 1025, 1026, 1028, 1029, 1030(a)(4)–(5), 1031, 1037, 1040, 1341–1344, 1348, 1350, 1361, 1363, 1369, 1702, 1703 (if vandalism or malicious mischief, including destruction of mail, is involved), 1708, 1831, 1832, 1992(a)(1), (a)(5), 2113(b), 2282A, 2282B, 2291, 2312–2317, 2332b(a)(1), 2701; 19 U.S.C. § 2401f; 29 U.S.C.
+Statutory Provisions: 7 U.S.C. §§ 6, 6b, 6c, 6h, 6o, 13, 23; 15 U.S.C. §§ 50, 77e, 77q, 77x, 78j, 78ff, 80b-6, 1644, 6821; 18 U.S.C. §§ 38, 225, 285–289, 471–473, 500, 510, 553(a)(1), 641, 656, 657, 659, 662, 664, 1001–1008, 1010–1014, 1016–1022, 1025, 1026, 1028, 1029, 1030(a)(4)–(5), 1031, 1037, 1040, 1341–1344, 1348, 1350, 1361, 1363, 1369, 1702, 1703 (if vandalism or malicious mischief, including destruction of mail, is involved), 1708, 1831, 1832, 1992(a)(1), (a)(5), 2113(b), 2282A, 2282B, 2291, 2312–2317, 2332b(a)(1), 2701; 19 U.S.C. § 2401f; 29 U.S.C.
 
 § 501(c); 42 U.S.C. § 1011; 49 U.S.C. §§ 14915, 30170, 46317(a), 60123(b). For additional statutory provision(s), see Appendix A (Statutory Index).
 
-Application Notes:1. Definitions.—For purposes of this guideline:“Cultural heritage resource” has the meaning given that term in Application Note 1of the Commentary to §2B1.5 (Theft of, Damage to, or Destruction of, Cultural HeritageResources or Paleontological Resources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources).
+Application Notes:
 
-“Equity securities” has the meaning given that term in section 3(a)(11) of the SecuritiesExchange Act of 1934 (15 U.S.C. § 78c(a)(11)).
+1. Definitions.—For purposes of this guideline:
+    “Cultural heritage resource” has the meaning given that term in Application Note 1of the Commentary to §2B1.5 (Theft of, Damage to, or Destruction of, Cultural HeritageResources or Paleontological Resources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources).
 
-“Federal health care offense” has the meaning given that term in 18 U.S.C. § 24.
+    “Equity securities” has the meaning given that term in section 3(a)(11) of the SecuritiesExchange Act of 1934 (15 U.S.C. § 78c(a)(11)).
 
-§2B1.1“Financial institution” includes any institution described in 18 U.S.C. § 20, § 656, § 657, § 1005, § 1006, § 1007, or § 1014; any state or foreign bank, trust company, creditunion, insurance company, investment company, mutual fund, savings (building andloan) association, union or employee pension fund; any health, medical, or hospital insurance association; brokers and dealers registered, or required to be registered, with the Securities and Exchange Commission; futures commodity merchants and commodity pooloperators registered, or required to be registered, with the Commodity Futures TradingCommission; and any similar entity, whether or not insured by the federal government.
+    “Federal health care offense” has the meaning given that term in 18 U.S.C. § 24.
 
-“Union or employee pension fund” and “any health, medical, or hospital insurance association,” primarily include large pension funds that serve many persons (e.g., pensionfunds of large national and international organizations, unions, and corporations doingsubstantial interstate business), and associations that undertake to provide pension, disability, or other benefits (e.g., medical or hospitalization insurance) to large numbers ofpersons.
+    “Financial institution” includes any institution described in 18 U.S.C. § 20, § 656, § 657, § 1005, § 1006, § 1007, or § 1014; any state or foreign bank, trust company, creditunion, insurance company, investment company, mutual fund, savings (building andloan) association, union or employee pension fund; any health, medical, or hospital insurance association; brokers and dealers registered, or required to be registered, with the Securities and Exchange Commission; futures commodity merchants and commodity pooloperators registered, or required to be registered, with the Commodity Futures TradingCommission; and any similar entity, whether or not insured by the federal government.
 
-“Firearm” and “destructive device” have the meaning given those terms in the Commentary to §1B1.1 (Application Instructions).
+    “Union or employee pension fund” and “any health, medical, or hospital insurance association,” primarily include large pension funds that serve many persons (e.g., pensionfunds of large national and international organizations, unions, and corporations doingsubstantial interstate business), and associations that undertake to provide pension, disability, or other benefits (e.g., medical or hospitalization insurance) to large numbers ofpersons.
 
-“Foreign instrumentality” and “foreign agent” have the meaning given those termsin 18 U.S.C. § 1839(1) and (2), respectively.
+    “Firearm” and “destructive device” have the meaning given those terms in the Commentary to §1B1.1 (Application Instructions).
 
-“Government health care program” means any plan or program that provides healthbenefits, whether directly, through insurance, or otherwise, which is funded directly, inwhole or in part, by federal or state government. Examples of such programs are the Medicare program, the Medicaid program, and the CHIP program.
+    “Foreign instrumentality” and “foreign agent” have the meaning given those termsin 18 U.S.C. § 1839(1) and (2), respectively.
 
-“Means of identification” has the meaning given that term in 18 U.S.C. § 1028(d)(7), except that such means of identification shall be of an actual (i.e., not fictitious) individual, other than the defendant or a person for whose conduct the defendant is accountableunder §1B1.3 (Relevant Conduct).
+    “Government health care program” means any plan or program that provides healthbenefits, whether directly, through insurance, or otherwise, which is funded directly, inwhole or in part, by federal or state government. Examples of such programs are the Medicare program, the Medicaid program, and the CHIP program.
 
-“National cemetery” means a cemetery (A) established under section 2400 of title 38, United States Code; or (B) under the jurisdiction of the Secretary of the Army, the Secretary of the Navy, the Secretary of the Air Force, or the Secretary of the Interior.
+    “Means of identification” has the meaning given that term in 18 U.S.C. § 1028(d)(7), except that such means of identification shall be of an actual (i.e., not fictitious) individual, other than the defendant or a person for whose conduct the defendant is accountableunder §1B1.3 (Relevant Conduct).
 
-“Paleontological resource” has the meaning given that term in Application Note 1 ofthe Commentary to §2B1.5 (Theft of, Damage to, or Destruction of, Cultural HeritageResources or Paleontological Resources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources).
+    “National cemetery” means a cemetery (A) established under section 2400 of title 38, United States Code; or (B) under the jurisdiction of the Secretary of the Army, the Secretary of the Navy, the Secretary of the Air Force, or the Secretary of the Interior.
 
-“Personal information” means sensitive or private information involving an identifiable individual (including such information in the possession of a third party), including(A) medical records; (B) wills; (C) diaries; (D) private correspondence, including e-mail;(E) financial records; (F) photographs of a sensitive or private nature; or (G) similar information.
+    “Paleontological resource” has the meaning given that term in Application Note 1 ofthe Commentary to §2B1.5 (Theft of, Damage to, or Destruction of, Cultural HeritageResources or Paleontological Resources; Unlawful Sale, Purchase, Exchange, Transportation, or Receipt of Cultural Heritage Resources or Paleontological Resources).
 
-“Pre-retail medical product” has the meaning given that term in 18 U.S.C. § 670(e).
+    “Personal information” means sensitive or private information involving an identifiable individual (including such information in the possession of a third party), including(A) medical records; (B) wills; (C) diaries; (D) private correspondence, including e-mail;(E) financial records; (F) photographs of a sensitive or private nature; or (G) similar information.
 
-“Publicly traded company” means an issuer (A) with a class of securities registeredunder section 12 of the Securities Exchange Act of 1934 (15 U.S.C. § 78l); or (B) that is required to file reports under section 15(d) of the Securities Exchange Act of 1934(15 U.S.C. § 78o(d)). “Issuer” has the meaning given that term in section 3 of the Securities Exchange Act of 1934 (15 U.S.C. § 78c).
+    “Pre-retail medical product” has the meaning given that term in 18 U.S.C. § 670(e).
 
-§2B1.1“Supply chain” has the meaning given that term in 18 U.S.C. § 670(e).
+    “Publicly traded company” means an issuer (A) with a class of securities registeredunder section 12 of the Securities Exchange Act of 1934 (15 U.S.C. § 78l); or (B) that is required to file reports under section 15(d) of the Securities Exchange Act of 1934(15 U.S.C. § 78o(d)). “Issuer” has the meaning given that term in section 3 of the Securities Exchange Act of 1934 (15 U.S.C. § 78c).
 
-“Theft from the person of another” means theft, without the use of force, of propertythat was being held by another person or was within arms’ reach. Examples include pickpocketing and non-forcible purse-snatching, such as the theft of a purse from a shoppingcart.
+    “Supply chain” has the meaning given that term in 18 U.S.C. § 670(e).
 
-“Trade secret” has the meaning given that term in 18 U.S.C. § 1839(3).
+    “Theft from the person of another” means theft, without the use of force, of propertythat was being held by another person or was within arms’ reach. Examples include pickpocketing and non-forcible purse-snatching, such as the theft of a purse from a shoppingcart.
 
-“Veterans’ memorial” means any structure, plaque, statue, or other monument described in 18 U.S.C. § 1369(a).
+    “Trade secret” has the meaning given that term in 18 U.S.C. § 1839(3).
 
-“Victim” means (A) any person who sustained any part of the actual loss determinedunder subsection (b)(1); or (B) any individual who sustained bodily injury as a result ofthe offense. “Person” includes individuals, corporations, companies, associations, firms, partnerships, societies, and joint stock companies.
+    “Veterans’ memorial” means any structure, plaque, statue, or other monument described in 18 U.S.C. § 1369(a).
 
-2. Application of Subsection (a)(1).—(A) “Referenced to this Guideline”.—For purposes of subsection (a)(1), an offense is “referenced to this guideline” if (i) this guideline is the applicable Chapter Twoguideline determined under the provisions of §1B1.2 (Applicable Guidelines) for the offense of conviction; or (ii) in the case of a conviction for conspiracy, solicitation, orattempt to which §2X1.1 (Attempt, Solicitation, or Conspiracy) applies, this guideline is the appropriate guideline for the offense the defendant was convicted of conspiring, soliciting, or attempting to commit.
+    “Victim” means (A) any person who sustained any part of the actual loss determinedunder subsection (b)(1); or (B) any individual who sustained bodily injury as a result ofthe offense. “Person” includes individuals, corporations, companies, associations, firms, partnerships, societies, and joint stock companies.
+
+2. Application of Subsection (a)(1).—
+
+(A) “Referenced to this Guideline”.—For purposes of subsection (a)(1), an offense is “referenced to this guideline” if (i) this guideline is the applicable Chapter Twoguideline determined under the provisions of §1B1.2 (Applicable Guidelines) for the offense of conviction; or (ii) in the case of a conviction for conspiracy, solicitation, orattempt to which §2X1.1 (Attempt, Solicitation, or Conspiracy) applies, this guideline is the appropriate guideline for the offense the defendant was convicted of conspiring, soliciting, or attempting to commit.
 
 (B) Definition of “Statutory Maximum Term of Imprisonment”.—For purposesof this guideline, “statutory maximum term of imprisonment” means the maximum term of imprisonment authorized for the offense of conviction, including anyincrease in that maximum term under a statutory enhancement provision.
 
@@ -736,29 +781,31 @@ Application Notes:1. Definitions.—For purposes of this guideline:“Cultural h
 
 (A) General Rule.—Subject to the exclusions in subdivision (D), loss is the greater ofactual loss or intended loss.
 
-(i) Actual Loss.—“Actual loss” means the reasonably foreseeable pecuniaryharm that resulted from the offense.
+    (i) Actual Loss.—“Actual loss” means the reasonably foreseeable pecuniaryharm that resulted from the offense.
 
-(ii) Intended Loss.—“Intended loss” (I) means the pecuniary harm that the defendant purposely sought to inflict; and (II) includes intended pecuniary harmthat would have been impossible or unlikely to occur (e.g., as in a governmentsting operation, or an insurance fraud in which the claim exceeded the insuredvalue).
+    (ii) Intended Loss.—“Intended loss” (I) means the pecuniary harm that the defendant purposely sought to inflict; and (II) includes intended pecuniary harmthat would have been impossible or unlikely to occur (e.g., as in a governmentsting operation, or an insurance fraud in which the claim exceeded the insuredvalue).
 
-§2B1.1(iii) Pecuniary Harm.—“Pecuniary harm” means harm that is monetary orthat otherwise is readily measurable in money. Accordingly, pecuniary harmdoes not include emotional distress, harm to reputation, or other non-economic harm.
+    §2B1.1(iii) Pecuniary Harm.—“Pecuniary harm” means harm that is monetary orthat otherwise is readily measurable in money. Accordingly, pecuniary harmdoes not include emotional distress, harm to reputation, or other non-economic harm.
 
-(iv) Reasonably Foreseeable Pecuniary Harm.—For purposes of this guideline, “reasonably foreseeable pecuniary harm” means pecuniary harmthat the defendant knew or, under the circumstances, reasonably should haveknown, was a potential result of the offense.
+    (iv) Reasonably Foreseeable Pecuniary Harm.—For purposes of this guideline, “reasonably foreseeable pecuniary harm” means pecuniary harmthat the defendant knew or, under the circumstances, reasonably should haveknown, was a potential result of the offense.
 
-(v) Rules of Construction in Certain Cases.—In the cases described in subdivisions (I) through (III), reasonably foreseeable pecuniary harm shall be considered to include the pecuniary harm specified for those cases as follows:(I) Product Substitution Cases.—In the case of a product substitutionoffense, the reasonably foreseeable pecuniary harm includes the reasonably foreseeable costs of making substitute transactions and handling ordisposing of the product delivered, or of retrofitting the product so thatit can be used for its intended purpose, and the reasonably foreseeablecosts of rectifying the actual or potential disruption to the victim’s business operations caused by the product substitution.
+    (v) Rules of Construction in Certain Cases.—In the cases described in subdivisions (I) through (III), reasonably foreseeable pecuniary harm shall be considered to include the pecuniary harm specified for those cases as follows:
+    
+        (I) Product Substitution Cases.—In the case of a product substitutionoffense, the reasonably foreseeable pecuniary harm includes the reasonably foreseeable costs of making substitute transactions and handling ordisposing of the product delivered, or of retrofitting the product so thatit can be used for its intended purpose, and the reasonably foreseeablecosts of rectifying the actual or potential disruption to the victim’s business operations caused by the product substitution.
 
-(II) Procurement Fraud Cases.—In the case of a procurement fraud, suchas a fraud affecting a defense contract award, reasonably foreseeable pecuniary harm includes the reasonably foreseeable administrative coststo the government and other participants of repeating or correcting the procurement action affected, plus any increased costs to procure the product or service involved that was reasonably foreseeable.
+        (II) Procurement Fraud Cases.—In the case of a procurement fraud, suchas a fraud affecting a defense contract award, reasonably foreseeable pecuniary harm includes the reasonably foreseeable administrative coststo the government and other participants of repeating or correcting the procurement action affected, plus any increased costs to procure the product or service involved that was reasonably foreseeable.
 
-(III) Offenses Under 18 U.S.C. § 1030.—In the case of an offense under18 U.S.C. § 1030, actual loss includes the following pecuniary harm, regardless of whether such pecuniary harm was reasonably foreseeable:any reasonable cost to any victim, including the cost of responding to anoffense, conducting a damage assessment, and restoring the data, program, system, or information to its condition prior to the offense, andany revenue lost, cost incurred, or other damages incurred because ofinterruption of service.
+        (III) Offenses Under 18 U.S.C. § 1030.—In the case of an offense under18 U.S.C. § 1030, actual loss includes the following pecuniary harm, regardless of whether such pecuniary harm was reasonably foreseeable:any reasonable cost to any victim, including the cost of responding to anoffense, conducting a damage assessment, and restoring the data, program, system, or information to its condition prior to the offense, andany revenue lost, cost incurred, or other damages incurred because ofinterruption of service.
 
 (B) Gain.—The court shall use the gain that resulted from the offense as an alternativemeasure of loss only if there is a loss but it reasonably cannot be determined.
 
-(C) Estimation of Loss.—The court need only make a reasonable estimate of the loss.
+(C) Estimation of Loss.—The court need only make a reasonable estimate of the loss. The sentencing judge is in a unique position to assess the evidence and estimatethe loss based upon that evidence. For this reason, the court’s loss determination is entitled to appropriate deference. See 18 U.S.C. § 3742(e) and (f).
 
-The sentencing judge is in a unique position to assess the evidence and estimatethe loss based upon that evidence. For this reason, the court’s loss determination is entitled to appropriate deference. See 18 U.S.C. § 3742(e) and (f).
+The estimate of the loss shall be based on available information, taking into account, as appropriate and practicable under the circumstances, factors such as the following:
 
-The estimate of the loss shall be based on available information, taking into account, as appropriate and practicable under the circumstances, factors such as the following:(i) The fair market value of the property unlawfully taken, copied, or destroyed;or, if the fair market value is impracticable to determine or inadequatelymeasures the harm, the cost to the victim of replacing that property.
+(i) The fair market value of the property unlawfully taken, copied, or destroyed;or, if the fair market value is impracticable to determine or inadequatelymeasures the harm, the cost to the victim of replacing that property.
 
-§2B1.1(ii) In the case of proprietary information (e.g., trade secrets), the cost of developing that information or the reduction in the value of that information thatresulted from the offense.
+(ii) In the case of proprietary information (e.g., trade secrets), the cost of developing that information or the reduction in the value of that information thatresulted from the offense.
 
 (iii) The cost of repairs to damaged property.
 

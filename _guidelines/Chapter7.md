@@ -143,7 +143,179 @@ CommentaryApplication Notes:1. Revocation of probation or supervised release gen
  
  Effective November 1, 1990 (amendment 362). Amended effective November 1, 1991 (amendment 427); November 1, 1995 (amendment 533); November 1, 2002 (amendment 646); November 1, 2004 (amendment 664); November 1, 2009 (amendment 733).
 
-§7B1.4. Term of Imprisonment (Policy Statement)(a) The range of imprisonment applicable upon revocation is set forthin the following table:§7B1.4Revocation Table(in months of imprisonment)Criminal History Category*Grade ofViolation I II III IV V VIGrade C 3–9 4–10 5–11 6–12 7–13 8–14Grade B 4–10 6–12 8–14 12–18 18–24 21–27Grade A (1) Except as provided in subdivision (2) below:12–18 15–21 18–24 24–30 30–37 33–41(2) Where the defendant was on probation or supervised release as a result of a sentence for a Class A felony:24–30 27–33 30–37 37–46 46–57 51–63.
+§7B1.4. Term of Imprisonment (Policy Statement)
+
+(a) The range of imprisonment applicable upon revocation is set forthin the following table:
+
+<table border="0" cellpadding="5px" cellspacing="0" width="100%"><tbody><tr><td align="center" colspan="10">
+        <h3>Revocation Table<br>(in months of imprisonment)</h3>
+    </td>
+</tr><tr><td width="15%">
+        <!-- LEAVE BLANK --></td>
+    <td width="5%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+    <td width="10%">
+        <!-- LEAVE BLANK --></td>
+</tr><tr><td>
+        &nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td align="center" colspan="6">
+        <strong><u>Criminal History Category</u>*</strong></td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>Grade of<br>
+        Violation</strong></td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        &nbsp;</td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>I</strong></td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>II</strong></td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>III</strong></td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>IV</strong></td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>V</strong></td>
+    <td align="left" style="border-right: none; border-left: none; border-top: none; padding-top: 0in; padding-bottom: 0in; height: 0.16in; border-bottom: 0.0133333in solid" valign="bottom">
+        <strong>VI</strong></td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        <strong>Grade C</strong>&nbsp;&nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        &nbsp;</td>
+    <td align="left">
+        3-9</td>
+    <td align="left">
+        4-10</td>
+    <td align="left">
+        5-11&nbsp;</td>
+    <td align="left">
+        6-12</td>
+    <td align="left">
+        7-13</td>
+    <td align="left">
+        8-14</td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        <strong>Grade B</strong></td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        &nbsp;</td>
+    <td align="left">
+        4-10&nbsp;</td>
+    <td align="left">
+        6-12</td>
+    <td align="left">
+        8-14</td>
+    <td align="left">
+        12-18</td>
+    <td align="left">
+        18-24</td>
+    <td align="left">
+        21-27</td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        <strong>Grade A</strong></td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        <strong>(1)</strong></td>
+    <td align="left" colspan="6">
+        Except as provided in subdivision (2) below:</td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        &nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        &nbsp;</td>
+    <td align="left">
+        12-18</td>
+    <td align="left">
+        15-21</td>
+    <td align="left">
+        18-24</td>
+    <td align="left">
+        24-30</td>
+    <td align="left">
+        30-37</td>
+    <td align="left">
+        33-41</td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        &nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td align="left" valign="top">
+        <strong>(2)</strong></td>
+    <td align="left" colspan="6">
+        Where the defendant was on probation or supervised release as a result of a sentence for a Class A felony:</td>
+    <td>
+        &nbsp;</td>
+</tr><tr><td align="left" colspan="10" valign="bottom">
+        &nbsp;</td>
+</tr><tr><td align="left">
+        &nbsp;</td>
+    <td>
+        &nbsp;</td>
+    <td align="left">
+        &nbsp;</td>
+    <td align="left">
+        24-30</td>
+    <td align="left">
+        27-33</td>
+    <td align="left">
+        30-37</td>
+    <td align="left">
+        37-46</td>
+    <td align="left">
+        46-57</td>
+    <td align="left">
+        51-63.</td>
+    <td>
+        &nbsp;</td>
+</tr></tbody></table>
+
+
 
 *The criminal history category is the category applicable at the timethe defendant originally was sentenced to a term of supervision.
 
@@ -151,7 +323,14 @@ CommentaryApplication Notes:1. Revocation of probation or supervised release gen
 
 (3) In any other case, the sentence upon revocation may be imposed at any point within the applicable range, provided thatthe sentence—(A) is not greater than the maximum term of imprisonmentauthorized by statute; and(B) is not less than any minimum term of imprisonment required by statute.
 
-§7B1.4CommentaryApplication Notes:1. The criminal history category to be used in determining the applicable range of imprisonment in the Revocation Table is the category determined at the time the defendantoriginally was sentenced to the term of supervision. The criminal history category is not to be recalculated because the ranges set forth in the Revocation Table have been designed to take into account that the defendant violated supervision. In the rare case inwhich no criminal history category was determined when the defendant originally wassentenced to the term of supervision being revoked, the court shall determine the criminal history category that would have been applicable at the time the defendant originallywas sentenced to the term of supervision. (See the criminal history provisions of§§4A1.1–4B1.4.)2. Departure from the applicable range of imprisonment in the Revocation Table may bewarranted when the court departed from the applicable range for reasons set forth in§4A1.3 (Departures Based on Inadequacy of Criminal History Category) in originally imposing the sentence that resulted in supervision. Additionally, an upward departure maybe warranted when a defendant, subsequent to the federal sentence resulting in supervision, has been sentenced for an offense that is not the basis of the violation proceeding.
+
+Commentary
+
+Application Notes:
+
+1. The criminal history category to be used in determining the applicable range of imprisonment in the Revocation Table is the category determined at the time the defendantoriginally was sentenced to the term of supervision. The criminal history category is not to be recalculated because the ranges set forth in the Revocation Table have been designed to take into account that the defendant violated supervision. In the rare case inwhich no criminal history category was determined when the defendant originally wassentenced to the term of supervision being revoked, the court shall determine the criminal history category that would have been applicable at the time the defendant originallywas sentenced to the term of supervision. (See the criminal history provisions of§§4A1.1–4B1.4.)
+
+2. Departure from the applicable range of imprisonment in the Revocation Table may bewarranted when the court departed from the applicable range for reasons set forth in§4A1.3 (Departures Based on Inadequacy of Criminal History Category) in originally imposing the sentence that resulted in supervision. Additionally, an upward departure maybe warranted when a defendant, subsequent to the federal sentence resulting in supervision, has been sentenced for an offense that is not the basis of the violation proceeding.
 
 3. In the case of a Grade C violation that is associated with a high risk of new feloniousconduct (e.g., a defendant, under supervision for conviction of criminal sexual abuse, violates the condition that the defendant not associate with children by loitering near a schoolyard), an upward departure may be warranted.
 
@@ -186,28 +365,3 @@ Other aspects of the defendant’s conduct, such as compliance with supervision 
 ###### Historical Note 
  
  Effective November 1, 1990 (amendment 362).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -115,6 +115,26 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
+                      <Link to="/guidelines/§8C2.4" className="usa-nav-link">
+                        <span>Fine Table</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/guidelines/§2B1.1" className="usa-nav-link">
+                        <span>Loss Table</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/guidelines/§7B1.4" className="usa-nav-link">
+                        <span>Revocation Table</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/guidelines/§5A1.1" className="usa-nav-link">
+                        <span>Sentencing Table</span>
+                      </Link>
+                    </li>
+                    <li>
                       <Link to="/" className="usa-nav-link">
                         <span>Appendix B</span>
                       </Link>

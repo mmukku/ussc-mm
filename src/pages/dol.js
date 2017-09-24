@@ -78,7 +78,7 @@ class DOL extends Component {
 
   calculate(e) {
     let s = _.find(data, x => {
-      if (x.substance !== this.state.substance && x.uom != this.state.uom)
+      if (x.substance !== this.state.substance && x.uom !== this.state.uom)
         return false;
       if (x.min !== undefined) {
         if (this.state.qty < x.min) return false;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import parts from '../data/parts.json';
 import sections from '../data/sections.json';
 import HomeLink from '../components/homeLink';
@@ -34,12 +33,14 @@ export default props => {
   });
 
   const chapterList = Chapters.map(c => {
-    if (c.id !== chapterId)
+    if (c.id !== chapterId) {
       return (
         <option key={c.id} value={`/chapters/${c.id}/parts`}>
           Chapter {c.id}
         </option>
       );
+    }
+    return null;
   });
 
   return (
