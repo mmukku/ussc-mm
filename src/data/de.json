@@ -1,0 +1,288 @@
+[
+  { "substance": "Heroin", "targetWeight": 1, "targetUOM": "kg" },
+  {
+    "substance": "Alpha-Methylfentanyl",
+    "targetWeight": 10,
+    "targetUOM": "kg"
+  },
+  { "substance": "Dextromoramide", "targetWeight": 670, "targetUOM": "gm" },
+  { "substance": "Dipipanone", "targetWeight": 250, "targetUOM": "gm" },
+  { "substance": "3-Methylfentanyl", "targetWeight": 10, "targetUOM": "kg" },
+  {
+    "substance": "3-1-Methyl-4-phenyl-4-propionoxypiperidine/MPPP",
+    "targetWeight": 700,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "1-(2-Phenylethyl)-4-phenyl-4-acetyloxypiperidine/PEPAP",
+    "targetWeight": 700,
+    "targetUOM": "gm"
+  },
+  { "substance": "Alphaprodine", "targetWeight": 100, "targetUOM": "gm" },
+  {
+    "substance":
+      "Fentanyl (N-phenyl-N-[1-(2-phenylethyl)-4-piperidinyl] Propanamide)",
+    "targetWeight": 2.5,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "Hydromorphone/Dihydromorphinone",
+    "targetWeight": 2.5,
+    "targetUOM": "kg"
+  },
+  { "substance": "Levorphanol", "targetWeight": 2.5, "targetUOM": "kg" },
+  {
+    "substance": "Meperidine/Pethidine",
+    "targetWeight": 50,
+    "targetUOM": "gm"
+  },
+  { "substance": "Methadone", "targetWeight": 500, "targetUOM": "gm" },
+  { "substance": "6-Monoacetylmorphine", "targetWeight": 1, "targetUOM": "kg" },
+  {
+    "substance": "Oxycodone (actual)",
+    "targetWeight": 6700,
+    "targetUOM": "gm"
+  },
+  { "substance": "Oxymorphone", "targetWeight": 5, "targetUOM": "kg" },
+  { "substance": "Racemorphan", "targetWeight": 800, "targetUOM": "gm" },
+  { "substance": "Codeine", "targetWeight": 80, "targetUOM": "gm" },
+  {
+    "substance": "Dextropropoxyphene/Propoxyphene-Bulk",
+    "targetWeight": 50,
+    "targetUOM": "gm"
+  },
+  { "substance": "Ethylmorphine", "targetWeight": 165, "targetUOM": "gm" },
+  {
+    "substance": "Hydrocodone (actual)",
+    "targetWeight": 6700,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Mixed Alkaloids of Opium/Papaveretum",
+    "targetWeight": 250,
+    "targetUOM": "gm"
+  },
+  { "substance": "Opium", "targetWeight": 50, "targetUOM": "gm" },
+  {
+    "substance": "Levo-alpha-acetylmethadol (LAAM)",
+    "targetWeight": 3,
+    "targetUOM": "kg"
+  },
+  { "substance": "Cocaine", "targetWeight": 200, "targetUOM": "gm" },
+  { "substance": "N-Ethylamphetamine", "targetWeight": 80, "targetUOM": "gm" },
+  { "substance": "Fenethylline", "targetWeight": 40, "targetUOM": "gm" },
+  { "substance": "Amphetamine", "targetWeight": 2, "targetUOM": "kg" },
+  {
+    "substance": "Amphetamine (Actual)",
+    "targetWeight": 20,
+    "targetUOM": "kg"
+  },
+  { "substance": "Methamphetamine", "targetWeight": 2, "targetUOM": "kg" },
+  {
+    "substance": "Methamphetamine (Actual)",
+    "targetWeight": 20,
+    "targetUOM": "kg"
+  },
+  { "substance": "Ice", "targetWeight": 20, "targetUOM": "kg" },
+  { "substance": "Khat", "targetWeight": 0.01, "targetUOM": "gm" },
+  {
+    "substance": "4-Methylaminorex (“Euphoria”)",
+    "targetWeight": 100,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Methylphenidate (Ritalin)",
+    "targetWeight": 100,
+    "targetUOM": "gm"
+  },
+  { "substance": "Phenmetrazine", "targetWeight": 80, "targetUOM": "gm" },
+  {
+    "substance":
+      "Phenylacetone/P 2 P (when possessed for the purpose of manufacturing methamphetamine)",
+    "targetWeight": 416,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Phenylacetone/P 2 P (in any other case)",
+    "targetWeight": 75,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Cocaine Base (Crack)",
+    "targetWeight": 3571,
+    "targetUOM": "gm"
+  },
+  { "substance": "Aminorex", "targetWeight": 100, "targetUOM": "gm" },
+  { "substance": "Methcathinone", "targetWeight": 380, "targetUOM": "gm" },
+  {
+    "substance": "N-N-Dimethylamphetamine",
+    "targetWeight": 40,
+    "targetUOM": "gm"
+  },
+  { "substance": "N-Benzylpiperazine", "targetWeight": 100, "targetUOM": "gm" },
+  { "substance": "Bufotenine", "targetWeight": 70, "targetUOM": "gm" },
+  {
+    "substance": "D-Lysergic Acid Diethylamide/Lysergide/LSD",
+    "targetWeight": 100,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "Diethyltryptamine/DET",
+    "targetWeight": 80,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Dimethyltryptamine/DM",
+    "targetWeight": 100,
+    "targetUOM": "gm"
+  },
+  { "substance": "Mescaline", "targetWeight": 10, "targetUOM": "gm" },
+  {
+    "substance": "Mushrooms containing Psilocin and/or Psilocybin (Dry)",
+    "targetWeight": 1,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Mushrooms containing Psilocin and/or Psilocybin (Wet)",
+    "targetWeight": 0.1,
+    "targetUOM": "gm"
+  },
+  { "substance": "Peyote (Dry)", "targetWeight": 0.5, "targetUOM": "gm" },
+  { "substance": "Peyote (Wet)", "targetWeight": 0.05, "targetUOM": "gm" },
+  { "substance": "Phencyclidine/PCP", "targetWeight": 1, "targetUOM": "kg" },
+  {
+    "substance": "Phencyclidine (actual) /PCP (actual)",
+    "targetWeight": 10,
+    "targetUOM": "kg"
+  },
+  { "substance": "Psilocin", "targetWeight": 500, "targetUOM": "gm" },
+  { "substance": "Psilocybin", "targetWeight": 500, "targetUOM": "gm" },
+  {
+    "substance": "Pyrrolidine Analog of Phencyclidine/PHP",
+    "targetWeight": 1,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "Thiophene Analog of Phencyclidine/TCP",
+    "targetWeight": 1,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "4-Bromo-2,5-Dimethoxyamphetamine/DOB",
+    "targetWeight": 2.5,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "2,5-Dimethoxy-4-methylamphetamine/DOM",
+    "targetWeight": 1.67,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "3,4-Methylenedioxyamphetamine/MDA",
+    "targetWeight": 500,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "3,4-Methylenedioxymethamphetamine/MDMA",
+    "targetWeight": 500,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "3,4-Methylenedioxy-N-ethylamphetamine/MDEA",
+    "targetWeight": 500,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Paramethoxymethamphetamine/PMA",
+    "targetWeight": 500,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "1-Piperidinocyclohexanecarbonitrile/PCC",
+    "targetWeight": 680,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "N-ethyl-1-phenylcyclohexylamine (PCE)",
+    "targetWeight": 1,
+    "targetUOM": "kg"
+  },
+  {
+    "substance": "Marihuana/Cannabis, granulated, powdered, etc.",
+    "targetWeight": 1,
+    "targetUOM": "gm"
+  },
+  { "substance": "Hashish Oil", "targetWeight": 50, "targetUOM": "gm" },
+  {
+    "substance": "Cannabis Resin or Hashish",
+    "targetWeight": 5,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Tetrahydrocannabinol, Organic",
+    "targetWeight": 167,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Tetrahydrocannabinol, Synthetic",
+    "targetWeight": 167,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Flunitrazepam",
+    "substanceUOM": "units",
+    "targetWeight": 16,
+    "targetUOM": "gm"
+  },
+  {
+    "substance":
+      "Schedule I or II Depressant except gamma-hydroxybutyric acid)",
+    "targetWeight": 1,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "gamma-hydroxybutyric acid",
+    "substanceUOM": "ml",
+    "targetWeight": 8.8,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Schedule III Substance",
+    "substanceUOM": "units",
+    "targetWeight": 1,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "ketamine",
+    "substanceUOM": "units",
+    "targetWeight": 1,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Schedule IV Substance (except Flunitrazepam)",
+    "substanceUOM": "units",
+    "targetWeight": 0.0625,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "Schedule V Substance",
+    "substanceUOM": "units",
+    "targetWeight": 0.00625,
+    "targetUOM": "gm"
+  },
+  { "substance": "Ephedrine", "targetWeight": 10, "targetUOM": "kg" },
+  { "substance": "Phenylpropanolamine", "targetWeight": 10, "targetUOM": "kg" },
+  { "substance": "Pseudoephedrine", "targetWeight": 10, "targetUOM": "kg" },
+  {
+    "substance": "1,4-butanediol",
+    "substanceUOM": "ml",
+    "targetWeight": 8.8,
+    "targetUOM": "gm"
+  },
+  {
+    "substance": "gamma butyrolactone",
+    "substanceUOM": "ml",
+    "targetWeight": 8.8,
+    "targetUOM": "gm"
+  }
+]
