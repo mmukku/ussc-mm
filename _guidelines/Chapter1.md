@@ -388,7 +388,7 @@ In certain cases, a defendant may be accountable for particular conduct under mo
 
 As noted earlier, a defendant may be accountable for particular conduct under more than one subsection. In this example, Defendant C also is accountable for the money taken on the basis of subsection (a)(1)(B) because the taking of money was within the scope and in furtherance of the jointly undertaken criminal activity (the robbery), and was reasonably foreseeable (as noted, the taking of money was the specific objective of the jointly undertaken criminal activity).
 
-(C) **Requirements that the conduct of others be within the scope of the jointlyundertaken criminal activity, in furtherance of that criminal activity, and reasonably foreseeable.**—
+(C) **Requirements that the conduct of others be within the scope of the jointly undertaken criminal activity, in furtherance of that criminal activity, and reasonably foreseeable.**—
 
 (i) Defendant D pays Defendant E a small amount to forge an endorsement on an $800 stolen government check. Unknown to Defendant E, Defendant D then uses that check as a down payment in a scheme to fraudulently obtain $15,000 worth of merchandise. Defendant E is convicted of forging the $800 check and is accountable for the forgery of this check under subsection(a)(1)(A). Defendant E is not accountable for the $15,000 because the fraudulent scheme to obtain $15,000 was not within the scope of the jointly undertaken criminal activity (*i.e.*, the forgery of the $800 check).
 
@@ -396,7 +396,7 @@ As noted earlier, a defendant may be accountable for particular conduct under mo
 
 (iii) Defendants H and I engaged in an ongoing marihuana importation conspiracy in which Defendant J was hired only to help off-load a single shipment. Defendants H, I, and J are included in a single count charging conspiracy to import marihuana. Defendant J is accountable for the entire single shipment of marihuana he helped import under subsection (a)(1)(A) and any acts and omissions of others related to the importation of that shipment on the basis of subsection (a)(1)(B) (*see* the discussion in example (A)(i) above). He is not accountable for prior or subsequent shipments of marihuana imported by Defendants H or I because those acts were not within the scope of his jointly undertaken criminal activity (the importation of the single shipment of marihuana).
 
-(iv) Defendant K is a wholesale distributor of child pornography. Defendant L is a retail-level dealer who purchases child pornography from Defendant K and resells it, but otherwise operates independently of Defendant K. Similarly, Defendant M is a retail-level dealer who purchases child pornography from Defendant K and resells it, but otherwise operates independently of Defendant K. Defendants L and M are aware of each other’s criminal activity butoperate independently. Defendant N is Defendant K’s assistant who recruits customers for Defendant K and frequently supervises the deliveries to Defendant K’s customers. Each defendant is convicted of a count charging conspiracy to distribute child pornography. Defendant K is accountable under subsection(a)(1)(A) for the entire quantity of child pornography sold to Defendants L and M. Defendant N also is accountable for the entire quantity sold to thosedefendants under subsection (a)(1)(B) because the entire quantity was within the scope of his jointly undertaken criminal activity (to distribute child pornography with Defendant K), in furtherance of that criminal activity, and reasonably foreseeable. Defendant L is accountable under subsection (a)(1)(A) only for the quantity of child pornography that he purchased from Defendant K because he is not engaged in a jointly undertaken criminal activity with the other defendants. For the same reason, Defendant M is accountable undersubsection (a)(1)(A) only for the quantity of child pornography that he purchased from Defendant K.
+(iv) Defendant K is a wholesale distributor of child pornography. Defendant L is a retail-level dealer who purchases child pornography from Defendant K and resells it, but otherwise operates independently of Defendant K. Similarly, Defendant M is a retail-level dealer who purchases child pornography from Defendant K and resells it, but otherwise operates independently of Defendant K. Defendants L and M are aware of each other’s criminal activity butoperate independently. Defendant N is Defendant K’s assistant who recruits customers for Defendant K and frequently supervises the deliveries to Defendant K’s customers. Each defendant is convicted of a count charging conspiracy to distribute child pornography. Defendant K is accountable under subsection(a)(1)(A) for the entire quantity of child pornography sold to Defendants L and M. Defendant N also is accountable for the entire quantity sold to those defendants under subsection (a)(1)(B) because the entire quantity was within the scope of his jointly undertaken criminal activity (to distribute child pornography with Defendant K), in furtherance of that criminal activity, and reasonably foreseeable. Defendant L is accountable under subsection (a)(1)(A) only for the quantity of child pornography that he purchased from Defendant K because he is not engaged in a jointly undertaken criminal activity with the other defendants. For the same reason, Defendant M is accountable under subsection (a)(1)(A) only for the quantity of child pornography that he purchased from Defendant K.
 
 (v) Defendant O knows about her boyfriend’s ongoing drug-trafficking activity, but agrees to participate on only one occasion by making a delivery for him at his request when he was ill. Defendant O is accountable under subsection (a)(1)(A) for the drug quantity involved on that one occasion. Defendant O is not accountable for the other drug sales made by her boyfriend because those sales were not within the scope of her jointly undertaken criminal activity (*i.e.*, the one delivery).
 
@@ -434,6 +434,7 @@ Note, however, in certain cases, offense conduct associated with a previously im
 (B) **Risk or Danger of Harm.**—If the offense guideline includes creating a risk or danger of harm as a specific offense characteristic, whether that risk or danger was created is to be considered in determining the offense level. *See, e.g.*, §2K1.4 (Arson; Property Damage by Use of Explosives); §2Q1.2 (Mishandling of Hazardous or Toxic Substances or Pesticides). If, however, the guideline refers only to harm sustained(*e.g.*, §2A2.2 (Aggravated Assault); §2B3.1 (Robbery)) or to actual, attempted or intended harm (*e.g.*, §2B1.1 (Theft, Property Destruction, and Fraud); §2X1.1 (Attempt, Solicitation, or Conspiracy)), the risk created enters into the determination of the offense level only insofar as it is incorporated into the base offense level. Unless clearly indicated by the guidelines, harm that is merely risked is not to be treated as the equivalent of harm that occurred. In a case in which creation of risk is not adequately taken into account by the applicable offense guideline, an upward departure may be warranted. *See generally* §1B1.4 (Information to be Used in Imposing Sentence); §5K2.0 (Grounds for Departure). The extent to which harm that was attempted or intended enters into the determination of the offense level should be determined in accordance with §2X1.1 (Attempt, Solicitation, or Conspiracy) and the applicable offense guideline.
 
 7. **Factors Requiring Conviction under a Specific Statute.**—A particular guideline (in the base offense level or in a specific offense characteristic) may expressly direct that a particular factor be applied only if the defendant was convicted of a particular statute.
+
 For example, in §2S1.1 (Laundering of Monetary Instruments; Engaging in Monetary Transactions in Property Derived from Unlawful Activity), subsection (b)(2)(B) applies if the defendant “was convicted under 18 U.S.C. § 1956”. Unless such an express direction is included, conviction under the statute is not required. Thus, use of a statutory reference to describe a particular set of circumstances does not require a conviction under the referenced statute. An example of this usage is found in §2A3.4(a)(2) (“if the offense involved conduct described in 18 U.S.C. § 2242”).
 
 Unless otherwise specified, an express direction to apply a particular factor only if the defendant was convicted of a particular statute includes the determination of the offenselevel where the defendant was convicted of conspiracy, attempt, solicitation, aiding or abetting, accessory after the fact, or misprision of felony in respect to that particular statute. For example, §2S1.1(b)(2)(B) (which is applicable only if the defendant is convicted under 18 U.S.C. § 1956) would be applied in determining the offense level under §2X3.1 (Accessory After the Fact) in a case in which the defendant was convicted of accessory after the fact to a violation of 18 U.S.C. § 1956 but would not be applied in a case in which the defendant is convicted of a conspiracy under 18 U.S.C. § 1956(h) and the sole object of that conspiracy was to commit an offense set forth in 18 U.S.C. § 1957.
@@ -691,15 +692,15 @@ United States v. R.L.C., 503 U.S. 291 (1992). Therefore, a necessary stepin asce
 
 (ii) The defendant is—(I) suffering from a serious physical or medical condition, (II) suffering from a serious functional or cognitive impairment, or(III) experiencing deteriorating physical or mental health because of the aging process, that substantially diminishes the ability of the defendant to provide self-care within the environment of a correctional facility and from which he or she is not expected to recover.
 
-(B) Age of the Defendant.—The defendant (i) is at least 65 years old; (ii) is experiencing a serious deterioration in physical or mental health because of the agingprocess; and (iii) has served at least 10 years or 75 percent of his or her term of imprisonment, whichever is less.
+(B) **Age of the Defendant.**—The defendant (i) is at least 65 years old; (ii) is experiencing a serious deterioration in physical or mental health because of the agingprocess; and (iii) has served at least 10 years or 75 percent of his or her term of imprisonment, whichever is less.
 
-(C) Family Circumstances.—(i) The death or incapacitation of the caregiver of the defendant’s minor child orminor children.
+(C) **Family Circumstances.**—(i) The death or incapacitation of the caregiver of the defendant’s minor child orminor children.
 
 (ii) The incapacitation of the defendant’s spouse or registered partner when the defendant would be the only available caregiver for the spouse or registeredpartner.
 
-(D) Other Reasons.—As determined by the Director of the Bureau of Prisons, thereexists in the defendant’s case an extraordinary and compelling reason other than, or in combination with, the reasons described in subdivisions (A) through (C).
+(D) **ther Reasons.**—As determined by the Director of the Bureau of Prisons, thereexists in the defendant’s case an extraordinary and compelling reason other than, or in combination with, the reasons described in subdivisions (A) through (C).
 
-2. Foreseeability of Extraordinary and Compelling Reasons.—For purposes of this policy statement, an extraordinary and compelling reason need not have been unforeseenat the time of sentencing in order to warrant a reduction in the term of imprisonment.
+2. **Foreseeability of Extraordinary and Compelling Reasons.**—For purposes of this policy statement, an extraordinary and compelling reason need not have been unforeseenat the time of sentencing in order to warrant a reduction in the term of imprisonment.
 
 Therefore, the fact that an extraordinary and compelling reason reasonably could havebeen known or anticipated by the sentencing court does not preclude consideration for a reduction under this policy statement.
 
@@ -714,84 +715,5 @@ This policy statement shall not be construed to confer upon the defendant any ri
 Background: The Commission is required by 28 U.S.C. § 994(a)(2) to develop general policystatements regarding application of the guidelines or other aspects of sentencing that in the view of the Commission would further the purposes of sentencing (18 U.S.C. § 3553(a)(2)), including, among other things, the appropriate use of the sentence modification provisions setforth in 18 U.S.C. § 3582(c). In doing so, the Commission is authorized by 28 U.S.C. § 994(t) to“describe what should be considered extraordinary and compelling reasons for sentence reduction, including the criteria to be applied and a list of specific examples.” This policy statementimplements 28 U.S.C. § 994(a)(2) and (t).
 
 ###### *Historical Note*
- 
- Effective November 1, 2006 (amendment 683). Amended effective November 1, 2007 (amendment 698); November 1, 2010 (amendment 746); November 1, 2016 (amendment 799).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Effective November 1, 2006 (amendment 683). Amended effective November 1, 2007 (amendment 698); November 1, 2010 (amendment 746); November 1, 2016 (amendment 799).
