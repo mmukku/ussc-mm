@@ -111,9 +111,35 @@ class Container extends Component {
                     </li>
                     <li>
                       <Link to="/ai" className="usa-nav-link">
-                        <span>Application Instructions</span>
+                        <span>Reference Chart</span>
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/appendixb" className="usa-nav-link">
+                        <span>Appendix B</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/amendments" className="usa-nav-link">
+                        <span>Amendments</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/archives" className="usa-nav-link">
+                        <span>Archives</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button
+                    className="usa-accordion-button usa-nav-link"
+                    aria-expanded="false"
+                    aria-controls="side-nav-2"
+                  >
+                    <span>Tables &amp; Figures</span>
+                  </button>
+                  <ul id="side-nav-2" className="usa-nav-submenu">
                     <li>
                       <Link to="/guidelines/§8C2.4" className="usa-nav-link">
                         <span>Fine Table</span>
@@ -134,38 +160,35 @@ class Container extends Component {
                         <span>Sentencing Table</span>
                       </Link>
                     </li>
+                  </ul>
+                </li>
+                <li>
+                  <button
+                    className="usa-accordion-button usa-nav-link"
+                    aria-expanded="false"
+                    aria-controls="side-nav-3"
+                  >
+                    <span>Calculators</span>
+                  </button>
+                  <ul id="side-nav-3" className="usa-nav-submenu">
                     <li>
-                      <Link to="/" className="usa-nav-link">
-                        <span>Appendix B</span>
+                      <Link to="/sc" className="usa-nav-link">
+                        <span>Sentencing Calculator</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="/amendments" className="usa-nav-link">
-                        <span>Amendments</span>
+                      <Link to="/dol" className="usa-nav-link">
+                        <span>Drug Quantity Calculator</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="/archives" className="usa-nav-link">
-                        <span>Archives</span>
+                      <Link to="/de" className="usa-nav-link">
+                        <span>Drug Equivalency Calculator</span>
                       </Link>
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <Link to="/sc" className="usa-nav-link">
-                    <span>Sentencing Calculator</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/dol" className="usa-nav-link">
-                    <span>Drug Quantity Calculator</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/de" className="usa-nav-link">
-                    <span>Drug Equivalency Calculator</span>
-                  </Link>
-                </li>
+
                 <li>
                   <Link to="/si" className="usa-nav-link">
                     <span>Statutory Index</span>

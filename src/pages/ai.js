@@ -68,8 +68,9 @@ export default props => {
         warrant consideration.
       </p>
       <p>
-        10 ► Consider the applicable factors in 18 U.S.C.§ 3553(a) taken as a
-        whole and determine sentence to impose.
+        10 ► Consider the applicable factors in{' '}
+        <a href="/appendixb"> 18 U.S.C.§ 3553(a) </a> taken as a whole and
+        determine sentence to impose.
       </p>
     </div>
   );
