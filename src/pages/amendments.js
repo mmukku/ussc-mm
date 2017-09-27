@@ -1,6 +1,8 @@
 import React from 'react';
 import Pagination from '../components/pagination';
 import data from '../data/amendments';
+import Remarkable from 'remarkable';
+var md = new Remarkable({ html: true });
 
 class Amendments extends React.Component {
   constructor() {
@@ -17,6 +19,11 @@ class Amendments extends React.Component {
   onChangePage(pageOfItems) {
     // update state with new page of items
     this.setState({ pageOfItems: pageOfItems });
+  }
+
+  getRawMarkup(text) {
+    var md = new Remarkable({ html: true });
+    return { __html: md.render(text) };
   }
 
   render() {
@@ -43,9 +50,9 @@ class Amendments extends React.Component {
               </div>
               <div className="usa-width-one-half">{item.EffectiveDate}</div>
             </section>
-            <section>{item.Text}</section>
+            <section dangerouslySetInnerHTML={this.getRawMarkup(item.Text)} />
             <h4>Reason for Amendment</h4>
-            <section>{item.Reason}</section>
+            <section dangerouslySetInnerHTML={this.getRawMarkup(item.Reason)} />
           </div>
         ))}
       </div>
