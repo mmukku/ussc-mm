@@ -5,7 +5,7 @@ Swingtech ussc mobile site
 
 Assuming that nodejs installed on the machine
 
-git clone 
+git clone https://github.com/stussc/ussc
 
 Local development with hot reloading support
 
@@ -17,7 +17,7 @@ yarn start
 
 yarn build
 
-Make sure that following lines are added at the top of cache file. (we need to automate this step)
+Make sure that following lines are added at the top of build/manifest.appcache file. (we need to automate this step)
 /
 /index.html
 /§2B1.1.md
@@ -25,6 +25,7 @@ Make sure that following lines are added at the top of cache file. (we need to a
 /§7B1.4.md
 /§8C2.4.md
 
+copy the contents of build folder to deploy machine.
 
 
 ## src
