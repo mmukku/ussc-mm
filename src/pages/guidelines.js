@@ -21,12 +21,7 @@ export default props => {
   );
   let guidelineList = filtered.map(gl => (
     <p key={gl.id}>
-      <GuidelineLink
-        chapterId={chapterId}
-        partId={partId}
-        sectionId={sectionId}
-        id={gl.id}
-      >
+      <GuidelineLink id={gl.id}>
         {gl.id} -{gl.title}
       </GuidelineLink>
     </p>
@@ -45,28 +40,27 @@ export default props => {
     navList = Sections.filter(
       s => s.chapter === chapterId && s.part === partId
     ).map(s => {
-      if (s.id !== sectionId) {
-        return (
-          <option
-            key={s.id}
-            value={`/chapters/${chapterId}/parts/${partId}/sections/${s.id}/guidelines`}
-          >
-            Section {s.id}
-          </option>
-        );
-      }
+      if (s.id === sectionId) return null;
+      return (
+        <option
+          key={s.id}
+          value={`/chapters/${chapterId}/parts/${partId}/sections/${s.id}/guidelines`}
+        >
+          Section {s.id}
+        </option>
+      );
     });
   } else {
     navList = Parts.filter(p => p.chapter === chapterId).map(p => {
-      if (p.id !== partId)
-        return (
-          <option
-            key={p.id}
-            value={`/chapters/${chapterId}/parts/${p.id}/guidelines`}
-          >
-            Part {p.id}
-          </option>
-        );
+      if (p.id === partId) return null;
+      return (
+        <option
+          key={p.id}
+          value={`/chapters/${chapterId}/parts/${p.id}/guidelines`}
+        >
+          Part {p.id}
+        </option>
+      );
     });
   }
 

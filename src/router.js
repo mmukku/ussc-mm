@@ -60,12 +60,6 @@ class USSCRouter extends Component {
             />
             <Route
               exact
-              path="/chapters/:chapterId/parts/:part/sections/:sectionId/guidelines/:id"
-              component={AsyncGuideline}
-              title="GuideLine"
-            />
-            <Route
-              exact
               path="/guidelines/:id"
               component={AsyncGuideline}
               title="GuideLine"

@@ -20,20 +20,16 @@ class GuideLine extends Component {
   }
 
   saveParams(props) {
-    let chapterId = props.match.params.chapterId;
-    let partId = props.match.params.part;
-    let sectionId = props.match.params.sectionId;
-    let id = props.match.params.id;
-    if (chapterId === undefined) {
-      chapterId = id[1];
-      partId = id[2];
-      sectionId = id[3];
-    }
+    let id = props.match.params.id.trim();
+    id = id.replace('.', '');
+    let chapterId = id[0];
 
-    let self = this;
+    let partId = id[1];
+    let sectionId = id[2];
     this.setState({ content: undefined });
     let path = `${process.env.PUBLIC_URL}/${id}.md`;
 
+    let self = this;
     fetch(path)
       .then(response => response.text())
       .catch(err => self.setState({ content: err }))
@@ -80,7 +76,7 @@ class GuideLine extends Component {
       imgContent: imgContent,
       guidelineList: guidelineList,
       id: id,
-      chapteId: chapterId,
+      chapterId: chapterId,
       sectionId: sectionId,
       partId: partId
     });
@@ -119,8 +115,8 @@ class GuideLine extends Component {
         </h6>
         <div className="usa-section">
           <h3>
-            Chapter {this.state.chapterId} - Part {this.state.partId} -{' '}
-            {this.state.sectionId} GuideLine- {this.state.id}
+            Chapter {this.state.chapterId} - Part {this.state.partId} - Seciton
+            {this.state.sectionId} - GuideLine- {this.state.id}
           </h3>
           {this.state.imgContent}
           <div dangerouslySetInnerHTML={this.getRawMarkup()} />

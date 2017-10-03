@@ -21,15 +21,15 @@ export default props => {
     ));
 
   const partList = Parts.filter(p => p.chapter === chapterId).map(p => {
-    if (p.id !== partId)
-      return (
-        <option
-          key={p.id}
-          value={`/chapters/${chapterId}/parts/${p.id}/sections`}
-        >
-          Part {p.id}
-        </option>
-      );
+    if (p.id === partId) return null;
+    return (
+      <option
+        key={p.id}
+        value={`/chapters/${chapterId}/parts/${p.id}/sections`}
+      >
+        Part {p.id}
+      </option>
+    );
   });
 
   return (

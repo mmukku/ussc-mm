@@ -9,10 +9,6 @@ const propTypes = {
   pageSize: PropTypes.number
 };
 
-const defaultProps = {
-  initialPage: 1
-};
-
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
@@ -143,6 +139,5 @@ class Pagination extends React.Component {
 }
 
 Pagination.propTypes = propTypes;
-Pagination.defaultProps;
 
 export default Pagination;

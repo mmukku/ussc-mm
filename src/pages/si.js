@@ -171,7 +171,7 @@ class SI extends Component {
 
     let guidelines = results.Guidelines.split(',').map(gl => (
       <li key={gl}>
-        <a href="/sc/">{gl}</a>
+        <a href={`/guidelines/${gl}`}>{gl}</a>
       </li>
     ));
     this.setState({ guidelines: guidelines });
