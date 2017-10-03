@@ -5,6 +5,8 @@ Swingtech ussc mobile site
 
 Assuming that nodejs installed on the machine
 
+npm install -g yarn
+
 git clone https://github.com/stussc/ussc
 
 Local development with hot reloading support
