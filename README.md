@@ -1,6 +1,32 @@
 # ussc
 Swingtech ussc mobile site
 
+## Getting Started
+
+Assuming that nodejs installed on the machine
+
+git clone 
+
+Local development with hot reloading support
+
+yarn start
+
+### navigate to http://localhost:3000
+
+## Production build
+
+yarn build
+
+Make sure that following lines are added at the top of cache file. (we need to automate this step)
+/
+/index.html
+/§2B1.1.md
+/§5A1.1.md
+/§7B1.4.md
+/§8C2.4.md
+
+
+
 ## src
 
 ### src/components
