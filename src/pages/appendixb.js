@@ -790,7 +790,11 @@ export default params => {
         therefor. The court shall provide a transcription or other appropriate
         public record of the court’s statement of reasons, together with the
         order of judgement and commitment, to the Probation System and to the
-        Sentencing Commission,<a href="#fn1" class="footnoteRef" id="fnref1">
+        Sentencing Commission,<a
+          href="#fn1"
+          className="footnoteRef"
+          id="fnref1"
+        >
           <sup>1</sup>
         </a>{' '}
         and, if the sentence includes a term of imprisonment, to the Bureau of
@@ -1133,7 +1137,7 @@ export default params => {
           firearm was brandished, discharged, or otherwise used as a weapon and
           the crime of violence or drug trafficking crime during and relation<a
             href="#fn2"
-            class="footnoteRef"
+            className="footnoteRef"
             id="fnref2"
           >
             <sup>2</sup>
@@ -2575,7 +2579,7 @@ export default params => {
           <strong>(1)</strong> terminate a term of supervised release and
           discharge the defendant released<a
             href="#fn3"
-            class="footnoteRef"
+            className="footnoteRef"
             id="fnref3"
           >
             <sup>3</sup>
@@ -8264,7 +8268,7 @@ export default params => {
         emergency guideline amendments to implement section 2(g) of the No
         Electronic Theft (NET) Act (29 U.S.C. 994 note<a
           href="#fn4"
-          class="footnoteRef"
+          className="footnoteRef"
           id="fnref4"
         >
           <sup>4</sup>
@@ -11867,7 +11871,7 @@ export default params => {
         enactment of this Act, the Commission shall complete its consideration
         and review under this section.”
       </p>
-      <div class="footnotes">
+      <div className="footnotes">
         <hr />
         <ol>
           <li id="fn1">
