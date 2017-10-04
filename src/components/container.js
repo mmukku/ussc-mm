@@ -135,7 +135,7 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/" className="usa-nav-link">
+                      <Link to="/appendixb" className="usa-nav-link">
                         <span>Appendix B</span>
                       </Link>
                     </li>

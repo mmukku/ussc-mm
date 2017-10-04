@@ -116,7 +116,7 @@ class USSCRouter extends Component {
               exact
               path="/appendixb"
               component={AsyncAppendixB}
-              title="Appliation Instructions"
+              title="Appendix B"
             />
           </Switch>
         </Container>
