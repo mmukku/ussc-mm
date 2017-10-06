@@ -152,19 +152,30 @@ class Container extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/sc" className="usa-nav-link">
-                    <span>Guideline Range</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/dol" className="usa-nav-link">
-                    <span>Drug Quantity Calculator</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/de" className="usa-nav-link">
-                    <span>Drug Equivalency Calculator</span>
-                  </Link>
+                  <button
+                    className="usa-accordion-button usa-nav-link"
+                    aria-expanded="false"
+                    aria-controls="side-nav-2"
+                  >
+                    <span>Calculators</span>
+                  </button>
+                  <ul id="side-nav-2" className="usa-nav-submenu">
+                    <li>
+                      <Link to="/sc" className="usa-nav-link">
+                        <span>Guideline Range</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/dol" className="usa-nav-link">
+                        <span>Drug Quantity Calculator</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/de" className="usa-nav-link">
+                        <span>Drug Equivalency Calculator</span>
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <Link to="/" className="usa-nav-link">
@@ -195,16 +206,6 @@ class Container extends Component {
                 <li>
                   <Link to="/" className="usa-nav-link">
                     <span>Updates</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Privacy Policy</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>About</span>
                   </Link>
                 </li>
               </ul>
