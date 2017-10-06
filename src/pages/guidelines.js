@@ -11,22 +11,17 @@ export default props => {
   let chapterId = props.match.params.chapterId;
   let partId = props.match.params.part;
   let sectionId = props.match.params.sectionId;
-  if (sectionId === undefined) {
-    sectionId = '1';
+  let filtered = guideLines.filter(
+    gl => gl.chapter === chapterId && gl.part === partId
+  );
+
+  if (sectionId !== undefined) {
+    filtered = filtered.filter(gl => gl.section === sectionId);
   }
 
-  const filtered = guideLines.filter(
-    gl =>
-      gl.chapter === chapterId && gl.part === partId && gl.section === sectionId
-  );
   let guidelineList = filtered.map(gl => (
     <p key={gl.id}>
-      <GuidelineLink
-        chapterId={chapterId}
-        partId={partId}
-        sectionId={sectionId}
-        id={gl.id}
-      >
+      <GuidelineLink id={gl.id}>
         {gl.id} -{gl.title}
       </GuidelineLink>
     </p>
@@ -55,10 +50,11 @@ export default props => {
           </option>
         );
       }
+      return null;
     });
   } else {
     navList = Parts.filter(p => p.chapter === chapterId).map(p => {
-      if (p.id !== partId)
+      if (p.id !== partId) {
         return (
           <option
             key={p.id}
@@ -67,6 +63,8 @@ export default props => {
             Part {p.id}
           </option>
         );
+      }
+      return null;
     });
   }
 

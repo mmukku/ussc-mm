@@ -1,25 +1,19 @@
 CACHE MANIFEST
-/
-/index.html
-/§2B1.1.md
-/§5A1.1.md
-/§7B1.4.md
-/§8C2.4.md
 /static/css/main.f89d30a0.css
-/static/js/0.fd748bd1.chunk.js
-/static/js/1.f8197fc7.chunk.js
+/static/js/0.3e3bfbbd.chunk.js
+/static/js/1.cb3ffbfc.chunk.js
 /static/js/10.5e9cea97.chunk.js
 /static/js/11.b32ac801.chunk.js
 /static/js/12.108395ad.chunk.js
-/static/js/2.a6091c20.chunk.js
-/static/js/3.1fc45c2f.chunk.js
-/static/js/4.6e29b6ff.chunk.js
-/static/js/5.34d1fee4.chunk.js
-/static/js/6.c5142aae.chunk.js
-/static/js/7.1170c929.chunk.js
-/static/js/8.a84eff9e.chunk.js
-/static/js/9.867b3242.chunk.js
-/static/js/main.ac56386e.js
+/static/js/2.0cb327d2.chunk.js
+/static/js/3.0f000c33.chunk.js
+/static/js/4.79000ba2.chunk.js
+/static/js/5.e0d80751.chunk.js
+/static/js/6.b865de76.chunk.js
+/static/js/7.b3e77ab0.chunk.js
+/static/js/8.e8819d17.chunk.js
+/static/js/9.4430c171.chunk.js
+/static/js/main.885108c8.js
 /static/media/angle-arrow-down-hover.53c1cd25.png
 /static/media/angle-arrow-down-hover.a3ee995e.svg
 /static/media/angle-arrow-down-primary-hover.2c1f3745.png
@@ -69,4 +63,4 @@ CACHE MANIFEST
 /static/media/warning.4ba1d198.svg
 /static/media/youtube15.bededcff.svg
 /static/media/yt-icon.65e96ce4.png
-# Created at 2017-10-05T10:14:22.749Z
+# Created at 2017-10-06T03:22:23.687Z

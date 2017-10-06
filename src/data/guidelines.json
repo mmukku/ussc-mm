@@ -1,5 +1,12 @@
 [
   {
+    "id": "§1A3.1",
+    "chapter": "1",
+    "part": "A",
+    "section": "3",
+    "title": "Authoriy"
+  },
+  {
     "id": "§1B1.1",
     "chapter": "1",
     "part": "B",
@@ -2415,32 +2422,28 @@
     "chapter": "8",
     "part": "A",
     "section": "1",
-    "title": "Application Instructions",
-    "title": "Organizations"
+    "title": "Application Instructions ― Organizations"
   },
   {
     "id": "§8B1.1",
     "chapter": "8",
     "part": "B",
     "section": "1",
-    "title": "Restitution",
-    "title": "Organizations"
+    "title": "Restitution ― Organizations"
   },
   {
     "id": "§8B1.2",
     "chapter": "8",
     "part": "B",
     "section": "1",
-    "title": "Remedial Orders",
-    "title": "Organizations (Policy Statement)"
+    "title": " Remedial Orders ― Organizations (Policy Statement)"
   },
   {
     "id": "§8B1.3",
     "chapter": "8",
     "part": "B",
     "section": "1",
-    "title": "Community Service",
-    "title": "Organizations (Policy Statement)"
+    "title": "Community Service ― Organizations (Policy Statement)"
   },
   {
     "id": "§8B1.4",

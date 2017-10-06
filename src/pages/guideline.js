@@ -3,7 +3,7 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import GuideLines from '../data/guidelines.json';
-import Remarkable from 'remarkable';
+import Data from '../data/gl.json';
 
 class GuideLine extends Component {
   constructor() {
@@ -29,19 +29,6 @@ class GuideLine extends Component {
       partId = id[2];
       sectionId = id[3];
     }
-
-    let self = this;
-    this.setState({ content: undefined });
-    let path = `${process.env.PUBLIC_URL}/${id}.md`;
-
-    fetch(path)
-      .then(response => response.text())
-      .catch(err => self.setState({ content: err }))
-      .then(text => {
-        if (!text.startsWith('<!doctype html>')) {
-          self.setState({ content: text });
-        }
-      });
 
     let imgContent;
 
@@ -80,15 +67,11 @@ class GuideLine extends Component {
       imgContent: imgContent,
       guidelineList: guidelineList,
       id: id,
-      chapteId: chapterId,
+      chapterId: chapterId,
       sectionId: sectionId,
-      partId: partId
+      partId: partId,
+      content: Data.find(gl => gl.id === id).content
     });
-  }
-
-  getRawMarkup() {
-    var md = new Remarkable({ html: true });
-    return { __html: md.render(this.state.content) };
   }
 
   render() {
@@ -118,12 +101,8 @@ class GuideLine extends Component {
           </div>
         </h6>
         <div className="usa-section">
-          <h3>
-            Chapter {this.state.chapterId} - Part {this.state.partId} -{' '}
-            {this.state.sectionId} GuideLine- {this.state.id}
-          </h3>
           {this.state.imgContent}
-          <div dangerouslySetInnerHTML={this.getRawMarkup()} />
+          <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </div>
       </div>
     );
