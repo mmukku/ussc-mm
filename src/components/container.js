@@ -101,7 +101,7 @@ class Container extends Component {
                     aria-expanded="false"
                     aria-controls="side-nav-1"
                   >
-                    <span>Guidelines Manual</span>
+                    <span>Guidelines</span>
                   </button>
                   <ul id="side-nav-1" className="usa-nav-submenu">
                     <li>
@@ -134,78 +134,41 @@ class Container extends Component {
                         <span>Sentencing Table</span>
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/appendixb" className="usa-nav-link">
+                        <span>Appendix B</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/amendments" className="usa-nav-link">
+                        <span>Amendments</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/archives" className="usa-nav-link">
+                        <span>Archives</span>
+                      </Link>
+                    </li>
                   </ul>
+                </li>
+                <li>
+                  <Link to="/sc" className="usa-nav-link">
+                    <span>Sentencing Calculator</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dol" className="usa-nav-link">
+                    <span>Drug Quantity Calculator</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/de" className="usa-nav-link">
+                    <span>Drug Equivalency Calculator</span>
+                  </Link>
                 </li>
                 <li>
                   <Link to="/si" className="usa-nav-link">
-                    <span>Appendix - A</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/appendixb" className="usa-nav-link">
-                    <span>Appendix - B</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/amendments" className="usa-nav-link">
-                    <span>Appendix - C</span>
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    className="usa-accordion-button usa-nav-link"
-                    aria-expanded="false"
-                    aria-controls="side-nav-2"
-                  >
-                    <span>Calculators</span>
-                  </button>
-                  <ul id="side-nav-2" className="usa-nav-submenu">
-                    <li>
-                      <Link to="/sc" className="usa-nav-link">
-                        <span>Guideline Range</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/dol" className="usa-nav-link">
-                        <span>Drug Quantity Calculator</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/de" className="usa-nav-link">
-                        <span>Drug Equivalency Calculator</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Frequently used Tables</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Applying the Guidelines</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Bookmarks</span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Notes</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Archive</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="usa-nav-link">
-                    <span>Updates</span>
+                    <span>Statutory Index</span>
                   </Link>
                 </li>
               </ul>
