@@ -25,13 +25,6 @@ Make sure that following lines are added at the top of build/manifest.appcache f
 
 /index.html
 
-/§2B1.1.md
-
-/§5A1.1.md
-
-/§7B1.4.md
-
-/§8C2.4.md
 
 copy the contents of build folder to deploy machine.
 
@@ -77,10 +70,6 @@ copy the contents of build folder to deploy machine.
 ## manifest
 /
 /index.html
-/§2B1.1.md
-/§5A1.1.md
-/§7B1.4.md
-/§8C2.4.md
 
 /chapter1.html
 /chapter2.html

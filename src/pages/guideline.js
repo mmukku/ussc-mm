@@ -62,7 +62,11 @@ class GuideLine extends Component {
       }
       return null;
     });
-
+    let thisgl = Data.find(gl => gl.id === id);
+    let content;
+    if (thisgl != undefined) {
+      content = thisgl.content;
+    }
     this.setState({
       imgContent: imgContent,
       guidelineList: guidelineList,
@@ -70,7 +74,7 @@ class GuideLine extends Component {
       chapterId: chapterId,
       sectionId: sectionId,
       partId: partId,
-      content: Data.find(gl => gl.id === id).content
+      content: content
     });
   }
 
