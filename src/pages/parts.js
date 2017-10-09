@@ -43,6 +43,7 @@ export default props => {
     return null;
   });
 
+  const thisChapter = Chapters.find(c => c.id === chapterId);
   return (
     <div>
       <h6>
@@ -56,6 +57,9 @@ export default props => {
       </h6>
       <div className="usa-section">
         <h3>Chapter {chapterId}</h3>
+        <h4>{thisChapter.title}</h4>
+        <p dangerouslySetInnerHTML={{ __html: thisChapter.content }} />
+
         <div>{partsList}</div>
       </div>
     </div>

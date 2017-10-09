@@ -6,6 +6,7 @@ import SectionsLink from '../components/sectionsLink';
 import GuidelineLink from '../components/guidelineLink';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
+import Chapters from '../data/chapters.json';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -15,8 +16,18 @@ export default props => {
     gl => gl.chapter === chapterId && gl.part === partId
   );
 
+  let sectionTitle = null;
+  let sectionContent = null;
+
   if (sectionId !== undefined) {
     filtered = filtered.filter(gl => gl.section === sectionId);
+    let section = Sections.find(
+      s => s.chapter === chapterId && s.part === partId && s.id === sectionId
+    );
+    if (section !== undefined) {
+      sectionTitle = sectionId + '. ' + section.title;
+      sectionContent = section.content;
+    }
   }
 
   let guidelineList = filtered.map(gl => (
@@ -68,6 +79,14 @@ export default props => {
     });
   }
 
+  const chapterTitle = Chapters.find(c => c.id === chapterId).title;
+
+  const thisPart = Parts.find(p => p.chapter === chapterId && p.id === partId);
+  let partContent = null;
+  if (sectionContent == null) {
+    partContent = thisPart.content;
+  }
+
   return (
     <div>
       <h6>
@@ -86,8 +105,14 @@ export default props => {
       </h6>
       <div className="usa-section">
         <h3>
-          Chapter {chapterId} - Part {partId}
+          Chapter {chapterId} - {chapterTitle}
         </h3>
+        <h4>
+          Part {partId} - {thisPart.title}
+        </h4>
+        <p dangerouslySetInnerHTML={{ __html: partContent }} />
+        <h5>{sectionTitle} </h5>
+        <p dangerouslySetInnerHTML={{ __html: sectionContent }} />
         <div>{guidelineList}</div>
       </div>
     </div>

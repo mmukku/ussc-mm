@@ -4,6 +4,7 @@ import Parts from '../data/parts.json';
 import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
+import Chapters from '../data/chapters.json';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
@@ -21,7 +22,7 @@ export default props => {
     ));
 
   const partList = Parts.filter(p => p.chapter === chapterId).map(p => {
-    if (p.id !== partId)
+    if (p.id !== partId) {
       return (
         <option
           key={p.id}
@@ -30,7 +31,13 @@ export default props => {
           Part {p.id}
         </option>
       );
+    } else {
+      return null;
+    }
   });
+
+  const chapterTitle = Chapters.find(c => c.id === chapterId).title;
+  const thisPart = Parts.find(p => p.chapter === chapterId && p.id === partId);
 
   return (
     <div>
@@ -50,8 +57,12 @@ export default props => {
       </h6>
       <div className="usa-section">
         <h3>
-          Chapter {chapterId} - Part {partId}
+          Chapter {chapterId} - {chapterTitle}
         </h3>
+        <h4>
+          Part {partId} - {thisPart.title}
+        </h4>
+        <p dangerouslySetInnerHTML={{ __html: thisPart.content }} />
 
         <div>{sectionList}</div>
       </div>

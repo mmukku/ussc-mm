@@ -12,7 +12,7 @@ const chapterList = chapters.map(c => (
 
 export default () => (
   <div>
-    <h3>Chapters</h3>
+    <h3>Guidelines</h3>
     {chapterList}
   </div>
 );

@@ -7,7 +7,6 @@ import asyncComponent from './components/asyncComponent';
 const AsyncHome = asyncComponent(() => import('./pages/home'));
 const AsyncSC = asyncComponent(() => import('./pages/sc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
-const AsyncST = asyncComponent(() => import('./pages/st'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncDE = asyncComponent(() => import('./pages/de'));
 const AsyncAmendments = asyncComponent(() => import('./pages/amendments'));
@@ -76,12 +75,6 @@ class USSCRouter extends Component {
               path="/si"
               component={AsyncSI}
               title="Statutory Index"
-            />
-            <Route
-              exact
-              path="/st"
-              component={AsyncST}
-              title="Sentencing Table"
             />
             <Route
               exact

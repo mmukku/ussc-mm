@@ -130,8 +130,16 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/st" className="usa-nav-link">
+                      <Link
+                        to="/chapters/5/parts/A/guidelines"
+                        className="usa-nav-link"
+                      >
                         <span>Sentencing Table</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/guidelines/§2T4.1" className="usa-nav-link">
+                        <span>Tax Table</span>
                       </Link>
                     </li>
                     <li>
