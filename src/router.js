@@ -16,6 +16,9 @@ const AsyncGuidelines = asyncComponent(() => import('./pages/guidelines'));
 const AsyncGuideline = asyncComponent(() => import('./pages/guideline'));
 const AsyncApplicationInstructions = asyncComponent(() => import('./pages/ai'));
 const AsyncAppendixB = asyncComponent(() => import('./pages/appendixb'));
+const AsyncAppendixBPart = asyncComponent(() =>
+  import('./pages/appendixbpart')
+);
 const AsyncArchives = asyncComponent(() => import('./pages/archives'));
 
 const title = 'USSC Guidelines';
@@ -106,10 +109,17 @@ class USSCRouter extends Component {
               component={AsyncApplicationInstructions}
               title="Appliation Instructions"
             />
+
             <Route
               exact
-              path="/appendixb"
+              path="/ab"
               component={AsyncAppendixB}
+              title="Appendix B"
+            />
+            <Route
+              exact
+              path="/ab/:part"
+              component={AsyncAppendixBPart}
               title="Appendix B"
             />
           </Switch>
