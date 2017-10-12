@@ -28,6 +28,16 @@ Make sure that following lines are added at the top of build/manifest.appcache f
 
 copy the contents of build folder to deploy machine.
 
+If deploying on IIS, make sure the [Url Rewrite Module](https://www.iis.net/downloads/microsoft/url-rewriteURL) is installed.
+If deploing on any other webserver enable the URL rerouting to honor server side rerouting..  Apache example 
+
+RewriteEngine On  
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ /index.html [L]
+
 
 ## src
 
@@ -70,13 +80,3 @@ copy the contents of build folder to deploy machine.
 ## manifest
 /
 /index.html
-
-/chapter1.html
-/chapter2.html
-/chapter3.html
-/chapter4.html
-/chapter5.html
-/chapter6.html
-/chapter7.html
-/chapter8.html
-

@@ -63,13 +63,14 @@ class DE extends Component {
       }
 
       let conversionFactor = 1;
-      let conversion = conversionTable.find(
+      let conversion = _.find(
+        conversionTable,
         c => c.uom === this.state.uom && c.targetUOM === sourceUOM
       );
       if (conversion !== undefined) {
         conversionFactor = conversion.factor;
       }
-      console.log(this.state.uom, sourceUOM, conversionFactor);
+      // console.log(this.state.uom, sourceUOM, conversionFactor);
       result = (
         <section>
           <div className="usa-alert usa-alert-info">
