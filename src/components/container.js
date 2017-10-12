@@ -111,9 +111,40 @@ class Container extends Component {
                     </li>
                     <li>
                       <Link to="/ai" className="usa-nav-link">
-                        <span>Application Instructions</span>
+                        <span>Applying Instructions</span>
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/si" className="usa-nav-link">
+                        <span>Appendix A</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/ab" className="usa-nav-link">
+                        <span>Appendix B</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/amendments" className="usa-nav-link">
+                        <span>Appendix C</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/archives" className="usa-nav-link">
+                        <span>Archives</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button
+                    className="usa-accordion-button usa-nav-link"
+                    aria-expanded="false"
+                    aria-controls="side-nav-2"
+                  >
+                    <span>Tables</span>
+                  </button>
+                  <ul id="side-nav-2" className="usa-nav-submenu">
                     <li>
                       <Link to="/guidelines/§8C2.4" className="usa-nav-link">
                         <span>Fine Table</span>
@@ -142,21 +173,6 @@ class Container extends Component {
                         <span>Tax Table</span>
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/appendixb" className="usa-nav-link">
-                        <span>Appendix B</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/amendments" className="usa-nav-link">
-                        <span>Amendments</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/archives" className="usa-nav-link">
-                        <span>Archives</span>
-                      </Link>
-                    </li>
                   </ul>
                 </li>
                 <li>
@@ -172,11 +188,6 @@ class Container extends Component {
                 <li>
                   <Link to="/de" className="usa-nav-link">
                     <span>Drug Equivalency Calculator</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/si" className="usa-nav-link">
-                    <span>Statutory Index</span>
                   </Link>
                 </li>
               </ul>
