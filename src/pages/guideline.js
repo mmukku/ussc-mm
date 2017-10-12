@@ -4,6 +4,7 @@ import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
+import _ from 'lodash';
 
 class GuideLine extends Component {
   constructor() {
@@ -32,22 +33,23 @@ class GuideLine extends Component {
 
     let imgContent;
 
-    let guideLines = GuideLines.filter(
+    let guideLines = _.filter(
+      GuideLines,
       gl => gl.chapter === chapterId && gl.part === partId
     );
 
     if (sectionId !== undefined) {
-      guideLines = GuideLines.filter(gl => gl.section === sectionId);
+      guideLines = _.filter(GuideLines, gl => gl.section === sectionId);
     }
 
-    let gl = GuideLines.find(gl => gl.id === id);
+    let gl = _.find(GuideLines, gl => gl.id === id);
 
     if (gl !== undefined && gl.img !== undefined) {
       let img = require(`../img/${gl.img}`);
       imgContent = <img src={img} alt="{gl.title}" />;
     }
 
-    let guidelineList = guideLines.map(gl => {
+    let guidelineList = _.map(guideLines, gl => {
       if (gl.id !== id) {
         let link = `/chapters/${chapterId}/parts/${partId}/guidelines/${gl.id}`;
         if (sectionId !== undefined) {
@@ -62,7 +64,7 @@ class GuideLine extends Component {
       }
       return null;
     });
-    let thisgl = Data.find(gl => gl.id === id);
+    let thisgl = _.find(Data, gl => gl.id === id);
     let content;
     if (thisgl != undefined) {
       content = thisgl.content;

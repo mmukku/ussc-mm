@@ -5,23 +5,25 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import Chapters from '../data/chapters.json';
+import _ from 'lodash';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
   let partId = props.match.params.part;
-  let sectionList = sections
-    .filter(s => s.chapter === chapterId && s.part === partId)
-    .map(s => (
-      <p key={s.id}>
-        <GuideLinesLink chapterId={chapterId} partId={partId} sectionId={s.id}>
-          <span>
-            {s.id} - {s.title}
-          </span>
-        </GuideLinesLink>
-      </p>
-    ));
+  let sectionList = _.filter(
+    sections,
+    s => s.chapter === chapterId && s.part === partId
+  ).map(s => (
+    <p key={s.id}>
+      <GuideLinesLink chapterId={chapterId} partId={partId} sectionId={s.id}>
+        <span>
+          {s.id} - {s.title}
+        </span>
+      </GuideLinesLink>
+    </p>
+  ));
 
-  const partList = Parts.filter(p => p.chapter === chapterId).map(p => {
+  const partList = _.filter(Parts, p => p.chapter === chapterId).map(p => {
     if (p.id !== partId) {
       return (
         <option
@@ -36,8 +38,11 @@ export default props => {
     }
   });
 
-  const chapterTitle = Chapters.find(c => c.id === chapterId).title;
-  const thisPart = Parts.find(p => p.chapter === chapterId && p.id === partId);
+  const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
+  const thisPart = _.find(
+    Parts,
+    p => p.chapter === chapterId && p.id === partId
+  );
 
   return (
     <div>

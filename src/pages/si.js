@@ -131,14 +131,14 @@ class SI extends Component {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    let statuteOptions = data
-      // eslint-disable-next-line
-      .filter(d => d.Title == this.state.title)
-      .map(x => x.Statute);
+    let statuteOptions = _.filter(data, d => d.Title == this.state.title).map(
+      x => x.Statute
+    );
 
     return inputLength === 0
       ? statuteOptions
-      : statuteOptions.filter(
+      : _.filter(
+          statuteOptions,
           s => s.toLowerCase().slice(0, inputLength) === inputValue
         );
   }

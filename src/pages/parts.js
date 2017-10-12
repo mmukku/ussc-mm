@@ -5,12 +5,13 @@ import HomeLink from '../components/homeLink';
 import SectionsLink from '../components/sectionsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import Chapters from '../data/chapters.json';
+import _ from 'lodash';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
-  let partsList = parts.filter(p => p.chapter === chapterId).map(p => {
+  let partsList = _.filter(parts, p => p.chapter === chapterId).map(p => {
     let hasSections =
-      sections.find(s => s.chapter === chapterId && s.part === p.id) !==
+      _.find(sections, s => s.chapter === chapterId && s.part === p.id) !==
       undefined;
 
     if (hasSections) {
@@ -43,7 +44,7 @@ export default props => {
     return null;
   });
 
-  const thisChapter = Chapters.find(c => c.id === chapterId);
+  const thisChapter = _.find(Chapters, c => c.id === chapterId);
   return (
     <div>
       <h6>

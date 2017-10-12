@@ -7,12 +7,14 @@ import GuidelineLink from '../components/guidelineLink';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
 import Chapters from '../data/chapters.json';
+import _ from 'lodash';
 
 export default props => {
   let chapterId = props.match.params.chapterId;
   let partId = props.match.params.part;
   let sectionId = props.match.params.sectionId;
-  let filtered = guideLines.filter(
+  let filtered = _.filter(
+    guideLines,
     gl => gl.chapter === chapterId && gl.part === partId
   );
 
@@ -20,8 +22,9 @@ export default props => {
   let sectionContent = null;
 
   if (sectionId !== undefined) {
-    filtered = filtered.filter(gl => gl.section === sectionId);
-    let section = Sections.find(
+    filtered = _.filter(filtered, gl => gl.section === sectionId);
+    let section = _.find(
+      Sections,
       s => s.chapter === chapterId && s.part === partId && s.id === sectionId
     );
     if (section !== undefined) {
@@ -30,7 +33,7 @@ export default props => {
     }
   }
 
-  let guidelineList = filtered.map(gl => (
+  let guidelineList = _.map(filtered, gl => (
     <p key={gl.id}>
       <GuidelineLink id={gl.id}>
         {gl.id} -{gl.title}
@@ -48,7 +51,8 @@ export default props => {
       </SectionsLink>
     );
     text = <span>&nbsp; > &nbsp; {`Section ${sectionId}`}</span>;
-    navList = Sections.filter(
+    navList = _.filter(
+      Sections,
       s => s.chapter === chapterId && s.part === partId
     ).map(s => {
       if (s.id !== sectionId) {
@@ -64,7 +68,7 @@ export default props => {
       return null;
     });
   } else {
-    navList = Parts.filter(p => p.chapter === chapterId).map(p => {
+    navList = _.filter(Parts, p => p.chapter === chapterId).map(p => {
       if (p.id !== partId) {
         return (
           <option
@@ -79,9 +83,12 @@ export default props => {
     });
   }
 
-  const chapterTitle = Chapters.find(c => c.id === chapterId).title;
+  const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
 
-  const thisPart = Parts.find(p => p.chapter === chapterId && p.id === partId);
+  const thisPart = _.find(
+    Parts,
+    p => p.chapter === chapterId && p.id === partId
+  );
   let partContent = null;
   if (sectionContent == null) {
     partContent = thisPart.content;
