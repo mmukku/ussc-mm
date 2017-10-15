@@ -278,7 +278,7 @@
     "min": 300,
     "uom": "g",
     "max": 1,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 32
   },
   {
@@ -376,7 +376,7 @@
     "min": 100,
     "uom": "g",
     "max": 300,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 30
   },
   {
@@ -474,7 +474,7 @@
     "min": 70,
     "uom": "g",
     "max": 100,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 28
   },
   {
@@ -744,7 +744,7 @@
     "min": 8,
     "uom": "g",
     "max": 10,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 22
   },
   { "min": 80, "uom": "kg", "max": 100, "substance": "Marihuana", "level": 22 },
@@ -824,7 +824,7 @@
     "min": 6,
     "uom": "g",
     "max": 8,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 20
   },
   { "min": 60, "uom": "kg", "max": 80, "substance": "Marihuana", "level": 20 },
@@ -910,7 +910,7 @@
     "min": 4,
     "uom": "g",
     "max": 6,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 18
   },
   { "min": 40, "uom": "kg", "max": 60, "substance": "Marihuana", "level": 18 },
@@ -997,7 +997,7 @@
     "min": 2,
     "uom": "g",
     "max": 4,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 16
   },
   { "min": 20, "uom": "kg", "max": 40, "substance": "Marihuana", "level": 16 },
@@ -1084,7 +1084,7 @@
     "min": 1,
     "uom": "g",
     "max": 2,
-    "substance": "a Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 14
   },
   { "min": 10, "uom": "kg", "max": 20, "substance": "Marihuana", "level": 14 },

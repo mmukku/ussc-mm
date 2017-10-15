@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import data from '../data/dol.json';
 import _ from 'lodash';
 
-const substanceList = _.uniqBy(data, 'substance').map(ol => (
+let substanceList = _.uniqBy(data, 'substance');
+
+substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
   <option key={ol.substance}>{ol.substance}</option>
 ));
 

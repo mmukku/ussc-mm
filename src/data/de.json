@@ -241,7 +241,7 @@
     "targetUOM": "gm"
   },
   {
-    "substance": "gamma-hydroxybutyric acid",
+    "substance": "Gamma-Hydroxybutyric Acid",
     "substanceUOM": "ml",
     "targetWeight": 8.8,
     "targetUOM": "gm"
@@ -253,7 +253,7 @@
     "targetUOM": "gm"
   },
   {
-    "substance": "ketamine",
+    "substance": "Ketamine",
     "substanceUOM": "units",
     "targetWeight": 1,
     "targetUOM": "gm"
@@ -280,7 +280,7 @@
     "targetUOM": "gm"
   },
   {
-    "substance": "gamma butyrolactone",
+    "substance": "Gamma Butyrolactone",
     "substanceUOM": "ml",
     "targetWeight": 8.8,
     "targetUOM": "gm"
