@@ -137,7 +137,7 @@ class DE extends Component {
   }
 
   calculate(e) {
-    let s = _.find(data, x => x.substance !== this.state.substance);
+    let s = _.find(data, x => x.substance === this.state.substance);
 
     if (s !== undefined) {
       this.setState({ marihuana: s });

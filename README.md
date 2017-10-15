@@ -32,8 +32,11 @@ Make sure that following lines are added at the top of build/manifest.appcache f
 /index.html
 ```
 
-
 Copy the contents of build folder to deploy machine.
+
+For the offline feature to work, the site must be serving requests over https.
+
+As we are using client side router, we don't have the physical files at the web server, so we need to tell web server to server the root of the site and not fail with 404.
 
 When deploying on IIS, make sure the [Url Rewrite Module](https://www.iis.net/downloads/microsoft/url-rewriteURL) is installed.
 
