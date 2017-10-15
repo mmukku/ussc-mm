@@ -69,8 +69,8 @@ export default props => {
       </p>
       <p>
         10 ► Consider the applicable factors in{' '}
-        <a href="/appendixb"> 18 U.S.C.§ 3553(a) </a> taken as a whole and
-        determine sentence to impose.
+        <a href="/ab/18U.S.C.§3553"> 18 U.S.C.§ 3553(a) </a> taken as a whole
+        and determine sentence to impose.
       </p>
     </div>
   );
