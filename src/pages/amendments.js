@@ -39,8 +39,8 @@ class Amendments extends React.Component {
   renderSearchResults() {
     return this.state.searchResults.map(r => (
       <section
-        key={r}
         className="usa-section"
+        key={r}
         dangerouslySetInnerHTML={{
           __html: _.find(data, a => a.id === r).content
         }}
@@ -75,7 +75,7 @@ class Amendments extends React.Component {
     }
     return (
       <button className="usa-button" disabled>
-        Next &nbsp;&gt;
+        Next &gt;
       </button>
     );
   }
@@ -83,22 +83,22 @@ class Amendments extends React.Component {
   navigation() {
     if (this.state.searchResults.length === 1) {
       return (
-        <div className="usa-section">
-          <div className="usa-width-one-half">{this.prevButton()}</div>
-          <div className="usa-width-one-half">{this.nextButton()}</div>
-        </div>
+        <p>
+          <section className="usa-width-one-half">{this.prevButton()}</section>
+          <section className="usa-width-one-half">{this.nextButton()}</section>
+        </p>
       );
     }
   }
 
   render() {
-    let content = 'No Results.';
+    let content = '<p><strong>No Results</strong></div>';
     if (this.state.searchResults.length > 0) {
       content = this.renderSearchResults();
     }
 
     return (
-      <div className="usa-section">
+      <div>
         <div className="usa-section">
           <div className="usa-width-one-half">
             <h2>Amendments</h2>
