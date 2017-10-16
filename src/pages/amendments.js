@@ -1,55 +1,119 @@
 import React from 'react';
-import Pagination from '../components/pagination';
 import data from '../data/appendix-c';
-//import Remarkable from 'remarkable';
-//var md = new Remarkable({ html: true });
+import _ from 'lodash';
 
 class Amendments extends React.Component {
   constructor() {
     super();
     this.state = {
-      exampleItems: data,
-      pageOfItems: []
+      slug: '1',
+      searchResults: [1]
     };
 
-    // bind function in constructor instead of render (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
-    this.onChangePage = this.onChangePage.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
-  onChangePage(pageOfItems) {
-    // update state with new page of items
-    this.setState({ pageOfItems: pageOfItems });
+  handleSearch(event) {
+    var currentValue = event.target.value;
+
+    this.filter(currentValue);
   }
 
-  getRawMarkup(text) {
-    //var md = new Remarkable({ html: true });
-    //return { __html: md.render(text) };
+  filter(currentValue) {
+    this.setState({ slug: currentValue });
+    let results = [];
+    if (_.toNumber(currentValue) > 0) {
+      results = _.filter(data, a => a.id === _.toNumber(currentValue)).map(
+        a => a.id
+      );
+    } else {
+      console.log(typeof currentValue);
+      results = _.filter(data, a => a.edt === _.toString(currentValue)).map(
+        a => a.id
+      );
+    }
+
+    this.setState({ searchResults: results });
+  }
+
+  renderSearchResults() {
+    return this.state.searchResults.map(r => (
+      <section
+        key={r}
+        className="usa-section"
+        dangerouslySetInnerHTML={{
+          __html: _.find(data, a => a.id === r).content
+        }}
+      />
+    ));
+  }
+
+  prevButton() {
+    let current = this.state.searchResults[0];
+    if (current > 1) {
+      return (
+        <button className="usa-button" onClick={() => this.filter(current - 1)}>
+          &lt; Previous
+        </button>
+      );
+    }
+    return (
+      <button className="usa-button" disabled>
+        &lt; Previous
+      </button>
+    );
+  }
+
+  nextButton() {
+    let current = this.state.searchResults[0];
+    if (current < data.length) {
+      return (
+        <button className="usa-button" onClick={() => this.filter(current + 1)}>
+          Next &gt;
+        </button>
+      );
+    }
+    return (
+      <button className="usa-button" disabled>
+        Next &nbsp;&gt;
+      </button>
+    );
+  }
+
+  navigation() {
+    if (this.state.searchResults.length === 1) {
+      return (
+        <div className="usa-section">
+          <div className="usa-width-one-half">{this.prevButton()}</div>
+          <div className="usa-width-one-half">{this.nextButton()}</div>
+        </div>
+      );
+    }
   }
 
   render() {
+    let content = 'No Results.';
+    if (this.state.searchResults.length > 0) {
+      content = this.renderSearchResults();
+    }
+
     return (
       <div className="usa-section">
-        <div>
+        <div className="usa-section">
           <div className="usa-width-one-half">
             <h2>Amendments</h2>
           </div>
           <div className="usa-width-one-half">
-            <Pagination
-              items={this.state.exampleItems}
-              onChangePage={this.onChangePage}
-              pageSize={1}
+            <input
+              onChange={this.handleSearch}
+              value={this.state.slug}
+              placeholder="Search by amemdment number or mm/dd/yyyy"
             />
           </div>
         </div>
-
-        {this.state.pageOfItems.map(item => (
-          <div key={item.id}>
-            <section
-              className="usa-section"
-              dangerouslySetInnerHTML={{ __html: item.content }}
-            />
-          </div>
-        ))}
+        {this.navigation()}
+        {content}
+        {this.navigation()}
       </div>
     );
   }

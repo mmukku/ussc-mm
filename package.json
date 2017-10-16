@@ -4,8 +4,7 @@
   "private": true,
   "dependencies": {
     "appcache-nanny": "^1.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
+    "elasticlunr": "^0.9.5",
     "lodash": "^4.17.4",
     "prettier": "^1.6.0",
     "react": "^15.6.1",
@@ -15,11 +14,12 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.12",
     "react-ultimate-pagination": "^1.0.2",
-    "remarkable": "^1.7.1",
     "uswds": "^1.3.1"
   },
   "devDependencies": {
-    "appcache-manifest": "^2.1.0"
+    "lint-staged": "^4.0.4",
+    "appcache-manifest": "^2.1.0",
+    "husky": "^0.14.3"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -29,7 +29,6 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "md2html": "remarkable _guidelines/chapter1.md > public/chapter1.html && remarkable _guidelines/chapter2.md > public/chapter2.html && remarkable _guidelines/chapter3.md > public/chapter3.html && remarkable _guidelines/chapter4.md > public/chapter4.html && remarkable _guidelines/chapter5.md > public/chapter5.html && remarkable _guidelines/chapter6.md > public/chapter6.html && remarkable _guidelines/chapter7.md > public/chapter7.html && remarkable _guidelines/chapter8.md > public/chapter8.html ",
     "start": "react-scripts start",
     "build": "react-scripts build && appcache-manifest --stamp -p /static build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
