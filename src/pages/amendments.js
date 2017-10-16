@@ -6,31 +6,42 @@ class Amendments extends React.Component {
   constructor() {
     super();
     this.state = {
-      slug: '1',
+      slug: '',
       searchResults: [1]
     };
 
-    this.handleSearch = this.handleSearch.bind(this);
-  }
-
-  handleSearch(event) {
-    var currentValue = event.target.value;
-
-    this.filter(currentValue);
+    this.filter = this.filter.bind(this);
   }
 
   filter(currentValue) {
-    this.setState({ slug: currentValue });
+    if (currentValue !== undefined) {
+      this.setState({ slug: currentValue });
+    } else {
+      currentValue = this.state.slug;
+    }
+
     let results = [];
     if (_.toNumber(currentValue) > 0) {
       results = _.filter(data, a => a.id === _.toNumber(currentValue)).map(
         a => a.id
       );
     } else {
-      console.log(typeof currentValue);
-      results = _.filter(data, a => a.edt === _.toString(currentValue)).map(
-        a => a.id
-      );
+      var d = new Date(currentValue);
+      if (_.isDate(d)) {
+        let delimiter = '/';
+        function pad(s) {
+          return s < 10 ? '0' + s : s;
+        }
+        let formatted = [
+          pad(d.getMonth() + 1),
+          pad(d.getDate()),
+          d.getFullYear()
+        ].join(delimiter);
+        console.log(formatted);
+        results = _.filter(data, a => a.edt === _.toString(formatted)).map(
+          a => a.id
+        );
+      }
     }
 
     this.setState({ searchResults: results });
@@ -83,34 +94,50 @@ class Amendments extends React.Component {
   navigation() {
     if (this.state.searchResults.length === 1) {
       return (
-        <p>
-          <section className="usa-width-one-half">{this.prevButton()}</section>
-          <section className="usa-width-one-half">{this.nextButton()}</section>
-        </p>
+        <div style={{ float: 'right' }}>
+          <span className="usa-button-list">
+            <span>{this.prevButton()}</span>
+            <span>{this.nextButton()}</span>
+          </span>
+        </div>
       );
     }
   }
 
   render() {
-    let content = '<p><strong>No Results</strong></div>';
+    let content = (
+      <p>
+        <strong>No Amendments found.</strong>
+      </p>
+    );
     if (this.state.searchResults.length > 0) {
       content = this.renderSearchResults();
     }
 
     return (
       <div>
-        <div className="usa-section">
-          <div className="usa-width-one-half">
-            <h2>Amendments</h2>
-          </div>
-          <div className="usa-width-one-half">
+        <h2>Amendments</h2>
+        <form
+          className="usa-search usa-search-big"
+          onSubmit={e => {
+            this.filter(this.state.slug);
+            e.preventDefault();
+          }}
+        >
+          <div role="search">
             <input
-              onChange={this.handleSearch}
+              id="search-field-big"
+              type="search"
+              name="search"
+              onChange={e => this.setState({ slug: e.target.value })}
               value={this.state.slug}
-              placeholder="Search by amemdment number or mm/dd/yyyy"
+              placeholder="Search by amemdment number or date"
             />
+            <button type="submit">
+              <span className="usa-search-submit-text">Search</span>
+            </button>
           </div>
-        </div>
+        </form>
         {this.navigation()}
         {content}
         {this.navigation()}
