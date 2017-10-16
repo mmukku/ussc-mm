@@ -51,10 +51,7 @@ class GuideLine extends Component {
 
     let guidelineList = _.map(guideLines, gl => {
       if (gl.id !== id) {
-        let link = `/chapters/${chapterId}/parts/${partId}/guidelines/${gl.id}`;
-        if (sectionId !== undefined) {
-          link = `/chapters/${chapterId}/parts/${partId}/sections/${sectionId}/guidelines/${gl.id}`;
-        }
+        let link = `/guidelines/${gl.id}`;
 
         return (
           <option key={gl.id} value={link}>

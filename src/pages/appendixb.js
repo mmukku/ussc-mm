@@ -290,17 +290,17 @@ export default params => {
         <strong>(classified at 28 U.S.C. § 994 notes)</strong>
       </p>
       <p>
-        <a href="appendixb/PUB.L.100–690">
+        <a href="/ab/PUB.L.100–690">
           <strong>ANTI DRUG ABUSE ACT OF 1988(PUB. L. 100–690)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.101–647">
+        <a href="/ab/PUB.L.101–647">
           <strong>CRIME CONTROL ACT OF 1990(PUB. L. 101–647)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.102–141">
+        <a href="/ab/PUB.L.102–141">
           <strong>
             TREASURY, POSTAL SERVICE ANDGENERAL GOVERNMENTAPPROPRIATIONS ACT,
             1992(PUB. L. 102–141)
@@ -308,7 +308,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.103–322">
+        <a href="/ab/PUB.L.103–322">
           <strong>
             VIOLENT CRIME CONTROL ANDLAW ENFORCEMENT ACT OF 1994(PUB. L.
             103–322)
@@ -316,7 +316,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–38">
+        <a href="/ab/PUB.L.104–38">
           <strong>
             ACT TO DISAPPROVE OF AMENDMENTS TO THE FEDERAL SENTENCING GUIDELINES
             RELATING TO LOWERING OF CRACKSENTENCES AND SENTENCES FOR MONEY
@@ -326,14 +326,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–71">
+        <a href="/ab/PUB.L.104–71">
           <strong>
             SEX CRIMES AGAINST CHILDREN PREVENTION ACT OF 1995(PUB. L. 104–71)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–132">
+        <a href="/ab/PUB.L.104–132">
           <strong>
             ANTITERRORISM AND EFFECTIVE DEATH PENALTY ACT OF 1996orMANDATORY
             VICTIMS RESTITUTION ACT OF 1996(PUB. L. 104–132)
@@ -341,7 +341,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–201">
+        <a href="/ab/PUB.L.104–201">
           <strong>
             NATIONAL DEFENSE AUTHORIZATION ACT FOR FISCAL YEAR 1997(PUB. L.
             104–201)
@@ -349,7 +349,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–208">
+        <a href="/ab/PUB.L.104–208">
           <strong>
             OMNIBUS CONSOLIDATED APPROPRIATIONS ACT, 1997orILLEGAL IMMIGRATION
             REFORM AND IMMIGRANT RESPONSIBILITY ACT OF 1996(PUB. L. 104–208)
@@ -357,19 +357,19 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–237">
+        <a href="/ab/PUB.L.104–237">
           <strong>
             COMPREHENSIVE METHAMPHETAMINE CONTROL ACT OF 1996(PUB. L. 104–237)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–294">
+        <a href="/ab/PUB.L.104–294">
           <strong>ECONOMIC ESPIONAGE ACT OF 1996(PUB. L. 104–294)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.104–305">
+        <a href="/ab/PUB.L.104–305">
           <strong>
             DRUG-INDUCED RAPE PREVENTION AND PUNISHMENT ACT OF 1996(PUB. L.
             104–305)
@@ -377,31 +377,31 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–101">
+        <a href="/ab/PUB.L.105–101">
           <strong>
             VETERANS’ CEMETERY PROTECTION ACT OF 1997(PUB. L. 105–101)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–147">
+        <a href="/ab/PUB.L.105–147">
           <strong>NO ELECTRONIC THEFT (NET) ACT(PUB. L. 105–147)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–172">
+        <a href="/ab/PUB.L.105–172">
           <strong>WIRELESS TELEPHONE PROTECTION ACT(PUB. L. 105–172)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–184">
+        <a href="/ab/PUB.L.105–184">
           <strong>
             TELEMARKETING FRAUD PROTECTION ACT OF 1998(PUB. L. 105–184)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–314">
+        <a href="/ab/PUB.L.105–314">
           <strong>
             PROTECTION OF CHILDREN FROM SEXUAL PREDATORS ACT OF 1998(PUB. L.
             105–314)
@@ -409,7 +409,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.105–318">
+        <a href="/ab/PUB.L.105–318">
           <strong>
             IDENTITY THEFT AND ASSUMPTION DETERRENCE ACT OF 1998(PUB. L.
             105–318)
@@ -417,7 +417,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.106–160">
+        <a href="/ab/PUB.L.106–160">
           <strong>
             DIGITAL THEFT DETERRENCE AND COPYRIGHT DAMAGES IMPROVEMENT ACT OF
             1999(PUB. L. 106–160)
@@ -425,7 +425,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.106–310">
+        <a href="/ab/PUB.L.106–310">
           <strong>
             CHILDREN’S HEALTH ACT OF 2000orMETHAMPHETAMINE ANTI-PROLIFERATION
             ACT OF 2000(PUB. L. 106–310)
@@ -433,7 +433,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.106–386">
+        <a href="/ab/PUB.L.106–386">
           <strong>
             VICTIMS OF TRAFFICKING AND VIOLENCE PROTECTION ACT OF 2000(PUB. L.
             106–386)
@@ -441,14 +441,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.106–420">
+        <a href="/ab/PUB.L.106–420">
           <strong>
             COLLEGE SCHOLARSHIP FRAUD PREVENTION ACT OF 2000(PUB. L. 106–420)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.107–56">
+        <a href="/ab/PUB.L.107–56">
           <strong>
             UNITING AND STRENGTHENING AMERICA BY PROVIDING APPROPRIATE TOOLS
             REQUIRED TO INTERCEPT AND OBSTRUCT TERRORISM ACT OF 2001orUSA
@@ -457,14 +457,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.107–155">
+        <a href="/ab/PUB.L.107–155">
           <strong>
             BIPARTISAN CAMPAIGN REFORM ACT OF 2002(PUB. L. 107–155)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.107–296">
+        <a href="/ab/PUB.L.107–296">
           <strong>
             HOMELAND SECURITY ACT OF 2002orCYBER SECURITY ENHANCEMENT ACT OF
             2002(PUB. L. 107–296)
@@ -472,7 +472,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–21">
+        <a href="/ab/PUB.L.108–21">
           <strong>
             PROSECUTORIAL REMEDIES AND OTHER TOOLS TO END THE EXPLOITATION OF
             CHILDREN TODAY ACT OF 2003orTHE PROTECT ACT(PUB. L. 108–21)
@@ -480,7 +480,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–187">
+        <a href="/ab/PUB.L.108–187">
           <strong>
             CONTROLLING THE ASSAULT OF NON-SOLICITED PORNOGRAPHYAND MARKETING
             ACT OF 2003orCAN-SPAM ACT OF 2003(PUB. L. 108–187)
@@ -488,19 +488,19 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–275">
+        <a href="/ab/PUB.L.108–275">
           <strong>
             IDENTITY THEFT PENALTY ENHANCEMENT ACT(PUB. L. 108–275)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–358">
+        <a href="/ab/PUB.L.108–358">
           <strong>ANABOLIC STEROID CONTROL ACT OF 2004(PUB. L. 108–358)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–458">
+        <a href="/ab/PUB.L.108–458">
           <strong>
             INTELLIGENCE REFORM AND TERRORISM PREVENTION ACT OF 2004orSTOP
             TERRORIST AND MILITARY HOAXES ACT OF 2004(PUB. L. 108–458)
@@ -508,7 +508,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.108–482">
+        <a href="/ab/PUB.L.108–482">
           <strong>
             INTELLECTUAL PROPERTY PROTECTION AND COURTS AMENDMENTS ACT OF
             2004orFRAUDULENT ONLINE IDENTITY SANCTIONS ACT(PUB. L. 108–482)
@@ -516,7 +516,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–9">
+        <a href="/ab/PUB.L.109–9">
           <strong>
             FAMILY ENTERTAINMENT AND COPYRIGHT ACT OF 2005orARTISTS’ RIGHTS AND
             THEFT PREVENTION ACT OF 2005 (ART ACT)
@@ -524,7 +524,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–76">
+        <a href="/ab/PUB.L.109–76">
           <strong>
             UNITED STATES PAROLE COMMISSION EXTENSION AND SENTENCING COMMISSION
             AUTHORITY ACT OF 2005(PUB. L. 109–76)
@@ -532,7 +532,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–162">
+        <a href="/ab/PUB.L.109–162">
           <strong>
             VIOLENCE AGAINST WOMEN AND DEPARTMENT OF JUSTICE REAUTHORIZATION ACT
             OF 2005 (PUB. L. 109–162)
@@ -540,7 +540,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–177">
+        <a href="/ab/PUB.L.109–177">
           <strong>
             USA PATRIOT IMPROVEMENT AND REAUTHORIZATION ACT OF 2005(PUB. L.
             109–177)
@@ -548,14 +548,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–181">
+        <a href="/ab/PUB.L.109–181">
           <strong>
             STOP COUNTERFEITING IN MANUFACTURED GOODS ACT(PUB. L. 109–181)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–248">
+        <a href="/ab/PUB.L.109–248">
           <strong>
             ADAM WALSH CHILD PROTECTION AND SAFETY ACT OF 2006orSEX OFFENDER
             REGISTRATION AND NOTIFICATION ACT(PUB. L. 109–248)
@@ -563,7 +563,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–295">
+        <a href="/ab/PUB.L.109–295">
           <strong>
             DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS ACT, 2007(PUB. L.
             109–295)
@@ -571,7 +571,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.109–476">
+        <a href="/ab/PUB.L.109–476">
           <strong>
             TELEPHONE RECORDS AND PRIVACY PROTECTION ACT OF 2006(PUB. L.
             109–476)
@@ -579,14 +579,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–177">
+        <a href="/ab/PUB.L.110–177">
           <strong>
             COURT SECURITY IMPROVEMENT ACT OF 2007(PUB. L. 110–177)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–179">
+        <a href="/ab/PUB.L.110–179">
           <strong>
             EMERGENCY AND DISASTER ASSISTANCE FRAUD PENALTY ENHANCEMENT ACTOF
             2007(PUB. L. 110–179)
@@ -594,7 +594,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–326">
+        <a href="/ab/PUB.L.110–326">
           <strong>
             FORMER VICE PRESIDENT PROTECTION ACT OF 2008orIDENTITY THEFT
             ENFORCEMENT AND RESTITUTION ACT OF 2008(PUB. L. 110–326)
@@ -602,21 +602,21 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–384">
+        <a href="/ab/PUB.L.110–384">
           <strong>
             LET OUR VETERANS REST IN PEACE ACT OF 2008(PUB. L. 110–384)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–407">
+        <a href="/ab/PUB.L.110–407">
           <strong>
             DRUG TRAFFICKING VESSEL INTERDICTION ACT OF 2008(PUB. L. 110–407)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–425">
+        <a href="/ab/PUB.L.110–425">
           <strong>
             RYAN HAIGHT ONLINE PHARMACY CONSUMER PROTECTION ACT OF 2008(PUB. L.
             110–425)
@@ -624,7 +624,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.110–457">
+        <a href="/ab/PUB.L.110–457">
           <strong>
             WILLIAM WILBERFORCE TRAFFICKING VICTIMS PROTECTIONREAUTHORIZATION
             ACT OF 2008(PUB. L. 110–457)
@@ -632,7 +632,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.111–84">
+        <a href="/ab/PUB.L.111–84">
           <strong>
             NATIONAL DEFENSE AUTHORIZATION ACT FOR FISCAL YEAR 2010orMATTHEW
             SHEPARD AND JAMES BYRD, JR. HATE CRIMES PREVENTION ACT(PUB. L.
@@ -641,14 +641,14 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.111–148">
+        <a href="/ab/PUB.L.111–148">
           <strong>
             PATIENT PROTECTION AND AFFORDABLE CARE ACT(PUB. L. 111–148)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.111–203">
+        <a href="/ab/PUB.L.111–203">
           <strong>
             DODD–FRANK WALL STREET REFORM AND CONSUMER PROTECTION ACT(PUB. L.
             111–203)
@@ -656,19 +656,19 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.111–220">
+        <a href="/ab/PUB.L.111–220">
           <strong>FAIR SENTENCING ACT OF 2010(PUB. L. 111–220)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.111–273">
+        <a href="/ab/PUB.L.111–273">
           <strong>
             SECURE AND RESPONSIBLE DRUG DISPOSAL ACT(PUB. L. 111–273)
           </strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.112–144">
+        <a href="/ab/PUB.L.112–144">
           <strong>
             FOOD AND DRUG ADMINISTRATION SAFETY AND INNOVATION ACT(PUB. L.
             112–144)
@@ -676,7 +676,7 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.112–186">
+        <a href="/ab/PUB.L.112–186">
           <strong>
             STRENGTHENING AND FOCUSINGENFORCEMENT TO DETER ORGANIZED STEALING
             AND ENHANCE SAFETY ACT OF 2012orSAFE DOSES ACT(PUB. L. 112–186)
@@ -684,12 +684,12 @@ export default params => {
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.112–206">
+        <a href="/ab/PUB.L.112–206">
           <strong>CHILD PROTECTION ACT OF 2012(PUB. L. 112–206)</strong>
         </a>
       </p>
       <p>
-        <a href="appendixb/PUB.L.112–269">
+        <a href="/ab/PUB.L.112–269">
           <strong>
             FOREIGN AND ECONOMIC ESPIONAGE PENALTY ENHANCEMENT ACT OF 2012(PUB.
             L. 112–269)
