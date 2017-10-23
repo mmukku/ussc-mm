@@ -5,7 +5,7 @@ import Container from './components/container';
 import asyncComponent from './components/asyncComponent';
 
 const AsyncHome = asyncComponent(() => import('./pages/home'));
-const AsyncSC = asyncComponent(() => import('./pages/sc'));
+const AsyncGRC = asyncComponent(() => import('./pages/grc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncDE = asyncComponent(() => import('./pages/de'));
@@ -69,9 +69,9 @@ class USSCRouter extends Component {
             />
             <Route
               exact
-              path="/sc"
-              component={AsyncSC}
-              title="Sentencing Calculator"
+              path="/grc"
+              component={AsyncGRC}
+              title="Guideline Range Calculator"
             />
             <Route
               exact

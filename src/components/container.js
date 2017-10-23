@@ -176,8 +176,8 @@ class Container extends Component {
                   </ul>
                 </li>
                 <li>
-                  <Link to="/sc" className="usa-nav-link">
-                    <span>Sentencing Calculator</span>
+                  <Link to="/grc" className="usa-nav-link">
+                    <span>Guideline Range Calculator</span>
                   </Link>
                 </li>
                 <li>
