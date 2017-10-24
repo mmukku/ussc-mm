@@ -131,7 +131,7 @@ class SI extends Component {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    let statuteOptions = _.filter(data, d => d.Title == this.state.title).map(
+    let statuteOptions = _.filter(data, d => d.Title === this.state.title).map(
       x => x.Statute
     );
 
@@ -164,8 +164,7 @@ class SI extends Component {
   search() {
     let results = _.find(
       data,
-      // eslint-disable-next-line
-      d => d.Title == this.state.title && d.Statute == this.state.statute
+      d => d.Title === this.state.title && d.Statute === this.state.statute
     );
     if (results === undefined) return;
 

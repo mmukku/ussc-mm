@@ -63,7 +63,7 @@ class GuideLine extends Component {
     });
     let thisgl = _.find(Data, gl => gl.id === id);
     let content;
-    if (thisgl != undefined) {
+    if (thisgl !== undefined) {
       content = thisgl.content;
     }
     this.setState({
