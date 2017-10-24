@@ -16,9 +16,9 @@
     "uswds": "^1.3.1"
   },
   "devDependencies": {
-    "lint-staged": "^4.0.4",
     "appcache-manifest": "^2.1.0",
     "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
     "prettier": "^1.6.0"
   },
   "lint-staged": {
@@ -28,7 +28,7 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
+    "precommit": "",
     "start": "react-scripts start",
     "build": "react-scripts build && appcache-manifest --stamp -p /static build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
