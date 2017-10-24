@@ -28,7 +28,7 @@
     ]
   },
   "scripts": {
-    "precommit": "",
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build && appcache-manifest --stamp -p /static build/static/**/*.{html,css,js,png,svg} -o build/manifest.appcache",
     "test": "react-scripts test --env=jsdom",
