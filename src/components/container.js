@@ -6,6 +6,7 @@ import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
 import iconhttps from 'uswds/dist/img/icon-https.svg';
 import close from 'uswds/dist/img/close.svg';
 import { Link } from 'react-router-dom';
+import SearchGuidelines from './searchGuidelines';
 // import '../ussc.css';
 
 class Container extends Component {
@@ -191,17 +192,7 @@ class Container extends Component {
                   </Link>
                 </li>
               </ul>
-              <form className="usa-search usa-search-small">
-                <div role="search">
-                  <label className="usa-sr-only" htmlFor="search-field-small">
-                    Search small
-                  </label>
-                  <input id="search-field-small" type="search" name="slug" />
-                  <button type="submit">
-                    <span className="usa-sr-only">Search</span>
-                  </button>
-                </div>
-              </form>
+              <SearchGuidelines />
             </nav>
           </div>
         </header>

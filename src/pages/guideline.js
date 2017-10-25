@@ -63,7 +63,9 @@ class GuideLine extends Component {
     });
     let thisgl = _.find(Data, gl => gl.id === id);
     let content;
+    let title;
     if (thisgl !== undefined) {
+      title = thisgl.title;
       content = thisgl.content;
     }
     this.setState({
@@ -73,6 +75,7 @@ class GuideLine extends Component {
       chapterId: chapterId,
       sectionId: sectionId,
       partId: partId,
+      title: title,
       content: content
     });
   }
@@ -105,6 +108,7 @@ class GuideLine extends Component {
         </h6>
         <div className="usa-section">
           {this.state.imgContent}
+          <div dangerouslySetInnerHTML={{ __html: this.state.title }} />
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </div>
       </div>
