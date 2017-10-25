@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default props => {
-	let bookmark_id = parseInt(props.match.bookmarkId);
+	console.log(props);
+	let bookmark_id = parseInt(props.match.params.bookmarkId);
+	console.log(bookmark_id);
 	let bookmark_count = localStorage.getItem('ussc-bookmark-count');
 	if (bookmark_count === null)
 		bookmark_count = '0';
