@@ -20,7 +20,6 @@ const AsyncAppendixBPart = asyncComponent(() =>
   import('./pages/appendixbpart')
 );
 const AsyncArchives = asyncComponent(() => import('./pages/archives'));
-const AsyncAddBookmark = asyncComponent(() => import('./pages/add_bookmark'));
 const AsyncBookmarks = asyncComponent(() => import('./pages/bookmarks'));
 
 const title = 'USSC Guidelines';
@@ -33,14 +32,18 @@ class USSCRouter extends Component {
           <Helmet titleTemplate={`%s - ${title}`} />
           <Switch>
             <Route exact path="/" component={AsyncHome} title="Home" />
-			<Route path="/add_bookmark/" component={AsyncAddBookmark} title="Add Bookmark" />
             <Route
               exact
               path="/chapters"
               component={AsyncHome}
               title="Chapters"
             />
-			<Route exact path="/bookmarks" component={AsyncBookmarks} title="Bookmarks" />
+			<Route
+			  exact
+			  path="/bookmarks"
+			  component={AsyncBookmarks}
+			  title="Bookmarks"
+			/>
             <Route
               exact
               path="/chapters/:chapterId/parts"
