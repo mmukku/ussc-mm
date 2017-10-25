@@ -196,7 +196,7 @@ class Container extends Component {
                   <label className="usa-sr-only" htmlFor="search-field-small">
                     Search small
                   </label>
-                  <input id="search-field-small" type="search" name="search" />
+                  <input id="search-field-small" type="search" name="slug" />
                   <button type="submit">
                     <span className="usa-sr-only">Search</span>
                   </button>

@@ -37,7 +37,6 @@ class Amendments extends React.Component {
           pad(d.getDate()),
           d.getFullYear()
         ].join(delimiter);
-        console.log(formatted);
         results = _.filter(data, a => a.edt === _.toString(formatted)).map(
           a => a.id
         );

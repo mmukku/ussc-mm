@@ -8,7 +8,9 @@ import Parts from './pages/parts';
 import Sections from './pages/sections';
 import Guidelines from './pages/guidelines';
 import Guideline from './pages/guideline';
+//import Search from './pages/search';
 
+const AsyncSearch = asyncComponent(() => import('./pages/search'));
 const AsyncGRC = asyncComponent(() => import('./pages/grc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
@@ -33,6 +35,12 @@ class USSCRouter extends Component {
           <Switch>
             <Route exact path="/" component={Home} title="Home" />
             <Route exact path="/chapters" component={Home} title="Chapters" />
+            <Route
+              exact
+              path="/search/:slug?"
+              component={AsyncSearch}
+              title="Search"
+            />
             <Route
               exact
               path="/chapters/:chapterId/parts"

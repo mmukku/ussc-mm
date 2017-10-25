@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "appcache-nanny": "^1.1.0",
-    "elasticlunr": "^0.9.5",
     "lodash": "^4.17.4",
+    "lunr": "^2.1.4",
     "react": "^15.6.1",
     "react-autosuggest": "^9.3.2",
     "react-dom": "^15.6.1",
@@ -22,7 +22,7 @@
     "prettier": "^1.6.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "src/**/*.{js,jsx,css}": [
       "prettier --single-quote --write",
       "git add"
     ]
