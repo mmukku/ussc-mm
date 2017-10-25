@@ -1,43 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../App';
 import { Link } from 'react-router-dom';
+import App from '../App';
+import { count_bookmarks, read_bookmark, remove_bookmark } from '../bookmark';
 
-function remove_bookmark(bookmark_id) {
-	console.log('Hi ' + bookmark_id);
-	let bookmark_count = localStorage.getItem('ussc-bookmark-count');
-	if (bookmark_count === null)
-		bookmark_count = '0';
-	bookmark_count = parseInt(bookmark_count);
-	localStorage.removeItem('ussc-bookmarks.' + bookmark_id);
-	for (var i = bookmark_id + 1; i < bookmark_count; i++) {
-		localStorage.setItem(
-			'ussc-bookmarks.' + (i - 1),
-			localStorage.getItem('ussc-bookmarks.' + i)
-		);
-	}
-	localStorage.setItem('ussc-bookmark-count', bookmark_count - 1);
-	alert('Bookmark removed');
-	ReactDOM.render(<App />, document.getElementById('root'));
-}
-
-function remove_bookmark_closure(id) {
+/* return a function so that if the original variable changes the function is not affected; remove a bookmark,
+	let the user know, and refresh the page */
+export function remove_bookmark_wrapper(id) {
 	return function() {
 		remove_bookmark(id);
+		alert('Bookmark removed');
+		ReactDOM.render(<App />, document.getElementById('root'));
 	}
 }
 
 export default props => {
-	let bookmark_count = localStorage.getItem('ussc-bookmark-count');
-	if (bookmark_count === null)
-		bookmark_count = '0';
-	bookmark_count = parseInt(bookmark_count);
+	let bookmark_count = count_bookmarks();
 	let bookmarks_list = [];
 	for (var i = 0; i < bookmark_count; i++) {
-		let item = localStorage.getItem('ussc-bookmarks.' + i);
+		let item = read_bookmark(i);
 		bookmarks_list.push
 		(
-			<p><Link to={item}>{item}</Link> (<a href='#' onClick={remove_bookmark_closure(i)}>Remove Bookmark</a>)</p>
+			<p><Link to={item}>{item}</Link> (<a href='#' onClick={remove_bookmark_wrapper(i)}>Remove Bookmark</a>)</p>
 		);
 	}
 	return (
