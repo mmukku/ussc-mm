@@ -21,7 +21,6 @@ const AsyncAppendixBPart = asyncComponent(() =>
 );
 const AsyncArchives = asyncComponent(() => import('./pages/archives'));
 const AsyncAddBookmark = asyncComponent(() => import('./pages/add_bookmark'));
-const AsyncRemoveBookmark = asyncComponent(() => import('./pages/remove_bookmark'));
 const AsyncBookmarks = asyncComponent(() => import('./pages/bookmarks'));
 
 const title = 'USSC Guidelines';
@@ -35,12 +34,6 @@ class USSCRouter extends Component {
           <Switch>
             <Route exact path="/" component={AsyncHome} title="Home" />
 			<Route path="/add_bookmark/" component={AsyncAddBookmark} title="Add Bookmark" />
-			<Route
-			  exact
-			  path="/remove_bookmark/:bookmarkId"
-			  component={AsyncRemoveBookmark}
-			  title="Remove Bookmark"
-			/>
             <Route
               exact
               path="/chapters"
