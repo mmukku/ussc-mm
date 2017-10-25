@@ -51,6 +51,12 @@ RewriteRule ^ - [L]
 RewriteRule ^ /index.html [L]
 ```
 
+## Building index data for full text search on guidelines
+
+In the terminal from project root.  This creates gl_index.json file in data folder.
+
+node buildIndex.js
+
 ## src
 
 ### src/components
