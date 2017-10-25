@@ -4,6 +4,7 @@ import Parts from '../data/parts.json';
 import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
+import BookmarkLink from '../components/bookmarkLink';
 import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
@@ -53,6 +54,7 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp;Part {partId}
         </div>
+		<BookmarkLink path={props.location.pathname} />
         <div className="usa-width-one-half">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>

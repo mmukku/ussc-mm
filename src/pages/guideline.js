@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
+import BookmarkLink from '../components/bookmarkLink';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
 import _ from 'lodash';
@@ -96,6 +97,7 @@ class GuideLine extends Component {
             </GuideLinesLink>
             &nbsp; > &nbsp; {this.state.id}
           </div>
+		  <BookmarkLink path={this.props.location.pathname} />
           <div className="usa-width-one-half">
             <select onChange={e => (window.location = e.target.value)}>
               <option>Go to</option>

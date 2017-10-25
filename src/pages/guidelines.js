@@ -4,6 +4,7 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import SectionsLink from '../components/sectionsLink';
 import GuidelineLink from '../components/guidelineLink';
+import BookmarkLink from '../components/bookmarkLink';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
 import Chapters from '../data/chapters.json';
@@ -103,6 +104,7 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp; {bc} {text}
         </div>
+		<BookmarkLink path={props.location.pathname} />
         <div className="usa-width-one-half">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>

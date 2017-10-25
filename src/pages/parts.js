@@ -4,6 +4,7 @@ import sections from '../data/sections.json';
 import HomeLink from '../components/homeLink';
 import SectionsLink from '../components/sectionsLink';
 import GuideLinesLink from '../components/guidelinesLink';
+import BookmarkLink from '../components/bookmarkLink';
 import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
@@ -51,6 +52,7 @@ export default props => {
         <span className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;Chapter {chapterId}
         </span>
+		<BookmarkLink path={props.location.pathname} />
         <select onChange={e => (window.location = e.target.value)}>
           <option>Go to</option>
           {chapterList}

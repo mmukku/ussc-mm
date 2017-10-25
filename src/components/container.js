@@ -190,6 +190,11 @@ class Container extends Component {
                     <span>Drug Equivalency Calculator</span>
                   </Link>
                 </li>
+				<li>
+				  <Link to="/bookmarks" className="usa-nav-link">
+				    <span>Bookmarks</span>
+				  </Link>
+				</li>
               </ul>
               <form className="usa-search usa-search-small">
                 <div role="search">
