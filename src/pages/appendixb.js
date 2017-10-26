@@ -699,32 +699,6 @@ export default params => {
           </strong>
         </a>
       </p>
-      <div className="footnotes">
-        <hr />
-        <ol>
-          <li id="fn1">
-            <p>
-              So in original. The second comma probably should not appear.<a href="#fnref1">↩</a>
-            </p>
-          </li>
-          <li id="fn2">
-            <p>
-              <sup>1</sup> So in original. Probably should be “in relation”.<a href="#fnref2">↩</a>
-            </p>
-          </li>
-          <li id="fn3">
-            <p>
-              <sup>1</sup> So in original. Probably “defendant released” should
-              be “defendant”.<a href="#fnref3">↩</a>
-            </p>
-          </li>
-          <li id="fn4">
-            <p>
-              <sup>1</sup> So in original. Probably should be 28 U.S.C. note.<a href="#fnref4">↩</a>
-            </p>
-          </li>
-        </ol>
-      </div>
     </div>
   );
 };
