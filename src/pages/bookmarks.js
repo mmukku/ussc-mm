@@ -19,10 +19,12 @@ export default props => {
 	let bookmarks_list = [];
 	for (var i = 0; i < bookmark_count; i++) {
 		let item = read_bookmark(i);
-		bookmarks_list.push
-		(
-			<p><Link to={item}>{item}</Link> (<a href='#' onClick={remove_bookmark_wrapper(i)}>Remove Bookmark</a>)</p>
-		);
+		if (item !== null) {
+			bookmarks_list.push
+			(
+				<p><Link to={item.path}>{item.title}</Link> (<a href='#' onClick={remove_bookmark_wrapper(i)}>Remove Bookmark</a>)</p>
+			);
+		}
 	}
 	return (
 	  <div>

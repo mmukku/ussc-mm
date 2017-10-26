@@ -52,7 +52,7 @@ export default props => {
         <span className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;Chapter {chapterId}
         </span>
-		<BookmarkLink path={props.location.pathname} />
+		<BookmarkLink path={props.location.pathname} title={`Chapter ${chapterId} - ${thisChapter.title}`} />
         <select onChange={e => (window.location = e.target.value)}>
           <option>Go to</option>
           {chapterList}

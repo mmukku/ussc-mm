@@ -54,7 +54,7 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp;Part {partId}
         </div>
-		<BookmarkLink path={props.location.pathname} />
+		<BookmarkLink path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`} />
         <div className="usa-width-one-half">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>

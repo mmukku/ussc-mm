@@ -6,7 +6,16 @@ export function count_bookmarks() {
 }
 
 export function read_bookmark(bookmark_id) {
-	return localStorage.getItem('ussc-bookmarks.' + bookmark_id);
+	var bookmark_object;
+	try {
+		bookmark_object = JSON.parse(localStorage.getItem('ussc-bookmarks.' + bookmark_id));
+	} catch (e) {
+		return null;
+	}
+	if (!('path' in bookmark_object && 'title' in bookmark_object)) {
+		return null;
+	}
+	return bookmark_object;
 }
 
 export function remove_bookmark(bookmark_id) {
@@ -21,9 +30,9 @@ export function remove_bookmark(bookmark_id) {
 	localStorage.setItem('ussc-bookmark-count', bookmark_count - 1);
 }
 
-export function add_bookmark(path) {
+export function add_bookmark(path, title) {
 	let bookmark_count = count_bookmarks();
-	localStorage.setItem('ussc-bookmarks.' + bookmark_count, path);
+	localStorage.setItem('ussc-bookmarks.' + bookmark_count, JSON.stringify({path: path, title: title}));
 	bookmark_count++;
 	localStorage.setItem('ussc-bookmark-count', bookmark_count.toString());
 }

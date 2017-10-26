@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import BookmarkLink from '../components/bookmarkLink';
 
 export default params => {
+	console.log(params);
   return (
     <div>
-	  <BookmarkLink path={params.location.pathname} />
+	  <BookmarkLink path={params.location.pathname} title="Appendix B" />
       <p>
         <strong>APPENDIX B</strong>
       </p>
