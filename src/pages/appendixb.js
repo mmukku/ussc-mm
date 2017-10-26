@@ -296,6 +296,19 @@ export default params => {
         </a>
       </p>
       <p>
+        <a href="/ab/PUB.L.100–700">
+          <strong>Major Fraud Act of 1988 (Pub. L. 100–700)</strong>
+        </a>
+      </p>
+      <p>
+        <a href="/ab/PUB.L.101–73">
+          <strong>
+            Financial Institutions Reform, Recovery, and Enforcement Act of 1989
+            (Pub. L. 101–73)
+          </strong>
+        </a>
+      </p>
+      <p>
         <a href="/ab/PUB.L.101–647">
           <strong>Crime Control Act of 1990 (PUB. L. 101–647)</strong>
         </a>
@@ -461,6 +474,19 @@ export default params => {
         <a href="/ab/PUB.L.107–155">
           <strong>
             Bipartisan Campaign Reform Act of 2002 (PUB. L. 107–155)
+          </strong>
+        </a>
+      </p>
+      <p>
+        <a href="/ab/PUB.L.107–204">
+          <strong>Sarbanes-Oxley Act of 2002 (Pub. L. 107–204)</strong>
+        </a>
+      </p>
+      <p>
+        <a href="/ab/PUB.L.107–273">
+          <strong>
+            21st Century Department of Justice Appropriations Authorization Act
+            (Pub. L. 107–273)
           </strong>
         </a>
       </p>
