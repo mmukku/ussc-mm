@@ -25,7 +25,7 @@ class Search extends React.Component {
       console.log(slug, 'here');
       let results = idx.search(slug).map(r => (
         <li key={r.ref}>
-          <a href={`/guidelines/${r.ref}`}>{r.ref}</a>
+          <a href={`/gl/${r.ref}`}>{r.ref}</a>
           <div
             dangerouslySetInnerHTML={{
               __html: _.find(data, gl => gl.id === r.ref).title

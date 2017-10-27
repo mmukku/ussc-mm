@@ -116,7 +116,7 @@ class SI extends Component {
             inputProps={inputProps}
             theme={theme}
           />
-          <button onClick={this.search.bind(this)}>Go</button>
+          <button onClick={this.search}>Go</button>
         </section>
         {results}
       </div>
@@ -131,7 +131,7 @@ class SI extends Component {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    let statuteOptions = _.filter(data, d => d.Title === this.state.title).map(
+    let statuteOptions = _.filter(data, d => d.Title == this.state.title).map(
       x => x.Statute
     );
 
@@ -161,20 +161,20 @@ class SI extends Component {
     });
   };
 
-  search() {
+  search = () => {
     let results = _.find(
       data,
-      d => d.Title === this.state.title && d.Statute === this.state.statute
+      d => d.Title == this.state.title && d.Statute === this.state.statute
     );
     if (results === undefined) return;
 
     let guidelines = results.Guidelines.split(',').map(gl => (
       <li key={gl}>
-        <a href={`/guidelines/§${gl}`}>{gl}</a>
+        <a href={`/gl/§${gl}`}>{gl}</a>
       </li>
     ));
     this.setState({ guidelines: guidelines });
-  }
+  };
 }
 
 export default SI;

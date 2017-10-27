@@ -126,7 +126,7 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/amendments" className="usa-nav-link">
+                      <Link to="/ac" className="usa-nav-link">
                         <span>Appendix C</span>
                       </Link>
                     </li>
@@ -147,17 +147,17 @@ class Container extends Component {
                   </button>
                   <ul id="side-nav-2" className="usa-nav-submenu">
                     <li>
-                      <Link to="/guidelines/§8C2.4" className="usa-nav-link">
+                      <Link to="/gl/§8C2.4" className="usa-nav-link">
                         <span>Fine Table</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="/guidelines/§2B1.1" className="usa-nav-link">
+                      <Link to="/gl/§2B1.1" className="usa-nav-link">
                         <span>Loss Table</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="/guidelines/§7B1.4" className="usa-nav-link">
+                      <Link to="/gl/§7B1.4" className="usa-nav-link">
                         <span>Revocation Table</span>
                       </Link>
                     </li>
@@ -170,7 +170,7 @@ class Container extends Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/guidelines/§2T4.1" className="usa-nav-link">
+                      <Link to="/gl/§2T4.1" className="usa-nav-link">
                         <span>Tax Table</span>
                       </Link>
                     </li>

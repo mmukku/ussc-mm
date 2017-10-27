@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default props => {
   return (
-    <Link to={`/guidelines/${props.id}`}>
+    <Link to={`/gl/${props.id}`}>
       <span>{props.children}</span>
     </Link>
   );

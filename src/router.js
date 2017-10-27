@@ -7,7 +7,7 @@ import Home from './pages/home';
 import Parts from './pages/parts';
 import Sections from './pages/sections';
 import Guidelines from './pages/guidelines';
-import Guideline from './pages/guideline';
+import Guideline from './pages/gl';
 //import Search from './pages/search';
 
 const AsyncSearch = asyncComponent(() => import('./pages/search'));
@@ -15,7 +15,7 @@ const AsyncGRC = asyncComponent(() => import('./pages/grc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncDE = asyncComponent(() => import('./pages/de'));
-const AsyncAmendments = asyncComponent(() => import('./pages/amendments'));
+const AsyncAmendments = asyncComponent(() => import('./pages/ac'));
 
 const AsyncApplicationInstructions = asyncComponent(() => import('./pages/ai'));
 const AsyncAppendixB = asyncComponent(() => import('./pages/appendixb'));
@@ -57,19 +57,19 @@ class USSCRouter extends Component {
               exact
               path="/chapters/:chapterId/parts/:part/sections/:sectionId/guidelines"
               component={Guidelines}
-              title="GuideLines"
+              title="Guidelines"
             />
             <Route
               exact
               path="/chapters/:chapterId/parts/:part/guidelines"
               component={Guidelines}
-              title="GuideLines"
+              title="Guidelines"
             />
             <Route
               exact
-              path="/guidelines/:id"
+              path="/gl/:id"
               component={Guideline}
-              title="GuideLine"
+              title="Guideline"
             />
             <Route
               exact
@@ -97,7 +97,7 @@ class USSCRouter extends Component {
             />
             <Route
               exact
-              path="/amendments"
+              path="/ac"
               component={AsyncAmendments}
               title="Amendments"
             />
