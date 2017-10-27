@@ -5,6 +5,7 @@ import PartsLink from '../components/partsLink';
 import SectionsLink from '../components/sectionsLink';
 import GuidelineLink from '../components/guidelineLink';
 import BookmarkLink from '../components/bookmarkLink';
+import { ContentWrapper } from '../components/contentwrapper';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
 import Chapters from '../data/chapters.json';
@@ -118,7 +119,7 @@ export default props => {
           </select>
         </div>
       </h6>
-      <div className="usa-section">
+      <ContentWrapper path={props.location.pathname}>
         <h3>
           Chapter {chapterId} - {chapterTitle}
         </h3>
@@ -129,7 +130,7 @@ export default props => {
         <h5>{sectionTitle} </h5>
         <p dangerouslySetInnerHTML={{ __html: sectionContent }} />
         <div>{guidelineList}</div>
-      </div>
+      </ContentWrapper>
     </div>
   );
 };
