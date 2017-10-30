@@ -9,7 +9,7 @@
   { "substance": "Dipipanone", "targetWeight": 250, "targetUOM": "gm" },
   { "substance": "3-Methylfentanyl", "targetWeight": 10, "targetUOM": "kg" },
   {
-    "substance": "3-1-Methyl-4-phenyl-4-propionoxypiperidine/MPPP",
+    "substance": "1-Methyl-4-phenyl-4-propionoxypiperidine/MPPP",
     "targetWeight": 700,
     "targetUOM": "gm"
   },
@@ -20,8 +20,7 @@
   },
   { "substance": "Alphaprodine", "targetWeight": 100, "targetUOM": "gm" },
   {
-    "substance":
-      "Fentanyl (N-phenyl-N-[1-(2-phenylethyl)-4-piperidinyl] Propanamide)",
+    "substance": "Fentanyl (N-phenyl-N-[1-(2-phenylethyl)-4-piperidinyl] Propanamide)",
     "targetWeight": 2.5,
     "targetUOM": "kg"
   },
@@ -83,6 +82,11 @@
     "targetWeight": 20,
     "targetUOM": "kg"
   },
+  {
+    "substance": "Morphine",
+    "targetWeight": 500,
+    "targetUOM": "gm"
+  },
   { "substance": "Ice", "targetWeight": 20, "targetUOM": "kg" },
   { "substance": "Khat", "targetWeight": 0.01, "targetUOM": "gm" },
   {
@@ -97,13 +101,12 @@
   },
   { "substance": "Phenmetrazine", "targetWeight": 80, "targetUOM": "gm" },
   {
-    "substance":
-      "Phenylacetone/P 2 P (when possessed for the purpose of manufacturing methamphetamine)",
+    "substance": "Phenylacetone/P2P (when possessed for the purpose of manufacturing methamphetamine)",
     "targetWeight": 416,
     "targetUOM": "gm"
   },
   {
-    "substance": "Phenylacetone/P 2 P (in any other case)",
+    "substance": "Phenylacetone/P2P (in any other case)",
     "targetWeight": 75,
     "targetUOM": "gm"
   },
@@ -235,8 +238,7 @@
     "targetUOM": "gm"
   },
   {
-    "substance":
-      "Schedule I or II Depressant except gamma-hydroxybutyric acid)",
+    "substance": "Schedule I or II Depressant (except gamma-hydroxybutyric acid)",
     "targetWeight": 1,
     "targetUOM": "gm"
   },
@@ -247,7 +249,7 @@
     "targetUOM": "gm"
   },
   {
-    "substance": "Schedule III Substance",
+    "substance": "Schedule III Substances (except ketamine)",
     "substanceUOM": "units",
     "targetWeight": 1,
     "targetUOM": "gm"
@@ -259,13 +261,13 @@
     "targetUOM": "gm"
   },
   {
-    "substance": "Schedule IV Substance (except Flunitrazepam)",
+    "substance": "Schedule IV Substances (except Flunitrazepam)",
     "substanceUOM": "units",
     "targetWeight": 0.0625,
     "targetUOM": "gm"
   },
   {
-    "substance": "Schedule V Substance",
+    "substance": "Schedule V Substances",
     "substanceUOM": "units",
     "targetWeight": 0.00625,
     "targetUOM": "gm"
