@@ -97,7 +97,7 @@ class USSCRouter extends Component {
             />
             <Route
               exact
-              path="/ac"
+              path="/ac/:id?"
               component={AsyncAmendments}
               title="Amendments"
             />

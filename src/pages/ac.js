@@ -3,11 +3,12 @@ import data from '../data/appendix-c';
 import _ from 'lodash';
 
 class Amendments extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    let id = props.match.params.id || 1;
     this.state = {
       slug: '',
-      searchResults: [1]
+      searchResults: [_.toNumber(id)]
     };
 
     this.filter = this.filter.bind(this);
