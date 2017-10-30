@@ -11,7 +11,7 @@ const categoryList = [
   { value: 'II', text: 'CHC II (2 or 3 points)' },
   { value: 'III', text: 'CHC III (4, 5, or 6 points)' },
   { value: 'IV', text: 'CHC IV (7, 8, or 9 points)' },
-  { value: 'V', text: 'CHC V (10, 11, 0r 12 points)' },
+  { value: 'V', text: 'CHC V (10, 11, or 12 points)' },
   { value: 'VI', text: 'CHC VI (13 or more points)' }
 ].map(c => (
   <option value={c.value} key={c.value}>
