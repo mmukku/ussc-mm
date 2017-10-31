@@ -99,13 +99,14 @@ class HighlightContext {
   regularizedTextAddress(element, offset) {
 	return this.regularizedTextAddressForElement(element) + this.regularizedTextOffsetAddress(element, offset);
   }
-  highlightEntireElement(element) {
+  highlightEntireElement(id, element) {
 	if (this.elementIsIgnored(element)) {
 	  return;
 	}
 	element.className += ' highlight';
+	element.className += ' highlight.' + id;
   }
-  highlightRangeRecursive(element, begin, end) {
+  highlightRangeRecursive(id, element, begin, end) {
 	if (this.elementIsIgnored(element)) {
 	  return;
 	}
@@ -116,10 +117,10 @@ class HighlightContext {
 	  for (var i = element.childNodes.length - 1; i >= 0; i--) {
 		let child = element.childNodes[i];
 		let childSize = this.regularizedTextSize(child);
-		if (position > end && position - childSize > begin) {
-		  this.highlightEntireElement(child);
+		if (position < end && position - childSize > begin) {
+		  this.highlightEntireElement(id, child);
 		} else if (position - childSize < end && position > begin) {
-		  this.highlightRangeRecursive(child, begin, end);
+		  this.highlightRangeRecursive(id, child, begin, end);
 		}
 		position -= childSize;
 	  }
@@ -131,11 +132,11 @@ class HighlightContext {
 		end = position + size;
 	  }
 	  let spanNode = insert_span_into_text(element, begin - position, end - position);
-	  this.highlightEntireElement(spanNode);
+	  this.highlightEntireElement(id, spanNode);
 	}
   }
-  highlightRange(begin, end) {
-	this.highlightRangeRecursive(this.ancestor, begin, end);
+  highlightRange(id, begin, end) {
+	this.highlightRangeRecursive(id, this.ancestor, begin, end);
   }
 }
 
@@ -221,6 +222,37 @@ function blank_highlight_collection() {
   };
 }
 
+function validate_highlight_collection(collection) {
+  if (typeof collection !== 'object') {
+	return blank_highlight_collection();
+  }
+  if (collection === null) {
+	return blank_highlight_collection();
+  }
+  if (Array.isArray(collection)) {
+	return blank_highlight_collection();
+  }
+  if (!('nextId' in collection)) {
+	return blank_highlight_collection();
+  }
+  if (typeof collection.nextId !== 'number') {
+	return blank_highlight_collection();
+  }
+  if (!('data' in collection)) {
+	return blank_highlight_collection();
+  }
+  if (typeof collection.data !== 'object') {
+	return blank_highlight_collection();
+  }
+  if (collection.data === null) {
+	return blank_highlight_collection();
+  }
+  if (!Array.isArray(collection.data)) {
+	return blank_highlight_collection();
+  }
+  return collection;
+}
+
 function generate_content(props) {
   return (<div id='ussc-highlight-content'>{props.children}</div>);
 }
@@ -228,7 +260,7 @@ function generate_content(props) {
 export class ContentWrapper extends Component {
   constructor(props) {
 	super(props);
-	this.state = {content: generate_content(props)};
+	this.state = {content: generate_content(props), ids: []};
 	this.highlightSelection = this.highlightSelection.bind(this);
     this.selectHandler = this.selectHandler.bind(this);
   }
@@ -267,32 +299,51 @@ export class ContentWrapper extends Component {
 	  return result;
 	}
   }
-  getHighlightCollection() {
-	let highlightQueryObject = {
+  getHighlightQueryString() {
+	return JSON.stringify({
 	  type: 'ussc-highlights',
 	  path: this.props.path
-	};
+	});
+  }
+  getHighlightCollection() {
 	var highlightCollection;
 	try {
-	  highlightCollection = JSON.parse(localStorage.getItem(JSON.stringify(highlightQueryObject)));
+	  highlightCollection = JSON.parse(localStorage.getItem(this.getHighlightQueryString()));
 	} catch (e) {
-	  highlightCollection = blank_highlight_collection();
+	  highlightCollection = null;
 	}
-	if (highlightCollection === null) {
-	  highlightCollection = blank_highlight_collection();
-	}
+	highlightCollection = validate_highlight_collection(highlightCollection);
 	return highlightCollection;
+  }
+  setHighlightCollection(collection) {
+	localStorage.setItem(this.getHighlightQueryString(), JSON.stringify(validate_highlight_collection(collection)));
   }
   applyHighlights() {
 	let highlightCollection = this.getHighlightCollection();
 	let domDiv = document.createElement('div');
 	domDiv.innerHTML = this.originalContent;
 	let context = new HighlightContext(domDiv);
+	let ids = [];
 	for (var i = 0; i < highlightCollection.data.length; i++) {
 	  let highlightItem = highlightCollection.data[i];
-	  context.highlightRange(highlightItem.first, highlightItem.last);
+	  context.highlightRange(highlightItem.id, highlightItem.first, highlightItem.last);
+	  ids.push(highlightItem.id);
 	}
-	this.setState({content: <div id='ussc-highlight-content' dangerouslySetInnerHTML={{__html: domDiv.innerHTML}} />});
+	this.setState({
+	  content: (<div id='ussc-highlight-content' dangerouslySetInnerHTML={{__html: domDiv.innerHTML}} />),
+	  ids: ids
+	});
+  }
+  removeHighlight(id) {
+	let highlightCollection = this.getHighlightCollection();
+	for (var i = 0; i < highlightCollection.data.length; i++) {
+	  if (highlightCollection.data[i].id === id) {
+		highlightCollection.data.splice(i, 1);
+		break;
+	  }
+	}
+	this.setHighlightCollection(highlightCollection);
+	this.updateContent();
   }
   highlightSelection() {
 	let selectionInfo = this.getSelectionInfo();
@@ -309,15 +360,15 @@ export class ContentWrapper extends Component {
 	  };
 	  highlightCollection.data.push(highlightObject);
 	  highlightCollection.nextId++;
-	  let highlightQueryObject = {
-	    type: 'ussc-highlights',
-	    path: this.props.path
-	  };
-	  localStorage.setItem(JSON.stringify(highlightQueryObject), JSON.stringify(highlightCollection));
+	  this.setHighlightCollection(highlightCollection);
 	  this.updateContent();
 	}
   }
   selectHandler() {
+	let clickMenu = document.getElementById('ussc-highlight-click-menu');
+	if (clickMenu) {
+	  clickMenu.style.display = 'none';
+	}
     let selectionInfo = this.getSelectionInfo();
 	let selectMenu = document.getElementById('ussc-select-menu');
 	/* If something is selected and the select menu exists, show the selection menu. Otherwise, hide the selection menu. */
@@ -334,11 +385,29 @@ export class ContentWrapper extends Component {
 	  }
 	}
   }
+  highlightClickHandler(id) {
+	let clickMenu = document.getElementById('ussc-highlight-click-menu');
+	if (clickMenu) {
+	  let elements = document.getElementsByClassName('highlight.' + id);
+	  if (elements.length > 0) {
+	    clickMenu.style.display = 'block';
+	    clickMenu.style.position = 'absolute';
+	    let position = node_offset_position(elements[0], 0);
+		clickMenu.style.top = (position[1] - clickMenu.offsetHeight) + 'px';
+		clickMenu.style.left = position[0] + 'px';
+		document.getElementById('ussc-remove-highlight-button').onclick = function(component, item) {
+		  return function() {
+			component.removeHighlight(item);
+		  }
+		}(this, id);
+	  }
+ 	}
+  }
   updateContent() {
-	this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
 	this.applyHighlights();
   }
   componentDidMount() {
+	this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
 	this.updateContent();
   }
   componentWillReceiveProps(props) {
@@ -348,6 +417,18 @@ export class ContentWrapper extends Component {
 	if (this.props !== props) {
 	  this.updateContent();
 	}
+	if (this.state !== state) {
+	  for (var i = 0; i < this.state.ids.length; i++) {
+		let elements = document.getElementsByClassName('highlight.' + this.state.ids[i]);
+		for (var j = 0; j < elements.length; j++) {
+		  elements[j].onclick = function(component, item) {
+			return function() {
+			  component.highlightClickHandler(item);
+			}
+		  }(this, this.state.ids[i]);
+		}
+	  }
+	}
   }
   render() {
 	document.addEventListener('selectionchange', this.selectHandler);
@@ -355,6 +436,9 @@ export class ContentWrapper extends Component {
 	  <div className="usa-section">
 	    <ul id='ussc-select-menu' className='usa-nav-submenu' style={{display:'none'}}>
 		  <li><a href='#' className='usa-nav-link' onClick={this.highlightSelection}>Highlight</a></li>
+		</ul>
+		<ul id='ussc-highlight-click-menu' className='usa-nav-submenu' style={{display:'none'}}>
+		  <li><a id='ussc-remove-highlight-button' href='#' className='usa-nav-link'>Remove Highlight</a></li>
 		</ul>
 		{this.state.content}
 	  </div>
