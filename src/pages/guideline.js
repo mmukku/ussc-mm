@@ -3,6 +3,7 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
+import { ContentWrapper } from '../components/contentwrapper';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
 import _ from 'lodash';
@@ -106,10 +107,10 @@ class GuideLine extends Component {
             </select>
           </div>
         </h6>
-        <div className="usa-section">
+        <ContentWrapper path={this.props.location.pathname}>
           {this.state.imgContent}
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-        </div>
+        </ContentWrapper>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import data from '../data/appendix-b';
 import BookmarkLink from '../components/bookmarkLink';
+import { ContentWrapper } from '../components/contentwrapper';
 import _ from 'lodash';
 
 export default props => {
@@ -10,8 +11,10 @@ export default props => {
   return (
     <div>
 	  <BookmarkLink path={props.location.pathname} title={`Appendix B - ${id}`}/>
-      <a href="/ab">AppendixB</a>
-      <p dangerouslySetInnerHTML={{ __html: content }} />
+	  <ContentWrapper path={props.location.pathname}>
+        <a href="/ab">AppendixB</a>
+        <p dangerouslySetInnerHTML={{ __html: content }} />
+	  </ContentWrapper>
     </div>
   );
 };

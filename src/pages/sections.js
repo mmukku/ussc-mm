@@ -5,6 +5,7 @@ import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
+import { ContentWrapper } from '../components/contentwrapper';
 import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
@@ -62,7 +63,7 @@ export default props => {
           </select>
         </div>
       </h6>
-      <div className="usa-section">
+      <ContentWrapper path={props.location.pathname}>
         <h3>
           Chapter {chapterId} - {chapterTitle}
         </h3>
@@ -72,7 +73,7 @@ export default props => {
         <p dangerouslySetInnerHTML={{ __html: thisPart.content }} />
 
         <div>{sectionList}</div>
-      </div>
+      </ContentWrapper>
     </div>
   );
 };
