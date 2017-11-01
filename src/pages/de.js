@@ -45,6 +45,11 @@ const NotesTable = [
     substances: 'Ephedrine,Phenylpropanolamine,Pseudoephedrine',
     notes:
       'Provided, that in a case involving ephedrine, pseudoephedrine, or phenylpropanolamine tablets, use the weight of the ephedrine, pseudoephedrine, or phenylpropanolamine contained in the tablets, not the weight of the entire tablets, in calculating the base offense level.'
+  },
+  {
+    substances:
+      'Marihuana/Cannabis, granulated, powdered, etc., Hashish Oil, Cannabis Resin or Hashish, Tetrahydrocannabinol, Organic, Tetrahydrocannabinol, Synthetic, Schedule I or II Depressant (except gamma-hydroxybutyric acid), gamma-hydroxybutyric acid, ketamine, 1,4-butanediol',
+    notes: ''
   }
 ];
 

@@ -239,6 +239,7 @@
   },
   {
     "substance": "Schedule I or II Depressant (except gamma-hydroxybutyric acid)",
+    "substanceUOM": "units",
     "targetWeight": 1,
     "targetUOM": "gm"
   },
