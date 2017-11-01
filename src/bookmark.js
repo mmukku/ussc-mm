@@ -1,38 +1,72 @@
-export function count_bookmarks() {
-	let bookmark_count = localStorage.getItem('ussc-bookmark-count');
-	if (bookmark_count === null)
-		bookmark_count = '0';
-	return parseInt(bookmark_count);
+function blank_bookmarks() {
+  return {
+	nextId: 0,
+	data: []
+  };
 }
 
-export function read_bookmark(bookmark_id) {
-	var bookmark_object;
-	try {
-		bookmark_object = JSON.parse(localStorage.getItem('ussc-bookmarks.' + bookmark_id));
-	} catch (e) {
-		return null;
-	}
-	if (!('path' in bookmark_object && 'title' in bookmark_object)) {
-		return null;
-	}
-	return bookmark_object;
+function validate_bookmarks(bookmarks) {
+  if (typeof bookmarks !== 'object') {
+	return blank_bookmarks();
+  }
+  if (bookmarks === null) {
+	return blank_bookmarks();
+  }
+  if (Array.isArray(bookmarks)) {
+	return blank_bookmarks();
+  }
+  if (!('nextId' in bookmarks)) {
+	return blank_bookmarks();
+  }
+  if (typeof bookmarks.nextId !== 'number') {
+	return blank_bookmarks();
+  }
+  if (!('data' in bookmarks)) {
+	return blank_bookmarks();
+  }
+  if (typeof bookmarks.data !== 'object') {
+	return blank_bookmarks();
+  }
+  if (bookmarks.data === null) {
+	return blank_bookmarks();
+  }
+  if (!Array.isArray(bookmarks.data)) {
+	return blank_bookmarks();
+  }
+  return bookmarks;
+}
+
+export function get_bookmarks() {
+  let queryString = JSON.stringify({type: 'ussc-bookmarks'});
+  var bookmarks;
+  try {
+	bookmarks = JSON.parse(localStorage.getItem(queryString));
+  } catch (e) {
+	bookmarks = null;
+  }
+  bookmarks = validate_bookmarks(bookmarks);
+  return bookmarks;
+}
+
+export function set_bookmarks(bookmarks) {
+  let queryString = JSON.stringify({type: 'ussc-bookmarks'});
+  localStorage.setItem(queryString, JSON.stringify(validate_bookmarks(bookmarks)))
 }
 
 export function remove_bookmark(bookmark_id) {
-	let bookmark_count = count_bookmarks();
-	localStorage.removeItem('ussc-bookmarks.' + bookmark_id);
-	for (var i = bookmark_id + 1; i < bookmark_count; i++) {
-		localStorage.setItem(
-			'ussc-bookmarks.' + (i - 1),
-			localStorage.getItem('ussc-bookmarks.' + i)
-		);
+  let bookmarks = get_bookmarks();
+  for (var i = 0; i < bookmarks.data.length; i++) {
+    if (bookmarks.data[i].id === bookmark_id) {
+	  bookmarks.data.splice(i, 1);
+	  break;
 	}
-	localStorage.setItem('ussc-bookmark-count', bookmark_count - 1);
+  }
+  set_bookmarks(bookmarks);
 }
 
 export function add_bookmark(path, title) {
-	let bookmark_count = count_bookmarks();
-	localStorage.setItem('ussc-bookmarks.' + bookmark_count, JSON.stringify({path: path, title: title}));
-	bookmark_count++;
-	localStorage.setItem('ussc-bookmark-count', bookmark_count.toString());
+	let bookmarks = get_bookmarks();
+	bookmarks.data.push({path: path, title: title, id: bookmarks.nextId});
+	bookmarks.nextId++;
+	set_bookmarks(bookmarks);
 }

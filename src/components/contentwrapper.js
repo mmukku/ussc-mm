@@ -103,8 +103,13 @@ class HighlightContext {
 	if (this.elementIsIgnored(element)) {
 	  return;
 	}
-	element.className += ' highlight';
-	element.className += ' highlight.' + id;
+	if (element.nodeType === Node.ELEMENT_NODE) {
+	  element.className += ' highlight';
+	  element.className += ' highlight.' + id;
+	} else if (element.nodeType === Node.TEXT_NODE) {
+	  let spanNode = insert_span_into_text(element, 0, this.regularizedTextSize(element));
+	  this.highlightEntireElement(id, spanNode);
+	}
   }
   highlightRangeRecursive(id, element, begin, end) {
 	if (this.elementIsIgnored(element)) {
@@ -151,7 +156,7 @@ class HighlightContext {
 function node_offset_position(node, offset) {
   if (node.nodeType === Node.ELEMENT_NODE) {
 	var correctChild;
-	if (node.childNodes.length >= offset)
+	if (offset >= node.childNodes.length)
 	{
 	  return [
 	    node.offsetLeft + node.offsetWidth,
@@ -159,10 +164,14 @@ function node_offset_position(node, offset) {
 	  ];
 	} else {
 	  correctChild = node.childNodes[offset];
-	  return [
-	    correctChild.offsetLeft,
-	    correctChild.offsetTop
-	  ];
+	  if (correctChild.nodeType === Node.ELEMENT_NODE) {
+	    return [
+	      correctChild.offsetLeft,
+	      correctChild.offsetTop
+	    ];
+	  } else {
+		return node_offset_position(correctChild, 0);
+	  }
 	}
   } else if (node.nodeType === Node.TEXT_NODE) {
 	let parentNode = node;
@@ -199,6 +208,18 @@ function node_offset_position(node, offset) {
   } else {
     return [0, 0];
   }
+}
+
+function select_position(elements) {
+  var position;
+  position = null;
+  for (var i = 0; i < elements.length; i++) {
+	let newPosition = node_offset_position(elements[i], 0);
+	if (position === null || newPosition[1] < position[1]) {
+	  position = newPosition;
+	}
+  }
+  return position;
 }
 
 function fill_selection_info_forward(selection, info) {
@@ -343,7 +364,7 @@ export class ContentWrapper extends Component {
 	  }
 	}
 	this.setHighlightCollection(highlightCollection);
-	this.updateContent();
+	this.applyHighlights();
   }
   highlightSelection() {
 	let selectionInfo = this.getSelectionInfo();
@@ -361,14 +382,10 @@ export class ContentWrapper extends Component {
 	  highlightCollection.data.push(highlightObject);
 	  highlightCollection.nextId++;
 	  this.setHighlightCollection(highlightCollection);
-	  this.updateContent();
+	  this.applyHighlights();
 	}
   }
   selectHandler() {
-	let clickMenu = document.getElementById('ussc-highlight-click-menu');
-	if (clickMenu) {
-	  clickMenu.style.display = 'none';
-	}
     let selectionInfo = this.getSelectionInfo();
 	let selectMenu = document.getElementById('ussc-select-menu');
 	/* If something is selected and the select menu exists, show the selection menu. Otherwise, hide the selection menu. */
@@ -378,7 +395,7 @@ export class ContentWrapper extends Component {
 	    selectMenu.style.display = 'block';
 	    selectMenu.style.position = 'absolute';
 	    let position = node_offset_position(selectionInfo.first.node, selectionInfo.first.offset);
-	    selectMenu.style.top = (position[1] - selectMenu.offsetHeight) + 'px';
+	    selectMenu.style.top = (position[1] + 25) + 'px';
 	    selectMenu.style.left = position[0] + 'px';
 	  } else {
 	    selectMenu.style.display = 'none';
@@ -392,30 +409,29 @@ export class ContentWrapper extends Component {
 	  if (elements.length > 0) {
 	    clickMenu.style.display = 'block';
 	    clickMenu.style.position = 'absolute';
-	    let position = node_offset_position(elements[0], 0);
-		clickMenu.style.top = (position[1] - clickMenu.offsetHeight) + 'px';
+		let position = select_position(elements);
+		clickMenu.style.top = (position[1] + 25) + 'px';
 		clickMenu.style.left = position[0] + 'px';
 		document.getElementById('ussc-remove-highlight-button').onclick = function(component, item) {
 		  return function() {
 			component.removeHighlight(item);
+			clickMenu.style.display = 'none';
 		  }
 		}(this, id);
 	  }
  	}
   }
-  updateContent() {
-	this.applyHighlights();
-  }
   componentDidMount() {
 	this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
-	this.updateContent();
+	this.applyHighlights();
   }
   componentWillReceiveProps(props) {
 	this.setState({content: generate_content(props)});
   }
   componentDidUpdate(props, state) {
 	if (this.props !== props) {
-	  this.updateContent();
+	  this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
+	  this.applyHighlights();
 	}
 	if (this.state !== state) {
 	  for (var i = 0; i < this.state.ids.length; i++) {
@@ -435,7 +451,16 @@ export class ContentWrapper extends Component {
     return (
 	  <div className="usa-section">
 	    <ul id='ussc-select-menu' className='usa-nav-submenu' style={{display:'none'}}>
-		  <li><a href='#' className='usa-nav-link' onClick={this.highlightSelection}>Highlight</a></li>
+		  <li>
+		    <a href='#' className='usa-nav-link'
+			  onClick={() => {
+				this.highlightSelection();
+				document.getElementById('ussc-select-menu').style.display = 'none';
+			  }}
+			>
+			  Highlight
+			</a>
+		  </li>
 		</ul>
 		<ul id='ussc-highlight-click-menu' className='usa-nav-submenu' style={{display:'none'}}>
 		  <li><a id='ussc-remove-highlight-button' href='#' className='usa-nav-link'>Remove Highlight</a></li>
