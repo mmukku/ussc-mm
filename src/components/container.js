@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import Helmet from 'react-helmet';
+import FontSize from './fontSize';
 import logo from '../img/logo.png';
 import favicon from 'uswds/dist/img/favicons/favicon-57.png';
 import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
@@ -8,8 +9,26 @@ import close from 'uswds/dist/img/close.svg';
 import { Link } from 'react-router-dom';
 import SearchGuidelines from './searchGuidelines';
 // import '../ussc.css';
-
+const DefaultFontSize = 1.25;
 class Container extends Component {
+  state = { fontSize: DefaultFontSize };
+
+  changeFontSize = direction => {
+    const factor = 0.625;
+
+    switch (direction) {
+      case '+':
+        this.setState(prevState => ({ fontSize: prevState.fontSize + factor }));
+        break;
+      case '-':
+        this.setState(prevState => ({ fontSize: prevState.fontSize - factor }));
+        break;
+      default:
+        this.setState({ fontSize: DefaultFontSize });
+        break;
+    }
+    console.log(this.state.fontSize);
+  };
   render() {
     return (
       <div style={{ marginBottom: '5.9rem' }}>
@@ -200,7 +219,9 @@ class Container extends Component {
         <main
           className="usa-grid usa-content usa-layout-docs"
           id="main-content"
+          style={{ fontSize: this.state.fontSize + 'rem' }}
         >
+          <FontSize changeFontSize={this.changeFontSize} />
           {this.props.children}
         </main>
         <footer className="usa-footer usa-footer-medium" role="contentinfo">
