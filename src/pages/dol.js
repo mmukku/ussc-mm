@@ -10,16 +10,13 @@ substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
 
 //drug offence level
 class DOL extends Component {
-  constructor() {
-    super();
-    this.state = {
-      offenseLevel: undefined,
-      substance: '',
-      uom: '',
-      uomList: '',
-      qty: 0.0
-    };
-  }
+  state = {
+    offenseLevel: undefined,
+    substance: '',
+    uom: '',
+    uomList: '',
+    qty: 0.0
+  };
 
   render() {
     let result = undefined;
@@ -60,7 +57,6 @@ class DOL extends Component {
             id="uom"
             onChange={e => this.setState({ uom: e.target.value })}
           >
-            <option>Select</option>
             {this.state.uomList}
           </select>
           <button onClick={this.calculate.bind(this)}>Go</button>
@@ -80,7 +76,7 @@ class DOL extends Component {
 
   calculate(e) {
     let s = _.find(data, x => {
-      if (x.substance !== this.state.substance && x.uom !== this.state.uom)
+      if (x.substance !== this.state.substance || x.uom !== this.state.uom)
         return false;
       if (x.min !== undefined) {
         if (this.state.qty < x.min) return false;

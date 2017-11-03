@@ -48,7 +48,7 @@ const NotesTable = [
   },
   {
     substances:
-      'Marihuana/Cannabis, granulated, powdered, etc., Hashish Oil, Cannabis Resin or Hashish, Tetrahydrocannabinol, Organic, Tetrahydrocannabinol, Synthetic, Schedule I or II Depressant (except gamma-hydroxybutyric acid), gamma-hydroxybutyric acid, ketamine, 1,4-butanediol',
+      'Marihuana/Cannabis, granulated, powdered, etc., Hashish Oil, Cannabis Resin or Hashish, Tetrahydrocannabinol, Organic, Tetrahydrocannabinol, Synthetic, Schedule I or II Depressant (except gamma-hydroxybutyric acid), Gamma-Hydroxybutyric Acid, Ketamine, 1,4-butanediol, Gamma Butyrolactone',
     notes: ''
   }
 ];
