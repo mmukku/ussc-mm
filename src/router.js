@@ -10,6 +10,8 @@ import Guidelines from './pages/guidelines';
 import Guideline from './pages/gl';
 //import Search from './pages/search';
 
+const AsyncDashboard = asyncComponent(() => import('./pages/dashboard'));
+const AsyncHome = asyncComponent(() => import('./pages/home'));
 const AsyncSearch = asyncComponent(() => import('./pages/search'));
 const AsyncGRC = asyncComponent(() => import('./pages/grc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
@@ -33,7 +35,18 @@ class USSCRouter extends Component {
         <Container>
           <Helmet titleTemplate={`%s - ${title}`} />
           <Switch>
-            <Route exact path="/" component={Home} title="Home" />
+            <Route
+              exact
+              path="/"
+              component={AsyncDashboard}
+              title="Dashboard"
+            />
+            <Route
+              exact
+              path="/home"
+              component={AsyncHome}
+              title="Guidelines Manual"
+            />
             <Route exact path="/chapters" component={Home} title="Chapters" />
             <Route
               exact
