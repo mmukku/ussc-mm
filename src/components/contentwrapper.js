@@ -339,11 +339,13 @@ export class ContentWrapper extends Component {
 	let selectionInfo = this.getSelectionInfo();
 	if (selectionInfo.selectionExists) {
 	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
-	  let textObject = notesObject.childNodes[1];
-	  if (textObject.innerHTML.length === 0) {
-		textObject.innerHTML = '<br />';
+	  if (notesObject !== null) {
+	    let textObject = notesObject.childNodes[1];
+	    if (textObject.innerHTML.length === 0) {
+	  	  textObject.innerHTML = '<br />';
+	    }
+	    textObject.focus();
 	  }
-	  textObject.focus();
 	}
   }
   createNotesObject(id) {
@@ -564,9 +566,10 @@ export class ContentWrapper extends Component {
 		  </li>
 		  <li>
 			<a href='#' className='usa-nav-link'
-			  onClick={() => {
+			  onClick={(event) => {
 				this.focusNotesAfterSelection();
 				document.getElementById('ussc-select-menu').style.display = 'none';
+				event.preventDefault();
 			  }}
 			  onBlur = {() => {document.getElementById('ussc-select-menu').style.display = 'none';}}
 			>
