@@ -36,6 +36,8 @@ class HighlightContext {
     if (element.nodeType === Node.ELEMENT_NODE) {
       if (element.tagName.toUpperCase() === 'A') {
 	    return true;
+	  } else if (element.classList.contains('notes')) {
+		return true;
 	  } else {
 	    return false;
 	  }
@@ -320,6 +322,89 @@ export class ContentWrapper extends Component {
 	  return result;
 	}
   }
+  getNoteQueryString(id) {
+	return JSON.stringify({
+	  type: 'ussc-notes',
+	  path: this.props.path,
+	  id: id
+	});
+  }
+  getNote(id) {
+	return localStorage.getItem(this.getNoteQueryString(id));
+  }
+  setNote(id, content) {
+	let queryString = this.getNoteQueryString(id);
+	if (content === '' || content === '<br>') {
+	  localStorage.removeItem(queryString);
+	} else {
+	  localStorage.setItem(queryString, content);
+	}
+  }
+  notesLinkClickHandler(id) {
+    let notes_object = document.getElementById('notes.' + id);
+    let text_object = notes_object.childNodes[1];
+    if (text_object.innerHTML.length === 0) {
+      text_object.innerHTML = '<br />';
+    }
+    text_object.focus();
+  }
+  notesBlurHandler(id) {
+    let notes_object = document.getElementById('notes.' + id);
+    let text_object = notes_object.childNodes[1];
+	this.setNote(id, text_object.innerHTML);
+    this.applyHighlights();
+  }
+  createNotesObject(id) {
+    let notes_object = document.createElement('div');
+    notes_object.className = 'notes';
+    notes_object.id = 'notes.' + id;
+    let notes_control_link = document.createElement('p');
+    notes_control_link.append(document.createElement('a'));
+    notes_control_link.childNodes[0].href = '#';
+    notes_control_link.childNodes[0].innerText = 'Add Note';
+    notes_control_link.childNodes[0].classList.add('notes_link');
+    let notes_control_text = document.createElement('p');
+    notes_control_text.className = 'notes_text';
+	notes_control_text.innerHTML = this.getNote(id);
+    notes_control_text.contentEditable = "true";
+    notes_object.appendChild(notes_control_link);
+    notes_object.appendChild(notes_control_text);
+    return notes_object;
+  }
+  applyNotesToDomElementRecursive(element, id) {
+    let new_id = id;
+    if (element.nodeType === Node.ELEMENT_NODE) {
+	  if (window.getComputedStyle(element).display !== 'inline') {
+	    let children_found = false;
+	    for (var i = element.childNodes.length - 1; i >= 0; i--) {
+		  let temp_new_id = this.applyNotesToDomElementRecursive(element.childNodes[i], new_id);
+		  if (temp_new_id !== null) {
+		    new_id = temp_new_id;
+		    children_found = true;
+		  }
+	    }
+	    if (new_id === id && children_found) {
+		  let notes_object = this.createNotesObject(new_id);
+	      if (element.nextSibling === null) {
+	        element.parentNode.appendChild(notes_object);
+	      } else {
+	        element.parentNode.insertBefore(notes_object, element.nextSibling);
+	      }
+	      new_id++;
+	    }
+	  }
+    } else if (element.nodeType === Node.TEXT_NODE) {
+	  if (element.data.trim().length === 0) {
+	    return null;
+	  }
+    } else {
+	  return null;
+    }
+    return new_id;
+  }
+  applyNotesToDomElement(domDiv) {
+    this.applyNotesToDomElementRecursive(domDiv, 0);
+  }
   getHighlightQueryString() {
 	return JSON.stringify({
 	  type: 'ussc-highlights',
@@ -339,10 +424,8 @@ export class ContentWrapper extends Component {
   setHighlightCollection(collection) {
 	localStorage.setItem(this.getHighlightQueryString(), JSON.stringify(validate_highlight_collection(collection)));
   }
-  applyHighlights() {
+  applyHighlightsToDomElement(domDiv) {
 	let highlightCollection = this.getHighlightCollection();
-	let domDiv = document.createElement('div');
-	domDiv.innerHTML = this.originalContent;
 	let context = new HighlightContext(domDiv);
 	let ids = [];
 	for (var i = 0; i < highlightCollection.data.length; i++) {
@@ -350,6 +433,15 @@ export class ContentWrapper extends Component {
 	  context.highlightRange(highlightItem.id, highlightItem.first, highlightItem.last);
 	  ids.push(highlightItem.id);
 	}
+	return [ids, domDiv];
+  }
+  applyHighlights() {
+	let domDiv = document.createElement('div');
+	domDiv.innerHTML = this.originalContent;
+	let info = this.applyHighlightsToDomElement(domDiv);
+	let ids = info[0];
+	domDiv = info[1];
+	this.applyNotesToDomElement(domDiv);
 	this.setState({
 	  content: (<div id='ussc-highlight-content' dangerouslySetInnerHTML={{__html: domDiv.innerHTML}} />),
 	  ids: ids
@@ -391,12 +483,18 @@ export class ContentWrapper extends Component {
 	/* If something is selected and the select menu exists, show the selection menu. Otherwise, hide the selection menu. */
 	if (selectMenu) {
 	  if (selectionInfo.selectionExists) {
-	    /* show the menu above the beginning of the selection */
-	    selectMenu.style.display = 'block';
-	    selectMenu.style.position = 'absolute';
-	    let position = node_offset_position(selectionInfo.first.node, selectionInfo.first.offset);
-	    selectMenu.style.top = (position[1] + 25) + 'px';
-	    selectMenu.style.left = position[0] + 'px';
+		let highlightContext = new HighlightContext(document.getElementById('ussc-highlight-content'));
+		if (
+		  !highlightContext.elementIsIgnored(selectionInfo.first.node) ||
+		  !highlightContext.elementIsIgnored(selectionInfo.last.node)
+		) {
+	      /* show the menu above the beginning of the selection */
+	      selectMenu.style.display = 'block';
+	      selectMenu.style.position = 'absolute';
+	      let position = node_offset_position(selectionInfo.first.node, selectionInfo.first.offset);
+	      selectMenu.style.top = (position[1] + 25) + 'px';
+	      selectMenu.style.left = position[0] + 'px';
+		}
 	  } else {
 	    selectMenu.style.display = 'none';
 	  }
@@ -443,6 +541,27 @@ export class ContentWrapper extends Component {
 			}
 		  }(this, this.state.ids[i]);
 		}
+	  }
+	  let elements = document.getElementsByClassName('notes_link');
+	  for (var i = 0; i < elements.length; i++) {
+		let id = elements[i].parentNode.parentNode.id.split('.')[1];
+		elements[i].onclick = function(component, item) {
+		  return function() {
+			component.notesLinkClickHandler(item)
+		  };
+		}(this, id);
+	  }
+	  elements = document.getElementsByClassName('notes');
+	  for (var i = 0; i < elements.length; i++) {
+		let id = parseInt(elements[i].id.split('.')[1], 10);
+		elements[i].addEventListener (
+		  'focusout',
+		  function(component, item) {
+		    return function() {
+			  component.notesBlurHandler(item)
+		    };
+		  }(this, id)
+		);
 	  }
 	}
   }

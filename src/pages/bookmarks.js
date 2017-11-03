@@ -11,7 +11,7 @@ export function remove_bookmark_wrapper(id) {
 		remove_bookmark(id);
 		alert('Bookmark removed');
 		ReactDOM.render(<App />, document.getElementById('root'));
-	}
+	};
 }
 
 export default props => {
