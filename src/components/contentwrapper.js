@@ -148,6 +148,20 @@ class HighlightContext {
   }
 }
 
+function get_non_inline_parent_and_path(node) {
+  let path = [];
+  while (node !== null && node.nodeType !== Node.ELEMENT_NODE || window.getComputedStyle(node).display === 'inline') {
+	let oldNode = node;
+  	node = node.parentNode;
+	for (var i = 0; i < node.childNodes.length; i++) {
+	  if (node.childNodes[i] === oldNode) {
+		path.push(i);
+	  }
+	}
+  }
+  return [node, path];
+}
+
 /* Hack to find the pixel location of a text-selection endpoint represented in the
 	node/offset form returned by the Selection API. If the node is an element, offset
 	is an index into its array of children, so we can find the position of that child.
@@ -177,21 +191,16 @@ function node_offset_position(node, offset) {
 	  }
 	}
   } else if (node.nodeType === Node.TEXT_NODE) {
-	let parentNode = node;
-	let index = [];
-    while (parentNode.nodeType !== Node.ELEMENT_NODE || window.getComputedStyle(parentNode).display === 'inline') {
-	  let oldParent = parentNode;
-  	  parentNode = parentNode.parentNode;
-	  for (var i = 0; i < parentNode.childNodes.length; i++) {
-		if (parentNode.childNodes[i] === oldParent) {
-		  index.push(i);
-		}
-	  }
-    }
+	let info = get_non_inline_parent_and_path(node);
+	let parentNode = info[0];
+	if (parentNode === null) {
+	  return [0, 0];
+	}
+	let path = info[1];
 	let duplicateNode = parentNode.cloneNode(true);
 	let duplicateChild = duplicateNode;
-	for (var i = index.length - 1; i >= 0; i--) {
-	  duplicateChild = duplicateChild.childNodes[index[i]];
+	for (var i = path.length - 1; i >= 0; i--) {
+	  duplicateChild = duplicateChild.childNodes[path[i]];
 	}
 	let spanNode = insert_span_into_text(duplicateChild, offset, offset + 1);
 	duplicateNode.style.position = 'absolute';
@@ -237,44 +246,6 @@ function fill_selection_info_backward(selection, info) {
   info.first.offset = selection.focusOffset;
   info.last.node = selection.anchorNode;
   info.last.offset = selection.anchorOffset;
-}
-
-function blank_highlight_collection() {
-  return {
-	nextId: 0,
-	data: []
-  };
-}
-
-function validate_highlight_collection(collection) {
-  if (typeof collection !== 'object') {
-	return blank_highlight_collection();
-  }
-  if (collection === null) {
-	return blank_highlight_collection();
-  }
-  if (Array.isArray(collection)) {
-	return blank_highlight_collection();
-  }
-  if (!('nextId' in collection)) {
-	return blank_highlight_collection();
-  }
-  if (typeof collection.nextId !== 'number') {
-	return blank_highlight_collection();
-  }
-  if (!('data' in collection)) {
-	return blank_highlight_collection();
-  }
-  if (typeof collection.data !== 'object') {
-	return blank_highlight_collection();
-  }
-  if (collection.data === null) {
-	return blank_highlight_collection();
-  }
-  if (!Array.isArray(collection.data)) {
-	return blank_highlight_collection();
-  }
-  return collection;
 }
 
 function generate_content(props) {
@@ -327,7 +298,7 @@ export class ContentWrapper extends Component {
 	return JSON.stringify({
 	  type: 'ussc-notes',
 	  path: this.props.path,
-	  id: id
+	  id: parseInt(id)
 	});
   }
   getNote(id) {
@@ -342,27 +313,48 @@ export class ContentWrapper extends Component {
 	}
   }
   notesLinkClickHandler(id) {
-    let notes_object = document.getElementById('notes.' + id);
-    let text_object = notes_object.childNodes[1];
-    if (text_object.innerHTML.length === 0) {
-      text_object.innerHTML = '<br />';
-    }
-    text_object.focus();
+    this.setNote(id, '');
+	this.rerenderLocalContent();
+  }
+  notesFocusHandler(id) {
+	let notes_object = document.getElementById('notes.' + id);
+	notes_object.childNodes[0].style.display = 'block';
   }
   notesBlurHandler(id) {
     let notes_object = document.getElementById('notes.' + id);
+	notes_object.childNodes[0].style.display = 'none';
     let text_object = notes_object.childNodes[1];
 	this.setNote(id, text_object.innerHTML);
     this.rerenderLocalContent();
+  }
+  getNextNotesObject(element) {
+	let non_inline_parent = get_non_inline_parent_and_path(element)[0];
+	if (non_inline_parent.nextSibling.classList.contains('notes')) {
+	  return non_inline_parent.nextSibling;
+	} else {
+	  return null;
+	}
+  }
+  focusNotesAfterSelection() {
+	let selectionInfo = this.getSelectionInfo();
+	if (selectionInfo.selectionExists) {
+	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
+	  let textObject = notesObject.childNodes[1];
+	  if (textObject.innerHTML.length === 0) {
+		textObject.innerHTML = '<br />';
+	  }
+	  textObject.focus();
+	}
   }
   createNotesObject(id) {
     let notes_object = document.createElement('div');
     notes_object.className = 'notes';
     notes_object.id = 'notes.' + id;
     let notes_control_link = document.createElement('p');
+	notes_control_link.style.display = 'none';
     notes_control_link.append(document.createElement('a'));
     notes_control_link.childNodes[0].href = '#';
-    notes_control_link.childNodes[0].innerText = 'Add Note';
+    notes_control_link.childNodes[0].innerText = 'Remove Note';
     notes_control_link.childNodes[0].classList.add('notes_link');
     let notes_control_text = document.createElement('p');
     notes_control_text.className = 'notes_text';
@@ -543,6 +535,14 @@ export class ContentWrapper extends Component {
 		    };
 		  }(this, id)
 		);
+		elements[i].addEventListener (
+		  'focusin',
+		  function(component, item) {
+			return function() {
+			  component.notesFocusHandler(item);
+			}
+		  }(this, id)
+		);
 	  }
 	}
   }
@@ -557,13 +557,31 @@ export class ContentWrapper extends Component {
 				this.highlightSelection();
 				document.getElementById('ussc-select-menu').style.display = 'none';
 			  }}
+			  onBlur = {() => {document.getElementById('ussc-select-menu').style.display = 'none';}}
 			>
 			  Highlight
 			</a>
 		  </li>
+		  <li>
+			<a href='#' className='usa-nav-link'
+			  onClick={() => {
+				this.focusNotesAfterSelection();
+				document.getElementById('ussc-select-menu').style.display = 'none';
+			  }}
+			  onBlur = {() => {document.getElementById('ussc-select-menu').style.display = 'none';}}
+			>
+			  Notes
+			</a>
+		  </li>
 		</ul>
 		<ul id='ussc-highlight-click-menu' className='usa-nav-submenu' style={{display:'none'}}>
-		  <li><a id='ussc-remove-highlight-button' href='#' className='usa-nav-link'>Remove Highlight</a></li>
+		  <li>
+		    <a id='ussc-remove-highlight-button' href='#' className='usa-nav-link'
+			  onBlur = {() => {document.getElementById('ussc-highlight-click-menu').style.display = 'none';}}
+			>
+			  Remove Highlight
+			</a>
+		  </li>
 		</ul>
 		{this.state.content}
 	  </div>

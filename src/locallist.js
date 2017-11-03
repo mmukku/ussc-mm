@@ -58,7 +58,7 @@ export function remove_list_item(query_string, id) {
 	  break;
 	}
   }
-  set_list(list);
+  set_list(query_string, list);
 }
 
 export function add_list_item(query_string, object) {
