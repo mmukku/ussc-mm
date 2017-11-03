@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import App from '../App';
+import { get_list, set_list, remove_list_item, add_list_item } from '../locallist';
 
 function get_regularized_offset_size(element) {
   if (element.nodeType === Node.ELEMENT_NODE) {
@@ -277,7 +278,7 @@ function validate_highlight_collection(collection) {
 }
 
 function generate_content(props) {
-  return (<div id='ussc-highlight-content'>{props.children}</div>);
+  return (<div id='ussc-content-wrapper'>{props.children}</div>);
 }
 
 export class ContentWrapper extends Component {
@@ -290,7 +291,7 @@ export class ContentWrapper extends Component {
   getSelectionInfo() {
 	let result = {};
 	let selection = document.getSelection();
-	let highlightContent = document.getElementById('ussc-highlight-content');
+	let highlightContent = document.getElementById('ussc-content-wrapper');
 	if (
 	  highlightContent !== null &&
 	  highlightContent.contains(selection.anchorNode) &&
@@ -352,7 +353,7 @@ export class ContentWrapper extends Component {
     let notes_object = document.getElementById('notes.' + id);
     let text_object = notes_object.childNodes[1];
 	this.setNote(id, text_object.innerHTML);
-    this.applyHighlights();
+    this.rerenderLocalContent();
   }
   createNotesObject(id) {
     let notes_object = document.createElement('div');
@@ -412,17 +413,10 @@ export class ContentWrapper extends Component {
 	});
   }
   getHighlightCollection() {
-	var highlightCollection;
-	try {
-	  highlightCollection = JSON.parse(localStorage.getItem(this.getHighlightQueryString()));
-	} catch (e) {
-	  highlightCollection = null;
-	}
-	highlightCollection = validate_highlight_collection(highlightCollection);
-	return highlightCollection;
+	return get_list(this.getHighlightQueryString());
   }
   setHighlightCollection(collection) {
-	localStorage.setItem(this.getHighlightQueryString(), JSON.stringify(validate_highlight_collection(collection)));
+	set_list(this.getHighlightQueryString(), collection);
   }
   applyHighlightsToDomElement(domDiv) {
 	let highlightCollection = this.getHighlightCollection();
@@ -433,48 +427,35 @@ export class ContentWrapper extends Component {
 	  context.highlightRange(highlightItem.id, highlightItem.first, highlightItem.last);
 	  ids.push(highlightItem.id);
 	}
-	return [ids, domDiv];
+	return ids;
   }
-  applyHighlights() {
+  rerenderLocalContent() {
 	let domDiv = document.createElement('div');
 	domDiv.innerHTML = this.originalContent;
-	let info = this.applyHighlightsToDomElement(domDiv);
-	let ids = info[0];
-	domDiv = info[1];
+	let ids = this.applyHighlightsToDomElement(domDiv);
 	this.applyNotesToDomElement(domDiv);
 	this.setState({
-	  content: (<div id='ussc-highlight-content' dangerouslySetInnerHTML={{__html: domDiv.innerHTML}} />),
+	  content: (<div id='ussc-content-wrapper' dangerouslySetInnerHTML={{__html: domDiv.innerHTML}} />),
 	  ids: ids
 	});
   }
   removeHighlight(id) {
-	let highlightCollection = this.getHighlightCollection();
-	for (var i = 0; i < highlightCollection.data.length; i++) {
-	  if (highlightCollection.data[i].id === id) {
-		highlightCollection.data.splice(i, 1);
-		break;
-	  }
-	}
-	this.setHighlightCollection(highlightCollection);
-	this.applyHighlights();
+	remove_list_item(this.getHighlightQueryString(), id);
+	this.rerenderLocalContent();
   }
   highlightSelection() {
 	let selectionInfo = this.getSelectionInfo();
 	if (selectionInfo.selectionExists) {
 	  let highlightCollection = this.getHighlightCollection();
-	  let highlightContent = document.getElementById('ussc-highlight-content');
+	  let highlightContent = document.getElementById('ussc-content-wrapper');
 	  let context = new HighlightContext(highlightContent);
 	  let firstAddr = context.regularizedTextAddress(selectionInfo.first.node, selectionInfo.first.offset);
 	  let lastAddr = context.regularizedTextAddress(selectionInfo.last.node, selectionInfo.last.offset);
-	  let highlightObject = {
-		id: highlightCollection.nextId,
+	  add_list_item(this.getHighlightQueryString(), {
 	    first: firstAddr,
 	    last: lastAddr
-	  };
-	  highlightCollection.data.push(highlightObject);
-	  highlightCollection.nextId++;
-	  this.setHighlightCollection(highlightCollection);
-	  this.applyHighlights();
+	  });
+	  this.rerenderLocalContent();
 	}
   }
   selectHandler() {
@@ -483,7 +464,7 @@ export class ContentWrapper extends Component {
 	/* If something is selected and the select menu exists, show the selection menu. Otherwise, hide the selection menu. */
 	if (selectMenu) {
 	  if (selectionInfo.selectionExists) {
-		let highlightContext = new HighlightContext(document.getElementById('ussc-highlight-content'));
+		let highlightContext = new HighlightContext(document.getElementById('ussc-content-wrapper'));
 		if (
 		  !highlightContext.elementIsIgnored(selectionInfo.first.node) ||
 		  !highlightContext.elementIsIgnored(selectionInfo.last.node)
@@ -520,16 +501,16 @@ export class ContentWrapper extends Component {
  	}
   }
   componentDidMount() {
-	this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
-	this.applyHighlights();
+	this.originalContent = document.getElementById('ussc-content-wrapper').innerHTML;
+	this.rerenderLocalContent();
   }
   componentWillReceiveProps(props) {
 	this.setState({content: generate_content(props)});
   }
   componentDidUpdate(props, state) {
 	if (this.props !== props) {
-	  this.originalContent = document.getElementById('ussc-highlight-content').innerHTML;
-	  this.applyHighlights();
+	  this.originalContent = document.getElementById('ussc-content-wrapper').innerHTML;
+	  this.rerenderLocalContent();
 	}
 	if (this.state !== state) {
 	  for (var i = 0; i < this.state.ids.length; i++) {
