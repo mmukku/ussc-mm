@@ -11,7 +11,7 @@ substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
 //drug offence level
 class DOL extends Component {
   state = {
-    offenseLevel: undefined,
+    offenseLevel: null,
     substance: '',
     uom: '',
     uomList: '',
@@ -19,8 +19,8 @@ class DOL extends Component {
   };
 
   render() {
-    let result = undefined;
-    if (this.state.offenseLevel !== undefined) {
+    let result = <div />;
+    if (this.state.offenseLevel !== null) {
       result = (
         <section>
           <div className="usa-alert usa-alert-info">
@@ -32,6 +32,8 @@ class DOL extends Component {
           </div>
         </section>
       );
+    } else {
+      result = <div />;
     }
     return (
       <div>
@@ -40,7 +42,6 @@ class DOL extends Component {
         <section>
           <label htmlFor="substance">Substance</label>
           <select
-            id="substance"
             onChange={e => this.getUOMList(e)}
             value={this.state.substance}
           >
@@ -48,14 +49,11 @@ class DOL extends Component {
             {substanceList}
           </select>
           <label htmlFor="weight">Weight</label>
-          <input
-            id="qty"
-            onChange={e => this.setState({ qty: e.target.value })}
-          />
+          <input onChange={this.handleQtyChange.bind(this)} />
           <label htmlFor="uom">Unit of measure</label>
           <select
-            id="uom"
-            onChange={e => this.setState({ uom: e.target.value })}
+            onChange={this.handleUOMChange.bind(this)}
+            value={this.state.uom}
           >
             {this.state.uomList}
           </select>
@@ -65,13 +63,26 @@ class DOL extends Component {
     );
   }
 
+  handleQtyChange(e) {
+    this.setState({ offenseLevel: null, qty: e.target.value });
+  }
+
+  handleUOMChange(e) {
+    this.setState({ offenseLevel: null, uom: e.target.value });
+  }
+
   getUOMList(e) {
     let uoml = _.filter(data, d => d.substance === e.target.value);
     let uomList = _.uniqBy(uoml, 'uom').map(x => (
       <option key={x.uom}>{x.uom}</option>
     ));
 
-    this.setState({ substance: e.target.value, uomList: uomList });
+    this.setState({
+      offenseLevel: null,
+      uom: uoml[0].uom,
+      substance: e.target.value,
+      uomList: uomList
+    });
   }
 
   calculate(e) {
@@ -88,6 +99,8 @@ class DOL extends Component {
     });
     if (s !== undefined) {
       this.setState({ offenseLevel: s.level });
+    } else {
+      this.setState({ offenseLevel: 'Not Found' });
     }
   }
 }

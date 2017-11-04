@@ -86,7 +86,7 @@ class DE extends Component {
   constructor() {
     super();
     this.state = {
-      marihuana: undefined,
+      marihuana: null,
       substance: '',
       uom: '',
       uomList: '',
@@ -95,9 +95,9 @@ class DE extends Component {
   }
 
   render() {
-    let result = undefined;
-    if (this.state.marihuana !== undefined) {
-      let sourceUOM = this.state.marihuana.sourceUOM;
+    let result;
+    if (this.state.marihuana !== null) {
+      let sourceUOM = this.state.marihuana.substanceUOM;
       if (sourceUOM === undefined) {
         sourceUOM = 'gm';
       }
@@ -134,6 +134,8 @@ class DE extends Component {
           </div>
         </section>
       );
+    } else {
+      result = <div />;
     }
     return (
       <div>
@@ -160,12 +162,14 @@ class DE extends Component {
           <label htmlFor="weight">Weight</label>
           <input
             id="qty"
-            onChange={e => this.setState({ qty: e.target.value })}
+            value={this.state.qty}
+            onChange={this.handleQtyChange.bind(this)}
           />
           <label htmlFor="uom">Unit of measure</label>
           <select
             id="uom"
-            onChange={e => this.setState({ uom: e.target.value })}
+            value={this.state.uom}
+            onChange={this.handleUOMChange.bind(this)}
           >
             {this.state.uomList}
           </select>
@@ -194,12 +198,24 @@ class DE extends Component {
 
     let uomList = uoml.map(x => <option key={x}>{x}</option>);
 
-    this.setState({ substance: e.target.value, uomList: uomList });
+    this.setState({
+      substance: e.target.value,
+      marihuana: null,
+      uom: uoml[0],
+      uomList: uomList
+    });
+  }
+
+  handleQtyChange(e) {
+    this.setState({ marihuana: null, qty: e.target.value });
+  }
+
+  handleUOMChange(e) {
+    this.setState({ marihuana: null, uom: e.target.value });
   }
 
   calculate(e) {
     let s = _.find(data, x => x.substance === this.state.substance);
-
     if (s !== undefined) {
       this.setState({ marihuana: s });
     }
