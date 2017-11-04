@@ -53,15 +53,12 @@ const theme = {
   }
 };
 class SI extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      statute: '',
-      guidelines: [],
-      statuteOptions: []
-    };
-  }
+  state = {
+    title: '',
+    statute: '',
+    guidelines: [],
+    statuteOptions: []
+  };
 
   render() {
     const value = this.state.statute;
@@ -124,13 +121,14 @@ class SI extends Component {
   }
 
   cascadestatute(e) {
-    this.setState({ title: e.target.value, statute: '' });
+    this.setState({ title: e.target.value, statute: '', guidelines: [] });
   }
 
   getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
+    // eslint-disable-next-line
     let statuteOptions = _.filter(data, d => d.Title == this.state.title).map(
       x => x.Statute
     );
@@ -162,6 +160,7 @@ class SI extends Component {
   };
 
   search = () => {
+    // eslint-disable-next-line
     let results = _.find(
       data,
       d => d.Title == this.state.title && d.Statute === this.state.statute
