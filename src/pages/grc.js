@@ -27,15 +27,12 @@ const zones = [
 ];
 
 class SC extends Component {
-  constructor() {
-    super();
-    this.state = {
-      offenseLevel: '',
-      category: '',
-      sentence: null,
-      zone: 'D'
-    };
-  }
+  state = {
+    offenseLevel: data[0].offenseLevel,
+    category: 'I',
+    sentence: null,
+    zone: 'D'
+  };
 
   render() {
     let results = '';
@@ -56,6 +53,8 @@ class SC extends Component {
           </div>
         </div>
       );
+    } else {
+      results = <div />;
     }
     return (
       <div>
@@ -73,18 +72,17 @@ class SC extends Component {
           <label htmlFor="offenseLevel">Offense Level</label>
           <select
             id="offenseLevel"
-            onChange={e => this.setState({ offenseLevel: e.target.value })}
+            onChange={this.handleOffenceLevelChange.bind(this)}
             value={this.state.offenseLevel}
           >
-            <option>Select</option>
             {offenseLevelsList}
           </select>
           <label htmlFor="category">Criminal History Category</label>
           <select
             id="category"
-            onChange={e => this.setState({ category: e.target.value })}
+            value={this.state.category}
+            onChange={this.handleCategoryChange.bind(this)}
           >
-            <option>Select</option>
             {categoryList}
           </select>
           <button onClick={this.calculate.bind(this)}>Go</button>
@@ -93,12 +91,21 @@ class SC extends Component {
     );
   }
 
+  handleOffenceLevelChange(e) {
+    this.setState({ sentence: null, offenseLevel: e.target.value });
+  }
+
+  handleCategoryChange(e) {
+    this.setState({ sentence: null, category: e.target.value });
+  }
+
   calculate(e) {
+    console.log(this.state);
     let s = _.find(
       data,
       x =>
         // eslint-disable-next-line
-        x.offenseLevel == this.state.offenseLevel
+        x.offenseLevel.toString() === this.state.offenseLevel.toString()
     );
     if (s !== undefined) {
       let zone = 'D';
@@ -107,7 +114,6 @@ class SC extends Component {
 
       let min = Number(pair[0]);
       let max = Number(pair[1]);
-      console.log(min, max);
       let zn = _.find(zones, z => min >= z.min && max <= z.max);
 
       if (zn !== undefined) {
