@@ -320,12 +320,17 @@ export class ContentWrapper extends Component {
 	let notes_object = document.getElementById('notes.' + id);
 	notes_object.childNodes[0].style.display = 'block';
   }
-  notesBlurHandler(id) {
+  notesBlurHandler(id, event) {
     let notes_object = document.getElementById('notes.' + id);
-	notes_object.childNodes[0].style.display = 'none';
-    let text_object = notes_object.childNodes[1];
-	this.setNote(id, text_object.innerHTML);
-    this.rerenderLocalContent();
+	if (
+	  event.relatedTarget === null ||
+	  event.relatedTarget.parentNode !== notes_object.childNodes[0]
+	) {
+	  notes_object.childNodes[0].style.display = 'none';
+      let text_object = notes_object.childNodes[1];
+	  this.setNote(id, text_object.innerHTML);
+      this.rerenderLocalContent();
+	}
   }
   getNextNotesObject(element) {
 	let non_inline_parent = get_non_inline_parent_and_path(element)[0];
@@ -341,6 +346,7 @@ export class ContentWrapper extends Component {
 	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
 	  if (notesObject !== null) {
 	    let textObject = notesObject.childNodes[1];
+		textObject.style.display = 'block';
 	    if (textObject.innerHTML.length === 0) {
 	  	  textObject.innerHTML = '<br />';
 	    }
@@ -360,7 +366,11 @@ export class ContentWrapper extends Component {
     notes_control_link.childNodes[0].classList.add('notes_link');
     let notes_control_text = document.createElement('p');
     notes_control_text.className = 'notes_text';
-	notes_control_text.innerHTML = this.getNote(id);
+	let noteHTML = this.getNote(id);
+	notes_control_text.innerHTML = noteHTML;
+	if (noteHTML === null) {
+	  notes_control_text.style.display = 'none';
+	}
     notes_control_text.contentEditable = "true";
     notes_object.appendChild(notes_control_link);
     notes_object.appendChild(notes_control_text);
@@ -370,6 +380,7 @@ export class ContentWrapper extends Component {
     let new_id = id;
     if (element.nodeType === Node.ELEMENT_NODE) {
 	  if (window.getComputedStyle(element).display !== 'inline') {
+		console.log(window.getComputedStyle(element));
 	    let children_found = false;
 	    for (var i = element.childNodes.length - 1; i >= 0; i--) {
 		  let temp_new_id = this.applyNotesToDomElementRecursive(element.childNodes[i], new_id);
@@ -522,23 +533,23 @@ export class ContentWrapper extends Component {
 		let id = elements[i].parentNode.parentNode.id.split('.')[1];
 		elements[i].onclick = function(component, item) {
 		  return function() {
-			component.notesLinkClickHandler(item)
+			component.notesLinkClickHandler(item);
 		  };
 		}(this, id);
 	  }
 	  elements = document.getElementsByClassName('notes');
 	  for (var i = 0; i < elements.length; i++) {
 		let id = parseInt(elements[i].id.split('.')[1], 10);
-		elements[i].addEventListener (
-		  'focusout',
+		elements[i].childNodes[1].addEventListener (
+		  'blur',
 		  function(component, item) {
-		    return function() {
-			  component.notesBlurHandler(item)
+		    return function(event) {
+			  component.notesBlurHandler(item, event)
 		    };
 		  }(this, id)
 		);
-		elements[i].addEventListener (
-		  'focusin',
+		elements[i].childNodes[1].addEventListener (
+		  'focus',
 		  function(component, item) {
 			return function() {
 			  component.notesFocusHandler(item);
