@@ -162,6 +162,24 @@ function get_non_inline_parent_and_path(node) {
   return [node, path];
 }
 
+function true_node_position(node) {
+  if (node.tagName.toUpperCase() === 'HTML' || node.tagName.toUpperCase() === 'BODY') {
+	return [0, 0];
+  } else {
+	let parent = node.offsetParent;
+	var parentPosition;
+	if (parent === null) {
+	  parentPosition = [0, 0];
+	} else {
+	  parentPosition = true_node_position(parent);
+	}
+	return [
+	  parentPosition[0] + node.offsetLeft,
+	  parentPosition[1] + node.offsetTop
+	];
+  }
+}
+
 /* Hack to find the pixel location of a text-selection endpoint represented in the
 	node/offset form returned by the Selection API. If the node is an element, offset
 	is an index into its array of children, so we can find the position of that child.
@@ -175,17 +193,17 @@ function node_offset_position(node, offset) {
 	var correctChild;
 	if (offset >= node.childNodes.length)
 	{
+	  let position = true_node_position(node);
 	  return [
-	    node.offsetLeft + node.offsetWidth,
-		node.offsetTop + node.offsetHeight
+	    position[0] + node.offsetWidth,
+		position[1] + node.offsetHeight
 	  ];
+	} else if (offset === 0) {
+	  return true_node_position(node);
 	} else {
 	  correctChild = node.childNodes[offset];
 	  if (correctChild.nodeType === Node.ELEMENT_NODE) {
-	    return [
-	      correctChild.offsetLeft,
-	      correctChild.offsetTop
-	    ];
+	    return true_node_position(correctChild);
 	  } else {
 		return node_offset_position(correctChild, 0);
 	  }
@@ -203,18 +221,16 @@ function node_offset_position(node, offset) {
 	  duplicateChild = duplicateChild.childNodes[path[i]];
 	}
 	let spanNode = insert_span_into_text(duplicateChild, offset, offset + 1);
+	let position = true_node_position(parentNode);
 	duplicateNode.style.position = 'absolute';
-	duplicateNode.style.top = parentNode.offsetTop + 'px';
-	duplicateNode.style.left = parentNode.offsetLeft + 'px';
+	duplicateNode.style.top = position[1] + 'px';
+	duplicateNode.style.left = position[0] + 'px';
 	duplicateNode.style.width = parentNode.offsetWidth + 'px';
 	duplicateNode.style.margin = '0px';
 	duplicateNode.style.userSelect = 'none';
 	duplicateNode.style['-ms-user-select'] = 'none';
 	parentNode.parentNode.appendChild(duplicateNode);
-	let result = [
-	  spanNode.offsetLeft + parentNode.offsetLeft,
-	  spanNode.offsetTop + parentNode.offsetTop
-	];
+	let result = true_node_position(spanNode);
 	parentNode.parentNode.removeChild(duplicateNode);
 	return result;
   } else {
