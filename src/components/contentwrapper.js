@@ -272,6 +272,12 @@ function html_is_effectively_blank(html) {
   return html === '' || html.trim().toUpperCase() === '<BR>' || html.trim().toUpperCase() === '<BR />';
 }
 
+function element_holds_notes(element) {
+  return element.nodeType === Node.ELEMENT_NODE &&
+    ['H2', 'H3', 'H4', 'LI', 'TABLE', 'P', 'BLOCKQUOTE', 'DIV', 'IMG'].indexOf(element.tagName.toUpperCase()) !== -1 &&
+    !element.classList.contains('notes');
+}
+
 export class ContentWrapper extends Component {
   constructor(props) {
 	super(props);
@@ -359,9 +365,12 @@ export class ContentWrapper extends Component {
 	}
   }
   getNextNotesObject(element) {
-	let non_inline_parent = get_non_inline_parent_and_path(element)[0];
-	if (non_inline_parent.nextSibling.classList.contains('notes')) {
-	  return non_inline_parent.nextSibling;
+	let parent = element;
+	while (parent !== null && !element_holds_notes(parent)) {
+	  parent = parent.parentNode;
+	}
+	if (parent !== null && parent.nextSibling !== null && parent.nextSibling.classList.contains('notes')) {
+	  return parent.nextSibling;
 	} else {
 	  return null;
 	}
@@ -405,7 +414,7 @@ export class ContentWrapper extends Component {
   applyNotesToDomElementRecursive(element, id) {
     let new_id = id;
     if (element.nodeType === Node.ELEMENT_NODE) {
-	  if (['H2', 'H3', 'H4', 'LI', 'TABLE', 'P', 'BLOCKQUOTE', 'DIV', 'IMG'].indexOf(element.tagName.toUpperCase()) !== -1) {
+	  if (element_holds_notes(element)) {
 	    let children_found = false;
 	    for (var i = element.childNodes.length - 1; i >= 0; i--) {
 		  let temp_new_id = this.applyNotesToDomElementRecursive(element.childNodes[i], new_id);
