@@ -510,6 +510,8 @@ export class ContentWrapper extends Component {
 		  !highlightContext.elementIsIgnored(selectionInfo.first.node) ||
 		  !highlightContext.elementIsIgnored(selectionInfo.last.node)
 		) {
+		  /* first hide the other menu if it is present */
+	      document.getElementById('ussc-highlight-click-menu').style.display = 'none';
 	      /* show the menu above the beginning of the selection */
 	      selectMenu.style.display = 'block';
 	      selectMenu.style.position = 'absolute';
@@ -527,6 +529,8 @@ export class ContentWrapper extends Component {
 	if (clickMenu) {
 	  let elements = document.getElementsByClassName('highlight.' + id);
 	  if (elements.length > 0) {
+		/* in this case, show the menu; first hide the other menu if it is present */
+		document.getElementById('ussc-select-menu').style.display = 'none';
 	    clickMenu.style.display = 'block';
 	    clickMenu.style.position = 'absolute';
 		let position = select_position(elements);
