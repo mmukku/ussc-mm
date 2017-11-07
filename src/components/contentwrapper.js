@@ -252,6 +252,10 @@ function generate_content(props) {
   return (<div id='ussc-content-wrapper'>{props.children}</div>);
 }
 
+function html_is_effectively_blank(html) {
+  return html === '' || html.trim().toUpperCase() === '<BR>' || html.trim().toUpperCase() === '<BR />';
+}
+
 export class ContentWrapper extends Component {
   constructor(props) {
 	super(props);
@@ -306,7 +310,7 @@ export class ContentWrapper extends Component {
   }
   setNote(id, content) {
 	let queryString = this.getNoteQueryString(id);
-	if (content === '' || content === '<br>') {
+	if (html_is_effectively_blank(content)) {
 	  localStorage.removeItem(queryString);
 	} else {
 	  localStorage.setItem(queryString, content);
@@ -314,7 +318,10 @@ export class ContentWrapper extends Component {
   }
   notesLinkClickHandler(id) {
     this.setNote(id, '');
-	this.rerenderLocalContent();
+	let notes_object = document.getElementById('notes.' + id);
+	notes_object.childNodes[0].style.display = 'none';
+	notes_object.childNodes[1].innerHTML = '';
+	notes_object.childNodes[1].style.display = 'none';
   }
   notesFocusHandler(id) {
 	let notes_object = document.getElementById('notes.' + id);
@@ -328,8 +335,11 @@ export class ContentWrapper extends Component {
 	) {
 	  notes_object.childNodes[0].style.display = 'none';
       let text_object = notes_object.childNodes[1];
-	  this.setNote(id, text_object.innerHTML);
-      this.rerenderLocalContent();
+	  let note_html = text_object.innerHTML;
+	  this.setNote(id, note_html);
+	  if (html_is_effectively_blank(note_html)) {
+		text_object.style.display = 'none';
+	  }
 	}
   }
   getNextNotesObject(element) {
@@ -379,8 +389,7 @@ export class ContentWrapper extends Component {
   applyNotesToDomElementRecursive(element, id) {
     let new_id = id;
     if (element.nodeType === Node.ELEMENT_NODE) {
-	  if (window.getComputedStyle(element).display !== 'inline') {
-		console.log(window.getComputedStyle(element));
+	  if (['H2', 'H3', 'H4', 'LI', 'TABLE', 'P', 'BLOCKQUOTE', 'DIV', 'IMG'].indexOf(element.tagName.toUpperCase()) !== -1) {
 	    let children_found = false;
 	    for (var i = element.childNodes.length - 1; i >= 0; i--) {
 		  let temp_new_id = this.applyNotesToDomElementRecursive(element.childNodes[i], new_id);
@@ -391,11 +400,13 @@ export class ContentWrapper extends Component {
 	    }
 	    if (new_id === id && children_found) {
 		  let notes_object = this.createNotesObject(new_id);
-	      if (element.nextSibling === null) {
-	        element.parentNode.appendChild(notes_object);
-	      } else {
-	        element.parentNode.insertBefore(notes_object, element.nextSibling);
-	      }
+		  if (element.parentNode !== null) {
+	        if (element.nextSibling === null) {
+	          element.parentNode.appendChild(notes_object);
+	        } else {
+	          element.parentNode.insertBefore(notes_object, element.nextSibling);
+	        }
+		  }
 	      new_id++;
 	    }
 	  }
@@ -541,7 +552,7 @@ export class ContentWrapper extends Component {
 	  for (var i = 0; i < elements.length; i++) {
 		let id = parseInt(elements[i].id.split('.')[1], 10);
 		elements[i].childNodes[1].addEventListener (
-		  'blur',
+		  'focusout',
 		  function(component, item) {
 		    return function(event) {
 			  component.notesBlurHandler(item, event)
@@ -549,7 +560,7 @@ export class ContentWrapper extends Component {
 		  }(this, id)
 		);
 		elements[i].childNodes[1].addEventListener (
-		  'focus',
+		  'focusin',
 		  function(component, item) {
 			return function() {
 			  component.notesFocusHandler(item);
