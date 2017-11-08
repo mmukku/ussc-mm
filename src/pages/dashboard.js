@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import arrowRight from '../img/static_chevron-right.svg';
+import arrowRight from '../img/icons/static_chevron-right_b.svg';
+import guidelinesManualColor from '../img/icons/static_guidelines-manual-color.svg';
+import appendixBIcon from '../img/icons/static_appendix-b-color.svg';
+import appendixAIcon from '../img/icons/static_appendix-a-color.svg';
+import appendixCIcon from '../img/icons/static_appendix-c-color.svg';
+import guidelineRangeIcon from '../img/icons/static_guildline-range-color.svg';
+import drugQuantityIcon from '../img/icons/static_drug-quantity-color.svg';
+import drugEquivalencyIcon from '../img/icons/static_drug-equivalency-color.svg';
 import _ from 'lodash';
 
 class Dashboard extends Component {
@@ -10,9 +17,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <section className="usa-section search_global">
+        <section className="usa-section search-global-A">
           <div className="usa-grid">
-            <div className="usa-width-one-whole search-box-global">
+            <div className="usa-width-one-whole">
               <form className="usa-search usa-search-small">
                 <div role="search">
                   <label className="usa-sr-only" for="search-field-small">
@@ -28,22 +35,25 @@ class Dashboard extends Component {
           </div>
         </section>
 
-        <section className="usa-section section-2">
+        <section className="usa-section">
           <div className="usa-grid">
-            <div className="container-01" style={{ border: 'auto' }}>
+            <div className="container-01">
               <a href="/home">
                 <div className="container-01-A">
                   <div className="container-01-A1">
-                    <span className="icon-guidelines-manual container-icon-light-A" />
+                    <img
+                      className="static_guidelines-manual-icon"
+                      src={guidelinesManualColor}
+                    />
                   </div>
                   <div className="container-01-A2">
                     <span className="container-font-light-B">
                       Version 3.14-17<br />
                     </span>
                     <span className="container-font-light-A">
-                      Guildelines Manual<br />
+                      Guidelines Manual<br />
                     </span>
-                    <span className="container-font-light-B">2017</span>
+                    <span className="container-font-light-Bd">2017</span>
                   </div>
                   <div className="container-01-A3">
                     <span className="icon-chevron-right container-icon-light-A" />
@@ -57,10 +67,10 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-appendix-a container-icon-light-B" />
+                      <img className="appendex-a-icon" src={appendixAIcon} />
                       <br />
                     </span>
-                    <span className="container-font-light-B">
+                    <span className="container-font-light-Bc">
                       Search Index<br />
                     </span>
                   </div>
@@ -73,10 +83,10 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-appendix-b container-icon-light-B" />
+                      <img className="appendex-b-icon" src={appendixBIcon} />
                       <br />
                     </span>
-                    <span className="container-font-light-B">
+                    <span className="container-font-light-Bc">
                       Search Index<br />
                     </span>
                   </div>
@@ -89,10 +99,10 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-appendix-c container-icon-light-B" />
+                      <img className="appendex-c-icon" src={appendixCIcon} />
                       <br />
                     </span>
-                    <span className="container-font-light-B">
+                    <span className="container-font-light-Bc">
                       Search Index<br />
                     </span>
                   </div>
@@ -102,10 +112,7 @@ class Dashboard extends Component {
           </div>
         </section>
 
-        <section
-          className="usa-section section-2"
-          style={{ paddingTop: '0px' }}
-        >
+        <section className="usa-section">
           <div className="usa-grid">
             <div className="container-01" style={{ border: 'auto' }}>
               <a href="/grc">
@@ -115,7 +122,10 @@ class Dashboard extends Component {
                       Guideline Range<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-guildline-range container-icon-light-B" />
+                      <img
+                        className="sentencing-range-icon"
+                        src={guidelineRangeIcon}
+                      />
                       <br />
                     </span>
                   </div>
@@ -128,7 +138,10 @@ class Dashboard extends Component {
                       Drug Quantity<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-drug-equivalency container-icon-light-B" />
+                      <img
+                        className="drug-quantity-icon"
+                        src={drugQuantityIcon}
+                      />
                       <br />
                     </span>
                   </div>
@@ -141,7 +154,10 @@ class Dashboard extends Component {
                       Drug Equivalency<br />
                     </span>
                     <span className="container-font-light-B">
-                      <span className="icon-guildline-range container-icon-light-B" />
+                      <img
+                        className="drug-equivalency-icon"
+                        src={drugEquivalencyIcon}
+                      />
                       <br />
                     </span>
                   </div>

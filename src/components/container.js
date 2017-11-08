@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import FontSize from './fontSize';
 import headerLogo from '../img/USSCGM.svg';
 import logo from '../img/logo.png';
-import arrowRight from '../img/static_chevron-right.svg';
 import favicon from 'uswds/dist/img/favicons/favicon-57.png';
 import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
 import iconhttps from 'uswds/dist/img/icon-https.svg';
@@ -37,11 +36,8 @@ class Container extends Component {
         <header className="usa-header usa-header-extended" role="banner">
           <div className="usa-navbar">
             <div className="back-container">
-              <button
-                className="usa-menu-btn"
-                style={{ backgroundColor: '#ffffff', border: '0px' }}
-              >
-                <span className="icon-chevron-left custom-position-header">
+              <button className="usa-menu-btn" style={{ border: '0px' }}>
+                <span className="usa-navbar-left icon-chevron-left-white">
                   {' '}
                 </span>
               </button>
@@ -50,11 +46,8 @@ class Container extends Component {
               <img className="logo-icon" src={headerLogo} />
             </div>
             <div className="menu-container">
-              <button
-                className="usa-menu-btn"
-                style={{ backgroundColor: '#ffffff', border: '0px' }}
-              >
-                <span className="icon-hambuger-menu custom-position-header" />
+              <button className="usa-menu-btn" style={{ border: '0px' }}>
+                <span className="usa-navbar-right icon-hambuger-menu-white" />
               </button>
             </div>
           </div>
@@ -62,94 +55,94 @@ class Container extends Component {
           <nav role="navigation" className="usa-nav">
             <div className="usa-nav-inner">
               <button className="usa-nav-close">
-                <span className="icon-hambuger-menu custom-position-header" />
+                <span className="icon-hambuger-menu usa-nav-icon" />
               </button>
-              <hr className="custom-linebreak-nav" />
+              <hr className="usa-nav-hr" />
 
               <ul className="usa-nav-primary usa-accordion">
                 <li style={{ paddingTop: '0px' }}>
                   <a className="usa-nav-link" href="/">
                     <span>
-                      <span className="icon-home custom-position-header" />
+                      <span className="icon-home-nav usa-nav-icon" />
                       Home
                     </span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/home">
-                    <span className="icon-guidelines-manual custom-position-header" />
-                    <span>Guildelines Manual</span>
+                    <span className="icon-guidelines-manual-nav usa-nav-icon" />
+                    <span>Guidelines Manual</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/si">
-                    <span className="icon-appendix-a custom-position-header" />
+                    <span className="icon-appendix-a-nav usa-nav-icon" />
                     <span>Appendix-A</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/ab">
-                    <span className="icon-appendix-b custom-position-header" />
+                    <span className="icon-appendix-b-nav usa-nav-icon" />
                     <span>Appendix-B</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/ac">
-                    <span className="icon-appendix-c custom-position-header" />
+                    <span className="icon-appendix-c-nav usa-nav-icon" />
                     <span>Appendix-C</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/grc">
-                    <span className="icon-guildline-range custom-position-header" />
+                    <span className="icon-guildline-range-nav usa-nav-icon" />
                     <span>Guideline Range</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/dol">
-                    <span className="icon-drug-equivalency custom-position-header" />
+                    <span className="icon-drug-equivalency-nav usa-nav-icon" />
                     <span>Drug Quantity</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/de">
-                    <span className="icon-drug-equivalency custom-position-header" />
+                    <span className="icon-drug-equivalency-nav usa-nav-icon" />
                     <span>Drug Equivalency</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/ai">
-                    <span className="icon-home custom-position-header" />
+                    <span className="icon-applying-the-guildelines-nav usa-nav-icon" />
                     <span>Applying the Guidelines</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/">
-                    <span className="icon-bookmarks custom-position-header" />
+                    <span className="icon-bookmarks-nav usa-nav-icon" />
                     <span>Bookmarks</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/">
-                    <span className="icon-notes custom-position-header" />
+                    <span className="icon-notes-nav usa-nav-icon" />
                     <span>Notes</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/archives">
-                    <span className="icon-applying-the-guildelines custom-position-header" />
+                    <span className="icon-archive-nav usa-nav-icon" />
                     <span>Archive</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/">
-                    <span className="icon-updates custom-position-header" />
+                    <span className="icon-updates-nav usa-nav-icon" />
                     <span>Updates</span>
                   </a>
                 </li>
                 <li>
                   <a className="usa-nav-link" href="/">
-                    <span className="icon-documents custom-position-header" />
+                    <span className="icon-documents-nav usa-nav-icon" />
                     <span>Disclaimer</span>
                   </a>
                 </li>
