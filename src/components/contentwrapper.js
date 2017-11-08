@@ -382,6 +382,7 @@ export class ContentWrapper extends Component {
 	  	  textObject.innerHTML = '<br />';
 	    }
 	    textObject.focus();
+		notesObject.scrollIntoView();
 	  }
 	}
   }
@@ -392,13 +393,13 @@ export class ContentWrapper extends Component {
     let notes_control_link = document.createElement('p');
 	notes_control_link.style.display = 'none';
 	notes_control_link.classList.add('notes_control')
-	let remove_note_link = document.createElement('a');
+	let remove_note_link = document.createElement('button');
 	remove_note_link.href = '#';
 	remove_note_link.innerText = 'Remove Note';
 	remove_note_link.classList.add('remove_note');
     notes_control_link.append(remove_note_link);
 	notes_control_link.append(new Text(' '));
-	let hide_controls_link = document.createElement('a');
+	let hide_controls_link = document.createElement('button');
 	hide_controls_link.href = '#';
 	hide_controls_link.innerText = 'Hide Note Controls';
 	hide_controls_link.classList.add('hide_controls');
@@ -608,7 +609,7 @@ export class ContentWrapper extends Component {
 	  <div className="usa-section">
 	    <ul id='ussc-select-menu' className='usa-nav-submenu' style={{display:'none'}}>
 		  <li>
-		    <a href='#' className='usa-nav-link'
+		    <button type='button' className='usa-nav-link'
 			  onClick={() => {
 				this.highlightSelection();
 				document.getElementById('ussc-select-menu').style.display = 'none';
@@ -616,10 +617,10 @@ export class ContentWrapper extends Component {
 			  onBlur = {() => {document.getElementById('ussc-select-menu').style.display = 'none';}}
 			>
 			  Highlight
-			</a>
+			</button>
 		  </li>
 		  <li>
-			<a href='#' className='usa-nav-link'
+			<button type='button' className='usa-nav-link'
 			  onClick={(event) => {
 				this.focusNotesAfterSelection();
 				document.getElementById('ussc-select-menu').style.display = 'none';
@@ -628,16 +629,16 @@ export class ContentWrapper extends Component {
 			  onBlur = {() => {document.getElementById('ussc-select-menu').style.display = 'none';}}
 			>
 			  Notes
-			</a>
+			</button>
 		  </li>
 		</ul>
 		<ul id='ussc-highlight-click-menu' className='usa-nav-submenu' style={{display:'none'}}>
 		  <li>
-		    <a id='ussc-remove-highlight-button' href='#' className='usa-nav-link'
+		    <button type='button' id='ussc-remove-highlight-button' className='usa-nav-link'
 			  onBlur = {() => {document.getElementById('ussc-highlight-click-menu').style.display = 'none';}}
 			>
 			  Remove Highlight
-			</a>
+			</button>
 		  </li>
 		</ul>
 		{this.state.content}
