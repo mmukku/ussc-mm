@@ -107,7 +107,7 @@ class GuideLine extends Component {
             </select>
           </div>
         </h6>
-        <ContentWrapper path={this.props.location.pathname}>
+        <ContentWrapper path={this.props.location.pathname} title={`${this.state.id} - ${this.state.title}`}>
           {this.state.imgContent}
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </ContentWrapper>

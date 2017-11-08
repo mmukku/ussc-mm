@@ -59,7 +59,7 @@ export default props => {
           {chapterList}
         </select>
       </h6>
-      <ContentWrapper path={props.location.pathname}>
+      <ContentWrapper path={props.location.pathname} title={`Chapter ${chapterId} - ${thisChapter.title}`}>
         <h3>Chapter {chapterId}</h3>
         <h4>{thisChapter.title}</h4>
         <p dangerouslySetInnerHTML={{ __html: thisChapter.content }} />

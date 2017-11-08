@@ -11,7 +11,7 @@ export default props => {
   return (
     <div>
 	  <BookmarkLink path={props.location.pathname} title={`Appendix B - ${id}`}/>
-	  <ContentWrapper path={props.location.pathname}>
+	  <ContentWrapper path={props.location.pathname} title={`Appendix B - ${id}`}>
         <a href="/ab">AppendixB</a>
         <p dangerouslySetInnerHTML={{ __html: content }} />
 	  </ContentWrapper>

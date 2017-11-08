@@ -19,7 +19,7 @@ const lg = GuideLines.length;
 const ls = sections.length;
 const ld = Data.length;
 export default (props) => (
-  <ContentWrapper path={props.location.pathname}>
+  <ContentWrapper path={props.location.pathname} title="Guidelines">
     <h3>Guidelines</h3>
     {chapterList}
   </ContentWrapper>

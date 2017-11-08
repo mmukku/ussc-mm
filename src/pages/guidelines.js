@@ -119,7 +119,7 @@ export default props => {
           </select>
         </div>
       </h6>
-      <ContentWrapper path={props.location.pathname}>
+      <ContentWrapper path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${generalTitle}`}>
         <h3>
           Chapter {chapterId} - {chapterTitle}
         </h3>

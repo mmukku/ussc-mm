@@ -5,7 +5,7 @@ function blank_list() {
   };
 }
 
-function object_type(item) {
+export function object_type(item) {
   if (typeof item !== 'object') {
 	return 'non-object';
   } else if (item === null) {

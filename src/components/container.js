@@ -195,6 +195,11 @@ class Container extends Component {
 				    <span>Bookmarks</span>
 				  </Link>
 				</li>
+				<li>
+				  <Link to="/notes" className="usa-nav-link">
+				    <span>Notes</span>
+				  </Link>
+				</li>
               </ul>
               <form className="usa-search usa-search-small">
                 <div role="search">

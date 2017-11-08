@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import App from '../App';
-import { get_list, set_list, remove_list_item, add_list_item } from '../locallist';
+import { get_note, set_note, remove_note } from '../note';
+import { add_highlight, remove_highlight, get_highlights, set_highlights } from '../highlight.js';
 
 function get_regularized_offset_size(element) {
   if (element.nodeType === Node.ELEMENT_NODE) {
@@ -113,6 +114,35 @@ class HighlightContext {
 	  let spanNode = insert_span_into_text(element, 0, this.regularizedTextSize(element));
 	  this.highlightEntireElement(id, spanNode);
 	}
+  }
+  elementOfRegularizedTextAddressRecursive(element, address) {
+	if (this.elementIsIgnored(element)) {
+	  return null;
+	}
+	let position = this.regularizedTextAddressForElement(element);
+	let size = this.regularizedTextSize(element);
+	if (element.nodeType === Node.ELEMENT_NODE) {
+	  position += size;
+	  for (var i = element.childNodes.length - 1; i >= 0; i--) {
+		let child = element.childNodes[i];
+		let childSize = this.regularizedTextSize(child);
+		if (position >= address && position - childSize < address) {
+		  let result = this.elementOfRegularizedTextAddressRecursive(child, address);
+		  if (result === null) {
+			return element;
+		  } else {
+			return result;
+		  }
+		}
+		position -= childSize;
+	  }
+	  return null;
+	} else {
+	  return null;
+	}
+  }
+  elementOfRegularizedTextAddress(address) {
+	return this.elementOfRegularizedTextAddressRecursive(this.ancestor, address);
   }
   highlightRangeRecursive(id, element, begin, end) {
 	if (this.elementIsIgnored(element)) {
@@ -278,6 +308,16 @@ function element_holds_notes(element) {
     !element.classList.contains('notes');
 }
 
+function focus_notes_object(notesObject) {
+  let textObject = notesObject.getElementsByClassName('notes_text')[0];
+  textObject.style.display = 'block';
+  if (textObject.innerHTML.length === 0) {
+	textObject.innerHTML = '<br />';
+  }
+  textObject.focus();
+  notesObject.scrollIntoView();
+}
+
 export class ContentWrapper extends Component {
   constructor(props) {
 	super(props);
@@ -320,22 +360,14 @@ export class ContentWrapper extends Component {
 	  return result;
 	}
   }
-  getNoteQueryString(id) {
-	return JSON.stringify({
-	  type: 'ussc-notes',
-	  path: this.props.path,
-	  id: parseInt(id)
-	});
-  }
   getNote(id) {
-	return localStorage.getItem(this.getNoteQueryString(id));
+	return get_note(this.props.path, id);
   }
   setNote(id, content) {
-	let queryString = this.getNoteQueryString(id);
 	if (html_is_effectively_blank(content)) {
-	  localStorage.removeItem(queryString);
+	  remove_note(this.props.path, id);
 	} else {
-	  localStorage.setItem(queryString, content);
+	  set_note(this.props.path, id, content, this.props.title);
 	}
   }
   removeNoteClickHandler(id) {
@@ -349,13 +381,25 @@ export class ContentWrapper extends Component {
   notesFocusHandler(id) {
 	let notes_object = document.getElementById('notes.' + id);
 	notes_object.getElementsByClassName('notes_control')[0].style.display = 'block';
+	document.getElementById('ussc-select-menu').style.display = 'none';
+	document.getElementById('ussc-highlight-click-menu').style.display = 'none';
   }
-  hideControlsClickHandler(id, event) {
+  saveNoteClickHandler(id, event) {
     let notes_object = document.getElementById('notes.' + id);
 	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
     let text_object = notes_object.getElementsByClassName('notes_text')[0];
 	let note_html = text_object.innerHTML;
 	this.setNote(id, note_html);
+	if (html_is_effectively_blank(note_html)) {
+	  text_object.style.display = 'none';
+	}
+  }
+  revertNoteClickHandler(id, event) {
+	let notes_object = document.getElementById('notes.' + id);
+	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
+	let text_object = notes_object.getElementsByClassName('notes_text')[0];
+	let note_html = this.getNote(id);
+	text_object.innerHTML = note_html;
 	if (html_is_effectively_blank(note_html)) {
 	  text_object.style.display = 'none';
 	}
@@ -376,13 +420,26 @@ export class ContentWrapper extends Component {
 	if (selectionInfo.selectionExists) {
 	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
 	  if (notesObject !== null) {
-	    let textObject = notesObject.getElementsByClassName('notes_text')[0];
-		textObject.style.display = 'block';
-	    if (textObject.innerHTML.length === 0) {
-	  	  textObject.innerHTML = '<br />';
+	    focus_notes_object(notesObject);
+	  }
+	}
+  }
+  focusNotesAfterHighlight(id) {
+	let highlightCollection = this.getHighlightCollection();
+	let highlightObject = null;
+	for (var i = 0; i < highlightCollection.data.length; i++) {
+	  if (highlightCollection.data[i].id == id) {
+		highlightObject = highlightCollection.data[i];
+	  }
+	}
+	if (highlightObject !== null) {
+	  let context = new HighlightContext(document.getElementById('ussc-content-wrapper'));
+	  let highlightElement = context.elementOfRegularizedTextAddress(highlightObject.first);
+	  if (highlightElement !== null) {
+	  let notesObject = this.getNextNotesObject(highlightElement);
+	    if (notesObject !== null) {
+		  focus_notes_object(notesObject);
 	    }
-	    textObject.focus();
-		notesObject.scrollIntoView();
 	  }
 	}
   }
@@ -394,16 +451,19 @@ export class ContentWrapper extends Component {
 	notes_control_link.style.display = 'none';
 	notes_control_link.classList.add('notes_control')
 	let remove_note_link = document.createElement('button');
-	remove_note_link.href = '#';
 	remove_note_link.innerText = 'Remove Note';
 	remove_note_link.classList.add('remove_note');
     notes_control_link.append(remove_note_link);
 	notes_control_link.append(new Text(' '));
-	let hide_controls_link = document.createElement('button');
-	hide_controls_link.href = '#';
-	hide_controls_link.innerText = 'Hide Note Controls';
-	hide_controls_link.classList.add('hide_controls');
-	notes_control_link.append(hide_controls_link);
+	let save_note_link = document.createElement('button');
+	save_note_link.innerText = 'Save Note';
+	save_note_link.classList.add('save_note');
+	notes_control_link.append(save_note_link);
+	notes_control_link.append(new Text(' '));
+	let revert_note_link = document.createElement('button');
+	revert_note_link.innerText = 'Revert Note';
+	revert_note_link.classList.add('revert_note');
+	notes_control_link.append(revert_note_link);
     let notes_control_text = document.createElement('p');
     notes_control_text.className = 'notes_text';
 	let noteHTML = this.getNote(id);
@@ -459,10 +519,10 @@ export class ContentWrapper extends Component {
 	});
   }
   getHighlightCollection() {
-	return get_list(this.getHighlightQueryString());
+	return get_highlights(this.props.path);
   }
   setHighlightCollection(collection) {
-	set_list(this.getHighlightQueryString(), collection);
+	set_highlights(this.props.path, collection);
   }
   applyHighlightsToDomElement(domDiv) {
 	let highlightCollection = this.getHighlightCollection();
@@ -486,7 +546,7 @@ export class ContentWrapper extends Component {
 	});
   }
   removeHighlight(id) {
-	remove_list_item(this.getHighlightQueryString(), id);
+	remove_highlight(this.props.path, id);
 	this.rerenderLocalContent();
   }
   highlightSelection() {
@@ -497,10 +557,7 @@ export class ContentWrapper extends Component {
 	  let context = new HighlightContext(highlightContent);
 	  let firstAddr = context.regularizedTextAddress(selectionInfo.first.node, selectionInfo.first.offset);
 	  let lastAddr = context.regularizedTextAddress(selectionInfo.last.node, selectionInfo.last.offset);
-	  add_list_item(this.getHighlightQueryString(), {
-	    first: firstAddr,
-	    last: lastAddr
-	  });
+	  add_highlight(this.props.path, firstAddr, lastAddr);
 	  this.rerenderLocalContent();
 	}
   }
@@ -544,6 +601,12 @@ export class ContentWrapper extends Component {
 		document.getElementById('ussc-remove-highlight-button').onclick = function(component, item) {
 		  return function() {
 			component.removeHighlight(item);
+			clickMenu.style.display = 'none';
+		  }
+		}(this, id);
+		document.getElementById('ussc-highlight-notes-button').onclick = function(component, item) {
+		  return function() {
+			component.focusNotesAfterHighlight(item);
 			clickMenu.style.display = 'none';
 		  }
 		}(this, id);
@@ -592,21 +655,37 @@ export class ContentWrapper extends Component {
 			};
 		  }(this, id)
 		);
-		elements[i].getElementsByClassName('hide_controls')[0].addEventListener(
+		elements[i].getElementsByClassName('save_note')[0].addEventListener(
 		  'click',
 		  function(component, item) {
 			return function() {
-			  component.hideControlsClickHandler(item);
+			  component.saveNoteClickHandler(item);
 			};
 		  }(this, id)
 		);
+		elements[i].getElementsByClassName('revert_note')[0].addEventListener(
+		  'click',
+		  function(component, item) {
+			return function() {
+			  component.revertNoteClickHandler(item);
+			}
+		  }(this, id)
+		);
 	  }
+	  document.getElementById('content_wrapper').addEventListener(
+	    'click',
+		function() {
+		  document.getElementById('ussc-select-menu').style.display = 'none';
+		  document.getElementById('ussc-highlight-click-menu').style.display = 'none';
+		},
+		true
+	  );
 	}
   }
   render() {
 	document.addEventListener('selectionchange', this.selectHandler);
     return (
-	  <div className="usa-section">
+	  <div id='content_wrapper' className="usa-section">
 	    <ul id='ussc-select-menu' className='usa-nav-submenu' style={{display:'none'}}>
 		  <li>
 		    <button type='button' className='usa-nav-link'
@@ -638,6 +717,13 @@ export class ContentWrapper extends Component {
 			  onBlur = {() => {document.getElementById('ussc-highlight-click-menu').style.display = 'none';}}
 			>
 			  Remove Highlight
+			</button>
+		  </li>
+		  <li>
+		    <button type='button' id='ussc-highlight-notes-button' className='usa-nav-link'
+	          onBlur = {() => {document.getElementById('ussc-highlight-click-menu').style.display = 'none';}}
+			>
+			  Notes
 			</button>
 		  </li>
 		</ul>

@@ -4,11 +4,10 @@ import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
 
 export default params => {
-	console.log(params);
   return (
     <div>
 	  <BookmarkLink path={params.location.pathname} title="Appendix B" />
-	  <ContentWrapper path={params.location.pathname}>
+	  <ContentWrapper path={params.location.pathname} title="Appendix B">
         <p>
           <strong>APPENDIX B</strong>
         </p>

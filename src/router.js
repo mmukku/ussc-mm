@@ -21,6 +21,7 @@ const AsyncAppendixBPart = asyncComponent(() =>
 );
 const AsyncArchives = asyncComponent(() => import('./pages/archives'));
 const AsyncBookmarks = asyncComponent(() => import('./pages/bookmarks'));
+const AsyncNotes = asyncComponent(() => import('./pages/notes'));
 
 const title = 'USSC Guidelines';
 
@@ -43,6 +44,12 @@ class USSCRouter extends Component {
 			  path="/bookmarks"
 			  component={AsyncBookmarks}
 			  title="Bookmarks"
+			/>
+			<Route
+			  exact
+			  path="/notes"
+			  component={AsyncNotes}
+			  title="Notes"
 			/>
             <Route
               exact
