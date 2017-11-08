@@ -338,30 +338,26 @@ export class ContentWrapper extends Component {
 	  localStorage.setItem(queryString, content);
 	}
   }
-  notesLinkClickHandler(id) {
+  removeNoteClickHandler(id) {
     this.setNote(id, '');
 	let notes_object = document.getElementById('notes.' + id);
-	notes_object.childNodes[0].style.display = 'none';
-	notes_object.childNodes[1].innerHTML = '';
-	notes_object.childNodes[1].style.display = 'none';
+	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
+	let text_object = notes_object.getElementsByClassName('notes_text')[0];
+	text_object.innerHTML = '';
+	text_object.style.display = 'none';
   }
   notesFocusHandler(id) {
 	let notes_object = document.getElementById('notes.' + id);
-	notes_object.childNodes[0].style.display = 'block';
+	notes_object.getElementsByClassName('notes_control')[0].style.display = 'block';
   }
-  notesBlurHandler(id, event) {
+  hideControlsClickHandler(id, event) {
     let notes_object = document.getElementById('notes.' + id);
-	if (
-	  event.relatedTarget === null ||
-	  event.relatedTarget.parentNode !== notes_object.childNodes[0]
-	) {
-	  notes_object.childNodes[0].style.display = 'none';
-      let text_object = notes_object.childNodes[1];
-	  let note_html = text_object.innerHTML;
-	  this.setNote(id, note_html);
-	  if (html_is_effectively_blank(note_html)) {
-		text_object.style.display = 'none';
-	  }
+	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
+    let text_object = notes_object.getElementsByClassName('notes_text')[0];
+	let note_html = text_object.innerHTML;
+	this.setNote(id, note_html);
+	if (html_is_effectively_blank(note_html)) {
+	  text_object.style.display = 'none';
 	}
   }
   getNextNotesObject(element) {
@@ -380,7 +376,7 @@ export class ContentWrapper extends Component {
 	if (selectionInfo.selectionExists) {
 	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
 	  if (notesObject !== null) {
-	    let textObject = notesObject.childNodes[1];
+	    let textObject = notesObject.getElementsByClassName('notes_text')[0];
 		textObject.style.display = 'block';
 	    if (textObject.innerHTML.length === 0) {
 	  	  textObject.innerHTML = '<br />';
@@ -395,10 +391,18 @@ export class ContentWrapper extends Component {
     notes_object.id = 'notes.' + id;
     let notes_control_link = document.createElement('p');
 	notes_control_link.style.display = 'none';
-    notes_control_link.append(document.createElement('a'));
-    notes_control_link.childNodes[0].href = '#';
-    notes_control_link.childNodes[0].innerText = 'Remove Note';
-    notes_control_link.childNodes[0].classList.add('notes_link');
+	notes_control_link.classList.add('notes_control')
+	let remove_note_link = document.createElement('a');
+	remove_note_link.href = '#';
+	remove_note_link.innerText = 'Remove Note';
+	remove_note_link.classList.add('remove_note');
+    notes_control_link.append(remove_note_link);
+	notes_control_link.append(new Text(' '));
+	let hide_controls_link = document.createElement('a');
+	hide_controls_link.href = '#';
+	hide_controls_link.innerText = 'Hide Note Controls';
+	hide_controls_link.classList.add('hide_controls');
+	notes_control_link.append(hide_controls_link);
     let notes_control_text = document.createElement('p');
     notes_control_text.className = 'notes_text';
 	let noteHTML = this.getNote(id);
@@ -568,32 +572,31 @@ export class ContentWrapper extends Component {
 		  }(this, this.state.ids[i]);
 		}
 	  }
-	  let elements = document.getElementsByClassName('notes_link');
-	  for (var i = 0; i < elements.length; i++) {
-		let id = elements[i].parentNode.parentNode.id.split('.')[1];
-		elements[i].onclick = function(component, item) {
-		  return function() {
-			component.notesLinkClickHandler(item);
-		  };
-		}(this, id);
-	  }
-	  elements = document.getElementsByClassName('notes');
+	  let elements = document.getElementsByClassName('notes');
 	  for (var i = 0; i < elements.length; i++) {
 		let id = parseInt(elements[i].id.split('.')[1], 10);
-		elements[i].childNodes[1].addEventListener (
-		  'focusout',
-		  function(component, item) {
-		    return function(event) {
-			  component.notesBlurHandler(item, event)
-		    };
-		  }(this, id)
-		);
-		elements[i].childNodes[1].addEventListener (
+		elements[i].addEventListener (
 		  'focusin',
 		  function(component, item) {
 			return function() {
 			  component.notesFocusHandler(item);
 			}
+		  }(this, id)
+		);
+		elements[i].getElementsByClassName('remove_note')[0].addEventListener(
+		  'click',
+		  function(component, item) {
+			return function() {
+			  component.removeNoteClickHandler(item);
+			};
+		  }(this, id)
+		);
+		elements[i].getElementsByClassName('hide_controls')[0].addEventListener(
+		  'click',
+		  function(component, item) {
+			return function() {
+			  component.hideControlsClickHandler(item);
+			};
 		  }(this, id)
 		);
 	  }
