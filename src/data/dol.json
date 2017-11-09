@@ -16,7 +16,7 @@
   { "min": 4.5, "uom": "kg", "substance": "Amphetamine (actual)", "level": 38 },
   { "min": 900, "uom": "g", "substance": "LSD", "level": 38 },
   { "min": 36, "uom": "kg", "substance": "Fentanyl", "level": 38 },
-  { "min": 9, "uom": "kg", "substance": "Fentanyl Analogue", "level": 38 },
+  { "min": 9, "uom": "kg", "substance": "A Fentanyl Analogue", "level": 38 },
   { "min": 90000, "uom": "kg", "substance": "Marihuana", "level": 38 },
   { "min": 18000, "uom": "kg", "substance": "Hashish", "level": 38 },
   { "min": 1800, "uom": "kg", "substance": "Hashish Oil", "level": 38 },
@@ -34,6 +34,7 @@
     "level": 38
   },
   { "min": 5625000, "uom": "units", "substance": "Flunitrazepam", "level": 38 },
+
   { "min": 30, "max": 90, "uom": "kg", "substance": "Heroin", "level": 36 },
   { "min": 150, "max": 450, "uom": "kg", "substance": "Cocaine", "level": 36 },
   { "min": 30, "uom": "kg", "max": 90, "substance": "Heroin", "level": 36 },
@@ -82,7 +83,7 @@
     "min": 3,
     "uom": "kg",
     "max": 9,
-    "substance": "Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 36
   },
   {
@@ -174,7 +175,7 @@
     "min": 1,
     "uom": "kg",
     "max": 3,
-    "substance": "Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 34
   },
   {
@@ -277,7 +278,7 @@
   {
     "min": 300,
     "uom": "g",
-    "max": 1,
+    "max": 1000,
     "substance": "A Fentanyl Analogue",
     "level": 32
   },
@@ -572,7 +573,7 @@
     "min": 40,
     "uom": "g",
     "max": 70,
-    "substance": "Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 26
   },
   {
@@ -664,7 +665,7 @@
     "min": 10,
     "uom": "g",
     "max": 40,
-    "substance": "Fentanyl Analogue",
+    "substance": "A Fentanyl Analogue",
     "level": 24
   },
   {
@@ -1131,24 +1132,24 @@
     "substance": "Flunitrazepam",
     "level": 14
   },
-  { "max": 999, "uom": "Mg", "substance": "Heroin", "level": 12 },
-  { "max": 49999, "uom": "Mg", "substance": "Cocaine", "level": 12 },
-  { "max": 2799, "uom": "Mg", "substance": "Cocaine Base", "level": 12 },
-  { "max": 9999, "uom": "Mg", "substance": "PCP", "level": 12 },
-  { "max": 999, "uom": "Mg", "substance": "PCP (actual)", "level": 12 },
-  { "max": 3999, "uom": "Mg", "substance": "Methamphetamine", "level": 12 },
+  { "max": 9.99, "uom": "g", "substance": "Heroin", "level": 12 },
+  { "max": 49.99, "uom": "g", "substance": "Cocaine", "level": 12 },
+  { "max": 2.79, "uom": "g", "substance": "Cocaine Base", "level": 12 },
+  { "max": 9.99, "uom": "g", "substance": "PCP", "level": 12 },
+  { "max": 0.99, "uom": "g", "substance": "PCP (actual)", "level": 12 },
+  { "max": 4.99, "uom": "g", "substance": "Methamphetamine", "level": 12 },
   {
-    "max": 499,
+    "max": 499.99,
     "uom": "Mg",
     "substance": "Methamphetamine (actual)",
     "level": 12
   },
-  { "max": 499, "uom": "Mg", "substance": "Ice", "level": 12 },
-  { "max": 4999, "uom": "Mg", "substance": "Amphetamine", "level": 12 },
-  { "max": 499, "uom": "Mg", "substance": "Amphetamine (actual)", "level": 12 },
-  { "max": 99, "uom": "Mg", "substance": "LSD", "level": 12 },
-  { "max": 3999, "uom": "Mg", "substance": "Fentanyl", "level": 12 },
-  { "max": 999, "uom": "Mg", "substance": "Fentanyl Analogue", "level": 12 },
+  { "max": 499.99, "uom": "Mg", "substance": "Ice", "level": 12 },
+  { "max": 4.99, "uom": "g", "substance": "Amphetamine", "level": 12 },
+  { "max": 499.99, "uom": "Mg", "substance": "Amphetamine (actual)", "level": 12 },
+  { "max": 99.99, "uom": "Mg", "substance": "LSD", "level": 12 },
+  { "max": 3.99, "uom": "g", "substance": "Fentanyl", "level": 12 },
+  { "max": 0.99, "uom": "g", "substance": "A Fentanyl Analogue", "level": 12 },
   { "min": 5, "uom": "kg", "max": 10, "substance": "Marihuana", "level": 12 },
   { "min": 1, "uom": "kg", "max": 2, "substance": "Hashish", "level": 12 },
   {
@@ -1295,9 +1296,9 @@
     "substance": "Schedule V substances",
     "level": 8
   },
-  { "max": 999, "uom": "g", "substance": "Marihuana", "level": 6 },
-  { "max": 199, "uom": "g", "substance": "Hashish", "level": 6 },
-  { "max": 19, "uom": "g", "substance": "Hashish Oil", "level": 6 },
+  { "max": 0.999, "uom": "kg", "substance": "Marihuana", "level": 6 },
+  { "max": 199.99, "uom": "g", "substance": "Hashish", "level": 6 },
+  { "max": 19.99, "uom": "g", "substance": "Hashish Oil", "level": 6 },
   { "max": 999, "uom": "units", "substance": "Ketamine", "level": 6 },
   {
     "max": 999,
