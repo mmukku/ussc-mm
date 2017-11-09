@@ -8,6 +8,15 @@ substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
   <option key={ol.substance}>{ol.substance}</option>
 ));
 
+const ConversionTable = [
+  { uom: 'mg', factor: 0.001, targetUOM: 'g' },
+  { uom: 'mg', factor: 0.000001, targetUOM: 'kg' },
+  { uom: 'kg', factor: 1000, targetUOM: 'g' },
+  { uom: 'kg', factor: 1000000, targetUOM: 'mg' },
+  { uom: 'g', factor: 1000, targetUOM: 'mg' },
+  { uom: 'g', factor: 0.001, targetUOM: 'kg' }
+];
+
 //drug offence level
 class DOL extends Component {
   state = {
@@ -87,13 +96,26 @@ class DOL extends Component {
 
   calculate(e) {
     let s = _.find(data, x => {
-      if (x.substance !== this.state.substance || x.uom !== this.state.uom)
-        return false;
+      if (x.substance !== this.state.substance) return false;
+      console.log(x);
+      let qty = this.state.qty;
+      if (x.uom !== this.state.uom) {
+        let conversionFactor = _.find(
+          ConversionTable,
+          u => u.uom === this.state.uom && u.targetUOM === x.uom
+        );
+        if (conversionFactor !== undefined) {
+          qty = qty * conversionFactor.factor;
+        } else {
+          return false;
+        }
+      }
+      console.log(this.state.qty, this.state.uom, qty, x.uom);
       if (x.min !== undefined) {
-        if (this.state.qty < x.min) return false;
+        if (qty < x.min) return false;
       }
       if (x.max !== undefined) {
-        if (x.max < this.state.qty) return false;
+        if (x.max < qty) return false;
       }
       return true;
     });

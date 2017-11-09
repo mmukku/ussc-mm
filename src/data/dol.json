@@ -739,7 +739,7 @@
     "substance": "Amphetamine (actual)",
     "level": 22
   },
-  { "min": 800, "uom": "Mg", "max": 1000, "substance": "LSD", "level": 22 },
+  { "min": 800, "uom": "mg", "max": 1000, "substance": "LSD", "level": 22 },
   { "min": 32, "uom": "g", "max": 40, "substance": "Fentanyl", "level": 22 },
   {
     "min": 8,
@@ -819,7 +819,7 @@
     "substance": "Amphetamine (actual)",
     "level": 20
   },
-  { "min": 600, "uom": "Mg", "max": 800, "substance": "LSD", "level": 20 },
+  { "min": 600, "uom": "mg", "max": 800, "substance": "LSD", "level": 20 },
   { "min": 24, "uom": "g", "max": 32, "substance": "Fentanyl", "level": 20 },
   {
     "min": 6,
@@ -905,7 +905,7 @@
     "substance": "Amphetamine (actual)",
     "level": 18
   },
-  { "min": 400, "uom": "Mg", "max": 600, "substance": "LSD", "level": 18 },
+  { "min": 400, "uom": "mg", "max": 600, "substance": "LSD", "level": 18 },
   { "min": 16, "uom": "g", "max": 24, "substance": "Fentanyl", "level": 18 },
   {
     "min": 4,
@@ -992,7 +992,7 @@
     "substance": "Amphetamine (actual)",
     "level": 16
   },
-  { "min": 200, "uom": "Mg", "max": 400, "substance": "LSD", "level": 16 },
+  { "min": 200, "uom": "mg", "max": 400, "substance": "LSD", "level": 16 },
   { "min": 8, "uom": "g", "max": 16, "substance": "Fentanyl", "level": 16 },
   {
     "min": 2,
@@ -1065,21 +1065,21 @@
   },
   {
     "min": 500,
-    "uom": "Mg",
+    "uom": "mg",
     "max": 1,
     "substance": "Methamphetamine (actual)",
     "level": 14
   },
-  { "min": 500, "uom": "Mg", "max": 1, "substance": "Ice", "level": 14 },
+  { "min": 500, "uom": "mg", "max": 1, "substance": "Ice", "level": 14 },
   { "min": 5, "uom": "g", "max": 10, "substance": "Amphetamine", "level": 14 },
   {
     "min": 500,
-    "uom": "Mg",
+    "uom": "mg",
     "max": 1000,
     "substance": "Amphetamine (actual)",
     "level": 14
   },
-  { "min": 100, "uom": "Mg", "max": 200, "substance": "LSD", "level": 14 },
+  { "min": 100, "uom": "mg", "max": 200, "substance": "LSD", "level": 14 },
   { "min": 4, "uom": "g", "max": 8, "substance": "Fentanyl", "level": 14 },
   {
     "min": 1,
@@ -1140,14 +1140,14 @@
   { "max": 4.99, "uom": "g", "substance": "Methamphetamine", "level": 12 },
   {
     "max": 499.99,
-    "uom": "Mg",
+    "uom": "mg",
     "substance": "Methamphetamine (actual)",
     "level": 12
   },
-  { "max": 499.99, "uom": "Mg", "substance": "Ice", "level": 12 },
+  { "max": 499.99, "uom": "mg", "substance": "Ice", "level": 12 },
   { "max": 4.99, "uom": "g", "substance": "Amphetamine", "level": 12 },
-  { "max": 499.99, "uom": "Mg", "substance": "Amphetamine (actual)", "level": 12 },
-  { "max": 99.99, "uom": "Mg", "substance": "LSD", "level": 12 },
+  { "max": 499.99, "uom": "mg", "substance": "Amphetamine (actual)", "level": 12 },
+  { "max": 99.99, "uom": "mg", "substance": "LSD", "level": 12 },
   { "max": 3.99, "uom": "g", "substance": "Fentanyl", "level": 12 },
   { "max": 0.99, "uom": "g", "substance": "A Fentanyl Analogue", "level": 12 },
   { "min": 5, "uom": "kg", "max": 10, "substance": "Marihuana", "level": 12 },
