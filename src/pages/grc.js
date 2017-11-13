@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/sc.json';
+import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
 const offenseLevelsList = _.uniqBy(data, 'offenseLevel').map(ol => (
@@ -44,13 +45,42 @@ class SC extends Component {
         description = sentence;
       }
 
-      description = `${description} imprisonment. Zone ${this.state.zone}.`;
+      description = `${description} imprisonment.`;
 
       results = (
-        <div className="usa-alert usa-alert-info">
-          <div className="usa-alert-body">
-            <h4 className="usa-alert-heading">{description}</h4>
-          </div>
+        <div>
+          <section className="usa-section grc-header">
+            <div className="usa-grid">
+              <div className="container-05-title">
+                <div className="container-05-title-A">
+                  <div className="container-05-title-A1">
+                    <span className="container-font-light-C">Results</span>
+                  </div>
+                </div>
+              </div>
+              <div className="container-05">
+                <div className="container-05-A">
+                  <div className="container-05-A1">
+                    <div className="container-05-A1a">
+                      <img className="alert-left-icon" src={alertIcon} />
+                    </div>
+                    <div className="container-05-A1b">
+                      <div className="container-05-A1b-top">
+                        <span className="container-font-light-C">
+                          {description}
+                        </span>
+                      </div>
+                      <div className="container-05-A1b-bottom">
+                        <span className="container-font-light-D">
+                          Zone {this.state.zone}.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       );
     } else {
@@ -58,35 +88,73 @@ class SC extends Component {
     }
     return (
       <div>
-        <h2>Guideline Range Calculator</h2>
-        <section>
-          Use the Guideline Range Calculator to determine the applicable
-          guideline range from the Sentencing Table (Chapter Five, Part A).
-          First, select the Offense Level (1–43) as determined by applying
-          Chapters Two and Three. Then, select the Criminal History Category
-          (I–VI) as determined by applying Chapter Four, Part A. Results are
-          displayed in months of imprisonment. “Life” means life imprisonment.
+        <section className="usa-section usa-section-black grc-header">
+          <div className="usa-grid">
+            <div className="container-title-b">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17<br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Guidelines Range<br />
+              </span>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              OFFENSE LEVEL<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <form className="usa-search usa-search-small">
+                <select
+                  id="offenseLevel"
+                  className="container-font-dark-B-4"
+                  onChange={this.handleOffenceLevelChange.bind(this)}
+                  value={this.state.offenseLevel}
+                >
+                  {offenseLevelsList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              CATOGORY<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <form className="usa-search usa-search-small">
+                <select
+                  id="category"
+                  className="container-font-dark-B-4"
+                  value={this.state.category}
+                  onChange={this.handleCategoryChange.bind(this)}
+                >
+                  {categoryList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <button
+                className="usa-button"
+                onClick={this.calculate.bind(this)}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
         </section>
         <section>{results}</section>
-        <section>
-          <label htmlFor="offenseLevel">Offense Level</label>
-          <select
-            id="offenseLevel"
-            onChange={this.handleOffenceLevelChange.bind(this)}
-            value={this.state.offenseLevel}
-          >
-            {offenseLevelsList}
-          </select>
-          <label htmlFor="category">Criminal History Category</label>
-          <select
-            id="category"
-            value={this.state.category}
-            onChange={this.handleCategoryChange.bind(this)}
-          >
-            {categoryList}
-          </select>
-          <button onClick={this.calculate.bind(this)}>Go</button>
-        </section>
       </div>
     );
   }

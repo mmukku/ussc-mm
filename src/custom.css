@@ -754,7 +754,7 @@ html {
 
 @media screen and (min-width: 2560px) {
   .usa-header-extended .usa-navbar {
-    max-width: 1200px !important;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding-right: 3rem;
@@ -945,7 +945,7 @@ fieldset {
 }
 
 @media screen and (min-width: 2560px) {
-  .usa-menu-btn {
+  .custom-usa-menu-btn {
     display: none;
   }
 }
@@ -2794,4 +2794,252 @@ input:placeholder-shown {
   border-style: dotted;
   border-width: 0px;
   border-color: red;
+}
+
+/* Krishna: TODO: Below CODE is for fixing Web Version Issue; */
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .custom-usa-navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: block;
+    height: auto;
+    max-width: 1040px;
+  }
+  .custom-usa-header-extended .custom-usa-navbar::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .custom-usa-nav {
+    border-top: 1px solid #d6d7d9;
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .usa-header-basic .custom-usa-navbar {
+    position: relative;
+    width: 18%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .custom-usa-navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: block;
+    height: auto;
+    max-width: 1040px;
+  }
+  .custom-usa-header-extended .custom-usa-navbar::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+.custom-usa-navbar {
+  border-bottom: 1px solid #aeb0b5;
+  height: 4rem;
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-navbar {
+    border-bottom: none;
+    display: inline-block;
+    height: 7.8rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .custom-usa-nav-inner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 1.5rem;
+    margin-top: -1px;
+    max-width: 1040px;
+    position: relative;
+  }
+  .custom-usa-header-extended .custom-usa-nav-inner::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .usa-logo {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended em {
+    font-size: 3.2rem;
+    line-height: 1;
+  }
+}
+
+.custom-usa-header {
+  width: 100% !important;
+  z-index: 7000;
+}
+@media screen and (min-width: 2560px) {
+  .custom-usa-header {
+    border-bottom: 1px solid #d6d7d9;
+  }
+}
+.custom-usa-header a {
+  border-bottom: none;
+}
+.custom-usa-header .usa-search {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 2560px) {
+  .custom-usa-header .usa-search {
+    float: right;
+    margin-bottom: 0;
+    max-width: 21.5rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .usa-header-basic .custom-usa-navbar {
+    position: relative;
+    width: 18%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-header-extended .custom-usa-navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: block;
+    height: auto;
+    max-width: 1040px;
+  }
+  .custom-usa-header-extended .custom-usa-navbar::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+.custom-usa-navbar {
+  border-bottom: 1px solid #aeb0b5;
+  height: 4rem;
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-navbar {
+    border-bottom: none;
+    display: inline-block;
+    height: 7.8rem;
+  }
+}
+.custom-usa-navbar {
+  border-bottom: 1px solid #035493;
+  height: 50px;
+  background: url(./img/seal.svg) no-repeat top left;
+  background-position: 0px -45px;
+  background-size: 150px 150px;
+  background-color: #06213c;
+}
+
+/* Krishna: Navigation Starts here; */
+
+.custom-usa-menu-btn {
+  /* stylelint-disable declaration-block-no-ignored-properties */
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  background-color: #0071bc;
+  color: #ffffff;
+  display: inline;
+  float: right;
+  font-size: 1.3rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 5.8rem;
+  /* stylelint-enable */
+}
+
+.custom-usa-menu-btn:hover {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 951px) {
+  .custom-usa-menu-btn {
+    display: none;
+  }
+}
+
+.custom-usa-menu-btn:hover {
+  color: #ffffff;
+  background-color: #205493;
+}
+
+.custom-usa-menu-btn:visited {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-menu-btn {
+    display: none;
+  }
+}
+
+.custom-usa-menu-btn:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-usa-menu-btn {
+  /* stylelint-disable declaration-block-no-ignored-properties */
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: -1px 0 0 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  /* background-color: #0071bc; */
+  color: #ffffff;
+  display: inline;
+  float: right;
+  font-size: 1.3rem;
+  height: 50px;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  /* stylelint-enable */
+}
+
+@media screen and (min-width: 2560px) {
+  .custom-usa-menu-btn {
+    display: none;
+  }
 }

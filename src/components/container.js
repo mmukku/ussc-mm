@@ -33,8 +33,11 @@ class Container extends Component {
   render() {
     return (
       <div>
-        <header className="usa-header usa-header-extended" role="banner">
-          <div className="usa-navbar">
+        <header
+          className="custom-usa-header custom-usa-header-extended"
+          role="banner"
+        >
+          <div className="custom-usa-navbar">
             <div className="back-container">
               <button className="usa-menu-btn" style={{ border: '0px' }}>
                 <span className="usa-navbar-left icon-chevron-left-white">
