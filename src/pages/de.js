@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/de.json';
+import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
 const conversionTable = [
@@ -119,17 +120,42 @@ class DE extends Component {
         notes = noteEntry.notes;
       }
       result = (
-        <section>
-          <div className="usa-alert usa-alert-info">
-            <div className="usa-alert-body">
-              <h4 className="usa-alert-heading">
-                Marihuana:{' '}
-                {this.state.qty *
-                  conversionFactor *
-                  this.state.marihuana.targetWeight}{' '}
-                {this.state.marihuana.targetUOM}
-              </h4>
-              <em>{notes}</em>
+        <section className="usa-section">
+          <div className="usa-grid">
+            <div className="container-05-title">
+              <div className="container-05-title-A">
+                <div className="container-05-title-A1">
+                  <span className="container-font-light-C">Results</span>
+                </div>
+              </div>
+            </div>
+            <div className="container-05">
+              <div className="container-05-A">
+                <div className="container-05-A1">
+                  <div className="container-05-A1a">
+                    <img className="alert-left-icon" src={alertIcon} />
+                  </div>
+
+                  <div className="container-05-A1b">
+                    <div className="container-05-A1b-top">
+                      <span className="container-font-light-C">
+                        Marihuana <br />
+                      </span>
+                    </div>
+                    <div className="container-05-A1b-bottom">
+                      <span className="container-font-light-D">
+                        {this.state.qty *
+                          conversionFactor *
+                          this.state.marihuana.targetWeight}{' '}
+                        {this.state.marihuana.targetUOM}
+                        <br />
+                      </span>
+                      <br />
+                      <em>{notes}</em>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -139,42 +165,112 @@ class DE extends Component {
     }
     return (
       <div>
-        <h2>Drug Equivalency Calculator</h2>
-        <p>
-          Use the Drug Equivalency Calculator to convert the quantity of
-          controlled substance involved in the offense to its equivalent
-          quantity of marihuana. In a case involving more than one controlled
-          substance, convert each controlled substance into its marihuana
-          equivalency and then add all converted quantities.
-        </p>
-        {result}
-
-        <section>
-          <label htmlFor="substance">Substance</label>
-          <select
-            id="substance"
-            onChange={e => this.getUOMList(e)}
-            value={this.state.substance}
-          >
-            <option>Select</option>
-            {substanceList}
-          </select>
-          <label htmlFor="weight">Weight</label>
-          <input
-            id="qty"
-            value={this.state.qty}
-            onChange={this.handleQtyChange.bind(this)}
-          />
-          <label htmlFor="uom">Unit of measure</label>
-          <select
-            id="uom"
-            value={this.state.uom}
-            onChange={this.handleUOMChange.bind(this)}
-          >
-            {this.state.uomList}
-          </select>
-          <button onClick={this.calculate.bind(this)}>Go</button>
+        <section className="usa-section usa-section-black">
+          <div className="usa-grid">
+            <div className="container-title-b">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17<br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Drug Equivalency Calculator<br />
+              </span>
+            </div>
+          </div>
         </section>
+        <section className="usa-section container-custom-result">
+          <div className="usa-grid">
+            <div className="container-03">
+              <div className="container-05-A1">
+                <div className="container-05-A1c container-font-light-Ea">
+                  Use the Drug Equivalency Calculator to convert the quantity of
+                  controlled substance involved in the offense to its equivalent
+                  quantity of marihuana. In a case involving more than one
+                  controlled substance, convert each controlled substance into
+                  its marihuana equivalency and then add all converted
+                  quantities. <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              SUBSTANCE<br />
+            </span>
+          </div>
+
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-search usa-search-small">
+                <select
+                  id="substance"
+                  className="container-font-dark-B-4"
+                  onChange={e => this.getUOMList(e)}
+                  value={this.state.substance}
+                >
+                  <option>Select</option>
+                  {substanceList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-form">
+                <fieldset>
+                  <span className="container-font-dark-B-3">
+                    WEIGHT<br />
+                  </span>
+                  <input
+                    aria-required="true"
+                    placeholder="Enter Number"
+                    id="qty"
+                    value={this.state.qty}
+                    onChange={this.handleQtyChange.bind(this)}
+                    className="container-font-dark-B-4"
+                  />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              UNIT OF MEASURE<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-search usa-search-small">
+                <select
+                  id="uom"
+                  className="container-font-dark-B-4"
+                  value={this.state.uom}
+                  onChange={this.handleUOMChange.bind(this)}
+                >
+                  {this.state.uomList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <button
+                className="usa-button"
+                onClick={this.calculate.bind(this)}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </section>
+        {result}
       </div>
     );
   }
