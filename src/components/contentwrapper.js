@@ -299,7 +299,7 @@ function generate_content(props) {
 }
 
 function html_is_effectively_blank(html) {
-  return html === '' || html.trim().toUpperCase() === '<BR>' || html.trim().toUpperCase() === '<BR />';
+  return html === null || html === '' || html.trim().toUpperCase() === '<BR>' || html.trim().toUpperCase() === '<BR />';
 }
 
 function element_holds_notes(element) {
@@ -308,14 +308,11 @@ function element_holds_notes(element) {
     !element.classList.contains('notes');
 }
 
-function focus_notes_object(notesObject) {
-  let textObject = notesObject.getElementsByClassName('notes_text')[0];
-  textObject.style.display = 'block';
-  if (textObject.innerHTML.length === 0) {
-	textObject.innerHTML = '<br />';
-  }
-  textObject.focus();
-  notesObject.scrollIntoView();
+function append_button(parent, text, className) {
+	let button = document.createElement('button');
+	button.innerText = text;
+	button.classList.add(className);
+    parent.append(button);
 }
 
 export class ContentWrapper extends Component {
@@ -370,39 +367,51 @@ export class ContentWrapper extends Component {
 	  set_note(this.props.path, id, content, this.props.title);
 	}
   }
+  turnOffNoteEditing(id) {
+	let notesObject = document.getElementById('notes.' + id);
+	notesObject.getElementsByClassName('edit_note')[0].style.display = 'inline-block';
+	notesObject.getElementsByClassName('save_note')[0].style.display = 'none';
+	notesObject.getElementsByClassName('revert_note')[0].style.display = 'none';
+	let textObject = notesObject.getElementsByClassName('notes_text')[0];
+	let noteHTML = this.getNote(id);
+	textObject.innerHTML = noteHTML;
+	textObject.contentEditable = 'false';
+	if (html_is_effectively_blank(noteHTML)) {
+	  notesObject.getElementsByClassName('notes_control')[0].style.display = 'none';
+	  textObject.style.display = 'none';
+	}
+  }
+  turnOnNoteEditing(id) {
+	let notesObject = document.getElementById('notes.' + id);
+	notesObject.getElementsByClassName('notes_control')[0].style.display = 'block';
+	notesObject.getElementsByClassName('edit_note')[0].style.display = 'none';
+	notesObject.getElementsByClassName('save_note')[0].style.display = 'inline-block';
+	notesObject.getElementsByClassName('revert_note')[0].style.display = 'inline-block';
+    let textObject = notesObject.getElementsByClassName('notes_text')[0];
+	textObject.contentEditable = 'true';
+    textObject.style.display = 'block';
+    if (textObject.innerHTML.length === 0) {
+	  textObject.innerHTML = '<br />';
+    }
+    textObject.focus();
+    notesObject.scrollIntoView();
+  }
   removeNoteClickHandler(id) {
     this.setNote(id, '');
-	let notes_object = document.getElementById('notes.' + id);
-	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
-	let text_object = notes_object.getElementsByClassName('notes_text')[0];
-	text_object.innerHTML = '';
-	text_object.style.display = 'none';
-  }
-  notesFocusHandler(id) {
-	let notes_object = document.getElementById('notes.' + id);
-	notes_object.getElementsByClassName('notes_control')[0].style.display = 'block';
-	document.getElementById('ussc-select-menu').style.display = 'none';
-	document.getElementById('ussc-highlight-click-menu').style.display = 'none';
+	this.turnOffNoteEditing(id);
   }
   saveNoteClickHandler(id, event) {
     let notes_object = document.getElementById('notes.' + id);
-	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
     let text_object = notes_object.getElementsByClassName('notes_text')[0];
 	let note_html = text_object.innerHTML;
 	this.setNote(id, note_html);
-	if (html_is_effectively_blank(note_html)) {
-	  text_object.style.display = 'none';
-	}
+	this.turnOffNoteEditing(id);
   }
   revertNoteClickHandler(id, event) {
-	let notes_object = document.getElementById('notes.' + id);
-	notes_object.getElementsByClassName('notes_control')[0].style.display = 'none';
-	let text_object = notes_object.getElementsByClassName('notes_text')[0];
-	let note_html = this.getNote(id);
-	text_object.innerHTML = note_html;
-	if (html_is_effectively_blank(note_html)) {
-	  text_object.style.display = 'none';
-	}
+	this.turnOffNoteEditing(id);
+  }
+  editNoteClickHandler(id, event) {
+	this.turnOnNoteEditing(id);
   }
   getNextNotesObject(element) {
 	let parent = element;
@@ -420,7 +429,7 @@ export class ContentWrapper extends Component {
 	if (selectionInfo.selectionExists) {
 	  let notesObject = this.getNextNotesObject(selectionInfo.first.node);
 	  if (notesObject !== null) {
-	    focus_notes_object(notesObject);
+		this.turnOnNoteEditing(notesObject.id.split('.')[1]);
 	  }
 	}
   }
@@ -438,7 +447,7 @@ export class ContentWrapper extends Component {
 	  if (highlightElement !== null) {
 	  let notesObject = this.getNextNotesObject(highlightElement);
 	    if (notesObject !== null) {
-		  focus_notes_object(notesObject);
+		  this.turnOnNoteEditing(notesObject.id.split('.')[1]);
 	    }
 	  }
 	}
@@ -448,30 +457,18 @@ export class ContentWrapper extends Component {
     notes_object.className = 'notes';
     notes_object.id = 'notes.' + id;
     let notes_control_link = document.createElement('p');
-	notes_control_link.style.display = 'none';
-	notes_control_link.classList.add('notes_control')
-	let remove_note_link = document.createElement('button');
-	remove_note_link.innerText = 'Remove Note';
-	remove_note_link.classList.add('remove_note');
-    notes_control_link.append(remove_note_link);
+	notes_control_link.classList.add('notes_control');
+	append_button(notes_control_link, 'Remove Note', 'remove_note');
 	notes_control_link.append(new Text(' '));
-	let save_note_link = document.createElement('button');
-	save_note_link.innerText = 'Save Note';
-	save_note_link.classList.add('save_note');
-	notes_control_link.append(save_note_link);
+	append_button(notes_control_link, 'Edit Note', 'edit_note');
 	notes_control_link.append(new Text(' '));
-	let revert_note_link = document.createElement('button');
-	revert_note_link.innerText = 'Revert Note';
-	revert_note_link.classList.add('revert_note');
-	notes_control_link.append(revert_note_link);
+	append_button(notes_control_link, 'Save Note', 'save_note');
+	notes_control_link.append(new Text(' '));
+	append_button(notes_control_link, 'Revert Note', 'revert_note');
     let notes_control_text = document.createElement('p');
     notes_control_text.className = 'notes_text';
 	let noteHTML = this.getNote(id);
 	notes_control_text.innerHTML = noteHTML;
-	if (noteHTML === null) {
-	  notes_control_text.style.display = 'none';
-	}
-    notes_control_text.contentEditable = "true";
     notes_object.appendChild(notes_control_link);
     notes_object.appendChild(notes_control_text);
     return notes_object;
@@ -639,14 +636,6 @@ export class ContentWrapper extends Component {
 	  let elements = document.getElementsByClassName('notes');
 	  for (var i = 0; i < elements.length; i++) {
 		let id = parseInt(elements[i].id.split('.')[1], 10);
-		elements[i].addEventListener (
-		  'focusin',
-		  function(component, item) {
-			return function() {
-			  component.notesFocusHandler(item);
-			}
-		  }(this, id)
-		);
 		elements[i].getElementsByClassName('remove_note')[0].addEventListener(
 		  'click',
 		  function(component, item) {
@@ -671,6 +660,15 @@ export class ContentWrapper extends Component {
 			}
 		  }(this, id)
 		);
+		elements[i].getElementsByClassName('edit_note')[0].addEventListener(
+		  'click',
+		  function(component, item) {
+			return function() {
+			  component.editNoteClickHandler(item);
+			}
+		  }(this, id)
+		);
+		this.turnOffNoteEditing(id);
 	  }
 	  document.getElementById('content_wrapper').addEventListener(
 	    'click',
