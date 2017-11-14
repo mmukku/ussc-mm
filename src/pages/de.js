@@ -83,53 +83,70 @@ substanceList = _.sortBy(substanceList, s => [s.substance]).map(ol => (
 
 //drug offence level
 class DE extends Component {
-  constructor() {
-    super();
-    this.state = {
-      marihuana: undefined,
-      substance: '',
-      uom: '',
-      uomList: '',
-      qty: 0.0
-    };
-  }
+  state = { equivalencies: [] };
+
+  add = (index, weight, uom, notes) => {
+    let es = [];
+    this.setState(prevState => {
+      for (let i = 0; i <= 2; i++) {
+        let e = prevState.equivalencies[i];
+        if (index === i) {
+          e = e || {};
+          e.weight = weight;
+          e.uom = uom;
+          e.notes = notes;
+          es[index] = e;
+        } else {
+          if (e) es[i] = e;
+        }
+      }
+      return { equivalencies: es };
+    });
+  };
+
+  conversionFactor = (src, target) => {
+    let conversionFactor = 1;
+    if (src !== target) {
+      let conversion = _.find(
+        conversionTable,
+        c => c.uom === src && c.targetUOM === target
+      );
+      conversionFactor = conversion.factor;
+    }
+    return conversionFactor;
+  };
+
+  calculate = () => {
+    let totalWeight = 0.0;
+    let currentUOM = '';
+    let notes = '';
+
+    for (let e of this.state.equivalencies) {
+      if (e) {
+        if (currentUOM === '') {
+          currentUOM = e.uom;
+        }
+        totalWeight += this.conversionFactor(e.uom, currentUOM) * e.weight;
+        if (e.notes && e.notes.length > 0 && e.notes !== notes) {
+          notes += e.notes;
+        }
+      }
+    }
+    this.setState({ totalWeight: totalWeight, uom: currentUOM, notes: notes });
+  };
 
   render() {
     let result = undefined;
-    if (this.state.marihuana !== undefined) {
-      let sourceUOM = this.state.marihuana.sourceUOM;
-      if (sourceUOM === undefined) {
-        sourceUOM = 'gm';
-      }
-
-      let conversionFactor = 1;
-      let conversion = _.find(
-        conversionTable,
-        c => c.uom === this.state.uom && c.targetUOM === sourceUOM
-      );
-      if (conversion !== undefined) {
-        conversionFactor = conversion.factor;
-      }
-      let notes = Notes;
-      let noteEntry = _.find(
-        NotesTable,
-        nt => nt.substances.indexOf(this.state.substance) >= 0
-      );
-      if (noteEntry !== undefined) {
-        notes = noteEntry.notes;
-      }
+    if (this.state.totalWeight) {
       result = (
         <section>
           <div className="usa-alert usa-alert-info">
             <div className="usa-alert-body">
               <h4 className="usa-alert-heading">
-                Marihuana:{' '}
-                {this.state.qty *
-                  conversionFactor *
-                  this.state.marihuana.targetWeight}{' '}
-                {this.state.marihuana.targetUOM}
+                Marihuana: {this.state.totalWeight} {this.state.uom}
               </h4>
-              <em>{notes}</em>
+
+              <em>{this.state.notes}</em>
             </div>
           </div>
         </section>
@@ -146,35 +163,19 @@ class DE extends Component {
           equivalency and then add all converted quantities.
         </p>
         {result}
-
+        <DEPair index={0} add={this.add.bind(this)} />
+        <DEPair index={1} add={this.add.bind(this)} />
+        <DEPair index={2} add={this.add.bind(this)} />
         <section>
-          <label htmlFor="substance">Substance</label>
-          <select
-            id="substance"
-            onChange={e => this.getUOMList(e)}
-            value={this.state.substance}
-          >
-            <option>Select</option>
-            {substanceList}
-          </select>
-          <label htmlFor="weight">Weight</label>
-          <input
-            id="qty"
-            onChange={e => this.setState({ qty: e.target.value })}
-          />
-          <label htmlFor="uom">Unit of measure</label>
-          <select
-            id="uom"
-            onChange={e => this.setState({ uom: e.target.value })}
-          >
-            {this.state.uomList}
-          </select>
           <button onClick={this.calculate.bind(this)}>Go</button>
         </section>
       </div>
     );
   }
+}
 
+class DEPair extends React.Component {
+  state = { uomList: [] };
   getUOMList(e) {
     let uom = _.filter(data, d => d.substance === e.target.value)[0]
       .substanceUOM;
@@ -194,15 +195,89 @@ class DE extends Component {
 
     let uomList = uoml.map(x => <option key={x}>{x}</option>);
 
-    this.setState({ substance: e.target.value, uomList: uomList });
+    this.setState({
+      substance: e.target.value,
+      uom: uoml[0],
+      uomList: uomList
+    });
   }
 
-  calculate(e) {
-    let s = _.find(data, x => x.substance === this.state.substance);
+  handleSubstanceChange(e) {
+    this.getUOMList(e);
+    this.calculate();
+  }
+
+  handleQtyChange(e) {
+    this.setState({ qty: e.target.value });
+    this.calculate();
+  }
+
+  handleUOMChange(e) {
+    this.setState({ uom: e.target.value });
+    this.calculate();
+  }
+
+  calculate() {
+    const { substance, qty, uom } = this.state;
+    if (!substance || !qty || !uom) return;
+    let s = _.find(data, x => x.substance === substance);
 
     if (s !== undefined) {
-      this.setState({ marihuana: s });
+      let sourceUOM = s.sourceUOM;
+      if (sourceUOM === undefined) {
+        sourceUOM = 'gm';
+      }
+
+      let conversionFactor = 1;
+      let conversion = _.find(
+        conversionTable,
+        c => c.uom === uom && c.targetUOM === sourceUOM
+      );
+      if (conversion !== undefined) {
+        conversionFactor = conversion.factor;
+      }
+      let notes = Notes;
+      let noteEntry = _.find(
+        NotesTable,
+        nt => nt.substances.indexOf(substance) >= 0
+      );
+      if (noteEntry !== undefined) {
+        notes = noteEntry.notes;
+      }
+      let weight = qty * conversionFactor * s.targetWeight;
+      this.props.add(this.props.index, weight, s.targetUOM, notes);
     }
+  }
+
+  render() {
+    const { substance, uomList } = this.state;
+    return (
+      <section>
+        <select
+          style={{ display: 'inline' }}
+          onChange={this.handleSubstanceChange.bind(this)}
+          value={substance}
+        >
+          <option>Select Substance</option>
+          {substanceList}
+        </select>
+        <input
+          id="qty"
+          onChange={this.handleQtyChange.bind(this)}
+          placeholder="Enter Weight"
+          style={{ display: 'inline', width: '150px', margin: '5px' }}
+        />
+        {uomList.length > 0 ? (
+          <select
+            id="uom"
+            style={{ display: 'inline', width: '75px' }}
+            onChange={this.handleUOMChange.bind(this)}
+          >
+            {uomList}
+          </select>
+        ) : null}
+      </section>
+    );
   }
 }
 
