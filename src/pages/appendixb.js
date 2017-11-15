@@ -72,8 +72,14 @@ export default params => {
           </a>
         </p>
         <p>
+          <strong>JUDICIARY AND JUDICIAL PROCEDURE</strong>
+        </p>
+        <p>
           <a href="/ab/publ">
-            <strong>JUDICIARY AND JUDICIAL PROCEDURE</strong>
+            <strong>
+              PROVISIONS OF PUBLIC LAWS GOVERNING THE COMMISSION OF SENTENCING
+              GUIDELINES
+            </strong>
           </a>
         </p>
       </ContentWrapper>
