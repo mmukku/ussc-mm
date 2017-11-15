@@ -17,18 +17,46 @@ class AppendixBPart extends React.Component {
     let data_object = _.find(data, b => b.id === this.props.match.params.part);
     let content = data_object.content;
     let id = data_object.id;
+    var title;
+    if ('title' in data_object) {
+      title = data_object.title;
+    } else {
+      title = data_object.id;
+    }
     return (
       <div>
         <BookmarkLink
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
         />
+        <p>
+          <a href="/ab">AppendixB</a>
+        </p>
         <ContentWrapper
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
         >
-          <a href="/ab">AppendixB</a>
-          <p dangerouslySetInnerHTML={{ __html: content }} />
+          <section className="usa-section">
+            <div className="usa-grid">
+              <div className="container-05-title">
+                <div className="container-05-title-A">
+                  <div className="container-05-title-A1">
+                    <span className="container-font-light-C">{title}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="container-05">
+                <div className="container-05-A">
+                  <div className="container-05-A1">
+                    <div
+                      className="container-05-A1c container-font-light-Ea"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </ContentWrapper>
       </div>
     );

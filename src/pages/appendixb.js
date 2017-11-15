@@ -11,11 +11,44 @@ export default params => {
         <p>
           <strong>APPENDIX B</strong>
         </p>
-        <p>
-          <a href="/ab/sss">
-            <strong>SELECTED SENTENCING STATUTES</strong>
-          </a>
-        </p>
+        <div className="usa-grid">
+          <div className="container-05-title">
+            <div className="container-05-A-button">
+              <div className="container-05-title-A1">
+                <span className="container-font-light-C">
+                  SELECTED SENTENCING STATUTES
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="container-05">
+            <div className="container-05b-A">
+              <div className="container-05-A1">
+                <div class="container-05-A1c container-font-light-Ea">
+                  This appendix sets forth the principal statutory provisions
+                  governing sentencing, the Sentencing Commission, and the
+                  drafting of sentencing guidelines,{' '}
+                  <strong>as of May 1, 2016</strong>, as follows:
+                  <br />
+                </div>
+              </div>
+              <div
+                className="usa-width-one-whole"
+                style={{
+                  'border-style': 'dotted',
+                  'border-width': '0px',
+                  'border-color': 'red'
+                }}
+              >
+                <a href="/ab/sss">
+                  <button className="usa-button-secondary usa-focus">
+                    Read More
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         <p>
           <strong>CONTENTS</strong>
         </p>
