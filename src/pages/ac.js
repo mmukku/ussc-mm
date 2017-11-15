@@ -3,17 +3,12 @@ import data from '../data/appendix-c';
 import _ from 'lodash';
 
 class Amendments extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      slug: '',
-      searchResults: [1]
-    };
+  state = {
+    slug: '',
+    searchResults: [_.toNumber(this.props.match.params.id || 1)]
+  };
 
-    this.filter = this.filter.bind(this);
-  }
-
-  filter(currentValue) {
+  filter = currentValue => {
     if (currentValue !== undefined) {
       this.setState({ slug: currentValue });
     } else {
@@ -37,7 +32,6 @@ class Amendments extends React.Component {
           pad(d.getDate()),
           d.getFullYear()
         ].join(delimiter);
-        console.log(formatted);
         results = _.filter(data, a => a.edt === _.toString(formatted)).map(
           a => a.id
         );
@@ -45,9 +39,9 @@ class Amendments extends React.Component {
     }
 
     this.setState({ searchResults: results });
-  }
+  };
 
-  renderSearchResults() {
+  renderSearchResults = () => {
     return this.state.searchResults.map(r => (
       <section
         className="usa-section"
@@ -57,9 +51,9 @@ class Amendments extends React.Component {
         }}
       />
     ));
-  }
+  };
 
-  prevButton() {
+  prevButton = () => {
     let current = this.state.searchResults[0];
     if (current > 1) {
       return (
@@ -73,9 +67,9 @@ class Amendments extends React.Component {
         &lt; Previous
       </button>
     );
-  }
+  };
 
-  nextButton() {
+  nextButton = () => {
     let current = this.state.searchResults[0];
     if (current < data.length) {
       return (
@@ -89,9 +83,9 @@ class Amendments extends React.Component {
         Next &gt;
       </button>
     );
-  }
+  };
 
-  navigation() {
+  navigation = () => {
     if (this.state.searchResults.length === 1) {
       return (
         <div style={{ float: 'right' }}>
@@ -102,7 +96,7 @@ class Amendments extends React.Component {
         </div>
       );
     }
-  }
+  };
 
   render() {
     let content = (

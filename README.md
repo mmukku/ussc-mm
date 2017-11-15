@@ -32,6 +32,13 @@ Make sure that following lines are added at the top of build/manifest.appcache f
 /index.html
 ```
 
+Add the following to the bottom of the manifest.appcache file
+
+```
+FALLBACK:
+. /
+```
+
 Copy the contents of build folder to deploy machine.
 
 For the offline feature to work, the site must be serving requests over https.
@@ -50,6 +57,12 @@ RewriteRule ^ - [L]
 
 RewriteRule ^ /index.html [L]
 ```
+
+## Building index data for full text search on guidelines
+
+In the terminal from project root.  This creates gl_index.json file in data folder.
+
+node buildIndex.js
 
 ## src
 
@@ -94,5 +107,8 @@ RewriteRule ^ /index.html [L]
 
 /
 /index.html
+
+FALLBACK:
+. /
 
 ```

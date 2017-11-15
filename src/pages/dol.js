@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/dol.json';
+import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
 let substanceList = _.uniqBy(data, 'substance');
@@ -8,65 +9,164 @@ substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
   <option key={ol.substance}>{ol.substance}</option>
 ));
 
+const ConversionTable = [
+  { uom: 'mg', factor: 0.001, targetUOM: 'g' },
+  { uom: 'mg', factor: 0.000001, targetUOM: 'kg' },
+  { uom: 'kg', factor: 1000, targetUOM: 'g' },
+  { uom: 'kg', factor: 1000000, targetUOM: 'mg' },
+  { uom: 'g', factor: 1000, targetUOM: 'mg' },
+  { uom: 'g', factor: 0.001, targetUOM: 'kg' }
+];
+
 //drug offence level
 class DOL extends Component {
-  constructor() {
-    super();
-    this.state = {
-      offenseLevel: undefined,
-      substance: '',
-      uom: '',
-      uomList: '',
-      qty: 0.0
-    };
-  }
+  state = {
+    offenseLevel: null,
+    substance: '',
+    uom: '',
+    uomList: '',
+    qty: 0.0
+  };
 
   render() {
-    let result = undefined;
-    if (this.state.offenseLevel !== undefined) {
+    let result = <div />;
+    if (this.state.offenseLevel !== null) {
       result = (
-        <section>
-          <div className="usa-alert usa-alert-info">
-            <div className="usa-alert-body">
-              <h4 className="usa-alert-heading">
-                Offense Level: {this.state.offenseLevel}
-              </h4>
+        <section className="usa-section">
+          <div className="usa-grid">
+            <div className="container-05-title">
+              <div className="container-05-title-A">
+                <div className="container-05-title-A1">
+                  <span className="container-font-light-C">Results</span>
+                </div>
+              </div>
+            </div>
+            <div className="container-05">
+              <div className="container-05-A">
+                <div className="container-05-A1">
+                  <div className="container-05-A1a">
+                    <img className="alert-left-icon" src={alertIcon} />
+                  </div>
+                  <div className="container-05-A1b">
+                    <div className="container-05-A1b-top">
+                      <span className="container-font-light-C">
+                        Offense Level <br />
+                      </span>
+                    </div>
+                    <div className="container-05-A1b-bottom">
+                      <span className="container-font-light-D">
+                        {this.state.offenseLevel} <br />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       );
+    } else {
+      result = <div />;
     }
     return (
       <div>
-        <h2>Drug Quantity Calculator</h2>
-        {result}
-        <section>
-          <label htmlFor="substance">Substance</label>
-          <select
-            id="substance"
-            onChange={e => this.getUOMList(e)}
-            value={this.state.substance}
-          >
-            <option>Select</option>
-            {substanceList}
-          </select>
-          <label htmlFor="weight">Weight</label>
-          <input
-            id="qty"
-            onChange={e => this.setState({ qty: e.target.value })}
-          />
-          <label htmlFor="uom">Unit of measure</label>
-          <select
-            id="uom"
-            onChange={e => this.setState({ uom: e.target.value })}
-          >
-            <option>Select</option>
-            {this.state.uomList}
-          </select>
-          <button onClick={this.calculate.bind(this)}>Go</button>
+        <section className="usa-section usa-section-black">
+          <div className="usa-grid">
+            <div className="container-title-b">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17<br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Drug Quantity Calculator<br />
+              </span>
+            </div>
+          </div>
         </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              SUBSTANCE<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-search usa-search-small">
+                <select
+                  className="container-font-dark-B-4"
+                  onChange={e => this.getUOMList(e)}
+                  value={this.state.substance}
+                >
+                  <option>Select</option>
+                  {substanceList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-form">
+                <fieldset>
+                  <span className="container-font-dark-B-3">
+                    WEIGHT<br />
+                  </span>
+                  <input
+                    type="text"
+                    required=""
+                    aria-required="true"
+                    placeholder="Enter Number"
+                    className="container-font-dark-B-4"
+                    onChange={this.handleQtyChange.bind(this)}
+                  />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              UNIT OF MEASURE<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form className="usa-search usa-search-small">
+                <select
+                  className="container-font-dark-B-4"
+                  onChange={this.handleUOMChange.bind(this)}
+                  value={this.state.uom}
+                >
+                  {this.state.uomList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <button
+                className="usa-button"
+                onClick={this.calculate.bind(this)}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </section>
+        {result}
       </div>
     );
+  }
+
+  handleQtyChange(e) {
+    this.setState({ offenseLevel: null, qty: e.target.value });
+  }
+
+  handleUOMChange(e) {
+    this.setState({ offenseLevel: null, uom: e.target.value });
   }
 
   getUOMList(e) {
@@ -75,23 +175,43 @@ class DOL extends Component {
       <option key={x.uom}>{x.uom}</option>
     ));
 
-    this.setState({ substance: e.target.value, uomList: uomList });
+    this.setState({
+      offenseLevel: null,
+      uom: uoml[0].uom,
+      substance: e.target.value,
+      uomList: uomList
+    });
   }
 
   calculate(e) {
     let s = _.find(data, x => {
-      if (x.substance !== this.state.substance && x.uom !== this.state.uom)
-        return false;
+      if (x.substance !== this.state.substance) return false;
+      console.log(x);
+      let qty = this.state.qty;
+      if (x.uom !== this.state.uom) {
+        let conversionFactor = _.find(
+          ConversionTable,
+          u => u.uom === this.state.uom && u.targetUOM === x.uom
+        );
+        if (conversionFactor !== undefined) {
+          qty = qty * conversionFactor.factor;
+        } else {
+          return false;
+        }
+      }
+      console.log(this.state.qty, this.state.uom, qty, x.uom);
       if (x.min !== undefined) {
-        if (this.state.qty < x.min) return false;
+        if (qty < x.min) return false;
       }
       if (x.max !== undefined) {
-        if (x.max < this.state.qty) return false;
+        if (x.max < qty) return false;
       }
       return true;
     });
     if (s !== undefined) {
       this.setState({ offenseLevel: s.level });
+    } else {
+      this.setState({ offenseLevel: 'Not Found' });
     }
   }
 }

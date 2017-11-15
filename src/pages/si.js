@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from '../data/si.json';
 import _ from 'lodash';
+import arrowRight from '../img/icons/static_chevron-right.svg';
 import Autosuggest from 'react-autosuggest';
 
 const titleOptionList = _.uniqBy(data, 'Title').map(t => (
@@ -12,11 +13,19 @@ const shouldRenderSuggestions = () => true;
 
 const renderSuggestion = suggestion => <div>{suggestion}</div>;
 const theme = {
+  input: {
+    fontFamily: 'Lato, sans-serif',
+    fontSize: 16,
+    color: '#ccc'
+  },
   container: {
     position: 'relative'
   },
   inputFocused: {
-    outline: 'none'
+    outline: 'none',
+    fontFamily: 'Lato, sans-serif',
+    fontSize: 16,
+    color: '#ccc'
   },
   inputOpen: {
     borderBottomLeftRadius: 0,
@@ -30,9 +39,9 @@ const theme = {
     position: 'absolute',
     top: 51,
     width: 280,
-    border: '1px solid #aaa',
-    backgroundColor: '#fff',
-    fontFamily: 'Helvetica, sans-serif',
+    border: '1px solid #035493',
+    backgroundColor: '#06213b',
+    fontFamily: 'Lato, sans-serif',
     fontWeight: 300,
     fontSize: 16,
     borderBottomLeftRadius: 4,
@@ -49,19 +58,16 @@ const theme = {
     padding: '10px 20px'
   },
   suggestionHighlighted: {
-    backgroundColor: '#ddd'
+    backgroundColor: '#035493'
   }
 };
 class SI extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      statute: '',
-      guidelines: [],
-      statuteOptions: []
-    };
-  }
+  state = {
+    title: '',
+    statute: '',
+    guidelines: [],
+    statuteOptions: []
+  };
 
   render() {
     const value = this.state.statute;
@@ -76,47 +82,111 @@ class SI extends Component {
     let results = '';
     if (this.state.guidelines.length > 0) {
       results = (
-        <section>
-          <h4>Results</h4>
-          <ul>{this.state.guidelines}</ul>
+        <section className="usa-section grc-header">
+          <div className="usa-grid">
+            <div className="container-05-title">
+              <div className="container-05-title-A">
+                <div className="container-05-title-A1">
+                  <span className="container-font-light-C">Results</span>
+                </div>
+              </div>
+            </div>
+            {this.state.guidelines}
+          </div>
         </section>
       );
     }
     return (
       <div>
-        <h2>Statutory Index</h2>
-        <section>
-          This index specifies the offense guideline section(s) in Chapter Two
-          (Offense Conduct) applicable to the statute of conviction. If more
-          than one guideline section is referenced for the particular statute,
-          use the guideline most appropriate for the offense conduct charged in
-          the count of which the defendant was convicted. For the rules
-          governing the determination of the offense guideline section(s) from
-          Chapter Two, and for any exceptions to those rules, see §1B1.2
-          (Applicable Guidelines).
+        <section className="usa-section usa-section-black container-custom-result">
+          <div className="usa-grid">
+            <div className="container-title">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17<br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Appendix A<br />
+              </span>
+              <span className="container-font-dark-B-2">Statutory Index</span>
+            </div>
+          </div>
         </section>
-        <section>
-          <label htmlFor="title">Title</label>
-          <select
-            id="title"
-            onChange={this.cascadestatute.bind(this)}
-            value={this.state.title}
-          >
-            <option>Select</option>
-            {titleOptionList}
-          </select>
-          <label htmlFor="statute">Statute</label>
-          <Autosuggest
-            suggestions={statuteOptions}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            getSuggestionValue={getSuggestionValue}
-            shouldRenderSuggestions={shouldRenderSuggestions}
-            renderSuggestion={renderSuggestion}
-            inputProps={inputProps}
-            theme={theme}
-          />
-          <button onClick={this.search.bind(this)}>Go</button>
+        <section className="usa-section container-custom-result">
+          <div className="usa-grid">
+            <div className="container-03">
+              <div className="container-05-A1">
+                <div className="container-05-A1c container-font-light-Ea">
+                  This index specifies the offense guideline section(s) in
+                  Chapter Two (Offense Conduct) applicable to the statute of
+                  conviction. If more than one guideline section is referenced
+                  for the particular statute, use the guideline most appropriate
+                  for the offense conduct charged in the count of which the
+                  defendant was convicted. For the rules governing the
+                  determination of the offense guideline section(s) from Chapter
+                  Two, and for any exceptions to those rules, see §1B1.2
+                  (Applicable Guidelines).<br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <span className="container-font-dark-B-3">
+              TITLE<br />
+            </span>
+          </div>
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <form className="usa-search usa-search-small">
+                <select
+                  id="title"
+                  className="container-font-dark-B-4"
+                  onChange={this.cascadestatute.bind(this)}
+                  value={this.state.title}
+                >
+                  <option>Select</option>
+                  {titleOptionList}
+                </select>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <form className="usa-form">
+                <fieldset>
+                  <span className="container-font-dark-B-3">
+                    STATUTE<br />
+                  </span>
+                  <Autosuggest
+                    suggestions={statuteOptions}
+                    onSuggestionsFetchRequested={
+                      this.onSuggestionsFetchRequested
+                    }
+                    onSuggestionsClearRequested={
+                      this.onSuggestionsClearRequested
+                    }
+                    getSuggestionValue={getSuggestionValue}
+                    shouldRenderSuggestions={shouldRenderSuggestions}
+                    renderSuggestion={renderSuggestion}
+                    inputProps={inputProps}
+                    theme={theme}
+                  />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole search-box-global">
+              <button className="usa-button" onClick={this.search}>
+                Search
+              </button>
+            </div>
+          </div>
         </section>
         {results}
       </div>
@@ -124,13 +194,14 @@ class SI extends Component {
   }
 
   cascadestatute(e) {
-    this.setState({ title: e.target.value, statute: '' });
+    this.setState({ title: e.target.value, statute: '', guidelines: [] });
   }
 
   getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
+    // eslint-disable-next-line
     let statuteOptions = _.filter(data, d => d.Title == this.state.title).map(
       x => x.Statute
     );
@@ -161,21 +232,32 @@ class SI extends Component {
     });
   };
 
-  search() {
+  search = () => {
+    // eslint-disable-next-line
     let results = _.find(
       data,
-      // eslint-disable-next-line
-      d => d.Title == this.state.title && d.Statute == this.state.statute
+      d => d.Title == this.state.title && d.Statute === this.state.statute
     );
     if (results === undefined) return;
 
     let guidelines = results.Guidelines.split(',').map(gl => (
-      <li key={gl}>
-        <a href={`/guidelines/§${gl}`}>{gl}</a>
-      </li>
+      <div className="container-05">
+        <div className="container-05-A">
+          <a href={`/gl/§${gl}`}>
+            <div className="container-03-A-a">
+              <div className="container-03-A1">
+                <span className="container-font-light-D">{gl}</span>
+              </div>
+              <div className="container-03-A2">
+                <img className="chevron-right-icon" src={arrowRight} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     ));
     this.setState({ guidelines: guidelines });
-  }
+  };
 }
 
 export default SI;

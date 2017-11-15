@@ -53,7 +53,7 @@ class GuideLine extends Component {
 
     let guidelineList = _.map(guideLines, gl => {
       if (gl.id !== id) {
-        let link = `/guidelines/${gl.id}`;
+        let link = `/gl/${gl.id}`;
 
         return (
           <option key={gl.id} value={link}>
@@ -65,17 +65,20 @@ class GuideLine extends Component {
     });
     let thisgl = _.find(Data, gl => gl.id === id);
     let content;
-    if (thisgl != undefined) {
+    let title;
+    if (thisgl !== undefined) {
+      title = thisgl.title;
       content = thisgl.content;
     }
     this.setState({
       imgContent: imgContent,
       guidelineList: guidelineList,
       id: id,
-	  title: gl.title,
+      title: gl.title,
       chapterId: chapterId,
       sectionId: sectionId,
       partId: partId,
+      title: title,
       content: content
     });
   }
@@ -99,7 +102,10 @@ class GuideLine extends Component {
             </GuideLinesLink>
             &nbsp; > &nbsp; {this.state.id}
           </div>
-		  <BookmarkLink path={this.props.location.pathname} title={`${this.state.id} - ${this.state.title}`}/>
+          <BookmarkLink
+            path={this.props.location.pathname}
+            title={`${this.state.id} - ${this.state.title}`}
+          />
           <div className="usa-width-one-half">
             <select onChange={e => (window.location = e.target.value)}>
               <option>Go to</option>
@@ -107,8 +113,12 @@ class GuideLine extends Component {
             </select>
           </div>
         </h6>
-        <ContentWrapper path={this.props.location.pathname} title={`${this.state.id} - ${this.state.title}`}>
+        <ContentWrapper
+          path={this.props.location.pathname}
+          title={`${this.state.id} - ${this.state.title}`}
+        >
           {this.state.imgContent}
+          <div dangerouslySetInnerHTML={{ __html: this.state.title }} />
           <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
         </ContentWrapper>
       </div>

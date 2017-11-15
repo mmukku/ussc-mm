@@ -3,17 +3,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import Container from './components/container';
 import asyncComponent from './components/asyncComponent';
+import Home from './pages/home';
+import Parts from './pages/parts';
+import Sections from './pages/sections';
+import Guidelines from './pages/guidelines';
+import Guideline from './pages/gl';
+//import Search from './pages/search';
 
+const AsyncDashboard = asyncComponent(() => import('./pages/dashboard'));
 const AsyncHome = asyncComponent(() => import('./pages/home'));
-const AsyncSC = asyncComponent(() => import('./pages/sc'));
+const AsyncSearch = asyncComponent(() => import('./pages/search'));
+const AsyncGRC = asyncComponent(() => import('./pages/grc'));
 const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncDE = asyncComponent(() => import('./pages/de'));
-const AsyncAmendments = asyncComponent(() => import('./pages/amendments'));
-const AsyncParts = asyncComponent(() => import('./pages/parts'));
-const AsyncSections = asyncComponent(() => import('./pages/sections'));
-const AsyncGuidelines = asyncComponent(() => import('./pages/guidelines'));
-const AsyncGuideline = asyncComponent(() => import('./pages/guideline'));
+const AsyncAmendments = asyncComponent(() => import('./pages/ac'));
+
 const AsyncApplicationInstructions = asyncComponent(() => import('./pages/ai'));
 const AsyncAppendixB = asyncComponent(() => import('./pages/appendixb'));
 const AsyncAppendixBPart = asyncComponent(() =>
@@ -32,60 +37,67 @@ class USSCRouter extends Component {
         <Container>
           <Helmet titleTemplate={`%s - ${title}`} />
           <Switch>
-            <Route exact path="/" component={AsyncHome} title="Home" />
             <Route
               exact
-              path="/chapters"
-              component={AsyncHome}
-              title="Chapters"
+              path="/"
+              component={AsyncDashboard}
+              title="Dashboard"
             />
-			<Route
-			  exact
-			  path="/bookmarks"
-			  component={AsyncBookmarks}
-			  title="Bookmarks"
-			/>
-			<Route
-			  exact
-			  path="/notes"
-			  component={AsyncNotes}
-			  title="Notes"
-			/>
+            <Route
+              exact
+              path="/home"
+              component={AsyncHome}
+              title="Guidelines Manual"
+            />
+            <Route exact path="/chapters" component={Home} title="Chapters" />
+            <Route
+              exact
+              path="/search/:slug?"
+              component={AsyncSearch}
+              title="Search"
+            />
+            <Route
+              exact
+              path="/bookmarks"
+              component={AsyncBookmarks}
+              title="Bookmarks"
+            />
+            <Route exact path="/notes" component={AsyncNotes} title="Notes" />
             <Route
               exact
               path="/chapters/:chapterId/parts"
-              component={AsyncParts}
+              component={Parts}
               title="Parts"
             />
             <Route
               exact
               path="/chapters/:chapterId/parts/:part/sections"
-              component={AsyncSections}
+              component={Sections}
               title="Sections"
             />
             <Route
               exact
               path="/chapters/:chapterId/parts/:part/sections/:sectionId/guidelines"
-              component={AsyncGuidelines}
-              title="GuideLines"
+              component={Guidelines}
+              title="Guidelines"
             />
             <Route
               exact
               path="/chapters/:chapterId/parts/:part/guidelines"
-              component={AsyncGuidelines}
-              title="GuideLines"
+              component={Guidelines}
+              title="Guidelines"
             />
             <Route
               exact
-              path="/guidelines/:id"
-              component={AsyncGuideline}
-              title="GuideLine"
+              path="/gl/:id"
+              component={Guideline}
+              title="Guideline"
             />
             <Route
               exact
-              path="/sc"
-              component={AsyncSC}
-              title="Sentencing Calculator"
+              path="/grc"
+              component={AsyncGRC}
+              title="Guideline Range Calculator"
             />
             <Route
               exact
@@ -107,7 +119,7 @@ class USSCRouter extends Component {
             />
             <Route
               exact
-              path="/amendments"
+              path="/ac/:id?"
               component={AsyncAmendments}
               title="Amendments"
             />

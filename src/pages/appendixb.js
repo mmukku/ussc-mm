@@ -6,8 +6,8 @@ import { ContentWrapper } from '../components/contentwrapper';
 export default params => {
   return (
     <div>
-	  <BookmarkLink path={params.location.pathname} title="Appendix B" />
-	  <ContentWrapper path={params.location.pathname} title="Appendix B">
+      <BookmarkLink path={params.location.pathname} title="Appendix B" />
+      <ContentWrapper path={params.location.pathname} title="Appendix B">
         <p>
           <strong>APPENDIX B</strong>
         </p>
@@ -21,8 +21,8 @@ export default params => {
         </p>
         <blockquote>
           <p>
-            <strong>Title 18.</strong> First, it sets forth relevant provisions of
-            title 18, United States Code (Crimes and Criminal Procedure), as
+            <strong>Title 18.</strong> First, it sets forth relevant provisions
+            of title 18, United States Code (Crimes and Criminal Procedure), as
             extracted from the following chapters of title 18:
           </p>
           <p>● Chapter 227 (Sentences);</p>
@@ -31,21 +31,21 @@ export default params => {
           <p>● Chapter 235 (Appeal).</p>
           <p>
             <strong>Title 28.</strong> Second, it sets forth relevant provisions
-            of title 28, United States Code (Judiciary and Judicial Procedure), as
-            extracted from the following chapter of title 28:
+            of title 28, United States Code (Judiciary and Judicial Procedure),
+            as extracted from the following chapter of title 28:
           </p>
           <p>● Chapter 58 (United States Sentencing Commission).</p>
           <p>
             <strong>
-              Public Laws Governing the Commission and the Drafting of Sentencing
-              Guidelines.
+              Public Laws Governing the Commission and the Drafting of
+              Sentencing Guidelines.
             </strong>{' '}
-            Third, it sets forth other relevant provisions of freestanding public
-            laws governing the Commission and the drafting of sentencing
-            guidelines (<em>e.g.</em>, congressional directives). These provisions
-            ordinarily appear in the United States Code in the notes following 28
-            U.S.C. § 994. This appendix sets them forth separately and in fuller
-            detail for ease of reference.
+            Third, it sets forth other relevant provisions of freestanding
+            public laws governing the Commission and the drafting of sentencing
+            guidelines (<em>e.g.</em>, congressional directives). These
+            provisions ordinarily appear in the United States Code in the notes
+            following 28 U.S.C. § 994. This appendix sets them forth separately
+            and in fuller detail for ease of reference.
           </p>
         </blockquote>
         <p>
@@ -56,28 +56,28 @@ export default params => {
           1984).
         </p>
         <p>
-          These statutory provisions are presented in this appendix solely for the
-          purpose of providing a reference to federal sentencing law as it stands
-          as of <strong>May 1, 2016</strong>. For the sake of brevity, certain
-          miscellaneous provisions are omitted. The Commission makes no
+          These statutory provisions are presented in this appendix solely for
+          the purpose of providing a reference to federal sentencing law as it
+          stands as of <strong>May 1, 2016</strong>. For the sake of brevity,
+          certain miscellaneous provisions are omitted. The Commission makes no
           representations concerning the accuracy of these provisions and
-          recommends that authoritative sources be consulted where legal reliance
-          is necessary.
+          recommends that authoritative sources be consulted where legal
+          reliance is necessary.
         </p>
         <p>
           <strong>CONTENTS</strong>
         </p>
         <p>
-          <strong>Title 18, United States Code</strong>
+          <strong>TITLE 18, UNITED STATES CODE</strong>
         </p>
         <p>
           <strong>CRIMES AND CRIMINAL PROCEDURE</strong>
         </p>
         <p>
-          <strong>CHAPTER 227 SENTENCES</strong>
+          <strong>CHAPTER 227-SENTENCES</strong>
         </p>
         <p>
-          <strong>SUBCHAPTER A GENERAL PROVISIONS</strong>
+          <strong>SUBCHAPTER A-GENERAL PROVISIONS</strong>
         </p>
         <p>
           <Link to="/ab/18U.S.C.§3551">3551. Authorized sentences.</Link>
@@ -109,7 +109,7 @@ export default params => {
           </a>
         </p>
         <p>
-          <strong>SUBCHAPTER B PROBATION</strong>
+          <strong>SUBCHAPTER B-PROBATION</strong>
         </p>
         <p>
           <a href="/ab/18U.S.C.§3561">3561. Sentence of probation.</a>
@@ -130,11 +130,11 @@ export default params => {
         </p>
         <p>
           <a href="/ab/18U.S.C.§3566">
-            3566. Implementation of a sentence of probation..
+            3566. Implementation of a sentence of probation.
           </a>
         </p>
         <p>
-          <strong>SUBCHAPTER C FINES</strong>
+          <strong>SUBCHAPTER C-FINES</strong>
         </p>
         <p>
           <a href="/ab/18U.S.C.§3571">3571. Sentence of fine.</a>
@@ -155,7 +155,7 @@ export default params => {
           </a>
         </p>
         <p>
-          <strong>SUBCHAPTER D IMPRISONMENT</strong>
+          <strong>SUBCHAPTER D-IMPRISONMENT</strong>
         </p>
         <p>
           <a href="/ab/18U.S.C.§3581">3581. Sentence of imprisonment.</a>
@@ -185,12 +185,13 @@ export default params => {
             3586. Implementation of a sentence of imprisonment.
           </a>
         </p>
+        <p>* * *</p>
         <p>
           <strong>CHAPTER 229-POSTSENTENCE ADMINISTRATION</strong>
         </p>
         <p>* * *</p>
         <p>
-          <strong>SUBCHAPTER C IMPRISONMENT</strong>
+          <strong>SUBCHAPTER C-IMPRISONMENT</strong>
         </p>
         <p>* * *</p>
         <p>
@@ -209,12 +210,15 @@ export default params => {
         <p>
           <a href="/ab/18U.S.C.§3624">3624. Release of a prisoner.</a>
         </p>
+        <p>* * *</p>
         <p>
-          <strong>CHAPTER 232 MISCELLANEOUS SENTENCING PROVISIONS</strong>
+          <strong>CHAPTER 232-MISCELLANEOUS SENTENCING PROVISIONS</strong>
         </p>
         <p>* * *</p>
         <p>
-          <a href="/ab/18U.S.C.§3661">3661. Use of information for sentencing.</a>
+          <a href="/ab/18U.S.C.§3661">
+            3661. Use of information for sentencing.
+          </a>
         </p>
         <p>
           <a href="/ab/18U.S.C.§3663">3663. Order of restitution.</a>
@@ -226,28 +230,29 @@ export default params => {
         </p>
         <p>
           <a href="/ab/18U.S.C.§3664">
-            3664. Procedure for issuance and enforcement of order of restitution
+            3664. Procedure for issuance and enforcement of order of
+            restitution.
           </a>
         </p>
+        <p>* * *</p>
         <p>
-          <strong>CHAPTER 235 APPEAL</strong>
+          <strong>CHAPTER 235-APPEAL</strong>
         </p>
         <p>* * *</p>
         <p>
           <a href="/ab/18U.S.C.§3742">3742. Review of a sentence</a>
         </p>
+        <p>* * *</p>
         <p>
-          <strong>Title 28, United States Code</strong>
+          <strong>TITLE 28, UNITED STATES CODE</strong>
         </p>
         <p>
           <strong>JUDICIARY AND JUDICIAL PROCEDURE</strong>
         </p>
         <p>
-          <strong>Sec.</strong>
-        </p>
-        <p>
           <a href="/ab/28U.S.C.§991">
-            991. United States Sentencing Commission; establishment and purposes.
+            991. United States Sentencing Commission; establishment and
+            purposes.
           </a>
         </p>
         <p>
@@ -271,50 +276,51 @@ export default params => {
         <p>
           <a href="/ab/28U.S.C.§998">998. Definitions.</a>
         </p>
+        <p>* * *</p>
         <p>
-          {' '}
           <strong>
-            Public Laws Governing the Commission and the Drafting of Sentencing
-            Guidelines
+            PROVISIONS OF PUBLIC LAWS GOVERNING THE COMMISSION OF SENTENCING
+            GUIDELINES
           </strong>
-        </p>
-        <p>
-          <strong>PROVISIONS OF PUBLIC LAWS</strong>
-        </p>
-        <p>
-          <strong>GOVERNING THE COMMISSION</strong>
-        </p>
-        <p>
-          <strong>AND THE DRAFTING</strong>
-        </p>
-        <p>
-          <strong>OF SENTENCING GUIDELINES</strong>
         </p>
         <p>
           <strong>(classified at 28 U.S.C. § 994 notes)</strong>
         </p>
         <p>
           <a href="/ab/PUB.L.100–690">
-            <strong>ANTI DRUG ABUSE ACT OF 1988(PUB. L. 100–690)</strong>
+            <strong>Anti Drug Abuse Act of 1988 (Pub. L. 100–690)</strong>
+          </a>
+        </p>
+        <p>
+          <a href="/ab/PUB.L.100–700">
+            <strong>Major Fraud Act of 1988 (Pub. L. 100–700)</strong>
+          </a>
+        </p>
+        <p>
+          <a href="/ab/PUB.L.101–73">
+            <strong>
+              Financial Institutions Reform, Recovery, and Enforcement Act of
+              1989 (Pub. L. 101–73)
+            </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.101–647">
-            <strong>CRIME CONTROL ACT OF 1990(PUB. L. 101–647)</strong>
+            <strong>Crime Control Act of 1990 (Pub. L. 101–647)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.102–141">
             <strong>
-              TREASURY, POSTAL SERVICE ANDGENERAL GOVERNMENTAPPROPRIATIONS ACT,
-              1992(PUB. L. 102–141)
+              Treasury, Postal Service and General Government Appropriations
+              Act, 1992 (Pub. L. 102–141)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.103–322">
             <strong>
-              VIOLENT CRIME CONTROL ANDLAW ENFORCEMENT ACT OF 1994(PUB. L.
+              Violent Crime control and Law Enforcement Act of 1994 (Pub. L.
               103–322)
             </strong>
           </a>
@@ -322,32 +328,33 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.104–38">
             <strong>
-              ACT TO DISAPPROVE OF AMENDMENTS TO THE FEDERAL SENTENCING GUIDELINES
-              RELATING TO LOWERING OF CRACKSENTENCES AND SENTENCES FOR MONEY
-              LAUNDERING AND TRANSACTIONS IN PROPERTY DERIVED FROM UNLAWFUL
-              ACTIVITY(PUB. L. 104–38)
+              Act to Disapprove of Amendments to the Federal Sentencing
+              Guidelines Relating to Lowering of Crack Sentences and Sentences
+              for Money Laundering and Transactions in Property Derived from
+              Unlawful Activity (Pub. L. 104–38)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–71">
             <strong>
-              SEX CRIMES AGAINST CHILDREN PREVENTION ACT OF 1995(PUB. L. 104–71)
+              Sex Crimes Against Children Prevention Act of 1995 (Pub. L.
+              104–71)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–132">
             <strong>
-              ANTITERRORISM AND EFFECTIVE DEATH PENALTY ACT OF 1996orMANDATORY
-              VICTIMS RESTITUTION ACT OF 1996(PUB. L. 104–132)
+              Antiterrorism and Effective Death Penalty Act of 1996 or Mandatory
+              Victims Restitution Act of 1996 (Pub. L. 104–132)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–201">
             <strong>
-              NATIONAL DEFENSE AUTHORIZATION ACT FOR FISCAL YEAR 1997(PUB. L.
+              National Defense Authorization Act for Fiscal Year 1997 (Pub. L.
               104–201)
             </strong>
           </a>
@@ -355,27 +362,29 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.104–208">
             <strong>
-              OMNIBUS CONSOLIDATED APPROPRIATIONS ACT, 1997orILLEGAL IMMIGRATION
-              REFORM AND IMMIGRANT RESPONSIBILITY ACT OF 1996(PUB. L. 104–208)
+              Omnibus Consolidated Appropriations Act, 1997 or Illegal
+              Immigration Reform and Immigrant Responsibility Act of 1996 (Pub.
+              L. 104–208)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–237">
             <strong>
-              COMPREHENSIVE METHAMPHETAMINE CONTROL ACT OF 1996(PUB. L. 104–237)
+              Comprehensive Methamphetamine Control Act of 1996 (Pub. L.
+              104–237)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–294">
-            <strong>ECONOMIC ESPIONAGE ACT OF 1996(PUB. L. 104–294)</strong>
+            <strong>Economic Espionage Act of 1996 (Pub. L. 104–294)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.104–305">
             <strong>
-              DRUG-INDUCED RAPE PREVENTION AND PUNISHMENT ACT OF 1996(PUB. L.
+              Drug-Induced Rape Prevention and Punishment Act of 1996 (Pub. L.
               104–305)
             </strong>
           </a>
@@ -383,31 +392,31 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.105–101">
             <strong>
-              VETERANS’ CEMETERY PROTECTION ACT OF 1997(PUB. L. 105–101)
+              Veterans’ Cemetery Protection Act of 1997 (Pub. L. 105–101)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.105–147">
-            <strong>NO ELECTRONIC THEFT (NET) ACT(PUB. L. 105–147)</strong>
+            <strong>No Electronic Theft (NET) Act (Pub. L. 105–147)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.105–172">
-            <strong>WIRELESS TELEPHONE PROTECTION ACT(PUB. L. 105–172)</strong>
+            <strong>Wireless Telephone Protection Act (Pub. L. 105–172)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.105–184">
             <strong>
-              TELEMARKETING FRAUD PROTECTION ACT OF 1998(PUB. L. 105–184)
+              Telemarketing Fraud Protection Act of 1998 (Pub. L. 105–184)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.105–314">
             <strong>
-              PROTECTION OF CHILDREN FROM SEXUAL PREDATORS ACT OF 1998(PUB. L.
+              Protection of Children from Sexual Predators Act of 1998 (Pub. L.
               105–314)
             </strong>
           </a>
@@ -415,7 +424,7 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.105–318">
             <strong>
-              IDENTITY THEFT AND ASSUMPTION DETERRENCE ACT OF 1998(PUB. L.
+              Identity Theft and Assumption Deterrence Act of 1998 (Pub. L.
               105–318)
             </strong>
           </a>
@@ -423,130 +432,145 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.106–160">
             <strong>
-              DIGITAL THEFT DETERRENCE AND COPYRIGHT DAMAGES IMPROVEMENT ACT OF
-              1999(PUB. L. 106–160)
+              Digital Theft Deterrence and Copyright Damages Improvement Act of
+              1999 (Pub. L. 106–160)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.106–310">
             <strong>
-              CHILDREN’S HEALTH ACT OF 2000orMETHAMPHETAMINE ANTI-PROLIFERATION
-              ACT OF 2000(PUB. L. 106–310)
+              Children’s Health Act of 2000 or Methamphetamine
+              Anti-Proliferation Act of 2000 (Pub. L. 106–310)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.106–386">
             <strong>
-              VICTIMS OF TRAFFICKING AND VIOLENCE PROTECTION ACT OF 2000(PUB. L.
-              106–386)
+              Victims of Trafficking and Violence Protection Act of 2000 (Pub.
+              L. 106–386)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.106–420">
             <strong>
-              COLLEGE SCHOLARSHIP FRAUD PREVENTION ACT OF 2000(PUB. L. 106–420)
+              College Scholarship Fraud Prevention Act of 2000 (Pub. L. 106–420)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.107–56">
             <strong>
-              UNITING AND STRENGTHENING AMERICA BY PROVIDING APPROPRIATE TOOLS
-              REQUIRED TO INTERCEPT AND OBSTRUCT TERRORISM ACT OF 2001orUSA
-              PATRIOT ACT(PUB. L. 107–56)
+              Uniting and Strengthening America by Providing Appropriate Tools
+              Required to Intercept and Obstruct Terrorism Act of 2001 or USA
+              PATRIOT Act (Pub. L. 107–56)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.107–155">
             <strong>
-              BIPARTISAN CAMPAIGN REFORM ACT OF 2002(PUB. L. 107–155)
+              Bipartisan Campaign Reform Act of 2002 (Pub. L. 107–155)
+            </strong>
+          </a>
+        </p>
+        <p>
+          <a href="/ab/PUB.L.107–204">
+            <strong>Sarbanes-Oxley Act of 2002 (Pub. L. 107–204)</strong>
+          </a>
+        </p>
+        <p>
+          <a href="/ab/PUB.L.107–273">
+            <strong>
+              21st Century Department of Justice Appropriations Authorization
+              Act (Pub. L. 107–273)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.107–296">
             <strong>
-              HOMELAND SECURITY ACT OF 2002orCYBER SECURITY ENHANCEMENT ACT OF
-              2002(PUB. L. 107–296)
+              Homeland Security Act of 2002 or Cyber Security Enhancement Act of
+              2002 (Pub. L. 107–296)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–21">
             <strong>
-              PROSECUTORIAL REMEDIES AND OTHER TOOLS TO END THE EXPLOITATION OF
-              CHILDREN TODAY ACT OF 2003orTHE PROTECT ACT(PUB. L. 108–21)
+              Prosecutorial Remedies and Other Tools to End the Exploitation of
+              Children Today Act of 2003 or the PROTECT Act (Pub. L. 108–21)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–187">
             <strong>
-              CONTROLLING THE ASSAULT OF NON-SOLICITED PORNOGRAPHYAND MARKETING
-              ACT OF 2003orCAN-SPAM ACT OF 2003(PUB. L. 108–187)
+              Controlling the Assault of Non-Solicited Pornography and Marketing
+              Act of 2003 or CAN-SPAM Act of 2003 (Pub. L. 108–187)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–275">
             <strong>
-              IDENTITY THEFT PENALTY ENHANCEMENT ACT(PUB. L. 108–275)
+              Identity Theft Penalty Enhancement Act (Pub. L. 108–275)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–358">
-            <strong>ANABOLIC STEROID CONTROL ACT OF 2004(PUB. L. 108–358)</strong>
+            <strong>
+              Anabolic Steroid Control Act of 2004 (Pub. L. 108–358)
+            </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–458">
             <strong>
-              INTELLIGENCE REFORM AND TERRORISM PREVENTION ACT OF 2004orSTOP
-              TERRORIST AND MILITARY HOAXES ACT OF 2004(PUB. L. 108–458)
+              Intelligence Reform and Terrorism Prevention Act of 2004 or Stop
+              Terrorist and Military Hoaxes Act of 2004 (Pub. L. 108–458)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.108–482">
             <strong>
-              INTELLECTUAL PROPERTY PROTECTION AND COURTS AMENDMENTS ACT OF
-              2004orFRAUDULENT ONLINE IDENTITY SANCTIONS ACT(PUB. L. 108–482)
+              Intellectual Property Protection and Courts Amendments Act of 2004
+              or Fraudulent Online Identity Sanctions Act (Pub. L. 108–482)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–9">
             <strong>
-              FAMILY ENTERTAINMENT AND COPYRIGHT ACT OF 2005orARTISTS’ RIGHTS AND
-              THEFT PREVENTION ACT OF 2005 (ART ACT)
+              Family Entertainment and Copyright Act of 2005 or Artists’ Rights
+              and Theft Prevention Act of 2005 (ART Act) (Pub. L. 109–9)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–76">
             <strong>
-              UNITED STATES PAROLE COMMISSION EXTENSION AND SENTENCING COMMISSION
-              AUTHORITY ACT OF 2005(PUB. L. 109–76)
+              United States Parole Commission Extension and Sentencing
+              Commission Authority Act of 2005 (Pub. L. 109–76)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–162">
             <strong>
-              VIOLENCE AGAINST WOMEN AND DEPARTMENT OF JUSTICE REAUTHORIZATION ACT
-              OF 2005 (PUB. L. 109–162)
+              Violence Against Women and Department of Justice Reauthorization
+              Act of 2005 (Pub. L. 109–162)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–177">
             <strong>
-              USA PATRIOT IMPROVEMENT AND REAUTHORIZATION ACT OF 2005(PUB. L.
+              USA PATRIOT Improvement and Reauthorization Act of 2005 (Pub. L.
               109–177)
             </strong>
           </a>
@@ -554,22 +578,22 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.109–181">
             <strong>
-              STOP COUNTERFEITING IN MANUFACTURED GOODS ACT(PUB. L. 109–181)
+              Stop Counterfeiting in Manufactured Goods Act (Pub. L. 109–181)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–248">
             <strong>
-              ADAM WALSH CHILD PROTECTION AND SAFETY ACT OF 2006orSEX OFFENDER
-              REGISTRATION AND NOTIFICATION ACT(PUB. L. 109–248)
+              Adam Walsh Child Protection and Safety Act of 2006 or Sex Offender
+              Registration and Notification Act (Pub. L. 109–248)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.109–295">
             <strong>
-              DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS ACT, 2007(PUB. L.
+              Department of Homeland Security Appropriations Act, 2007 (Pub. L.
               109–295)
             </strong>
           </a>
@@ -577,7 +601,7 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.109–476">
             <strong>
-              TELEPHONE RECORDS AND PRIVACY PROTECTION ACT OF 2006(PUB. L.
+              Telephone Records and Privacy Protection Act of 2006 (Pub. L.
               109–476)
             </strong>
           </a>
@@ -585,61 +609,61 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.110–177">
             <strong>
-              COURT SECURITY IMPROVEMENT ACT OF 2007(PUB. L. 110–177)
+              Court Security Improvement Act of 2007 (Pub. L. 110–177)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–179">
             <strong>
-              EMERGENCY AND DISASTER ASSISTANCE FRAUD PENALTY ENHANCEMENT ACTOF
-              2007(PUB. L. 110–179)
+              Emergency and Disaster Assistance Fraud Penalty Enhancement Act of
+              2007 (Pub. L. 110–179)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–326">
             <strong>
-              FORMER VICE PRESIDENT PROTECTION ACT OF 2008orIDENTITY THEFT
-              ENFORCEMENT AND RESTITUTION ACT OF 2008(PUB. L. 110–326)
+              Former Vice President Protection Act of 2008 or Identity Theft
+              Enforcement and Restitution Act of 2008 (Pub. L. 110–326)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–384">
             <strong>
-              LET OUR VETERANS REST IN PEACE ACT OF 2008(PUB. L. 110–384)
+              Let Our Veterans Rest in Peace Act of 2008 (Pub. L. 110–384)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–407">
             <strong>
-              DRUG TRAFFICKING VESSEL INTERDICTION ACT OF 2008(PUB. L. 110–407)
+              Drug Trafficking Vessel Interdiction Act of 2008 (Pub. L. 110–407)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–425">
             <strong>
-              RYAN HAIGHT ONLINE PHARMACY CONSUMER PROTECTION ACT OF 2008(PUB. L.
-              110–425)
+              Ryan Haight Online Pharmacy Consumer Protection Act of 2008 (Pub.
+              L. 110–425)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.110–457">
             <strong>
-              WILLIAM WILBERFORCE TRAFFICKING VICTIMS PROTECTIONREAUTHORIZATION
-              ACT OF 2008(PUB. L. 110–457)
+              William Wilberforce Trafficking Victims Protection Reauthorization
+              Act of 2008 (Pub. L. 110–457)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.111–84">
             <strong>
-              NATIONAL DEFENSE AUTHORIZATION ACT FOR FISCAL YEAR 2010orMATTHEW
-              SHEPARD AND JAMES BYRD, JR. HATE CRIMES PREVENTION ACT(PUB. L.
+              National Defense Authorization Act for Fiscal Year 2010 or Matthew
+              Shepard and James Byrd, Jr. Hate Crimes Prevention Act (Pub. L.
               111–84)
             </strong>
           </a>
@@ -647,34 +671,34 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.111–148">
             <strong>
-              PATIENT PROTECTION AND AFFORDABLE CARE ACT(PUB. L. 111–148)
+              Patient Protection and Affordable Care Act (Pub. L. 111–148)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.111–203">
             <strong>
-              DODD–FRANK WALL STREET REFORM AND CONSUMER PROTECTION ACT(PUB. L.
+              Dodd–Frank Wall Street Reform and Consumer Protection Act (Pub. L.
               111–203)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.111–220">
-            <strong>FAIR SENTENCING ACT OF 2010(PUB. L. 111–220)</strong>
+            <strong>Fair Sentencing Act of 2010 (Pub. L. 111–220)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.111–273">
             <strong>
-              SECURE AND RESPONSIBLE DRUG DISPOSAL ACT(PUB. L. 111–273)
+              Secure and Responsible Drug Disposal Act (Pub. L. 111–273)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.112–144">
             <strong>
-              FOOD AND DRUG ADMINISTRATION SAFETY AND INNOVATION ACT(PUB. L.
+              Food and Drug Administration Safety and Innovation Act (Pub. L.
               112–144)
             </strong>
           </a>
@@ -682,51 +706,25 @@ export default params => {
         <p>
           <a href="/ab/PUB.L.112–186">
             <strong>
-              STRENGTHENING AND FOCUSINGENFORCEMENT TO DETER ORGANIZED STEALING
-              AND ENHANCE SAFETY ACT OF 2012orSAFE DOSES ACT(PUB. L. 112–186)
+              Strengthening and Focusing Enforcement to Deter Organized Stealing
+              and Enhance Safety Act of 2012 or SAFE DOSES Act (Pub. L. 112–186)
             </strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.112–206">
-            <strong>CHILD PROTECTION ACT OF 2012(PUB. L. 112–206)</strong>
+            <strong>Child Protection Act of 2012 (Pub. L. 112–206)</strong>
           </a>
         </p>
         <p>
           <a href="/ab/PUB.L.112–269">
             <strong>
-              FOREIGN AND ECONOMIC ESPIONAGE PENALTY ENHANCEMENT ACT OF 2012(PUB.
-              L. 112–269)
+              Foreign and Economic Espionage Penalty Enhancement Act of 2012
+              (Pub. L. 112–269)
             </strong>
           </a>
         </p>
-        <div className="footnotes">
-          <hr />
-          <ol>
-            <li id="fn1">
-              <p>
-                So in original. The second comma probably should not appear.<a href="#fnref1">↩</a>
-              </p>
-            </li>
-            <li id="fn2">
-              <p>
-                <sup>1</sup> So in original. Probably should be “in relation”.<a href="#fnref2">↩</a>
-              </p>
-            </li>
-            <li id="fn3">
-              <p>
-                <sup>1</sup> So in original. Probably “defendant released” should
-                be “defendant”.<a href="#fnref3">↩</a>
-              </p>
-            </li>
-            <li id="fn4">
-              <p>
-                <sup>1</sup> So in original. Probably should be 28 U.S.C. note.<a href="#fnref4">↩</a>
-              </p>
-            </li>
-          </ol>
-        </div>
-	  </ContentWrapper>
+      </ContentWrapper>
     </div>
   );
 };
