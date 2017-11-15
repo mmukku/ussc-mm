@@ -1,5 +1,15 @@
 import React from 'react';
-import { get_notes_summary, get_note } from '../note';
+import ReactDOM from 'react-dom';
+import App from '../App';
+import { get_notes_summary, get_note, remove_note } from '../note';
+
+function remove_note_wrapper(path, id) {
+  return function() {
+    remove_note(path, id);
+    alert('Note removed');
+    ReactDOM.render(<App />, document.getElementById('root'));
+  };
+}
 
 export default props => {
   let summary = get_notes_summary();
@@ -7,12 +17,16 @@ export default props => {
   for (var key in summary) {
     let items = [];
     for (var i = 0; i < summary[key].ids.length; i++) {
+      let id = summary[key].ids[i];
       items.push(
-        <div
-          dangerouslySetInnerHTML={{
-            __html: get_note(key, summary[key].ids[i])
-          }}
-        />
+        <div>
+          <button onClick={remove_note_wrapper(key, id)}>Remove Note</button>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: get_note(key, id)
+            }}
+          />
+        </div>
       );
     }
     display.push(

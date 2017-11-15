@@ -6,7 +6,7 @@ import { get_bookmarks, remove_bookmark } from '../bookmark';
 
 /* return a function so that if the original variable changes the function is not affected; remove a bookmark,
 	let the user know, and refresh the page */
-export function remove_bookmark_wrapper(id) {
+function remove_bookmark_wrapper(id) {
   return function() {
     remove_bookmark(id);
     alert('Bookmark removed');
