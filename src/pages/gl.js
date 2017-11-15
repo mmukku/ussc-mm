@@ -74,7 +74,7 @@ class GuideLine extends Component {
       imgContent: imgContent,
       guidelineList: guidelineList,
       id: id,
-      title: gl.title,
+      textTitle: gl.title,
       chapterId: chapterId,
       sectionId: sectionId,
       partId: partId,
@@ -104,7 +104,7 @@ class GuideLine extends Component {
           </div>
           <BookmarkLink
             path={this.props.location.pathname}
-            title={`${this.state.id} - ${this.state.title}`}
+            title={`${this.state.id} - ${this.state.textTitle}`}
           />
           <div className="usa-width-one-half">
             <select onChange={e => (window.location = e.target.value)}>
@@ -115,7 +115,7 @@ class GuideLine extends Component {
         </h6>
         <ContentWrapper
           path={this.props.location.pathname}
-          title={`${this.state.id} - ${this.state.title}`}
+          title={`${this.state.id} - ${this.state.textTitle}`}
         >
           {this.state.imgContent}
           <div dangerouslySetInnerHTML={{ __html: this.state.title }} />

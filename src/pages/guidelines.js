@@ -97,9 +97,9 @@ export default props => {
   }
   var generalTitle;
   if (sectionTitle === null) {
-    generalTitle = thisPart.title;
+    generalTitle = `Chapter ${chapterId} Part ${partId} - ${thisPart.title}`;
   } else {
-	generalTitle = sectionTitle;
+    generalTitle = `Chapter ${chapterId} Part ${partId} Section ${sectionId} - ${sectionTitle}`;
   }
 
   return (
@@ -111,7 +111,7 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp; {bc} {text}
         </div>
-		<BookmarkLink path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${generalTitle}`} />
+        <BookmarkLink path={props.location.pathname} title={generalTitle} />
         <div className="usa-width-one-half">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>
@@ -119,7 +119,7 @@ export default props => {
           </select>
         </div>
       </h6>
-      <ContentWrapper path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${generalTitle}`}>
+      <ContentWrapper path={props.location.pathname} title={generalTitle}>
         <h3>
           Chapter {chapterId} - {chapterTitle}
         </h3>
