@@ -64,99 +64,89 @@ class Container extends Component {
 
               <ul className="usa-nav-primary usa-accordion">
                 <li style={{ paddingTop: '0px' }}>
-                  <a className="usa-nav-link" href="/">
+                  <Link className="usa-nav-link" to="/">
                     <span>
                       <span className="icon-home-nav usa-nav-icon" />
                       Home
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/home">
+                  <Link className="usa-nav-link" to="/home">
                     <span className="icon-guidelines-manual-nav usa-nav-icon" />
                     <span>Guidelines Manual</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/si">
+                  <Link className="usa-nav-link" to="/si">
                     <span className="icon-appendix-a-nav usa-nav-icon" />
                     <span>Appendix-A</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/ab">
+                  <Link className="usa-nav-link" to="/ab">
                     <span className="icon-appendix-b-nav usa-nav-icon" />
                     <span>Appendix-B</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/ac">
+                  <Link className="usa-nav-link" to="/ac">
                     <span className="icon-appendix-c-nav usa-nav-icon" />
                     <span>Appendix-C</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/grc">
+                  <Link className="usa-nav-link" to="/grc">
                     <span className="icon-guildline-range-nav usa-nav-icon" />
                     <span>Guideline Range</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/dol">
+                  <Link className="usa-nav-link" to="/dol">
                     <span className="icon-drug-equivalency-nav usa-nav-icon" />
                     <span>Drug Quantity</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/de">
+                  <Link className="usa-nav-link" to="/de">
                     <span className="icon-drug-equivalency-nav usa-nav-icon" />
                     <span>Drug Equivalency</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/ai">
+                  <Link className="usa-nav-link" to="/ai">
                     <span className="icon-applying-the-guildelines-nav usa-nav-icon" />
                     <span>Applying the Guidelines</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="usa-nav-link" href="/">
+                  <Link className="usa-nav-link" to="/bookmarks">
                     <span className="icon-bookmarks-nav usa-nav-icon" />
-                    <span>Bookmarks</span>
-                  </a>
-                </li>
-                <li>
-                  <a className="usa-nav-link" href="/">
-                    <span className="icon-notes-nav usa-nav-icon" />
-                    <span>Notes</span>
-                  </a>
-                </li>
-                <li>
-                  <a className="usa-nav-link" href="/archives">
-                    <span className="icon-archive-nav usa-nav-icon" />
-                    <span>Archive</span>
-                  </a>
-                </li>
-                <li>
-                  <a className="usa-nav-link" href="/">
-                    <span className="icon-updates-nav usa-nav-icon" />
-                    <span>Updates</span>
-                  </a>
-                </li>
-                <li>
-                  <a className="usa-nav-link" href="/">
-                    <span className="icon-documents-nav usa-nav-icon" />
-                    <span>Disclaimer</span>
-                  </a>
-                </li>
-                <li>
-                  <Link to="/bookmarks" className="usa-nav-link">
                     <span>Bookmarks</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/notes" className="usa-nav-link">
+                  <Link className="usa-nav-link" to="/notes">
+                    <span className="icon-notes-nav usa-nav-icon" />
                     <span>Notes</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="usa-nav-link" to="/archives">
+                    <span className="icon-archive-nav usa-nav-icon" />
+                    <span>Archive</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="usa-nav-link" to="/">
+                    <span className="icon-updates-nav usa-nav-icon" />
+                    <span>Updates</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="usa-nav-link" to="/">
+                    <span className="icon-documents-nav usa-nav-icon" />
+                    <span>Disclaimer</span>
                   </Link>
                 </li>
               </ul>
