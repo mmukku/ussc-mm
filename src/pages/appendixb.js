@@ -49,72 +49,51 @@ export default params => {
             </div>
           </div>
         </div>
-        <p>
-          <strong>CONTENTS</strong>
-        </p>
-        <p>
-          <strong>TITLE 18, UNITED STATES CODE</strong>
-        </p>
-        <p>
-          <strong>CRIMES AND CRIMINAL PROCEDURE</strong>
-        </p>
-        <p>
-          <strong>CHAPTER 227-SENTENCES</strong>
-        </p>
-        <p>
-          <a href="/ab/18usc227a">
-            <strong>SUBCHAPTER A-GENERAL PROVISIONS</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/18usc227b">
-            <strong>SUBCHAPTER B-PROBATION</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/18usc227c">
-            <strong>SUBCHAPTER C-FINES</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/18usc227d">
-            <strong>SUBCHAPTER D-IMPRISONMENT</strong>
-          </a>
-        </p>
-        <p>
-          <strong>CHAPTER 229-POSTSENTENCE ADMINISTRATION</strong>
-        </p>
-        <p>
-          <a href="/ab/18usc229c">
-            <strong>SUBCHAPTER C-IMPRISONMENT</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/18usc232">
-            <strong>CHAPTER 232-MISCELLANEOUS SENTENCING PROVISIONS</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/18usc235">
-            <strong>CHAPTER 235-APPEAL</strong>
-          </a>
-        </p>
-        <p>
-          <a href="/ab/28usc">
-            <strong>TITLE 28, UNITED STATES CODE</strong>
-          </a>
-        </p>
-        <p>
-          <strong>JUDICIARY AND JUDICIAL PROCEDURE</strong>
-        </p>
-        <p>
-          <a href="/ab/publ">
-            <strong>
-              PROVISIONS OF PUBLIC LAWS GOVERNING THE COMMISSION OF SENTENCING
-              GUIDELINES
-            </strong>
-          </a>
-        </p>
+        <hr className="usa-section-hr" />
+        <section
+          className="usa-section"
+          style={{
+            'border-style': 'dotted',
+            'border-width': '0px',
+            'border-color': 'grey',
+            'text-align': 'center'
+          }}
+        >
+          <div className="usa-grid">
+            <div className="container-03">
+              <div className="container-03-A-a">
+                <div className="container-03-A1">
+                  <a href="/ab/18usc">
+                    <span className="container-font-light-C">TITLE 18 </span>
+                    <span className="container-font-light-D">
+                      UNITED STATES CODE
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div className="container-03-A-b">
+                <div className="container-03-A1">
+                  <a href="/ab/28usc">
+                    <span className="container-font-light-C">TITLE 28 </span>
+                    <span className="container-font-light-D">
+                      UNITED STATES CODE
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div className="container-03-A-a">
+                <div className="container-03-A1">
+                  <a href="/ab/publ">
+                    <span className="container-font-light-C">
+                      PUBLIC LAWS GOVERNING THE COMMISSION AND THE DRAFTING OF
+                      SENTENCING GUIDELINES
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </ContentWrapper>
     </div>
   );

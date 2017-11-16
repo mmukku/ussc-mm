@@ -17,11 +17,25 @@ class AppendixBPart extends React.Component {
     let data_object = _.find(data, b => b.id === this.props.match.params.part);
     let content = data_object.content;
     let id = data_object.id;
-    var title;
+    var title, titleblock;
     if ('title' in data_object) {
       title = data_object.title;
     } else {
       title = data_object.id;
+    }
+    if ('titleblock' in data_object) {
+      titleblock = (
+        <div className="container-05-title-2">
+          <div className="container-05-title-B">
+            <div
+              className="container-05-title-B1"
+              dangerouslySetInnerHTML={{ __html: data_object.titleblock }}
+            />
+          </div>
+        </div>
+      );
+    } else {
+      titleblock = '';
     }
     return (
       <div>
@@ -45,6 +59,7 @@ class AppendixBPart extends React.Component {
                   </div>
                 </div>
               </div>
+              {titleblock}
               <div className="container-05">
                 <div className="container-05-A">
                   <div className="container-05-A1">
