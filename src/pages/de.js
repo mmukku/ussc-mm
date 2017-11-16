@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import data from '../data/de.json';
-import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
 const conversionTable = [
@@ -84,78 +83,70 @@ substanceList = _.sortBy(substanceList, s => [s.substance]).map(ol => (
 
 //drug offence level
 class DE extends Component {
-  constructor() {
-    super();
-    this.state = {
-      marihuana: null,
-      substance: '',
-      uom: '',
-      uomList: '',
-      qty: 0.0
-    };
-  }
+  state = { equivalencies: [] };
 
-  render() {
-    let result;
-    if (this.state.marihuana !== null) {
-      let sourceUOM = this.state.marihuana.substanceUOM;
-      if (sourceUOM === undefined) {
-        sourceUOM = 'gm';
+  add = (index, weight, uom, notes) => {
+    let es = [];
+    this.setState(prevState => {
+      for (let i = 0; i <= 2; i++) {
+        let e = prevState.equivalencies[i];
+        if (index === i) {
+          e = e || {};
+          e.weight = weight;
+          e.uom = uom;
+          e.notes = notes;
+          es[index] = e;
+        } else {
+          if (e) es[i] = e;
+        }
       }
+      return { equivalencies: es };
+    });
+  };
 
-      let conversionFactor = 1;
+  conversionFactor = (src, target) => {
+    let conversionFactor = 1;
+    if (src !== target) {
       let conversion = _.find(
         conversionTable,
-        c => c.uom === this.state.uom && c.targetUOM === sourceUOM
+        c => c.uom === src && c.targetUOM === target
       );
-      if (conversion !== undefined) {
-        conversionFactor = conversion.factor;
-      }
-      let notes = Notes;
-      let noteEntry = _.find(
-        NotesTable,
-        nt => nt.substances.indexOf(this.state.substance) >= 0
-      );
-      if (noteEntry !== undefined) {
-        notes = noteEntry.notes;
-      }
-      result = (
-        <section className="usa-section">
-          <div className="usa-grid">
-            <div className="container-05-title">
-              <div className="container-05-title-A">
-                <div className="container-05-title-A1">
-                  <span className="container-font-light-C">Results</span>
-                </div>
-              </div>
-            </div>
-            <div className="container-05">
-              <div className="container-05-A">
-                <div className="container-05-A1">
-                  <div className="container-05-A1a">
-                    <img className="alert-left-icon" src={alertIcon} />
-                  </div>
+      conversionFactor = conversion.factor;
+    }
+    return conversionFactor;
+  };
 
-                  <div className="container-05-A1b">
-                    <div className="container-05-A1b-top">
-                      <span className="container-font-light-C">
-                        Marihuana <br />
-                      </span>
-                    </div>
-                    <div className="container-05-A1b-bottom">
-                      <span className="container-font-light-D">
-                        {this.state.qty *
-                          conversionFactor *
-                          this.state.marihuana.targetWeight}{' '}
-                        {this.state.marihuana.targetUOM}
-                        <br />
-                      </span>
-                      <br />
-                      <em>{notes}</em>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  calculate = () => {
+    let totalWeight = 0.0;
+    let currentUOM = '';
+    let notes = '';
+
+    for (let e of this.state.equivalencies) {
+      if (e) {
+        if (currentUOM === '') {
+          currentUOM = e.uom;
+        }
+        totalWeight += this.conversionFactor(e.uom, currentUOM) * e.weight;
+        if (e.notes && e.notes.length > 0 && e.notes !== notes) {
+          notes += e.notes;
+        }
+      }
+    }
+    this.setState({ totalWeight: totalWeight, uom: currentUOM, notes: notes });
+  };
+
+  render() {
+    let result = undefined;
+    if (this.state.totalWeight) {
+      result = (
+        <section>
+          <div className="usa-alert usa-alert-info">
+            <div className="usa-alert-body">
+              <h4 className="usa-alert-heading">
+                Marihuana: {this.state.totalWeight} {this.state.uom}
+              </h4>
+
+              <em>{this.state.notes}</em>
             </div>
           </div>
         </section>
@@ -165,116 +156,29 @@ class DE extends Component {
     }
     return (
       <div>
-        <section className="usa-section usa-section-black">
-          <div className="usa-grid">
-            <div className="container-title-b">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17<br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Drug Equivalency Calculator<br />
-              </span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section container-custom-result">
-          <div className="usa-grid">
-            <div className="container-03">
-              <div className="container-05-A1">
-                <div className="container-05-A1c container-font-light-Ea">
-                  Use the Drug Equivalency Calculator to convert the quantity of
-                  controlled substance involved in the offense to its equivalent
-                  quantity of marihuana. In a case involving more than one
-                  controlled substance, convert each controlled substance into
-                  its marihuana equivalency and then add all converted
-                  quantities. <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              SUBSTANCE<br />
-            </span>
-          </div>
-
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-search usa-search-small">
-                <select
-                  id="substance"
-                  className="container-font-dark-B-4"
-                  onChange={e => this.getUOMList(e)}
-                  value={this.state.substance}
-                >
-                  <option>Select</option>
-                  {substanceList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-form">
-                <fieldset>
-                  <span className="container-font-dark-B-3">
-                    WEIGHT<br />
-                  </span>
-                  <input
-                    aria-required="true"
-                    placeholder="Enter Number"
-                    id="qty"
-                    value={this.state.qty}
-                    onChange={this.handleQtyChange.bind(this)}
-                    className="container-font-dark-B-4"
-                  />
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              UNIT OF MEASURE<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-search usa-search-small">
-                <select
-                  id="uom"
-                  className="container-font-dark-B-4"
-                  value={this.state.uom}
-                  onChange={this.handleUOMChange.bind(this)}
-                >
-                  {this.state.uomList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <button
-                className="usa-button"
-                onClick={this.calculate.bind(this)}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
+        <h2>Drug Equivalency Calculator</h2>
+        <p>
+          Use the Drug Equivalency Calculator to convert the quantity of
+          controlled substance involved in the offense to its equivalent
+          quantity of marihuana. In a case involving more than one controlled
+          substance, convert each controlled substance into its marihuana
+          equivalency and then add all converted quantities.
+        </p>
+        {result}
+        <DEPair index={0} add={this.add.bind(this)} />
+        <DEPair index={1} add={this.add.bind(this)} />
+        <DEPair index={2} add={this.add.bind(this)} />
+        <section>
+          <button onClick={this.calculate.bind(this)}>Go</button>
         </section>
         {result}
       </div>
     );
   }
+}
 
+class DEPair extends React.Component {
+  state = { uomList: [] };
   getUOMList(e) {
     let uom = _.filter(data, d => d.substance === e.target.value)[0]
       .substanceUOM;
@@ -296,25 +200,87 @@ class DE extends Component {
 
     this.setState({
       substance: e.target.value,
-      marihuana: null,
       uom: uoml[0],
       uomList: uomList
     });
   }
 
+  handleSubstanceChange(e) {
+    this.getUOMList(e);
+    this.calculate();
+  }
+
   handleQtyChange(e) {
-    this.setState({ marihuana: null, qty: e.target.value });
+    this.setState({ qty: e.target.value });
+    this.calculate();
   }
 
   handleUOMChange(e) {
-    this.setState({ marihuana: null, uom: e.target.value });
+    this.setState({ uom: e.target.value });
+    this.calculate();
   }
 
-  calculate(e) {
-    let s = _.find(data, x => x.substance === this.state.substance);
+  calculate() {
+    const { substance, qty, uom } = this.state;
+    if (!substance || !qty || !uom) return;
+    let s = _.find(data, x => x.substance === substance);
+
     if (s !== undefined) {
-      this.setState({ marihuana: s });
+      let sourceUOM = s.sourceUOM;
+      if (sourceUOM === undefined) {
+        sourceUOM = 'gm';
+      }
+
+      let conversionFactor = 1;
+      let conversion = _.find(
+        conversionTable,
+        c => c.uom === uom && c.targetUOM === sourceUOM
+      );
+      if (conversion !== undefined) {
+        conversionFactor = conversion.factor;
+      }
+      let notes = Notes;
+      let noteEntry = _.find(
+        NotesTable,
+        nt => nt.substances.indexOf(substance) >= 0
+      );
+      if (noteEntry !== undefined) {
+        notes = noteEntry.notes;
+      }
+      let weight = qty * conversionFactor * s.targetWeight;
+      this.props.add(this.props.index, weight, s.targetUOM, notes);
     }
+  }
+
+  render() {
+    const { substance, uomList } = this.state;
+    return (
+      <section>
+        <select
+          style={{ display: 'inline' }}
+          onChange={this.handleSubstanceChange.bind(this)}
+          value={substance}
+        >
+          <option>Select Substance</option>
+          {substanceList}
+        </select>
+        <input
+          id="qty"
+          onChange={this.handleQtyChange.bind(this)}
+          placeholder="Enter Weight"
+          style={{ display: 'inline', width: '150px', margin: '5px' }}
+        />
+        {uomList.length > 0 ? (
+          <select
+            id="uom"
+            style={{ display: 'inline', width: '75px' }}
+            onChange={this.handleUOMChange.bind(this)}
+          >
+            {uomList}
+          </select>
+        ) : null}
+      </section>
+    );
   }
 }
 
