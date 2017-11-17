@@ -6,11 +6,25 @@ import { ContentWrapper } from '../components/contentwrapper';
 export default params => {
   return (
     <div>
+      <section className="usa-section usa-section-black">
+        <div className="usa-grid">
+          <div className="container-title">
+            <span className="container-font-dark-B-2">
+              Version 3.14-17
+              <br />
+            </span>
+            <span className="container-font-dark-A-2">
+              Appendix B
+              <br />
+            </span>
+            <span className="container-font-dark-B-2">
+              Selected Sentencing Statutes
+            </span>
+          </div>
+        </div>
+      </section>
       <BookmarkLink path={params.location.pathname} title="Appendix B" />
       <ContentWrapper path={params.location.pathname} title="Appendix B">
-        <p>
-          <strong>APPENDIX B</strong>
-        </p>
         <div className="usa-grid">
           <div className="container-05-title">
             <div className="container-05-A-button">

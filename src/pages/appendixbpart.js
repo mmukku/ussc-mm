@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import data from '../data/appendix-b';
 
 import BookmarkLink from '../components/bookmarkLink';
@@ -37,15 +38,61 @@ class AppendixBPart extends React.Component {
     } else {
       titleblock = '';
     }
+    var breadcrumb_structure = [
+      <li>
+        <Link to="/ab">Appendix B</Link>
+      </li>
+    ];
+    for (var i = 0; i < data_object.breadcrumbs.length; i++) {
+      let breadcrumb_data_object = _.find(
+        data,
+        b => b.id === data_object.breadcrumbs[i]
+      );
+      var breadcrumb_title;
+      if ('title' in breadcrumb_data_object) {
+        breadcrumb_title = breadcrumb_data_object.title;
+      } else {
+        breadcrumb_title = breadcrumb_data_object.id;
+      }
+      breadcrumb_structure.push(
+        <li>
+          <Link to={`/ab/${breadcrumb_data_object.id}`}>
+            {breadcrumb_title}
+          </Link>
+        </li>
+      );
+    }
+    breadcrumb_structure.push(<li className="active">{title}</li>);
     return (
       <div>
+        <section className="usa-section usa-section-black">
+          <div className="usa-grid">
+            <div className="container-title">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17
+                <br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Appendix B
+                <br />
+              </span>
+              <span className="container-font-dark-B-2">
+                Selected Sentencing Statutes
+              </span>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section breadcrumb-global-A">
+          <div className="usa-grid breadcrumb-global-A-1">
+            <div className="usa-width-one-whole">
+              <ol className="breadcrumb-b">{breadcrumb_structure}</ol>
+            </div>
+          </div>
+        </section>
         <BookmarkLink
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
         />
-        <p>
-          <a href="/ab">AppendixB</a>
-        </p>
         <ContentWrapper
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
