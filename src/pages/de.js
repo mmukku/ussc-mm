@@ -2,20 +2,7 @@ import React, { Component } from 'react';
 import data from '../data/de.json';
 import _ from 'lodash';
 
-const conversionTable = [
-  { uom: 'oz', factor: 28.35, targetUOM: 'gm' },
-  { uom: 'lb', factor: 453.6, targetUOM: 'gm' },
-  { uom: 'lb', factor: 0.4536, targetUOM: 'kg' },
-  { uom: 'gal', factor: 3.785, targetUOM: 'liters' },
-  { uom: 'qt', factor: 0.946, targetUOM: 'liters' },
-  { uom: 'gm', factor: 1, targetUOM: 'ml' },
-  { uom: 'ml', factor: 1, targetUOM: 'gm' },
-  { uom: 'liter', factor: 1000, targetUOM: 'ml' },
-  { uom: 'mg', factor: 0.001, targetUOM: 'gm' },
-  { uom: 'kg', factor: 1000, targetUOM: 'gm' },
-  { uom: 'gm', factor: 1000, targetUOM: 'mg' },
-  { uom: 'grain', factor: 64.8, targetUOM: 'mg' }
-];
+import conversionTable from '../data/ct.json';
 
 const Notes =
   'Provided, that the minimum offense level from the Drug Quantity Table for this controlled substance individually, or in combination with another controlled substance, is level 12.';
@@ -151,6 +138,8 @@ class DE extends Component {
           </div>
         </section>
       );
+    } else {
+      result = <div />;
     }
     return (
       <div>
@@ -169,6 +158,7 @@ class DE extends Component {
         <section>
           <button onClick={this.calculate.bind(this)}>Go</button>
         </section>
+        {result}
       </div>
     );
   }
