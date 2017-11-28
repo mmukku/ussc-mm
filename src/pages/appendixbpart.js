@@ -111,7 +111,7 @@ class AppendixBPart extends React.Component {
                 <div className="container-05-A">
                   <div className="container-05-A1">
                     <div
-                      className="container-05-A1c container-font-light-Ea"
+                      className="container-05-A1c container-font-light-Ea ab-content"
                       dangerouslySetInnerHTML={{ __html: content }}
                     />
                   </div>

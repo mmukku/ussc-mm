@@ -38,11 +38,12 @@ export default params => {
           <div className="container-05">
             <div className="container-05b-A">
               <div className="container-05-A1">
-                <div class="container-05-A1c container-font-light-Ea">
+                <div className="container-05-A1c container-font-light-Ea ab-content">
                   This appendix sets forth the principal statutory provisions
                   governing sentencing, the Sentencing Commission, and the
                   drafting of sentencing guidelines,{' '}
-                  <strong>as of May 1, 2016</strong>, as follows:
+                  <strong className="noblock">as of May 1, 2016</strong>, as
+                  follows:
                   <br />
                 </div>
               </div>
@@ -76,34 +77,52 @@ export default params => {
           <div className="usa-grid">
             <div className="container-03">
               <div className="container-03-A-a">
-                <div className="container-03-A1">
-                  <a href="/ab/18usc">
+                <a href="/ab/18usc">
+                  <div className="container-03-A1">
                     <span className="container-font-light-C">TITLE 18 </span>
                     <span className="container-font-light-D">
                       UNITED STATES CODE
                     </span>
-                  </a>
-                </div>
+                  </div>
+                  <div className="container-03-A2">
+                    <img
+                      className="chevron-right-icon"
+                      src="/icons/static_chevron-right.svg"
+                    />
+                  </div>
+                </a>
               </div>
               <div className="container-03-A-b">
-                <div className="container-03-A1">
-                  <a href="/ab/28usc">
+                <a href="/ab/28usc">
+                  <div className="container-03-A1">
                     <span className="container-font-light-C">TITLE 28 </span>
                     <span className="container-font-light-D">
                       UNITED STATES CODE
                     </span>
-                  </a>
-                </div>
+                  </div>
+                  <div className="container-03-A2">
+                    <img
+                      className="chevron-right-icon"
+                      src="/icons/static_chevron-right.svg"
+                    />
+                  </div>
+                </a>
               </div>
               <div className="container-03-A-a">
-                <div className="container-03-A1">
-                  <a href="/ab/publ">
+                <a href="/ab/publ">
+                  <div className="container-03-A1">
                     <span className="container-font-light-C">
                       PUBLIC LAWS GOVERNING THE COMMISSION AND THE DRAFTING OF
                       SENTENCING GUIDELINES
                     </span>
-                  </a>
-                </div>
+                  </div>
+                  <div className="container-03-A2">
+                    <img
+                      className="chevron-right-icon"
+                      src="/icons/static_chevron-right.svg"
+                    />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
