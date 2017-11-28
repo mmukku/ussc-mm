@@ -82,6 +82,14 @@ class DOL extends Component {
             </div>
           </div>
         </section>
+        <p>
+          Use the Drug Quantity Calculator to find the offense level for the
+          controlled substance involved in the offense. First, select the
+          substance involved in the offense. Then, enter the weight of the
+          substance and the appropriate unit of measurement. Results will
+          display the offense level specified in the Drug Quantity Table set
+          forth in §2D1.1(c).
+        </p>
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <span className="container-font-dark-B-3">
