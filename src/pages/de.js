@@ -183,7 +183,7 @@ class DEPair extends React.Component {
       ).map(x => x.uom)
     );
 
-    let uomList = uoml.map(x => <option key={x}>{x}</option>);
+    let uomList = _.uniq(uoml).map(x => <option key={x}>{x}</option>);
 
     this.setState({
       substance: e.target.value,
