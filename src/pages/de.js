@@ -166,7 +166,8 @@ class DE extends Component {
 
 class DEPair extends React.Component {
   state = { uomList: [] };
-  getUOMList(e) {
+
+  handleSubstanceChange(e) {
     let uom = _.filter(data, d => d.substance === e.target.value)[0]
       .substanceUOM;
     if (uom === undefined) {
@@ -185,26 +186,22 @@ class DEPair extends React.Component {
 
     let uomList = _.uniq(uoml).map(x => <option key={x}>{x}</option>);
 
-    this.setState({
-      substance: e.target.value,
-      uom: uoml[0],
-      uomList: uomList
-    });
-  }
-
-  handleSubstanceChange(e) {
-    this.getUOMList(e);
-    this.calculate();
+    this.setState(
+      {
+        substance: e.target.value,
+        uom: uoml[0],
+        uomList: uomList
+      },
+      this.calculate
+    );
   }
 
   handleQtyChange(e) {
-    this.setState({ qty: e.target.value });
-    this.calculate();
+    this.setState({ qty: e.target.value }, this.calculate);
   }
 
   handleUOMChange(e) {
-    this.setState({ uom: e.target.value });
-    this.calculate();
+    this.setState({ uom: e.target.value }, this.calculate);
   }
 
   calculate() {
