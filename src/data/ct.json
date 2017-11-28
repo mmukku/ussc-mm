@@ -1,0 +1,17 @@
+[
+  { "uom": "oz", "factor": 28.35, "targetUOM": "gm" },
+  { "uom": "lb", "factor": 453.6, "targetUOM": "gm" },
+  { "uom": "lb", "factor": 0.4536, "targetUOM": "kg" },
+  { "uom": "gal", "factor": 3.785, "targetUOM": "liters" },
+  { "uom": "qt", "factor": 0.946, "targetUOM": "liters" },
+  { "uom": "gm", "factor": 1, "targetUOM": "ml" },
+  { "uom": "gm", "factor": 1000, "targetUOM": "mg" },
+  { "uom": "gm", "factor": 0.001, "targetUOM": "kg" },
+  { "uom": "ml", "factor": 1, "targetUOM": "gm" },
+  { "uom": "liter", "factor": 1000, "targetUOM": "ml" },
+  { "uom": "mg", "factor": 0.001, "targetUOM": "gm" },
+  { "uom": "mg", "factor": 0.000001, "targetUOM": "kg" },
+  { "uom": "kg", "factor": 1000, "targetUOM": "gm" },
+  { "uom": "kg", "factor": 1000000, "targetUOM": "gm" },
+  { "uom": "grain", "factor": 64.8, "targetUOM": "mg" }
+]

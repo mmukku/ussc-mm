@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 import data from '../data/dol.json';
-import alertIcon from '../img/icons/static_alert.svg';
+//import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
+
+import conversionTable from '../data/ct.json';
 
 let substanceList = _.uniqBy(data, 'substance');
 
 substanceList = _.sortBy(substanceList, s => s.substance).map(ol => (
   <option key={ol.substance}>{ol.substance}</option>
 ));
-
-const ConversionTable = [
-  { uom: 'mg', factor: 0.001, targetUOM: 'g' },
-  { uom: 'mg', factor: 0.000001, targetUOM: 'kg' },
-  { uom: 'kg', factor: 1000, targetUOM: 'g' },
-  { uom: 'kg', factor: 1000000, targetUOM: 'mg' },
-  { uom: 'g', factor: 1000, targetUOM: 'mg' },
-  { uom: 'g', factor: 0.001, targetUOM: 'kg' }
-];
 
 //drug offence level
 class DOL extends Component {
@@ -44,9 +37,6 @@ class DOL extends Component {
             <div className="container-05">
               <div className="container-05-A">
                 <div className="container-05-A1">
-                  <div className="container-05-A1a">
-                    <img className="alert-left-icon" src={alertIcon} />
-                  </div>
                   <div className="container-05-A1b">
                     <div className="container-05-A1b-top">
                       <span className="container-font-light-C">
@@ -178,11 +168,14 @@ class DOL extends Component {
   }
 
   getUOMList(e) {
-    let uoml = _.filter(data, d => d.substance === e.target.value);
-    let uomList = _.uniqBy(uoml, 'uom').map(x => (
-      <option key={x.uom}>{x.uom}</option>
-    ));
-
+    let substance = _.find(data, d => d.substance === e.target.value);
+    let uoml = _.concat(
+      substance.uom,
+      _.filter(conversionTable, d => d.targetUOM === substance.uom).map(
+        x => x.uom
+      )
+    );
+    let uomList = uoml.map(x => <option key={x}>{x}</option>);
     this.setState({
       offenseLevel: null,
       uom: uoml[0].uom,
@@ -198,7 +191,7 @@ class DOL extends Component {
       let qty = this.state.qty;
       if (x.uom !== this.state.uom) {
         let conversionFactor = _.find(
-          ConversionTable,
+          conversionTable,
           u => u.uom === this.state.uom && u.targetUOM === x.uom
         );
         if (conversionFactor !== undefined) {
