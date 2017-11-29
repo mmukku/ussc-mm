@@ -167,21 +167,23 @@ class Dashboard extends Component {
           </div>
         </section>
         <section className="usa-section container-color-warmgrey">
-          <div className="usa-grid">
-            <div className="container-02">
-              <div className="container-02-B">
-                <span className="icon-frequently-used-tables container-icon-dark-A" />
-              </div>
-              <div className="container-02-C">
-                <span className="container-font-dark-A">
-                  Frequently Used Tables<br />
-                </span>
-              </div>
-              <div className="container-02-D">
-                <img className="hamburger-menu-icon" src={arrowRight} />
+          <a href="/fut">
+            <div className="usa-grid">
+              <div className="container-02">
+                <div className="container-02-B">
+                  <span className="icon-frequently-used-tables container-icon-dark-A" />
+                </div>
+                <div className="container-02-C">
+                  <span className="container-font-dark-A">
+                    Frequently Used Tables<br />
+                  </span>
+                </div>
+                <div className="container-02-D">
+                  <img className="hamburger-menu-icon" src={arrowRight} />
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </section>
         <section className="usa-section container-color-warmgrey">
           <div className="usa-grid">
