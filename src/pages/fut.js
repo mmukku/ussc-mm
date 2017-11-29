@@ -17,7 +17,7 @@ class FrequentlyUsedTable extends Component {
         <section className="usa-section container-custom-result">
           <div className="usa-grid container-03a">
             <div className="container-03">
-              <Link to="/gl/§8C2.4">
+              <Link to="/gl/§5E1.2">
                 <div className="container-03-A-a">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">Fine Tables</span>
