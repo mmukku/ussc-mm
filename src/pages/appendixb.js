@@ -85,10 +85,7 @@ export default params => {
                     </span>
                   </div>
                   <div className="container-03-A2">
-                    <img
-                      className="chevron-right-icon"
-                      src="/icons/static_chevron-right.svg"
-                    />
+                    <div className="chevron-right-icon" />
                   </div>
                 </a>
               </div>
@@ -101,10 +98,7 @@ export default params => {
                     </span>
                   </div>
                   <div className="container-03-A2">
-                    <img
-                      className="chevron-right-icon"
-                      src="/icons/static_chevron-right.svg"
-                    />
+                    <div className="chevron-right-icon" />
                   </div>
                 </a>
               </div>
@@ -117,10 +111,7 @@ export default params => {
                     </span>
                   </div>
                   <div className="container-03-A2">
-                    <img
-                      className="chevron-right-icon"
-                      src="/icons/static_chevron-right.svg"
-                    />
+                    <div className="chevron-right-icon" />
                   </div>
                 </a>
               </div>
