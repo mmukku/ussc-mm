@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import arrowRight from '../img/icons/static_chevron-right.svg';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
 
 class FrequentlyUsedTable extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>
@@ -23,28 +17,28 @@ class FrequentlyUsedTable extends Component {
         <section className="usa-section container-custom-result">
           <div className="usa-grid container-03a">
             <div className="container-03">
-              <a href="/gl/§8C2.4">
+              <Link to="/gl/§8C2.4">
                 <div className="container-03-A-a">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">Fine Tables</span>
                   </div>
                   <div className="container-03-A2">
-                    <img className="chevron-right-icon" src={arrowRight} />
+                    <div className="chevron-right-icon" />
                   </div>
                 </div>
-              </a>
-              <a href="/gl/§2B1.1">
+              </Link>
+              <Link to="/gl/§2B1.1">
                 <div className="container-03-A-b">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">Loss Tables</span>
                   </div>
                   <div className="container-03-A2">
-                    <img className="chevron-right-icon" src={arrowRight} />
+                    <div className="chevron-right-icon" />
                   </div>
                 </div>
-              </a>
+              </Link>
 
-              <a href="/gl/§7B1.4">
+              <Link to="/gl/§7B1.4">
                 <div className="container-03-A-a">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">
@@ -52,12 +46,12 @@ class FrequentlyUsedTable extends Component {
                     </span>
                   </div>
                   <div className="container-03-A2">
-                    <img className="chevron-right-icon" src={arrowRight} />
+                    <div className="chevron-right-icon" />
                   </div>
                 </div>
-              </a>
+              </Link>
 
-              <a href="/chapters/5/parts/A/guidelines">
+              <Link to="/chapters/5/parts/A/guidelines">
                 <div className="container-03-A-b">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">
@@ -65,10 +59,10 @@ class FrequentlyUsedTable extends Component {
                     </span>
                   </div>
                   <div className="container-03-A2">
-                    <img className="chevron-right-icon" src={arrowRight} />
+                    <div className="chevron-right-icon" />
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

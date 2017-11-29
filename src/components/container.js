@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 //import Helmet from 'react-helmet';
-import FontSize from './fontSize';
 import headerLogo from '../img/USSCGM.svg';
-import logo from '../img/logo.png';
-import favicon from 'uswds/dist/img/favicons/favicon-57.png';
-import icondotgov from 'uswds/dist/img/icon-dot-gov.svg';
-import iconhttps from 'uswds/dist/img/icon-https.svg';
-import close from 'uswds/dist/img/close.svg';
 import { Link } from 'react-router-dom';
-import SearchGuidelines from './searchGuidelines';
 import '../custom.css';
 const DefaultFontSize = 1.25;
 class Container extends Component {
@@ -46,7 +39,11 @@ class Container extends Component {
               </button>
             </div>
             <div className="logo-container">
-              <img className="logo-icon" src={headerLogo} />
+              <img
+                className="logo-icon"
+                src={headerLogo}
+                alt="United States Sentencing Commission Guideline Manual"
+              />
             </div>
             <div className="menu-container">
               <button className="usa-menu-btn" style={{ border: '0px' }}>
@@ -55,7 +52,7 @@ class Container extends Component {
             </div>
           </div>
 
-          <nav role="navigation" className="usa-nav">
+          <nav className="usa-nav">
             <div className="usa-nav-inner">
               <button className="usa-nav-close">
                 <span className="icon-hambuger-menu usa-nav-icon" />

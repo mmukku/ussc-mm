@@ -1511,6 +1511,15 @@ div.chevron-right-icon {
   text-align: right;
 }
 
+div.chevron-right_b-icon {
+  background-image: url('img/icons/static_chevron-right_b.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40px;
+  display: inline-block;
+  text-align: right;
+}
+
 .chevron-left-icon {
   width: 35px;
   padding: 5px 0px 0px 0px;

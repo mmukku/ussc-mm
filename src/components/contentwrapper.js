@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import App from '../App';
 import { get_note, set_note, remove_note } from '../note';
 import {
   add_highlight,
@@ -494,7 +491,7 @@ export class ContentWrapper extends Component {
     let highlightCollection = this.getHighlightCollection();
     let highlightObject = null;
     for (var i = 0; i < highlightCollection.data.length; i++) {
-      if (highlightCollection.data[i].id == id) {
+      if (highlightCollection.data[i].id === id.toString) {
         highlightObject = highlightCollection.data[i];
       }
     }
@@ -625,7 +622,6 @@ export class ContentWrapper extends Component {
   highlightSelection() {
     let selectionInfo = this.getSelectionInfo();
     if (selectionInfo.selectionExists) {
-      let highlightCollection = this.getHighlightCollection();
       let highlightContent = document.getElementById('ussc-content-wrapper');
       let context = new HighlightContext(highlightContent);
       let firstAddr = context.regularizedTextAddress(
@@ -712,6 +708,7 @@ export class ContentWrapper extends Component {
     this.setState({ content: generate_content(props) });
   }
   componentDidUpdate(props, state) {
+    var i, j;
     if (this.props !== props) {
       this.originalContent = document.getElementById(
         'ussc-content-wrapper'
@@ -719,11 +716,11 @@ export class ContentWrapper extends Component {
       this.rerenderLocalContent();
     }
     if (this.state !== state) {
-      for (var i = 0; i < this.state.ids.length; i++) {
+      for (i = 0; i < this.state.ids.length; i++) {
         let elements = document.getElementsByClassName(
           'highlight.' + this.state.ids[i]
         );
-        for (var j = 0; j < elements.length; j++) {
+        for (j = 0; j < elements.length; j++) {
           elements[j].onclick = (function(component, item) {
             return function() {
               component.highlightClickHandler(item);
@@ -732,7 +729,7 @@ export class ContentWrapper extends Component {
         }
       }
       let elements = document.getElementsByClassName('notes');
-      for (var i = 0; i < elements.length; i++) {
+      for (i = 0; i < elements.length; i++) {
         let id = parseInt(elements[i].id.split('.')[1], 10);
         elements[i].getElementsByClassName('remove_note')[0].addEventListener(
           'click',

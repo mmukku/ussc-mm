@@ -38,7 +38,7 @@ export default props => {
       </div>
     );
   }
-  if (display.length == 0) {
+  if (display.length === 0) {
     display.push(<div>There are no notes.</div>);
   }
   return (

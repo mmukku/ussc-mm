@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import arrowRight from '../img/icons/static_chevron-right_b.svg';
 import guidelinesManualColor from '../img/icons/static_guidelines-manual-color.svg';
 import appendixBIcon from '../img/icons/static_appendix-b-color.svg';
 import appendixAIcon from '../img/icons/static_appendix-a-color.svg';
@@ -7,13 +6,8 @@ import appendixCIcon from '../img/icons/static_appendix-c-color.svg';
 import guidelineRangeIcon from '../img/icons/static_guildline-range-color.svg';
 import drugQuantityIcon from '../img/icons/static_drug-quantity-color.svg';
 import drugEquivalencyIcon from '../img/icons/static_drug-equivalency-color.svg';
-import _ from 'lodash';
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>
@@ -44,6 +38,7 @@ class Dashboard extends Component {
                     <img
                       className="static_guidelines-manual-icon"
                       src={guidelinesManualColor}
+                      alt=""
                     />
                   </div>
                   <div className="container-01-A2">
@@ -67,7 +62,11 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <img className="appendex-a-icon" src={appendixAIcon} />
+                      <img
+                        className="appendex-a-icon"
+                        src={appendixAIcon}
+                        alt="A"
+                      />
                       <br />
                     </span>
                     <span className="container-font-light-Bc">
@@ -83,7 +82,11 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <img className="appendex-b-icon" src={appendixBIcon} />
+                      <img
+                        className="appendex-b-icon"
+                        src={appendixBIcon}
+                        alt="B"
+                      />
                       <br />
                     </span>
                     <span className="container-font-light-Bc">
@@ -99,7 +102,11 @@ class Dashboard extends Component {
                       Appendix<br />
                     </span>
                     <span className="container-font-light-B">
-                      <img className="appendex-c-icon" src={appendixCIcon} />
+                      <img
+                        className="appendex-c-icon"
+                        src={appendixCIcon}
+                        alt="C"
+                      />
                       <br />
                     </span>
                     <span className="container-font-light-Bc">
@@ -125,6 +132,7 @@ class Dashboard extends Component {
                       <img
                         className="sentencing-range-icon"
                         src={guidelineRangeIcon}
+                        alt=""
                       />
                       <br />
                     </span>
@@ -141,6 +149,7 @@ class Dashboard extends Component {
                       <img
                         className="drug-quantity-icon"
                         src={drugQuantityIcon}
+                        alt=""
                       />
                       <br />
                     </span>
@@ -157,6 +166,7 @@ class Dashboard extends Component {
                       <img
                         className="drug-equivalency-icon"
                         src={drugEquivalencyIcon}
+                        alt=""
                       />
                       <br />
                     </span>
@@ -179,7 +189,7 @@ class Dashboard extends Component {
                   </span>
                 </div>
                 <div className="container-02-D">
-                  <img className="hamburger-menu-icon" src={arrowRight} />
+                  <div className="hamburger-menu-icon chevron-right_b-icon" />
                 </div>
               </div>
             </div>
@@ -200,7 +210,7 @@ class Dashboard extends Component {
                 </span>
               </div>
               <div className="container-02-D">
-                <img className="hamburger-menu-icon" src={arrowRight} />
+                <div className="hamburger-menu-icon chevron-right_b-icon" />
               </div>
             </div>
           </div>

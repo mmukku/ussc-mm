@@ -77,7 +77,7 @@ export default params => {
           <div className="usa-grid">
             <div className="container-03">
               <div className="container-03-A-a">
-                <a href="/ab/18usc">
+                <Link to="/ab/18usc">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">TITLE 18 </span>
                     <span className="container-font-light-D">
@@ -87,10 +87,10 @@ export default params => {
                   <div className="container-03-A2">
                     <div className="chevron-right-icon" />
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="container-03-A-b">
-                <a href="/ab/28usc">
+                <Link to="/ab/28usc">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">TITLE 28 </span>
                     <span className="container-font-light-D">
@@ -100,10 +100,10 @@ export default params => {
                   <div className="container-03-A2">
                     <div className="chevron-right-icon" />
                   </div>
-                </a>
+                </Link>
               </div>
               <div className="container-03-A-a">
-                <a href="/ab/publ">
+                <Link to="/ab/publ">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">
                       PUBLIC LAWS GOVERNING THE COMMISSION AND THE DRAFTING OF
@@ -113,7 +113,7 @@ export default params => {
                   <div className="container-03-A2">
                     <div className="chevron-right-icon" />
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

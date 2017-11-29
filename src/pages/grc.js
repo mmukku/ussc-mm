@@ -62,7 +62,7 @@ class SC extends Component {
                 <div className="container-05-A">
                   <div className="container-05-A1">
                     <div className="container-05-A1a">
-                      <img className="alert-left-icon" src={alertIcon} />
+                      <img className="alert-left-icon" src={alertIcon} alt="" />
                     </div>
                     <div className="container-05-A1b">
                       <div className="container-05-A1b-top">

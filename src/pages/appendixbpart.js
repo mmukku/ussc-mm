@@ -43,11 +43,9 @@ class AppendixBPart extends React.Component {
         <Link to="/ab">Appendix B</Link>
       </li>
     ];
+    let breadcrumb_search_function = b => b.id === data_object.breadcrumbs[i];
     for (var i = 0; i < data_object.breadcrumbs.length; i++) {
-      let breadcrumb_data_object = _.find(
-        data,
-        b => b.id === data_object.breadcrumbs[i]
-      );
+      let breadcrumb_data_object = _.find(data, breadcrumb_search_function);
       var breadcrumb_title;
       if ('title' in breadcrumb_data_object) {
         breadcrumb_title = breadcrumb_data_object.title;

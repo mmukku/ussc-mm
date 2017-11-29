@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/si.json';
 import _ from 'lodash';
-import arrowRight from '../img/icons/static_chevron-right.svg';
 import Autosuggest from 'react-autosuggest';
 
 const titleOptionList = _.uniqBy(data, 'Title').map(t => (
@@ -236,7 +235,7 @@ class SI extends Component {
     // eslint-disable-next-line
     let results = _.find(
       data,
-      d => d.Title == this.state.title && d.Statute === this.state.statute
+      d => d.Title === this.state.title && d.Statute === this.state.statute
     );
     if (results === undefined) return;
 
@@ -249,7 +248,7 @@ class SI extends Component {
                 <span className="container-font-light-D">{gl}</span>
               </div>
               <div className="container-03-A2">
-                <img className="chevron-right-icon" src={arrowRight} />
+                <div className="chevron-right-icon" />
               </div>
             </div>
           </a>

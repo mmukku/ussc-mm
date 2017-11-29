@@ -21,14 +21,14 @@ export default props => {
     let item = bookmarks.data[i];
     if (item !== null) {
       bookmark_elements.push(
-        <p key={item.id}>
-          <Link to={item.path}>{item.title}</Link> (<a
-            href="#"
-            onClick={remove_bookmark_wrapper(item.id)}
-          >
+        <div key={item.id}>
+          <div>
+            <Link to={item.path}>{item.title}</Link>
+          </div>
+          <button type="button" onClick={remove_bookmark_wrapper(item.id)}>
             Remove Bookmark
-          </a>)
-        </p>
+          </button>
+        </div>
       );
     }
   }
