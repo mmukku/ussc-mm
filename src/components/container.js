@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import Helmet from 'react-helmet';
+import FontSize from './fontSize';
 import headerLogo from '../img/USSCGM.svg';
 import { Link } from 'react-router-dom';
 import '../custom.css';
