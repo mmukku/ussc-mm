@@ -1,7 +1,8 @@
 import React from 'react';
 import lunr from 'lunr';
 import idxData from '../data/gl_index.json';
-import data from '../data/gl.json';
+import gldata from '../data/gl.json';
+import bdata from '../data/appendix-b.json';
 import _ from 'lodash';
 
 const idx = lunr.Index.load(idxData);
@@ -22,22 +23,31 @@ class Search extends React.Component {
 
   search(slug) {
     if (slug !== '') {
-      console.log(slug, 'here');
-      let results = idx.search(slug).map(r => (
-        <li key={r.ref}>
-          <a href={`/gl/${r.ref}`}>{r.ref}</a>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: _.find(data, gl => gl.id === r.ref).title
-            }}
-          />
-        </li>
-      ));
+      let results = idx.search(slug).map(r => {
+        let title, type;
+        if (r.ref.indexOf('§') === 0) {
+          title = _.find(gldata, gl => gl.id === r.ref).title;
+          type = 'gl';
+        } else {
+          type = 'ab';
+          title = _.find(bdata, b => b.id === r.ref).title;
+        }
+
+        return (
+          <li key={r.ref}>
+            <a href={`/${type}/${r.ref}`}>{r.ref}</a>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: title
+              }}
+            />
+          </li>
+        );
+      });
       if (results.length === 0) {
         results = 'No results found.';
       }
       this.setState({ slug: slug, results: results });
-      console.log(this.state);
     }
   }
 
