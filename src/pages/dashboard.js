@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchGuidelines from '../components/searchGuidelines';
 import guidelinesManualColor from '../img/icons/static_guidelines-manual-color.svg';
 import appendixBIcon from '../img/icons/static_appendix-b-color.svg';
 import appendixAIcon from '../img/icons/static_appendix-a-color.svg';
@@ -14,17 +15,7 @@ class Dashboard extends Component {
         <section className="usa-section search-global-A">
           <div className="usa-grid">
             <div className="usa-width-one-whole">
-              <form className="usa-search usa-search-small">
-                <div role="search">
-                  <label className="usa-sr-only" for="search-field-small">
-                    Search small
-                  </label>
-                  <input id="search-field-small" type="search" name="search" />
-                  <button type="submit">
-                    <span className="usa-sr-only">Search</span>
-                  </button>
-                </div>
-              </form>
+              <SearchGuidelines />
             </div>
           </div>
         </section>

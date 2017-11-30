@@ -6,6 +6,7 @@ import SectionsLink from '../components/sectionsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
@@ -49,17 +50,32 @@ export default props => {
   const thisChapter = _.find(Chapters, c => c.id === chapterId);
   return (
     <div>
+      <section className="usa-section search-global-A">
+        <div className="usa-grid">
+          <div className="usa-width-one-whole">
+            <SearchGuidelines />
+          </div>
+        </div>
+      </section>
       <h6>
         <span className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;Chapter {chapterId}
         </span>
-		<BookmarkLink path={props.location.pathname} title={`Chapter ${chapterId} - ${thisChapter.title}`} />
-        <select onChange={e => (window.location = e.target.value)}>
-          <option>Go to</option>
-          {chapterList}
-        </select>
+        <BookmarkLink
+          path={props.location.pathname}
+          title={`Chapter ${chapterId} - ${thisChapter.title}`}
+        />
+        <section className="search-global-B">
+          <select onChange={e => (window.location = e.target.value)}>
+            <option>Go to</option>
+            {chapterList}
+          </select>
+        </section>
       </h6>
-      <ContentWrapper path={props.location.pathname} title={`Chapter ${chapterId} - ${thisChapter.title}`}>
+      <ContentWrapper
+        path={props.location.pathname}
+        title={`Chapter ${chapterId} - ${thisChapter.title}`}
+      >
         <h3>Chapter {chapterId}</h3>
         <h4>{thisChapter.title}</h4>
         <p dangerouslySetInnerHTML={{ __html: thisChapter.content }} />

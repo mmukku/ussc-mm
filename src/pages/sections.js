@@ -6,6 +6,7 @@ import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
@@ -48,6 +49,13 @@ export default props => {
 
   return (
     <div>
+      <section className="usa-section search-global-A">
+        <div className="usa-grid">
+          <div className="usa-width-one-whole">
+            <SearchGuidelines />
+          </div>
+        </div>
+      </section>
       <h6>
         <div className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
@@ -55,15 +63,21 @@ export default props => {
           </PartsLink>{' '}
           &nbsp; > &nbsp;Part {partId}
         </div>
-		<BookmarkLink path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`} />
-        <div className="usa-width-one-half">
+        <BookmarkLink
+          path={props.location.pathname}
+          title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`}
+        />
+        <section className="usa-width-one-half search-global-B">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>
             {partList}
           </select>
-        </div>
+        </section>
       </h6>
-      <ContentWrapper path={props.location.pathname} title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`}>
+      <ContentWrapper
+        path={props.location.pathname}
+        title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`}
+      >
         <h3>
           Chapter {chapterId} - {chapterTitle}
         </h3>

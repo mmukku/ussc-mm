@@ -111,27 +111,29 @@ class Amendments extends React.Component {
     return (
       <div>
         <h2>Amendments</h2>
-        <form
-          className="usa-search usa-search-big"
-          onSubmit={e => {
-            this.filter(this.state.slug);
-            e.preventDefault();
-          }}
-        >
-          <div role="search">
-            <input
-              id="search-field-big"
-              type="search"
-              name="search"
-              onChange={e => this.setState({ slug: e.target.value })}
-              value={this.state.slug}
-              placeholder="Search by amemdment number or date"
-            />
-            <button type="submit">
-              <span className="usa-search-submit-text">Search</span>
-            </button>
-          </div>
-        </form>
+        <section className="search-global-A">
+          <form
+            className="usa-search usa-search-big"
+            onSubmit={e => {
+              this.filter(this.state.slug);
+              e.preventDefault();
+            }}
+          >
+            <div role="search">
+              <input
+                id="search-field-big"
+                type="search"
+                name="search"
+                onChange={e => this.setState({ slug: e.target.value })}
+                value={this.state.slug}
+                placeholder="Search by amemdment number or date"
+              />
+              <button type="submit">
+                <span className="usa-search-submit-text">Search</span>
+              </button>
+            </div>
+          </form>
+        </section>
         {this.navigation()}
         {content}
         {this.navigation()}

@@ -1707,7 +1707,7 @@ select {
   border: 1px solid #035493;
   border-radius: 0;
   box-sizing: border-box;
-  color: black; /* Krishna TODO: Modify Style; */
+  color: #fff;
   display: block;
   font-size: 1.7rem;
   height: 4rem;

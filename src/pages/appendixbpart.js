@@ -4,6 +4,7 @@ import data from '../data/appendix-b';
 
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 import scrollToElment from 'scroll-to-element';
 import _ from 'lodash';
 
@@ -77,6 +78,13 @@ class AppendixBPart extends React.Component {
               <span className="container-font-dark-B-2">
                 Selected Sentencing Statutes
               </span>
+            </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-A">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <SearchGuidelines />
             </div>
           </div>
         </section>

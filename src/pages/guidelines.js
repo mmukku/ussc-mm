@@ -6,6 +6,7 @@ import SectionsLink from '../components/sectionsLink';
 import GuidelineLink from '../components/guidelineLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
 import Chapters from '../data/chapters.json';
@@ -104,6 +105,13 @@ export default props => {
 
   return (
     <div>
+      <section className="usa-section search-global-A">
+        <div className="usa-grid">
+          <div className="usa-width-one-whole">
+            <SearchGuidelines />
+          </div>
+        </div>
+      </section>
       <h6>
         <div className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
@@ -112,12 +120,12 @@ export default props => {
           &nbsp; > &nbsp; {bc} {text}
         </div>
         <BookmarkLink path={props.location.pathname} title={generalTitle} />
-        <div className="usa-width-one-half">
+        <section className="usa-width-one-half search-global-B">
           <select onChange={e => (window.location = e.target.value)}>
             <option>Go to</option>
             {navList}
           </select>
-        </div>
+        </section>
       </h6>
       <ContentWrapper path={props.location.pathname} title={generalTitle}>
         <h3>

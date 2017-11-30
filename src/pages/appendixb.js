@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 
 export default params => {
   return (
@@ -21,6 +22,11 @@ export default params => {
               Selected Sentencing Statutes
             </span>
           </div>
+        </div>
+      </section>
+      <section className="usa-section search-global-A">
+        <div className="usa-grid">
+          <SearchGuidelines />
         </div>
       </section>
       <BookmarkLink path={params.location.pathname} title="Appendix B" />

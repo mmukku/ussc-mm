@@ -1,7 +1,8 @@
 import React from 'react';
 import lunr from 'lunr';
+import SearchGuidelines from '../components/searchGuidelines';
 import idxData from '../data/gl_index.json';
-import gldata from '../data/gl.json';
+import gldata from '../data/guidelines.json';
 import bdata from '../data/appendix-b.json';
 import _ from 'lodash';
 
@@ -26,22 +27,30 @@ class Search extends React.Component {
       let results = idx.search(slug).map(r => {
         let title, type;
         if (r.ref.indexOf('§') === 0) {
-          title = _.find(gldata, gl => gl.id === r.ref).title;
+          let gl = _.find(gldata, sgl => sgl.id === r.ref);
+          if (gl) {
+            title = gl.title;
+          } else {
+            title = '[]';
+          }
           type = 'gl';
         } else {
           type = 'ab';
-          title = _.find(bdata, b => b.id === r.ref).title;
+          title = _.find(bdata, b => b.id === r.ref).simpleTitle;
         }
 
         return (
-          <li key={r.ref}>
-            <a href={`/${type}/${r.ref}`}>{r.ref}</a>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: title
-              }}
-            />
-          </li>
+          <div className="container-03-A-a" key={r.ref}>
+            <a href={`/${type}/${r.ref}`}>
+              <div className="container-03-A1">
+                <span className="container-font-light-C">{r.ref} - </span>
+                <span className="container-font-light-D">{title}</span>
+              </div>
+              <div className="container-03-A2">
+                <div className="chevron-right-icon" />
+              </div>
+            </a>
+          </div>
         );
       });
       if (results.length === 0) {
@@ -54,29 +63,26 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <h3>Guideline Search</h3>
-        <form
-          className="usa-search usa-search-big"
-          onSubmit={e => {
-            e.preventDefault();
-            this.search(this.state.slug);
+        <section className="usa-section search-global-A">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <SearchGuidelines />
+            </div>
+          </div>
+        </section>
+        <section
+          className="usa-section"
+          style={{
+            borderStyle: 'dotted',
+            borderWidth: '0px',
+            borderColor: 'grey',
+            textAlign: 'center'
           }}
         >
-          <div role="search">
-            <input
-              id="search-field-big"
-              type="search"
-              onChange={e => this.setState({ slug: e.target.value })}
-              value={this.state.slug}
-            />
-            <button type="submit">
-              <span className="usa-search-submit-text">Search</span>
-            </button>
+          <div className="usa-grid">
+            <div className="container-03">{this.state.results}</div>
           </div>
-        </form>
-        <div className="usa-section">
-          <ul className="usa-unstyled-list">{this.state.results}</ul>
-        </div>
+        </section>
       </div>
     );
   }

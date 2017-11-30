@@ -4,6 +4,7 @@ import PartsLink from '../components/partsLink';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
+import SearchGuidelines from '../components/searchGuidelines';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
 import _ from 'lodash';
@@ -86,6 +87,13 @@ class GuideLine extends Component {
   render() {
     return (
       <div>
+        <section className="usa-section search-global-A">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <SearchGuidelines />
+            </div>
+          </div>
+        </section>
         <h6>
           <div className="usa-width-one-half">
             <HomeLink />&nbsp; > &nbsp;<PartsLink
@@ -106,12 +114,12 @@ class GuideLine extends Component {
             path={this.props.location.pathname}
             title={`${this.state.id} - ${this.state.textTitle}`}
           />
-          <div className="usa-width-one-half">
+          <section className="usa-width-one-half search-global-B">
             <select onChange={e => (window.location = e.target.value)}>
               <option>Go to</option>
               {this.state.guidelineList}
             </select>
-          </div>
+          </section>
         </h6>
         <ContentWrapper
           path={this.props.location.pathname}

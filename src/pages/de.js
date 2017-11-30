@@ -239,7 +239,7 @@ class DEPair extends React.Component {
   render() {
     const { substance, uomList } = this.state;
     return (
-      <section>
+      <section className="search-global-B">
         <select
           style={{ display: 'inline' }}
           onChange={this.handleSubstanceChange.bind(this)}
