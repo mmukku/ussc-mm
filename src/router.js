@@ -18,6 +18,9 @@ const AsyncSI = asyncComponent(() => import('./pages/si'));
 const AsyncDOL = asyncComponent(() => import('./pages/dol'));
 const AsyncDE = asyncComponent(() => import('./pages/de'));
 const AsyncAmendments = asyncComponent(() => import('./pages/ac'));
+const AsyncAppendixCPart = asyncComponent(() =>
+  import('./pages/appendixcpart')
+);
 
 const AsyncApplicationInstructions = asyncComponent(() => import('./pages/ai'));
 const AsyncAppendixB = asyncComponent(() => import('./pages/appendixb'));
@@ -154,6 +157,18 @@ class USSCRouter extends Component {
               path="/ab/:part"
               component={AsyncAppendixBPart}
               title="Appendix B"
+            />
+            <Route
+              exact
+              path="/ac/amendment/:id"
+              component={AsyncAppendixCPart}
+              title="Appendix C"
+            />
+            <Route
+              exact
+              path="/ac/search/:id"
+              component={AsyncAmendments}
+              title="Appendix C"
             />
           </Switch>
         </Container>
