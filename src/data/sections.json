@@ -1,5 +1,27 @@
 [
   {
+	"id": "1",
+	"type": "section",
+	"chapter": "1",
+	"part": "A",
+	"title": "Original Introduction to the Guidelines Manual",
+	"content": "<p>The following provisions of this Subpart set forth the original introduction to this manual, effective November 1, 1987, and as amended through November 1, 2000:</p>"
+  },
+  {
+	"id": "2",
+	"type": "section",
+	"chapter": "1",
+	"part": "A",
+	"title": "Continuing Evolution and Role of the Guidelines"
+  },
+  {
+	"id": "3",
+	"type": "section",
+	"chapter": "1",
+	"part": "A",
+	"title": "Authority"
+  },
+  {
     "id": "1",
     "type": "section",
     "chapter": "2",
