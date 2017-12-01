@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import guideLines from '../data/guidelines.json';
 import HomeLink from '../components/homeLink';
 import PartsLink from '../components/partsLink';
@@ -53,7 +54,7 @@ export default props => {
         Part {partId}
       </SectionsLink>
     );
-    text = <span>&nbsp; > &nbsp; {`Section ${sectionId}`}</span>;
+    text = <span>{`Section ${sectionId}`}</span>;
     navList = _.filter(
       Sections,
       s => s.chapter === chapterId && s.part === partId
@@ -105,6 +106,21 @@ export default props => {
 
   return (
     <div>
+      <section className="usa-section usa-section-black">
+        <div className="usa-grid">
+          <div className="container-title">
+            <span className="container-font-dark-B-2">
+              Version 3.14-17
+              <br />
+            </span>
+            <span className="container-font-dark-A-2">
+              Guidelines Manual
+              <br />
+            </span>
+            <span className="container-font-dark-B-2">2017</span>
+          </div>
+        </div>
+      </section>
       <section className="usa-section search-global-A">
         <div className="usa-grid">
           <div className="usa-width-one-whole">
@@ -112,13 +128,43 @@ export default props => {
           </div>
         </div>
       </section>
-      <h6>
-        <div className="usa-width-one-half">
-          <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
-            Chapter {chapterId}
-          </PartsLink>{' '}
-          &nbsp; > &nbsp; {bc} {text}
+      <section className="usa-section usa-section-blue">
+        <div className="usa-grid">
+          <div className="container-title-c">
+            <span className="container-font-dark-B-5">
+              CHAPTER {chapterId}
+              <br />
+            </span>
+          </div>
         </div>
+      </section>
+      <section className="usa-section usa-section-white">
+        <div className="usa-grid">
+          <div className="container-title-c">
+            <span className="container-font-light-Db">
+              {chapterTitle}
+              <br />
+            </span>
+          </div>
+        </div>
+      </section>
+      <section className="usa-section breadcrumb-global-A">
+        <div className="usa-grid breadcrumb-global-A-1">
+          <div className="usa-width-one-whole">
+            <ol className="breadcrumb-b">
+              <li>
+                <Link to="/home">Guidelines Manual</Link>
+              </li>
+              <li>
+                <PartsLink chapterId={chapterId}>Chapter {chapterId}</PartsLink>
+              </li>
+              <li>{bc}</li>
+              <li className="active">{text}</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <h6>
         <BookmarkLink path={props.location.pathname} title={generalTitle} />
         <section className="usa-width-one-half search-global-B">
           <select onChange={e => (window.location = e.target.value)}>

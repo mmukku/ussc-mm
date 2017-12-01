@@ -123,7 +123,7 @@ export default props => {
               Guidelines Manual
               <br />
             </span>
-            <span class="container-font-dark-B-2">2017</span>
+            <span className="container-font-dark-B-2">2017</span>
           </div>
         </div>
       </section>
