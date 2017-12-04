@@ -26,6 +26,7 @@ export default props => {
   let sectionContent = null;
 
   if (sectionId !== undefined) {
+    console.log('filtering for section ' + sectionId);
     filtered = _.filter(filtered, gl => gl.section === sectionId);
     let section = _.find(
       Sections,
@@ -48,10 +49,14 @@ export default props => {
   let bc;
   var text = <span>{`Part ${partId}`}</span>;
   let navList;
+  const thisPart = _.find(
+    Parts,
+    p => p.chapter === chapterId && p.id === partId
+  );
   if (props.match.params.sectionId !== undefined) {
     bc = (
       <SectionsLink chapterId={chapterId} partId={partId}>
-        Part {partId}
+        Part {partId} - {thisPart.title}
       </SectionsLink>
     );
     text = <span>{`Section ${sectionId}`}</span>;
@@ -89,19 +94,23 @@ export default props => {
 
   const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
 
-  const thisPart = _.find(
-    Parts,
-    p => p.chapter === chapterId && p.id === partId
-  );
-  let partContent = null;
-  if (sectionContent == null) {
-    partContent = thisPart.content;
-  }
   var generalTitle;
   if (sectionTitle === null) {
     generalTitle = `Chapter ${chapterId} Part ${partId} - ${thisPart.title}`;
   } else {
     generalTitle = `Chapter ${chapterId} Part ${partId} Section ${sectionId} - ${sectionTitle}`;
+  }
+  var specificTitle;
+  if (sectionTitle === null) {
+    specificTitle = thisPart.title;
+  } else {
+    specificTitle = sectionTitle;
+  }
+  var content;
+  if (sectionContent === null) {
+    content = thisPart.content;
+  } else {
+    content = sectionContent;
   }
 
   return (
@@ -164,27 +173,54 @@ export default props => {
           </div>
         </div>
       </section>
-      <h6>
-        <BookmarkLink path={props.location.pathname} title={generalTitle} />
-        <section className="usa-width-one-half search-global-B">
-          <select onChange={e => (window.location = e.target.value)}>
-            <option>Go to</option>
-            {navList}
-          </select>
-        </section>
-      </h6>
-      <ContentWrapper path={props.location.pathname} title={generalTitle}>
-        <h3>
-          Chapter {chapterId} - {chapterTitle}
-        </h3>
-        <h4>
-          Part {partId} - {thisPart.title}
-        </h4>
-        <p dangerouslySetInnerHTML={{ __html: partContent }} />
-        <h5>{sectionTitle} </h5>
-        <p dangerouslySetInnerHTML={{ __html: sectionContent }} />
-        <div>{guidelineList}</div>
-      </ContentWrapper>
+      <BookmarkLink path={props.location.pathname} title={generalTitle} />
+      <section className="usa-section container-04c">
+        <div className="usa-grid">
+          <div className="container-05-title">
+            <div className="container-05-title-A">
+              <div className="container-05-title-A1">
+                <span className="container-font-light-C">{specificTitle}</span>
+              </div>
+            </div>
+          </div>
+          <div className="container-05-title-2">
+            <div className="container-05-title-B">
+              <div className="container-05-title-B1">
+                <ContentWrapper
+                  path={props.location.pathname}
+                  title={generalTitle}
+                >
+                  <p
+                    className="container-font-light-Ea"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                  />
+                </ContentWrapper>
+              </div>
+            </div>
+          </div>
+          <div className="container-05">
+            <div className="container-05-A">{guidelineList}</div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="usa-section footer"
+        style={{
+          borderStyle: 'dotted',
+          borderWidth: '0px',
+          borderColor: 'grey',
+          textAlign: 'center'
+        }}
+      >
+        <div className="usa-grid footer-B">
+          <div className="usa-width-one-whole">
+            <select onChange={e => (window.location = e.target.value)}>
+              <option>Go to</option>
+              {navList}
+            </select>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
