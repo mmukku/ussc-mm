@@ -42,7 +42,7 @@ export default props => {
               <div className="container-05-title-A">
                 <div className="container-05-title-A1">
                   <span className="container-font-light-C">
-                    Part {p.id} - {p.title}
+                    PART {p.id} - {p.title}
                   </span>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default props => {
               <div className="container-05-title-A">
                 <div className="container-05-title-A1">
                   <span className="container-font-light-C">
-                    Part {p.id} - {p.title}
+                    PART {p.id} - {p.title}
                   </span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default props => {
     if (c.id !== chapterId) {
       return (
         <option key={c.id} value={`/chapters/${c.id}/parts`}>
-          Chapter {c.id}
+          CHAPTER {c.name}
         </option>
       );
     }
@@ -138,7 +138,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-dark-B-5">
-              CHAPTER {chapterId}
+              CHAPTER {thisChapter.name}
               <br />
             </span>
           </div>
@@ -161,19 +161,19 @@ export default props => {
               <li>
                 <Link to="/home">Guidelines Manual</Link>
               </li>
-              <li className="active">Chapter {chapterId}</li>
+              <li className="active">CHAPTER {thisChapter.name}</li>
             </ol>
           </div>
         </div>
       </section>
       <BookmarkLink
         path={props.location.pathname}
-        title={`Chapter ${chapterId} - ${thisChapter.title}`}
+        title={`CHAPTER ${thisChapter.name} - ${thisChapter.title}`}
       />
       <section className="search-global-B" />
       <ContentWrapper
         path={props.location.pathname}
-        title={`Chapter ${chapterId} - ${thisChapter.title}`}
+        title={`CHAPTER ${thisChapter.name} - ${thisChapter.title}`}
       >
         <p dangerouslySetInnerHTML={{ __html: thisChapter.content }} />
         <section className="container-04c">{partsList}</section>

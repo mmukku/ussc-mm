@@ -46,15 +46,15 @@ export default props => {
   ));
 
   let bc;
-  var text = <span>{`Part ${partId}`}</span>;
+  var text = <span>{`PART ${partId}`}</span>;
   let navList;
   if (props.match.params.sectionId !== undefined) {
     bc = (
       <SectionsLink chapterId={chapterId} partId={partId}>
-        Part {partId}
+        PART {partId}
       </SectionsLink>
     );
-    text = <span>{`Section ${sectionId}`}</span>;
+    text = <span>{`SECTION ${sectionId}`}</span>;
     navList = _.filter(
       Sections,
       s => s.chapter === chapterId && s.part === partId
@@ -65,7 +65,7 @@ export default props => {
             key={s.id}
             value={`/chapters/${chapterId}/parts/${partId}/sections/${s.id}/guidelines`}
           >
-            Section {s.id}
+            SECTION {s.id}
           </option>
         );
       }
@@ -79,7 +79,7 @@ export default props => {
             key={p.id}
             value={`/chapters/${chapterId}/parts/${p.id}/guidelines`}
           >
-            Part {p.id}
+            PART {p.id}
           </option>
         );
       }
@@ -87,7 +87,7 @@ export default props => {
     });
   }
 
-  const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
+  const chapter = _.find(Chapters, c => c.id === chapterId);
 
   const thisPart = _.find(
     Parts,
@@ -99,9 +99,9 @@ export default props => {
   }
   var generalTitle;
   if (sectionTitle === null) {
-    generalTitle = `Chapter ${chapterId} Part ${partId} - ${thisPart.title}`;
+    generalTitle = `CHAPTER ${chapterId} PART ${partId} - ${thisPart.title}`;
   } else {
-    generalTitle = `Chapter ${chapterId} Part ${partId} Section ${sectionId} - ${sectionTitle}`;
+    generalTitle = `CHAPTER ${chapterId} PART ${partId} SECTION ${sectionId} - ${sectionTitle}`;
   }
 
   return (
@@ -132,7 +132,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-dark-B-5">
-              CHAPTER {chapterId}
+              CHAPTER {chapter.name}
               <br />
             </span>
           </div>
@@ -142,7 +142,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-light-Db">
-              {chapterTitle}
+              {chapter.title}
               <br />
             </span>
           </div>
@@ -156,7 +156,7 @@ export default props => {
                 <Link to="/home">Guidelines Manual</Link>
               </li>
               <li>
-                <PartsLink chapterId={chapterId}>Chapter {chapterId}</PartsLink>
+                <PartsLink chapterId={chapterId}>CHAPTER {chapterId}</PartsLink>
               </li>
               <li>{bc}</li>
               <li className="active">{text}</li>
@@ -175,10 +175,10 @@ export default props => {
       </h6>
       <ContentWrapper path={props.location.pathname} title={generalTitle}>
         <h3>
-          Chapter {chapterId} - {chapterTitle}
+          CHAPTER {chapter.name} - {chapter.title}
         </h3>
         <h4>
-          Part {partId} - {thisPart.title}
+          PART {partId} - {thisPart.title}
         </h4>
         <p dangerouslySetInnerHTML={{ __html: partContent }} />
         <h5>{sectionTitle} </h5>
