@@ -1,24 +1,28 @@
 [
   {
     "id": "1",
+    "name": "ONE",
     "type": "chapter",
     "title": "INTRODUCTION, AUTHORITY, AND GENERAL APPLICATION PRINCIPLES"
   },
   {
     "id": "2",
+    "name": "TWO",
     "type": "chapter",
     "title": "OFFENSE CONDUCT",
     "content":
       "<h4 id='introductory-commentary-1' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Chapter Two pertains to offense conduct. The chapter is organized by offenses and divided into parts and related sections that may cover one statute or many. Each offense has a corresponding base offense level and may have one or more specific offense characteristics that adjust the offense level upward or downward. Certain factors relevant to the offense that are not covered in specific guidelines in Chapter Two are set forth in Chapter Three, Parts A (Victim-Related Adjustments), B (Role in the Offense), and C (Obstruction and Related Adjustments); Chapter Four, Part B (Career Offenders and Criminal Livelihood); and Chapter Five, Part K (Departures).</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 2011 (amendment <a href='/ac/758'>758</a>).</td></tr></tbody></table>"
   },
-  { "id": "3", "type": "chapter", "title": "ADJUSTMENTS" },
+  { "id": "3", "name": "THREE", "type": "chapter", "title": "ADJUSTMENTS" },
   {
     "id": "4",
+    "name": "FOUR",
     "type": "chapter",
     "title": "CRIMINAL HISTORY AND CRIMINAL LIVELIHOOD"
   },
   {
     "id": "5",
+    "name": "FIVE",
     "type": "chapter",
     "title": "DETERMINING THE SENTENCE",
     "content":
@@ -26,6 +30,7 @@
   },
   {
     "id": "6",
+    "name": "SIX",
     "type": "chapter",
     "title": "SENTENCING PROCEDURES, PLEA AGREEMENTS AND CRIME VICTIM'S RIGHTS",
     "content":
@@ -33,11 +38,13 @@
   },
   {
     "id": "7",
+    "name": "SEVEN",
     "type": "chapter",
     "title": "VIOLATIONS OF PROBATION AND SUPERVISED RELEASE"
   },
   {
     "id": "8",
+    "name": "EIGHT",
     "type": "chapter",
     "title": "SENTENCING OF ORGANIZATIONS",
     "content":

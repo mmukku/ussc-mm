@@ -41,7 +41,7 @@ export default props => {
     }
   });
 
-  const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
+  const chapter = _.find(Chapters, c => c.id === chapterId);
   const thisPart = _.find(
     Parts,
     p => p.chapter === chapterId && p.id === partId
@@ -76,10 +76,10 @@ export default props => {
       </h6>
       <ContentWrapper
         path={props.location.pathname}
-        title={`CHAPTER ${chapterId} PART ${partId} - ${thisPart.title}`}
+        title={`CHAPTER ${chapter.name} PART ${partId} - ${thisPart.title}`}
       >
         <h3>
-          CHAPTER {chapterId} - {chapterTitle}
+          CHAPTER {chapter.name} - {chapter.title}
         </h3>
         <h4>
           PART {partId} - {thisPart.title}

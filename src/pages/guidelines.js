@@ -87,7 +87,7 @@ export default props => {
     });
   }
 
-  const chapterTitle = _.find(Chapters, c => c.id === chapterId).title;
+  const chapter = _.find(Chapters, c => c.id === chapterId);
 
   const thisPart = _.find(
     Parts,
@@ -132,7 +132,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-dark-B-5">
-              CHAPTER {chapterId}
+              CHAPTER {chapter.name}
               <br />
             </span>
           </div>
@@ -142,7 +142,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-light-Db">
-              {chapterTitle}
+              {chapter.title}
               <br />
             </span>
           </div>
@@ -175,7 +175,7 @@ export default props => {
       </h6>
       <ContentWrapper path={props.location.pathname} title={generalTitle}>
         <h3>
-          CHAPTER {chapterId} - {chapterTitle}
+          CHAPTER {chapter.name} - {chapter.title}
         </h3>
         <h4>
           PART {partId} - {thisPart.title}
