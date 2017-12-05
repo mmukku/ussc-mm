@@ -99,14 +99,14 @@ class GuideLine extends Component {
             <HomeLink />&nbsp; > &nbsp;<PartsLink
               chapterId={this.state.chapterId}
             >
-              Chapter {this.state.chapterId}
+              CHAPTER {this.state.chapterId}
             </PartsLink>&nbsp; > &nbsp;
             <GuideLinesLink
               chapterId={this.state.chapterId}
               partId={this.state.partId}
               sectionId={this.state.sectionId}
             >
-              Part {this.state.partId}
+              PART {this.state.partId}
             </GuideLinesLink>
             &nbsp; > &nbsp; {this.state.id}
           </div>

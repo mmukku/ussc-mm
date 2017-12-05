@@ -42,7 +42,7 @@ export default props => {
               <div className="container-05-title-A">
                 <div className="container-05-title-A1">
                   <span className="container-font-light-C">
-                    Part {p.id} - {p.title}
+                    PART {p.id} - {p.title}
                   </span>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default props => {
               <div className="container-05-title-A">
                 <div className="container-05-title-A1">
                   <span className="container-font-light-C">
-                    Part {p.id} - {p.title}
+                    PART {p.id} - {p.title}
                   </span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default props => {
     if (c.id !== chapterId) {
       return (
         <option key={c.id} value={`/chapters/${c.id}/parts`}>
-          Chapter {c.id}
+          CHAPTER {c.id}
         </option>
       );
     }
@@ -161,7 +161,7 @@ export default props => {
               <li>
                 <Link to="/home">Guidelines Manual</Link>
               </li>
-              <li className="active">Chapter {chapterId}</li>
+              <li className="active">CHAPTER {chapterId}</li>
             </ol>
           </div>
         </div>

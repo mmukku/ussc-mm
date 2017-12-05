@@ -33,7 +33,7 @@ export default props => {
           key={p.id}
           value={`/chapters/${chapterId}/parts/${p.id}/sections`}
         >
-          Part {p.id}
+          PART {p.id}
         </option>
       );
     } else {
@@ -59,13 +59,13 @@ export default props => {
       <h6>
         <div className="usa-width-one-half">
           <HomeLink />&nbsp; > &nbsp;<PartsLink chapterId={chapterId}>
-            Chapter {chapterId}
+            CHAPTER {chapterId}
           </PartsLink>{' '}
-          &nbsp; > &nbsp;Part {partId}
+          &nbsp; > &nbsp;PART {partId}
         </div>
         <BookmarkLink
           path={props.location.pathname}
-          title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`}
+          title={`CHAPTER ${chapterId} PART ${partId} - ${thisPart.title}`}
         />
         <section className="usa-width-one-half search-global-B">
           <select onChange={e => (window.location = e.target.value)}>
@@ -76,13 +76,13 @@ export default props => {
       </h6>
       <ContentWrapper
         path={props.location.pathname}
-        title={`Chapter ${chapterId} Part ${partId} - ${thisPart.title}`}
+        title={`CHAPTER ${chapterId} PART ${partId} - ${thisPart.title}`}
       >
         <h3>
-          Chapter {chapterId} - {chapterTitle}
+          CHAPTER {chapterId} - {chapterTitle}
         </h3>
         <h4>
-          Part {partId} - {thisPart.title}
+          PART {partId} - {thisPart.title}
         </h4>
         <p dangerouslySetInnerHTML={{ __html: thisPart.content }} />
 
