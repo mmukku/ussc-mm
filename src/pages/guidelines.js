@@ -24,10 +24,11 @@ export default props => {
 
   let sectionTitle = null;
   let sectionContent = null;
+  var section;
 
   if (sectionId !== undefined) {
     filtered = _.filter(filtered, gl => gl.section === sectionId);
-    let section = _.find(
+    section = _.find(
       Sections,
       s => s.chapter === chapterId && s.part === partId && s.id === sectionId
     );
@@ -38,11 +39,16 @@ export default props => {
   }
 
   let guidelineList = _.map(filtered, gl => (
-    <p key={gl.id}>
-      <GuidelineLink id={gl.id}>
-        {gl.id} -{gl.title}
-      </GuidelineLink>
-    </p>
+    <GuidelineLink id={gl.id}>
+      <div className="container-03-A-a">
+        <div className="container-03-A1">
+          <span className="container-font-light-C">{gl.title}</span>
+        </div>
+        <div className="container-03-A2">
+          <div className="icon-chevron-right" />
+        </div>
+      </div>
+    </GuidelineLink>
   ));
 
   let bc;
@@ -50,9 +56,11 @@ export default props => {
   let navList;
   if (props.match.params.sectionId !== undefined) {
     bc = (
-      <SectionsLink chapterId={chapterId} partId={partId}>
-        PART {partId}
-      </SectionsLink>
+      <li>
+        <SectionsLink chapterId={chapterId} partId={partId}>
+          PART {partId}
+        </SectionsLink>
+      </li>
     );
     text = <span>{`SECTION ${sectionId}`}</span>;
     navList = _.filter(
@@ -93,15 +101,19 @@ export default props => {
     Parts,
     p => p.chapter === chapterId && p.id === partId
   );
-  let partContent = null;
-  if (sectionContent == null) {
-    partContent = thisPart.content;
+  var generalContent;
+  if (sectionContent === null) {
+    generalContent = thisPart.content;
+  } else {
+    generalContent = sectionContent;
   }
-  var generalTitle;
+  var generalTitle, generalShortTitle;
   if (sectionTitle === null) {
     generalTitle = `CHAPTER ${chapterId} PART ${partId} - ${thisPart.title}`;
+    generalShortTitle = thisPart.title;
   } else {
-    generalTitle = `CHAPTER ${chapterId} PART ${partId} SECTION ${sectionId} - ${sectionTitle}`;
+    generalTitle = `CHAPTER ${chapterId} PART ${partId} SECTION ${sectionId} - ${section.title}`;
+    generalShortTitle = section.title;
   }
 
   return (
@@ -158,33 +170,59 @@ export default props => {
               <li>
                 <PartsLink chapterId={chapterId}>CHAPTER {chapterId}</PartsLink>
               </li>
-              <li>{bc}</li>
+              {bc}
               <li className="active">{text}</li>
             </ol>
           </div>
         </div>
       </section>
-      <h6>
-        <BookmarkLink path={props.location.pathname} title={generalTitle} />
-        <section className="usa-width-one-half search-global-B">
-          <select onChange={e => (window.location = e.target.value)}>
-            <option>Go to</option>
-            {navList}
-          </select>
-        </section>
-      </h6>
+      <BookmarkLink path={props.location.pathname} title={generalTitle} />
       <ContentWrapper path={props.location.pathname} title={generalTitle}>
-        <h3>
-          CHAPTER {chapter.name} - {chapter.title}
-        </h3>
-        <h4>
-          PART {partId} - {thisPart.title}
-        </h4>
-        <p dangerouslySetInnerHTML={{ __html: partContent }} />
-        <h5>{sectionTitle} </h5>
-        <p dangerouslySetInnerHTML={{ __html: sectionContent }} />
-        <div>{guidelineList}</div>
+        <section className="usa-section container-04c">
+          <div className="usa-grid">
+            <div className="container-05-title">
+              <div className="container-05-title-A">
+                <div className="container-05-title-A1">
+                  <span className="container-font-light-C">
+                    {generalShortTitle}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="container-05-title-2">
+              <div className="container-05-title-B">
+                <div className="container-05-title-B1">
+                  <div
+                    className="container-font-light-Ea"
+                    dangerouslySetInnerHTML={{ __html: generalContent }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="container-05">
+              <div className="container-05-A">{guidelineList}</div>
+            </div>
+          </div>
+        </section>
       </ContentWrapper>
+      <section
+        className="usa-section footer"
+        style={{
+          borderStyle: 'dotted',
+          borderWidth: '0px',
+          borderColor: 'grey',
+          textAlign: 'center'
+        }}
+      >
+        <div className="usa-grid footer-B">
+          <div className="usa-width-one-whole">
+            <select onChange={e => (window.location = e.target.value)}>
+              <option>Go to</option>
+              {navList}
+            </select>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
