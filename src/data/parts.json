@@ -4,7 +4,8 @@
     "type": "part",
     "chapter": "1",
     "title": "INTRODUCTION AND AUTHORITY",
-    "content":"<h4 id='introductory-commentary' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Subparts 1 and 2 of this Part provide an introduction to the Guidelines Manual describing the historical development and evolution of the federal sentencing guidelines. Subpart 1 sets forth the original introduction to the Guidelines Manual as it first appeared in 1987, with the inclusion of amendments made occasionally thereto between 1987 and 2000. The original introduction, as so amended, explained a number of policy decisions made by the United States Sentencing Commission (“Commission”) when it promulgated the initial set of guidelines and therefore provides a useful reference for contextual and historical purposes. Subpart 2 further describes the evolution of the federal sentencing guidelines after the initial guidelines were promulgated.</p><p>Subpart 3 of this Part states the authority of the Commission to promulgate federal sentencing guidelines, policy statements, and commentary.</p>"
+    "content":
+      "<h4 id='introductory-commentary' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Subparts 1 and 2 of this Part provide an introduction to the Guidelines Manual describing the historical development and evolution of the federal sentencing guidelines. Subpart 1 sets forth the original introduction to the Guidelines Manual as it first appeared in 1987, with the inclusion of amendments made occasionally thereto between 1987 and 2000. The original introduction, as so amended, explained a number of policy decisions made by the United States Sentencing Commission (“Commission”) when it promulgated the initial set of guidelines and therefore provides a useful reference for contextual and historical purposes. Subpart 2 further describes the evolution of the federal sentencing guidelines after the initial guidelines were promulgated.</p><p>Subpart 3 of this Part states the authority of the Commission to promulgate federal sentencing guidelines, policy statements, and commentary.</p>"
   },
   {
     "id": "B",
@@ -292,7 +293,7 @@
     "chapter": "8",
     "title": "ORGANIZATIONAL PROBATION",
     "content":
-      "<h4 id='introductory-commentary-22' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Section <a href='/gl/§8D1.1'>§8D1.1</a> sets forth the circumstances under which a sentence to a term of probation is required. Sections <a href='/gl/§8D1.2'>§8D1.2</a> through <a href='/gl/§8D1.4'>§8D1.4</a>, and <a href='/gl/§8F1.1'>§8F1.1</a>, address the length of the probation term, conditions of probation, and violations of probation conditions.</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1991 (amendment <a href='/ac/422'>422</a>). Amended effective November 1, 2004 (<a href='/ac/673'>673</a>).</td></tr></tbody></table>"
+      "<h4 id='introductory-commentary-22' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Section <a href='/gl/§8D1.1'>§8D1.1</a> sets forth the circumstances under which a sentence to a term of probation is required. Sections <a href='/gl/§8D1.2'>§8D1.2</a> through <a href='/gl/§8D1.4'>§8D1.4</a>, and <a href='/gl/§8F1.1'>§8F1.1</a>, address the length of the probation term, conditions of probation, and violations of probation conditions.</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1991 (amendment <a href='/ac/422'>422</a>). Amended effective November 1, 2004 (amendment <a href='/ac/673'>673</a>).</td></tr></tbody></table>"
   },
   {
     "id": "E",
@@ -304,6 +305,8 @@
     "id": "F",
     "type": "part",
     "chapter": "8",
-    "title": "VIOLATIONS OF PROBATION -ORGANIZATIONS"
+    "title": "VIOLATIONS OF PROBATION -ORGANIZATIONS",
+    "content":
+      "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 2004 (amendment <a href='/ac/673'>673</a>).</td></tr></tbody></table>"
   }
 ]
