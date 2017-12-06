@@ -1,25 +1,26 @@
 [
   {
-	"id": "1",
-	"type": "section",
-	"chapter": "1",
-	"part": "A",
-	"title": "Original Introduction to the Guidelines Manual",
-	"content": "<p>The following provisions of this Subpart set forth the original introduction to this manual, effective November 1, 1987, and as amended through November 1, 2000:</p>"
+    "id": "1",
+    "type": "section",
+    "chapter": "1",
+    "part": "A",
+    "title": "Original Introduction to the Guidelines Manual",
+    "content":
+      "<p>The following provisions of this Subpart set forth the original introduction to this manual, effective November 1, 1987, and as amended through November 1, 2000:</p>"
   },
   {
-	"id": "2",
-	"type": "section",
-	"chapter": "1",
-	"part": "A",
-	"title": "Continuing Evolution and Role of the Guidelines"
+    "id": "2",
+    "type": "section",
+    "chapter": "1",
+    "part": "A",
+    "title": "Continuing Evolution and Role of the Guidelines"
   },
   {
-	"id": "3",
-	"type": "section",
-	"chapter": "1",
-	"part": "A",
-	"title": "Authority"
+    "id": "3",
+    "type": "section",
+    "chapter": "1",
+    "part": "A",
+    "title": "Authority"
   },
   {
     "id": "1",
@@ -40,8 +41,7 @@
     "type": "section",
     "chapter": "2",
     "part": "A",
-    "title":
-      "Criminal Sexual Abuse and Offenses Related to Registration as a Sex Offender",
+    "title": "Criminal Sexual Abuse and Offenses Related to Registration as a Sex Offender",
     "content":
       "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 2007 (amendment <a href='/ac/701'>701</a>).</td></tr></tbody></table>"
   },
@@ -66,8 +66,7 @@
     "type": "section",
     "chapter": "2",
     "part": "A",
-    "title":
-      "Threatening or Harassing Communications, Hoaxes, Stalking, and Domestic Violence",
+    "title": "Threatening or Harassing Communications, Hoaxes, Stalking, and Domestic Violence",
     "content":
       "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 1997 (amendment <a href='/ac/549'>549</a>); November 1, 2006 (amendment <a href='/ac/686'>686</a>).</td></tr></tbody></table>"
   },
@@ -123,8 +122,7 @@
     "type": "section",
     "chapter": "2",
     "part": "D",
-    "title":
-      "Unlawful Manufacturing, Importing, Exporting, Trafficking, or Possession; Continuing Criminal Enterprise"
+    "title": "Unlawful Manufacturing, Importing, Exporting, Trafficking, or Possession; Continuing Criminal Enterprise"
   },
   {
     "id": "2",
@@ -318,8 +316,7 @@
     "type": "section",
     "chapter": "2",
     "part": "M",
-    "title":
-      "Nuclear, Biological, and Chemical Weapons and Materials, and Other Weapons of Mass Destruction",
+    "title": "Nuclear, Biological, and Chemical Weapons and Materials, and Other Weapons of Mass Destruction",
     "content":
       "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 2001 (amendment <a href='/ac/633'>633</a>).</td></tr></tbody></table>"
   },
@@ -446,8 +443,7 @@
     "type": "section",
     "chapter": "2",
     "part": "X",
-    "title":
-      "Offenses Involving Border Tunnels and Submersible and Semi-Submersible Vessels",
+    "title": "Offenses Involving Border Tunnels and Submersible and Semi-Submersible Vessels",
     "content":
       "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 2007 (amendment <a href='/ac/700'>700</a>). Amended effective November 1, 2009 (<a href='/ac/728'>728</a>).</td></tr></tbody></table>"
   },
@@ -522,6 +518,6 @@
     "part": "C",
     "title": "Departures from the Guideline Fine Range",
     "content":
-      "<h4 id='introductory-commentary-21' class='Commentary'><strong>Introductory Commentary</strong></h4><p>The statutory provisions governing departures are set forth in 18 U.S.C. § 3553(b). Departure may be warranted if the court finds “that there exists an aggravating or mitigating circumstance of a kind, or to a degree, not adequately taken into consideration by the Sentencing Commission in formulating the guidelines that should result in a sentence different from that described.” This subpart sets forth certain factors that, in connection with certain offenses, may not have been adequately taken into consideration by the guidelines. In deciding whether departure is warranted, the court should consider the extent to which that factor is adequately taken into consideration by the guidelines and the relative importance or substantiality of that factor in the particular case.</p><p>To the extent that any policy statement from Chapter Five, Part K (Departures) is relevant to the organization, a departure from the applicable guideline fine range may be warranted. Some factors listed in Chapter Five, Part K that are particularly applicable to organizations are listed in this subpart. Other factors listed in Chapter Five, Part K may be applicable in particular cases. While this subpart lists factors that the Commission believes may constitute grounds for departure, the list is not exhaustive.</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1991 (amendment <a href='/ac/422'>422</a>).</td></tr></tbody></table>"
+      "<h4 id='introductory-commentary-21' class='Commentary'><strong>Introductory Commentary</strong></h4><p>The statutory provisions governing departures are set forth in <a href='/ab/18U.S.C.§3553#b'>18 U.S.C. § 3553(b)</a>. Departure may be warranted if the court finds “that there exists an aggravating or mitigating circumstance of a kind, or to a degree, not adequately taken into consideration by the Sentencing Commission in formulating the guidelines that should result in a sentence different from that described.” This subpart sets forth certain factors that, in connection with certain offenses, may not have been adequately taken into consideration by the guidelines. In deciding whether departure is warranted, the court should consider the extent to which that factor is adequately taken into consideration by the guidelines and the relative importance or substantiality of that factor in the particular case.</p><p>To the extent that any policy statement from Chapter Five, Part K (Departures) is relevant to the organization, a departure from the applicable guideline fine range may be warranted. Some factors listed in Chapter Five, Part K that are particularly applicable to organizations are listed in this subpart. Other factors listed in Chapter Five, Part K may be applicable in particular cases. While this subpart lists factors that the Commission believes may constitute grounds for departure, the list is not exhaustive.</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1991 (amendment <a href='/ac/422'>422</a>).</td></tr></tbody></table>"
   }
 ]

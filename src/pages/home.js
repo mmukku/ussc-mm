@@ -7,7 +7,7 @@ import SearchGuidelines from '../components/searchGuidelines';
 const chapterList = chapters.map(c => (
   <p key={c.id}>
     <PartsLink chapterId={c.id}>
-      Chapter {c.id} - {c.title}
+      CHAPTER {c.name} - {c.title}
     </PartsLink>
   </p>
 ));

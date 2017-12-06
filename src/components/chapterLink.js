@@ -6,6 +6,6 @@ export default props => (
     to={`/chapters/${props.chapterId}/parts`}
     className="usa-background-dark"
   >
-    <span>Chapter {props.chapterId}</span>
+    <span>CHAPTER {props.chapterId}</span>
   </Link>
 );
