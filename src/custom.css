@@ -1885,7 +1885,7 @@ input:placeholder-shown {
   padding-right: 4px;
 }
 
-strong {
+.appendix-b strong {
   /* William */
   font-family: 'Lato', Verdana, sans-serif;
   font-size: 16px;
@@ -1893,12 +1893,12 @@ strong {
   color: #1e2d3a;
 }
 
-strong.paragraph-header {
+.appendix-b strong.paragraph-header {
   /* William */
   display: block;
 }
 
-.paragraph-label {
+.appendix-b .paragraph-label {
   /* William */
   text-transform: uppercase;
 }

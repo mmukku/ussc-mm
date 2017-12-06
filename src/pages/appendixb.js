@@ -31,7 +31,7 @@ export default params => {
       </section>
       <BookmarkLink path={params.location.pathname} title="Appendix B" />
       <ContentWrapper path={params.location.pathname} title="Appendix B">
-        <div className="usa-grid">
+        <div className="usa-grid appendix-b">
           <div className="container-05-title">
             <div className="container-05-A-button">
               <div className="container-05-title-A1">

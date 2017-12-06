@@ -104,7 +104,7 @@ class AppendixBPart extends React.Component {
           title={`Appendix B - ${id}`}
         >
           <section className="usa-section">
-            <div className="usa-grid">
+            <div className="usa-grid appendix-b">
               <div className="container-05-title">
                 <div className="container-05-title-A">
                   <div className="container-05-title-A1">
