@@ -19,6 +19,24 @@ export default props => {
       _.find(sections, s => s.chapter === chapterId && s.part === p.id) !==
       undefined;
 
+    var contentBox;
+    if (p.content) {
+      contentBox = (
+        <div className="container-05-title-2">
+          <div className="container-05-title-B">
+            <div className="container-05-title-B1">
+              <div
+                className="container-font-light-Ea"
+                dangerouslySetInnerHTML={{ __html: p.content }}
+              />
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      contentBox = '';
+    }
+
     if (hasSections) {
       let sectionList = _.filter(
         sections,
@@ -47,11 +65,9 @@ export default props => {
                 </div>
               </div>
             </div>
+            {contentBox}
             <div className="container-05">
-              <div className="container-05-A">
-                <p dangerouslySetInnerHTML={{ __html: p.content }} />
-                {sectionList}
-              </div>
+              <div className="container-05-A">{sectionList}</div>
             </div>
           </div>
         </section>
@@ -74,6 +90,13 @@ export default props => {
           </div>
         </GuidelineLink>
       ));
+      if (guidelineList.length !== 0) {
+        guidelineList = (
+          <div className="container-05">
+            <div className="container-05-A">{guidelineList}</div>
+          </div>
+        );
+      }
       return (
         <section key={p.id} className="usa-section">
           <div className="usa-grid">
@@ -86,12 +109,8 @@ export default props => {
                 </div>
               </div>
             </div>
-            <div className="container-05">
-              <div className="container-05-A">
-                <p dangerouslySetInnerHTML={{ __html: p.content }} />
-                {guidelineList}
-              </div>
-            </div>
+            {contentBox}
+            {guidelineList}
           </div>
         </section>
       );
@@ -138,7 +157,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-dark-B-5">
-              CHAPTER {thisChapter.name}
+              CHAPTER {chapterId}
               <br />
             </span>
           </div>
@@ -161,7 +180,7 @@ export default props => {
               <li>
                 <Link to="/home">Guidelines Manual</Link>
               </li>
-              <li className="active">CHAPTER {thisChapter.name}</li>
+              <li className="active">CHAPTER {chapterId}</li>
             </ol>
           </div>
         </div>

@@ -45,7 +45,7 @@ export default props => {
           <span className="container-font-light-C">{gl.title}</span>
         </div>
         <div className="container-03-A2">
-          <div className="icon-chevron-right" />
+          <div className="chevron-right-icon" />
         </div>
       </div>
     </GuidelineLink>
@@ -54,14 +54,12 @@ export default props => {
   let bc;
   var text = <span>{`PART ${partId}`}</span>;
   let navList;
+  if (sectionTitle === null) {
+    bc = `PART ${partId}`;
+  } else {
+    bc = `PART ${partId} - ${section.title}`;
+  }
   if (props.match.params.sectionId !== undefined) {
-    bc = (
-      <li>
-        <SectionsLink chapterId={chapterId} partId={partId}>
-          PART {partId}
-        </SectionsLink>
-      </li>
-    );
     text = <span>{`SECTION ${sectionId}`}</span>;
     navList = _.filter(
       Sections,
@@ -102,10 +100,34 @@ export default props => {
     p => p.chapter === chapterId && p.id === partId
   );
   var generalContent;
-  if (sectionContent === null) {
-    generalContent = thisPart.content;
+  if (sectionContent !== null && sectionContent !== undefined) {
+    generalContent = (
+      <div className="container-05-title-2">
+        <div className="container-05-title-B">
+          <div className="container-05-title-B1">
+            <div
+              className="container-font-light-Ea"
+              dangerouslySetInnerHTML={{ __html: sectionContent }}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  } else if (thisPart.content !== undefined) {
+    generalContent = (
+      <div className="container-05-title-2">
+        <div className="container-05-title-B">
+          <div className="container-05-title-B1">
+            <div
+              className="container-font-light-Ea"
+              dangerouslySetInnerHTML={{ __html: thisPart.content }}
+            />
+          </div>
+        </div>
+      </div>
+    );
   } else {
-    generalContent = sectionContent;
+    generalContent = '';
   }
   var generalTitle, generalShortTitle;
   if (sectionTitle === null) {
@@ -114,6 +136,13 @@ export default props => {
   } else {
     generalTitle = `CHAPTER ${chapterId} PART ${partId} SECTION ${sectionId} - ${section.title}`;
     generalShortTitle = section.title;
+  }
+  if (guidelineList.length !== 0) {
+    guidelineList = (
+      <div className="container-05">
+        <div className="container-05-A">{guidelineList}</div>
+      </div>
+    );
   }
 
   return (
@@ -144,7 +173,7 @@ export default props => {
         <div className="usa-grid">
           <div className="container-title-c">
             <span className="container-font-dark-B-5">
-              CHAPTER {chapter.name}
+              CHAPTER {chapterId}
               <br />
             </span>
           </div>
@@ -170,8 +199,7 @@ export default props => {
               <li>
                 <PartsLink chapterId={chapterId}>CHAPTER {chapterId}</PartsLink>
               </li>
-              {bc}
-              <li className="active">{text}</li>
+              <li className="active">{bc}</li>
             </ol>
           </div>
         </div>
@@ -189,19 +217,8 @@ export default props => {
                 </div>
               </div>
             </div>
-            <div className="container-05-title-2">
-              <div className="container-05-title-B">
-                <div className="container-05-title-B1">
-                  <div
-                    className="container-font-light-Ea"
-                    dangerouslySetInnerHTML={{ __html: generalContent }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="container-05">
-              <div className="container-05-A">{guidelineList}</div>
-            </div>
+            {generalContent}
+            {guidelineList}
           </div>
         </section>
       </ContentWrapper>
