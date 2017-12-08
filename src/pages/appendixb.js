@@ -3,55 +3,29 @@ import { Link } from 'react-router-dom';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
 import SearchGuidelines from '../components/searchGuidelines';
+import AppendixBContentHeader from '../components/appendixBContentHeader';
+import ContentsLinkWrapper from '../components/contentsLinkWrapper';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import ContentBlock from '../components/contentBlock';
 
 export default params => {
   return (
     <div>
-      <section className="usa-section usa-section-black">
-        <div className="usa-grid">
-          <div className="container-title">
-            <span className="container-font-dark-B-2">
-              Version 3.14-17
-              <br />
-            </span>
-            <span className="container-font-dark-A-2">
-              Appendix B
-              <br />
-            </span>
-            <span className="container-font-dark-B-2">
-              Selected Sentencing Statutes
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className="usa-section search-global-A">
-        <div className="usa-grid">
-          <SearchGuidelines />
-        </div>
-      </section>
+      <AppendixBContentHeader />
       <BookmarkLink path={params.location.pathname} title="Appendix B" />
       <ContentWrapper path={params.location.pathname} title="Appendix B">
-        <div className="usa-grid appendix-b">
-          <div className="container-05-title">
-            <div className="container-05-A-button">
-              <div className="container-05-title-A1">
-                <span className="container-font-light-C">
-                  SELECTED SENTENCING STATUTES
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="container-05">
-            <div className="container-05b-A">
-              <div className="container-05-A1">
-                <div className="container-05-A1c container-font-light-Ea ab-content">
-                  This appendix sets forth the principal statutory provisions
-                  governing sentencing, the Sentencing Commission, and the
-                  drafting of sentencing guidelines,{' '}
-                  <strong className="noblock">as of May 1, 2016</strong>, as
-                  follows:
-                  <br />
-                </div>
+        <div className="appendix-b">
+          <Blockset>
+            <TitleBlock>Selected Sentencing Statutes</TitleBlock>
+            <ContentBlock>
+              <div className="container-font-light-Ea ab-content">
+                This appendix sets forth the principal statutory provisions
+                governing sentencing, the Sentencing Commission, and the
+                drafting of sentencing guidelines,{' '}
+                <strong className="noblock">as of May 1, 2016</strong>, as
+                follows:
+                <br />
               </div>
               <div
                 className="usa-width-one-whole"
@@ -61,14 +35,14 @@ export default params => {
                   'border-color': 'red'
                 }}
               >
-                <a href="/ab/sss">
+                <Link to="/ab/sss">
                   <button className="usa-button-secondary usa-focus">
                     Read More
                   </button>
-                </a>
+                </Link>
               </div>
-            </div>
-          </div>
+            </ContentBlock>
+          </Blockset>
         </div>
         <hr className="usa-section-hr" />
         <section
@@ -82,45 +56,30 @@ export default params => {
         >
           <div className="usa-grid">
             <div className="container-03">
-              <div className="container-03-A-a">
-                <Link to="/ab/18usc">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">TITLE 18 </span>
-                    <span className="container-font-light-D">
-                      UNITED STATES CODE
-                    </span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </Link>
-              </div>
-              <div className="container-03-A-b">
-                <Link to="/ab/28usc">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">TITLE 28 </span>
-                    <span className="container-font-light-D">
-                      UNITED STATES CODE
-                    </span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </Link>
-              </div>
-              <div className="container-03-A-a">
-                <Link to="/ab/publ">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">
-                      PUBLIC LAWS GOVERNING THE COMMISSION AND THE DRAFTING OF
-                      SENTENCING GUIDELINES
-                    </span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </Link>
-              </div>
+              <Link to="/ab/18usc">
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">TITLE 18 </span>
+                  <span className="container-font-light-D">
+                    UNITED STATES CODE
+                  </span>
+                </ContentsLinkWrapper>
+              </Link>
+              <Link to="/ab/28usc">
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">TITLE 28 </span>
+                  <span className="container-font-light-D">
+                    UNITED STATES CODE
+                  </span>
+                </ContentsLinkWrapper>
+              </Link>
+              <Link to="/ab/publ">
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">
+                    PUBLIC LAWS GOVERNING THE COMMISSION AND THE DRAFTING OF
+                    SENTENCING GUIDELINES
+                  </span>
+                </ContentsLinkWrapper>
+              </Link>
             </div>
           </div>
         </section>

@@ -3,7 +3,7 @@ import parts from '../data/parts.json';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
 import Chapters from '../data/chapters.json';
-import ContentHeader from '../components/contentHeader';
+import ChapterContentHeader from '../components/chapterContentHeader';
 import ChapterIndicator from '../components/chapterIndicator';
 import GoToFooter from '../components/goToFooter';
 import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
@@ -51,7 +51,7 @@ export default props => {
 
   return (
     <div>
-      <ContentHeader />
+      <ChapterContentHeader />
       <ChapterIndicator id={chapterId} />
       <BreadcrumbsWrapper>
         <GLMBreadcrumb />

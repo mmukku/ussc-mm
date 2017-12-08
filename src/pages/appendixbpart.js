@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import data from '../data/appendix-b';
-
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import TitleContentBlock from '../components/titleContentBlock';
+import ContentBlock from '../components/contentBlock';
+import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
 import SearchGuidelines from '../components/searchGuidelines';
+import AppendixBContentHeader from '../components/appendixBContentHeader';
 import scrollToElment from 'scroll-to-element';
 import _ from 'lodash';
 
@@ -27,14 +32,10 @@ class AppendixBPart extends React.Component {
     }
     if ('titleblock' in data_object) {
       titleblock = (
-        <div className="container-05-title-2">
-          <div className="container-05-title-B">
-            <div
-              className="container-05-title-B1"
-              dangerouslySetInnerHTML={{ __html: data_object.titleblock }}
-            />
-          </div>
-        </div>
+        <div
+          className="container-05-title-B1"
+          dangerouslySetInnerHTML={{ __html: data_object.titleblock }}
+        />
       );
     } else {
       titleblock = '';
@@ -64,37 +65,8 @@ class AppendixBPart extends React.Component {
     breadcrumb_structure.push(<li className="active">{title}</li>);
     return (
       <div>
-        <section className="usa-section usa-section-black">
-          <div className="usa-grid">
-            <div className="container-title">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17
-                <br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Appendix B
-                <br />
-              </span>
-              <span className="container-font-dark-B-2">
-                Selected Sentencing Statutes
-              </span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-A">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <SearchGuidelines />
-            </div>
-          </div>
-        </section>
-        <section className="usa-section breadcrumb-global-A">
-          <div className="usa-grid breadcrumb-global-A-1">
-            <div className="usa-width-one-whole">
-              <ol className="breadcrumb-b">{breadcrumb_structure}</ol>
-            </div>
-          </div>
-        </section>
+        <AppendixBContentHeader />
+        <BreadcrumbsWrapper>{breadcrumb_structure}</BreadcrumbsWrapper>
         <BookmarkLink
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
@@ -103,27 +75,17 @@ class AppendixBPart extends React.Component {
           path={this.props.location.pathname}
           title={`Appendix B - ${id}`}
         >
-          <section className="usa-section">
-            <div className="usa-grid appendix-b">
-              <div className="container-05-title">
-                <div className="container-05-title-A">
-                  <div className="container-05-title-A1">
-                    <span className="container-font-light-C">{title}</span>
-                  </div>
-                </div>
-              </div>
-              {titleblock}
-              <div className="container-05">
-                <div className="container-05-A">
-                  <div className="container-05-A1">
-                    <div
-                      className="container-05-A1c container-font-light-Ea ab-content"
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <section className="usa-section appendix-b">
+            <Blockset>
+              <TitleBlock>{title}</TitleBlock>
+              <TitleContentBlock>{titleblock}</TitleContentBlock>
+              <ContentBlock>
+                <div
+                  className="container-05-A1c container-font-light-Ea ab-content"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              </ContentBlock>
+            </Blockset>
           </section>
         </ContentWrapper>
       </div>

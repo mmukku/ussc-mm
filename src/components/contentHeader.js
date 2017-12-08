@@ -12,10 +12,10 @@ export default props => {
               <br />
             </span>
             <span className="container-font-dark-A-2">
-              Guidelines Manual
+              {props.title}
               <br />
             </span>
-            <span className="container-font-dark-B-2">2017</span>
+            <span className="container-font-dark-B-2">{props.subtitle}</span>
           </div>
         </div>
       </section>

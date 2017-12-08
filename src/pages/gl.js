@@ -6,7 +6,7 @@ import { ContentWrapper } from '../components/contentwrapper';
 import Sections from '../data/sections.json';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
-import ContentHeader from '../components/contentHeader';
+import ChapterContentHeader from '../components/chapterContentHeader';
 import ChapterIndicator from '../components/chapterIndicator';
 import GoToFooter from '../components/goToFooter';
 import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
@@ -117,7 +117,7 @@ class GuideLine extends Component {
     }
     return (
       <div>
-        <ContentHeader />
+        <ChapterContentHeader />
         <ChapterIndicator id={this.state.chapterId} />
         <BreadcrumbsWrapper>
           <GLMBreadcrumb />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import chapters from '../data/chapters.json';
 import PartsLink from '../components/partsLink';
 import ContentsLinkWrapper from '../components/contentsLinkWrapper';
-import ContentHeader from '../components/contentHeader';
+import ChapterContentHeader from '../components/chapterContentHeader';
 
 const chapterList = chapters.map(c => (
   <PartsLink chapterId={c.id}>
@@ -16,7 +16,7 @@ const chapterList = chapters.map(c => (
 ));
 export default props => (
   <div>
-    <ContentHeader />
+    <ChapterContentHeader />
     <section className="usa-section">
       <div className="usa-grid">
         <div className="container-03">{chapterList}</div>
