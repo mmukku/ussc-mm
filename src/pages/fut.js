@@ -27,7 +27,7 @@ class FrequentlyUsedTable extends Component {
                   </div>
                 </div>
               </Link>
-              <Link to="/gl/§2B1.1">
+              <Link to="/losstable">
                 <div className="container-03-A-b">
                   <div className="container-03-A1">
                     <span className="container-font-light-C">Loss Tables</span>
