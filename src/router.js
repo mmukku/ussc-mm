@@ -31,6 +31,7 @@ const AsyncArchives = asyncComponent(() => import('./pages/archives'));
 const AsyncBookmarks = asyncComponent(() => import('./pages/bookmarks'));
 const AsyncNotes = asyncComponent(() => import('./pages/notes'));
 const AsyncFUT = asyncComponent(() => import('./pages/fut'));
+const AsyncLossTable = asyncComponent(() => import('./pages/losstable'));
 
 const title = 'USSC Guidelines';
 
@@ -168,6 +169,12 @@ class USSCRouter extends Component {
               exact
               path="/ac/search/:id"
               component={AsyncAmendments}
+              title="Appendix C"
+            />
+            <Route
+              exact
+              path="/losstable"
+              component={AsyncLossTable}
               title="Appendix C"
             />
           </Switch>

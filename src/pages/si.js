@@ -181,7 +181,11 @@ class SI extends Component {
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <div className="usa-width-one-whole search-box-global">
-              <button className="usa-button" onClick={this.search}>
+              <button
+                type="button"
+                className="usa-button"
+                onClick={this.search}
+              >
                 Search
               </button>
             </div>
@@ -235,7 +239,9 @@ class SI extends Component {
     // eslint-disable-next-line
     let results = _.find(
       data,
-      d => d.Title === this.state.title && d.Statute === this.state.statute
+      d =>
+        d.Title.toString() === this.state.title &&
+        d.Statute === this.state.statute
     );
     if (results === undefined) return;
 

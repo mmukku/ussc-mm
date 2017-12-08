@@ -4,7 +4,7 @@ import FontSize from './fontSize';
 import headerLogo from '../img/USSCGM.svg';
 import { Link } from 'react-router-dom';
 import '../custom.css';
-const DefaultFontSize = 1.25;
+const DefaultFontSize = 1.7;
 class Container extends Component {
   state = { fontSize: DefaultFontSize };
 
@@ -25,6 +25,20 @@ class Container extends Component {
     console.log(this.state.fontSize);
   };
   render() {
+    var footerResult = '';
+    var paddingBottomPage = '0%';
+    var pathname = window.location.pathname;
+
+    if (
+      pathname !== '/' &&
+      pathname !== '/si' &&
+      pathname !== '/grc' &&
+      pathname !== '/dol' &&
+      pathname !== '/de'
+    ) {
+      paddingBottomPage = '22%';
+      footerResult = <FontSize changeFontSize={this.changeFontSize} />;
+    }
     return (
       <div>
         <header
@@ -152,7 +166,16 @@ class Container extends Component {
           </nav>
         </header>
         <div className="usa-overlay" />
-        <main id="main-content">{this.props.children}</main>
+        <main
+          id="main-content"
+          style={{
+            fontSize: this.state.fontSize + 'rem',
+            'padding-bottom': paddingBottomPage
+          }}
+        >
+          {this.props.children}
+        </main>
+        <footer>{footerResult}</footer>
       </div>
     );
   }

@@ -143,7 +143,6 @@ class Amendments extends React.Component {
 
   handleClick = searchVal => {
     searchVal = searchVal.replace(/\//g, '-');
-    alert(searchVal);
 
     window.location.href = '/ac/' + searchVal;
   };
@@ -151,63 +150,52 @@ class Amendments extends React.Component {
   render() {
     return (
       <div>
-        <form
-          className="usa-search usa-search-big"
-          onSubmit={e => {
-            this.handleClick(this.state.slug);
-            e.preventDefault();
-          }}
-        >
-          <section className="usa-section usa-section-black">
-            <div className="usa-grid">
-              <div className="container-title">
-                <span className="container-font-dark-B-2">
-                  Version 3.14-17
-                  <br />
-                </span>
-                <span className="container-font-dark-A-2">
-                  Appendix C
-                  <br />
-                </span>
-                <span className="container-font-dark-B-2">
-                  Amendments to the Guidelines Manual
-                </span>
-              </div>
+        <section className="usa-section usa-section-black">
+          <div className="usa-grid">
+            <div className="container-title">
+              <span className="container-font-dark-B-2">
+                Version 3.14-17
+                <br />
+              </span>
+              <span className="container-font-dark-A-2">
+                Appendix C
+                <br />
+              </span>
+              <span className="container-font-dark-B-2">
+                Amendments to the Guidelines Manual
+              </span>
             </div>
-          </section>
-          <section className="usa-section search-global-B">
-            <div className="usa-grid">
-              <div className="usa-width-one-whole">
-                <form className="usa-form">
-                  <fieldset>
-                    <span className="container-font-dark-B-3">
-                      SEARCH BY AMENDMENT NUMBER OR DATE<br />
-                    </span>
-                    <input
-                      type="text"
-                      required=""
-                      aria-required="true"
-                      id="inputAmmendmentNumber"
-                      placeholder="Enter Number or Date (MM/DD/YYYY)"
-                      className="container-font-dark-B-4"
-                      onChange={e => this.setState({ slug: e.target.value })}
-                      value={this.state.slug}
-                    />
-                  </fieldset>
-                </form>
-              </div>
+          </div>
+        </section>
+        <section className="usa-section search-global-B">
+          <div className="usa-grid">
+            <div className="usa-width-one-whole">
+              <form
+                className="usa-search usa-search-small"
+                onSubmit={e => {
+                  this.handleClick(this.state.slug);
+                  e.preventDefault();
+                }}
+              >
+                <div role="search">
+                  <label className="usa-sr-only" htmlFor="search-field-small">
+                    SEARCH BY AMENDMENT NUMBER OR DATE
+                  </label>
+                  <input
+                    id="inputAmmendmentNumber"
+                    type="search"
+                    placeholder="Enter Number or Effective Date (MM/DD/YYYY)"
+                    value={this.state.slug}
+                    onChange={e => this.setState({ slug: e.target.value })}
+                  />
+                  <button type="submit">
+                    <span className="usa-sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
             </div>
-          </section>
-          <section className="usa-section search-global-B">
-            <div className="usa-grid">
-              <div className="usa-width-one-whole">
-                <a>
-                  <button type="submit" className="usa-button" />
-                </a>
-              </div>
-            </div>
-          </section>
-        </form>
+          </div>
+        </section>
         {this.amendmentsList()}
       </div>
     );
