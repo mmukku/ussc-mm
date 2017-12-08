@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import HomeLink from '../components/homeLink';
-import PartsLink from '../components/partsLink';
+import ChapterBreadcrumb from '../components/chapterBreadcrumb';
 import GuideLinesLink from '../components/guidelinesLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
-import SearchGuidelines from '../components/searchGuidelines';
 import Sections from '../data/sections.json';
 import GuideLines from '../data/guidelines.json';
 import Data from '../data/gl.json';
-import Chapters from '../data/chapters.json';
+import ContentHeader from '../components/contentHeader';
+import ChapterIndicator from '../components/chapterIndicator';
+import GoToFooter from '../components/goToFooter';
+import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
+import GLMBreadcrumb from '../components/glmBreadcrumb';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import ContentBlock from '../components/contentBlock';
 import _ from 'lodash';
 
 class GuideLine extends Component {
@@ -111,75 +115,18 @@ class GuideLine extends Component {
     } else {
       intermediateLink = '';
     }
-    let thisChapter = _.find(Chapters, c => c.id === this.state.chapterId);
-    var thisChapterTitle;
-    if (thisChapter !== undefined) {
-      thisChapterTitle = thisChapter.title;
-    }
     return (
       <div>
-        <section className="usa-section usa-section-black">
-          <div className="usa-grid">
-            <div className="container-title">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17
-                <br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Guidelines Manual
-                <br />
-              </span>
-              <span className="container-font-dark-B-2">2017</span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-A">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <SearchGuidelines />
-            </div>
-          </div>
-        </section>
-        <section className="usa-section usa-section-blue">
-          <div className="usa-grid">
-            <div className="container-title-c">
-              <span className="container-font-dark-B-5">
-                CHAPTER {this.state.chapterId}
-                <br />
-              </span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section usa-section-white">
-          <div className="usa-grid">
-            <div className="container-title-c">
-              <span className="container-font-light-Db">
-                {thisChapterTitle}
-                <br />
-              </span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section breadcrumb-global-A">
-          <div className="usa-grid breadcrumb-global-A-1">
-            <div className="usa-width-one-whole">
-              <ol className="breadcrumb-b">
-                <li>
-                  <Link to="/home">Guidelines Manual</Link>
-                </li>
-                <li>
-                  <PartsLink chapterId={this.state.chapterId}>
-                    CHAPTER {this.state.chapterId}
-                  </PartsLink>
-                </li>
-                {intermediateLink}
-                <li className="active">
-                  {this.state.id} - {this.state.textTitle}
-                </li>
-              </ol>
-            </div>
-          </div>
-        </section>
+        <ContentHeader />
+        <ChapterIndicator id={this.state.chapterId} />
+        <BreadcrumbsWrapper>
+          <GLMBreadcrumb />
+          <ChapterBreadcrumb id={this.state.chapterId} />
+          {intermediateLink}
+          <li className="active">
+            {this.state.id} - {this.state.textTitle}
+          </li>
+        </BreadcrumbsWrapper>
         <BookmarkLink
           path={this.props.location.pathname}
           title={`${this.state.id} - ${this.state.textTitle}`}
@@ -188,49 +135,22 @@ class GuideLine extends Component {
           path={this.props.location.pathname}
           title={`${this.state.id} - ${this.state.textTitle}`}
         >
-          <section className="usa-section container-04c">
-            <div className="usa-grid">
-              <div className="container-05-title">
-                <div className="container-05-title-A">
-                  <div className="container-05-title-A1">
-                    <span className="container-font-light-C">
-                      {this.state.id} - {this.state.textTitle}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="container-05">
-                <div className="container-05-A1">
-                  <div className="container-05-A1c">
-                    {this.state.imgContent}
-                    <div
-                      className="container-font-light-Ea"
-                      dangerouslySetInnerHTML={{ __html: this.state.content }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <section className="container-04c">
+            <Blockset>
+              <TitleBlock>
+                {this.state.id} - {this.state.textTitle}
+              </TitleBlock>
+              <ContentBlock>
+                {this.state.imgContent}
+                <div
+                  className="container-font-light-Ea"
+                  dangerouslySetInnerHTML={{ __html: this.state.content }}
+                />
+              </ContentBlock>
+            </Blockset>
           </section>
         </ContentWrapper>
-        <section
-          className="usa-section footer"
-          style={{
-            borderStyle: 'dotted',
-            borderWidth: '0px',
-            borderColor: 'grey',
-            textAlign: 'center'
-          }}
-        >
-          <div className="usa-grid footer-B">
-            <div className="usa-width-one-whole">
-              <select onChange={e => (window.location = e.target.value)}>
-                <option>Go to</option>
-                {this.state.guidelineList}
-              </select>
-            </div>
-          </div>
-        </section>
+        <GoToFooter list={this.state.guidelineList} />
       </div>
     );
   }

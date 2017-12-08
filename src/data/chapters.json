@@ -3,28 +3,28 @@
     "id": "1",
     "name": "ONE",
     "type": "chapter",
-    "title": "INTRODUCTION, AUTHORITY, AND GENERAL APPLICATION PRINCIPLES"
+    "title": "Introduction, Authority, and General Application Principles"
   },
   {
     "id": "2",
     "name": "TWO",
     "type": "chapter",
-    "title": "OFFENSE CONDUCT",
+    "title": "Offense Conduct",
     "content":
       "<h4 id='introductory-commentary-1' class='Commentary'><strong>Introductory Commentary</strong></h4><p>Chapter Two pertains to offense conduct. The chapter is organized by offenses and divided into parts and related sections that may cover one statute or many. Each offense has a corresponding base offense level and may have one or more specific offense characteristics that adjust the offense level upward or downward. Certain factors relevant to the offense that are not covered in specific guidelines in Chapter Two are set forth in Chapter Three, Parts A (Victim-Related Adjustments), B (Role in the Offense), and C (Obstruction and Related Adjustments); Chapter Four, Part B (Career Offenders and Criminal Livelihood); and Chapter Five, Part K (Departures).</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 2011 (amendment <a href='/ac/758'>758</a>).</td></tr></tbody></table>"
   },
-  { "id": "3", "name": "THREE", "type": "chapter", "title": "ADJUSTMENTS" },
+  { "id": "3", "name": "THREE", "type": "chapter", "title": "Adjustments" },
   {
     "id": "4",
     "name": "FOUR",
     "type": "chapter",
-    "title": "CRIMINAL HISTORY AND CRIMINAL LIVELIHOOD"
+    "title": "Criminal History and Criminal Livelihood"
   },
   {
     "id": "5",
     "name": "FIVE",
     "type": "chapter",
-    "title": "DETERMINING THE SENTENCE",
+    "title": "Determining the Sentence",
     "content":
       "<h4 id='introductory-commentary-13' class='Commentary'><strong>Introductory Commentary</strong></h4><p>For certain categories of offenses and offenders, the guidelines permit the court to impose either imprisonment or some other sanction or combination of sanctions. In determining the type of sentence to impose, the sentencing judge should consider the nature and seriousness of the conduct, the statutory purposes of sentencing, and the pertinent offender characteristics. A sentence is within the guidelines if it complies with each applicable section of this chapter. The court should impose a sentence sufficient, but not greater than necessary, to comply with the statutory purposes of sentencing. 18 U.S.C. § 3553(a).</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987.</td></tr></tbody></table>"
   },
@@ -32,7 +32,7 @@
     "id": "6",
     "name": "SIX",
     "type": "chapter",
-    "title": "SENTENCING PROCEDURES, PLEA AGREEMENTS AND CRIME VICTIM'S RIGHTS",
+    "title": "Sentencing Procedures, Plea Agreements and Crime Victim's Rights",
     "content":
       "<table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1987. Amended effective November 1, 2006 (amendment <a href='/ac/694'>694</a>).</td></tr></tbody></table>"
   },
@@ -40,13 +40,13 @@
     "id": "7",
     "name": "SEVEN",
     "type": "chapter",
-    "title": "VIOLATIONS OF PROBATION AND SUPERVISED RELEASE"
+    "title": "Violations of Probation and Supervised Release"
   },
   {
     "id": "8",
     "name": "EIGHT",
     "type": "chapter",
-    "title": "SENTENCING OF ORGANIZATIONS",
+    "title": "Sentencing of Organizations",
     "content":
       "<h4 id='introductory-commentary-19' class='Commentary'><strong>Introductory Commentary</strong></h4><p>The guidelines and policy statements in this chapter apply when the convicted defendant is an organization. Organizations can act only through agents and, under federal criminal law, generally are vicariously liable for offenses committed by their agents. At the same time, individual agents are responsible for their own criminal conduct. Federal prosecutions of organizations therefore frequently involve individual and organizational co-defendants. Convicted individual agents of organizations are sentenced in accordance with the guidelines and policy statements in the preceding chapters. This chapter is designed so that the sanctions imposed upon organizations and their agents, taken together, will provide just punishment, adequate deterrence, and incentives for organizations to maintain internal mechanisms for preventing, detecting, and reporting criminal conduct.</p><p>This chapter reflects the following general principles:</p><p><em>First</em>, the court must, whenever practicable, order the organization to remedy any harm caused by the offense. The resources expended to remedy the harm should not be viewed as punishment, but rather as a means of making victims whole for the harm caused.</p><p><em>Second</em>, if the organization operated primarily for a criminal purpose or primarily by criminal means, the fine should be set sufficiently high to divest the organization of all its assets.</p><p><em>Third</em>, the fine range for any other organization should be based on the seriousness of the offense and the culpability of the organization. The seriousness of the offense generally will be reflected by the greatest of the pecuniary gain, the pecuniary loss, or the amount in a guideline offense level fine table. Culpability generally will be determined by six factors that the sentencing court must consider. The four factors that increase the ultimate punishment of an organization are: (i) the involvement in or tolerance of criminal activity; (ii) the prior history of the organization; (iii) the violation of an order; and (iv) the obstruction of justice. The two factors that mitigate the ultimate punishment of an organization are: (i) the existence of an effective compliance and ethics program; and (ii) self-reporting, cooperation, or acceptance of responsibility.</p><p><em>Fourth</em>, probation is an appropriate sentence for an organizational defendant when needed to ensure that another sanction will be fully implemented, or to ensure that steps will be taken within the organization to reduce the likelihood of future criminal conduct.</p><p>These guidelines offer incentives to organizations to reduce and ultimately eliminate criminal conduct by providing a structural foundation from which an organization may self-police its own conduct through an effective compliance and ethics program. The prevention and detection of criminal conduct, as facilitated by an effective compliance and ethics program, will assist an organization in encouraging ethical conduct and in complying fully with all applicable laws.</p><table><tbody><tr class='odd'><td><em>Historical Note</em></td><td>Effective November 1, 1991 (amendment <a href='/ac/422'>422</a>). Amended effective November 1, 2004 (amendment <a href='/ac/673'>673</a>).</td></tr></tbody></table>"
   }

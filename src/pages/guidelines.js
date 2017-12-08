@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import guideLines from '../data/guidelines.json';
-import HomeLink from '../components/homeLink';
-import PartsLink from '../components/partsLink';
-import SectionsLink from '../components/sectionsLink';
-import GuidelineLink from '../components/guidelineLink';
+import ContentsGuidelineLink from '../components/contentsGuidelineLink';
 import BookmarkLink from '../components/bookmarkLink';
 import { ContentWrapper } from '../components/contentwrapper';
-import SearchGuidelines from '../components/searchGuidelines';
+import ContentHeader from '../components/contentHeader';
+import ChapterIndicator from '../components/chapterIndicator';
+import GoToFooter from '../components/goToFooter';
+import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
+import ChapterBreadcrumb from '../components/chapterBreadcrumb';
+import GLMBreadcrumb from '../components/glmBreadcrumb';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import TitleContentBlock from '../components/titleContentBlock';
+import ContentBlock from '../components/contentBlock';
 import Sections from '../data/sections.json';
 import Parts from '../data/parts.json';
-import Chapters from '../data/chapters.json';
 import _ from 'lodash';
 
 export default props => {
@@ -38,21 +42,9 @@ export default props => {
     }
   }
 
-  let guidelineList = _.map(filtered, gl => (
-    <GuidelineLink id={gl.id}>
-      <div className="container-03-A-a">
-        <div className="container-03-A1">
-          <span className="container-font-light-C">{gl.title}</span>
-        </div>
-        <div className="container-03-A2">
-          <div className="chevron-right-icon" />
-        </div>
-      </div>
-    </GuidelineLink>
-  ));
+  let guidelineList = _.map(filtered, gl => <ContentsGuidelineLink gl={gl} />);
 
   let bc;
-  var text = <span>{`PART ${partId}`}</span>;
   let navList;
   if (sectionTitle === null) {
     bc = `PART ${partId}`;
@@ -60,7 +52,6 @@ export default props => {
     bc = `PART ${partId} - ${section.title}`;
   }
   if (props.match.params.sectionId !== undefined) {
-    text = <span>{`SECTION ${sectionId}`}</span>;
     navList = _.filter(
       Sections,
       s => s.chapter === chapterId && s.part === partId
@@ -93,8 +84,6 @@ export default props => {
     });
   }
 
-  const chapter = _.find(Chapters, c => c.id === chapterId);
-
   const thisPart = _.find(
     Parts,
     p => p.chapter === chapterId && p.id === partId
@@ -102,32 +91,20 @@ export default props => {
   var generalContent;
   if (sectionContent !== null && sectionContent !== undefined) {
     generalContent = (
-      <div className="container-05-title-2">
-        <div className="container-05-title-B">
-          <div className="container-05-title-B1">
-            <div
-              className="container-font-light-Ea"
-              dangerouslySetInnerHTML={{ __html: sectionContent }}
-            />
-          </div>
-        </div>
-      </div>
+      <div
+        className="container-font-light-Ea"
+        dangerouslySetInnerHTML={{ __html: sectionContent }}
+      />
     );
   } else if (thisPart.content !== undefined) {
     generalContent = (
-      <div className="container-05-title-2">
-        <div className="container-05-title-B">
-          <div className="container-05-title-B1">
-            <div
-              className="container-font-light-Ea"
-              dangerouslySetInnerHTML={{ __html: thisPart.content }}
-            />
-          </div>
-        </div>
-      </div>
+      <div
+        className="container-font-light-Ea"
+        dangerouslySetInnerHTML={{ __html: thisPart.content }}
+      />
     );
   } else {
-    generalContent = '';
+    generalContent = null;
   }
   var generalTitle, generalShortTitle;
   if (sectionTitle === null) {
@@ -137,109 +114,27 @@ export default props => {
     generalTitle = `CHAPTER ${chapterId} PART ${partId} SECTION ${sectionId} - ${section.title}`;
     generalShortTitle = section.title;
   }
-  if (guidelineList.length !== 0) {
-    guidelineList = (
-      <div className="container-05">
-        <div className="container-05-A">{guidelineList}</div>
-      </div>
-    );
-  }
 
   return (
     <div>
-      <section className="usa-section usa-section-black">
-        <div className="usa-grid">
-          <div className="container-title">
-            <span className="container-font-dark-B-2">
-              Version 3.14-17
-              <br />
-            </span>
-            <span className="container-font-dark-A-2">
-              Guidelines Manual
-              <br />
-            </span>
-            <span className="container-font-dark-B-2">2017</span>
-          </div>
-        </div>
-      </section>
-      <section className="usa-section search-global-A">
-        <div className="usa-grid">
-          <div className="usa-width-one-whole">
-            <SearchGuidelines />
-          </div>
-        </div>
-      </section>
-      <section className="usa-section usa-section-blue">
-        <div className="usa-grid">
-          <div className="container-title-c">
-            <span className="container-font-dark-B-5">
-              CHAPTER {chapterId}
-              <br />
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className="usa-section usa-section-white">
-        <div className="usa-grid">
-          <div className="container-title-c">
-            <span className="container-font-light-Db">
-              {chapter.title}
-              <br />
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className="usa-section breadcrumb-global-A">
-        <div className="usa-grid breadcrumb-global-A-1">
-          <div className="usa-width-one-whole">
-            <ol className="breadcrumb-b">
-              <li>
-                <Link to="/home">Guidelines Manual</Link>
-              </li>
-              <li>
-                <PartsLink chapterId={chapterId}>CHAPTER {chapterId}</PartsLink>
-              </li>
-              <li className="active">{bc}</li>
-            </ol>
-          </div>
-        </div>
-      </section>
+      <ContentHeader />
+      <ChapterIndicator id={chapterId} />
+      <BreadcrumbsWrapper>
+        <GLMBreadcrumb />
+        <ChapterBreadcrumb id={chapterId} />
+        <li className="active">{bc}</li>
+      </BreadcrumbsWrapper>
       <BookmarkLink path={props.location.pathname} title={generalTitle} />
       <ContentWrapper path={props.location.pathname} title={generalTitle}>
-        <section className="usa-section container-04c">
-          <div className="usa-grid">
-            <div className="container-05-title">
-              <div className="container-05-title-A">
-                <div className="container-05-title-A1">
-                  <span className="container-font-light-C">
-                    {generalShortTitle}
-                  </span>
-                </div>
-              </div>
-            </div>
-            {generalContent}
-            {guidelineList}
-          </div>
+        <section className="container-04c">
+          <Blockset>
+            <TitleBlock>{generalShortTitle}</TitleBlock>
+            <TitleContentBlock>{generalContent}</TitleContentBlock>
+            <ContentBlock>{guidelineList}</ContentBlock>
+          </Blockset>
         </section>
       </ContentWrapper>
-      <section
-        className="usa-section footer"
-        style={{
-          borderStyle: 'dotted',
-          borderWidth: '0px',
-          borderColor: 'grey',
-          textAlign: 'center'
-        }}
-      >
-        <div className="usa-grid footer-B">
-          <div className="usa-width-one-whole">
-            <select onChange={e => (window.location = e.target.value)}>
-              <option>Go to</option>
-              {navList}
-            </select>
-          </div>
-        </div>
-      </section>
+      <GoToFooter list={navList} />
     </div>
   );
 };
