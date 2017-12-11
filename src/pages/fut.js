@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ContentsLinkWrapper from '../components/contentsLinkWrapper';
 
 class FrequentlyUsedTable extends Component {
   render() {
@@ -18,50 +19,30 @@ class FrequentlyUsedTable extends Component {
           <div className="usa-grid container-03a">
             <div className="container-03">
               <Link to="/gl/§5E1.2">
-                <div className="container-03-A-a">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">Fine Tables</span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </div>
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">Fine Tables</span>
+                </ContentsLinkWrapper>
               </Link>
               <Link to="/losstable">
-                <div className="container-03-A-b">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">Loss Tables</span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </div>
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">Loss Tables</span>
+                </ContentsLinkWrapper>
               </Link>
 
               <Link to="/gl/§7B1.4">
-                <div className="container-03-A-a">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">
-                      Revocation Table
-                    </span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </div>
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">
+                    Revocation Table
+                  </span>
+                </ContentsLinkWrapper>
               </Link>
 
               <Link to="/chapters/5/parts/A/guidelines">
-                <div className="container-03-A-b">
-                  <div className="container-03-A1">
-                    <span className="container-font-light-C">
-                      Sentencing Table
-                    </span>
-                  </div>
-                  <div className="container-03-A2">
-                    <div className="chevron-right-icon" />
-                  </div>
-                </div>
+                <ContentsLinkWrapper>
+                  <span className="container-font-light-C">
+                    Sentencing Table
+                  </span>
+                </ContentsLinkWrapper>
               </Link>
             </div>
           </div>

@@ -4,6 +4,8 @@ import SimpleContentHeader from '../components/simpleContentHeader';
 import Blockset from '../components/blockset';
 import TitleBlock from '../components/titleBlock';
 import ContentBlock from '../components/contentBlock';
+import ExplanatoryBox from '../components/explanatoryBox';
+import FormObject from '../components/formObject';
 import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
@@ -77,68 +79,37 @@ class SC extends Component {
     return (
       <div>
         <SimpleContentHeader title="Guidelines Range" />
-        <section className="usa-section container-custom-result">
-          <div className="usa-grid">
-            <div className="container-03">
-              <div className="container-05-A1">
-                <div className="container-05-A1c container-font-light-Ea">
-                  This index specifies the offense guideline section(s) in
-                  Chapter Two (Offense Conduct) applicable to the statute of
-                  conviction. If more than one guideline section is referenced
-                  for the particular statute, use the guideline most appropriate
-                  for the offense conduct charged in the count of which the
-                  defendant was convicted. For the rules governing the
-                  determination of the offense guideline section(s) from Chapter
-                  Two, and for any exceptions to those rules, see §1B1.2
-                  (Applicable Guidelines). <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ExplanatoryBox>
+          This index specifies the offense guideline section(s) in Chapter Two
+          (Offense Conduct) applicable to the statute of conviction. If more
+          than one guideline section is referenced for the particular statute,
+          use the guideline most appropriate for the offense conduct charged in
+          the count of which the defendant was convicted. For the rules
+          governing the determination of the offense guideline section(s) from
+          Chapter Two, and for any exceptions to those rules, see §1B1.2
+          (Applicable Guidelines). <br />
+        </ExplanatoryBox>
 
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              OFFENSE LEVEL<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole search-box-global">
-              <form className="usa-search usa-search-small">
-                <select
-                  id="offenseLevel"
-                  className="container-font-dark-B-4"
-                  onChange={this.handleOffenceLevelChange.bind(this)}
-                  value={this.state.offenseLevel}
-                >
-                  {offenseLevelsList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              CATEGORY<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole search-box-global">
-              <form className="usa-search usa-search-small">
-                <select
-                  id="category"
-                  className="container-font-dark-B-4"
-                  value={this.state.category}
-                  onChange={this.handleCategoryChange.bind(this)}
-                >
-                  {categoryList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
+        <FormObject label="Offense Level">
+          <select
+            id="offenseLevel"
+            className="container-font-dark-B-4"
+            onChange={this.handleOffenceLevelChange.bind(this)}
+            value={this.state.offenseLevel}
+          >
+            {offenseLevelsList}
+          </select>
+        </FormObject>
+        <FormObject label="Category">
+          <select
+            id="category"
+            className="container-font-dark-B-4"
+            value={this.state.category}
+            onChange={this.handleCategoryChange.bind(this)}
+          >
+            {categoryList}
+          </select>
+        </FormObject>
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <div className="usa-width-one-whole search-box-global">

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SimpleContentHeader from '../components/simpleContentHeader';
+import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
 import data from '../data/appendix-c';
 
 import scrollToElment from 'scroll-to-element';
@@ -114,37 +116,19 @@ class AppendixCPart extends React.Component {
 
     return (
       <div>
-        <section className="usa-section usa-section-black custom-section">
-          <div className="usa-grid">
-            <div className="container-title">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17<br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Appendix C<br />
-              </span>
-              <span className="container-font-dark-B-2">
-                Amendments to the Guidelines Manual
-              </span>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section breadcrumb-global-A">
-          <div className="usa-grid breadcrumb-global-A-1">
-            <div className="usa-width-one-whole amendments-div">
-              <ul className="breadcrumb-b">
-                <li>
-                  <a href="/ac">Appendix C</a>
-                </li>
-
-                <li>
-                  <a href="/ac">Results</a>
-                </li>
-                <li className="active">Amendment {currAmmendmentId}</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <SimpleContentHeader
+          title="Appendix C"
+          subtitle="Amendments to the Guidelines Manual"
+        />
+        <BreadcrumbsWrapper>
+          <li>
+            <a href="/ac">Appendix C</a>
+          </li>
+          <li>
+            <a href="/ac">Results</a>
+          </li>
+          <li className="active">Amendment {currAmmendmentId}</li>
+        </BreadcrumbsWrapper>
         <section className="usa-section custom-section">
           <div className="usa-grid container-04a">
             <div className="container-04">

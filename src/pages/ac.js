@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import data from '../data/appendix-c';
+import ContentsLinkWrapper from '../components/contentsLinkWrapper';
+import SimpleContentHeader from '../components/simpleContentHeader';
 import _ from 'lodash';
 import arrowRight from '../img/icons/static_chevron-right.svg';
 
@@ -53,25 +56,16 @@ class Amendments extends React.Component {
                     divBoxColorClassName = 'container-03-A-a';
 
                   return (
-                    <a href={currentHref}>
-                      <div className={divBoxColorClassName}>
-                        <div className="container-03-A1">
-                          <span className="container-font-light-C">
-                            Amendments {'\u00A0'} {'\u00A0'}
-                          </span>
-                          <span className="container-font-light-D">
-                            {labelResult}
-                          </span>
-                        </div>
-                        <div className="container-03-A2">
-                          <img
-                            alt=""
-                            className="chevron-right-icon"
-                            src={arrowRight}
-                          />
-                        </div>
-                      </div>
-                    </a>
+                    <Link to={currentHref}>
+                      <ContentsLinkWrapper>
+                        <span className="container-font-light-C">
+                          Amendments {'\u00A0'} {'\u00A0'}
+                        </span>
+                        <span className="container-font-light-D">
+                          {labelResult}
+                        </span>
+                      </ContentsLinkWrapper>
+                    </Link>
                   );
                 })}
               </div>
@@ -112,25 +106,16 @@ class Amendments extends React.Component {
                     divBoxColorClassName = 'container-03-A-a';
 
                   return (
-                    <a href={currentHref}>
-                      <div className={divBoxColorClassName}>
-                        <div className="container-03-A1">
-                          <span className="container-font-light-C">
-                            Amendments {'\u00A0'} {'\u00A0'}
-                          </span>
-                          <span className="container-font-light-D">
-                            {name.Text}
-                          </span>
-                        </div>
-                        <div className="container-03-A2">
-                          <img
-                            alt=""
-                            className="chevron-right-icon"
-                            src={arrowRight}
-                          />
-                        </div>
-                      </div>
-                    </a>
+                    <Link to={currentHref}>
+                      <ContentsLinkWrapper>
+                        <span className="container-font-light-C">
+                          Amendments {'\u00A0'} {'\u00A0'}
+                        </span>
+                        <span className="container-font-light-D">
+                          {name.Text}
+                        </span>
+                      </ContentsLinkWrapper>
+                    </Link>
                   );
                 })}
               </div>
@@ -150,23 +135,10 @@ class Amendments extends React.Component {
   render() {
     return (
       <div>
-        <section className="usa-section usa-section-black">
-          <div className="usa-grid">
-            <div className="container-title">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17
-                <br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Appendix C
-                <br />
-              </span>
-              <span className="container-font-dark-B-2">
-                Amendments to the Guidelines Manual
-              </span>
-            </div>
-          </div>
-        </section>
+        <SimpleContentHeader
+          title="Appendix C"
+          subtitle="Amendments to the Guidelines Manual"
+        />
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <div className="usa-width-one-whole">

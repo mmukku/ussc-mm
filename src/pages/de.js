@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from '../data/de.json';
 import SimpleContentHeader from '../components/simpleContentHeader';
+import ExplanatoryBox from '../components/explanatoryBox';
 import _ from 'lodash';
 
 import conversionTable from '../data/ct.json';
@@ -145,13 +146,13 @@ class DE extends Component {
     return (
       <div>
         <SimpleContentHeader title="Drug Equivalency Calculator" />
-        <p>
+        <ExplanatoryBox>
           Use the Drug Equivalency Calculator to convert the quantity of
           controlled substance involved in the offense to its equivalent
           quantity of marihuana. In a case involving more than one controlled
           substance, convert each controlled substance into its marihuana
           equivalency and then add all converted quantities.
-        </p>
+        </ExplanatoryBox>
         {result}
         <DEPair index={0} add={this.add.bind(this)} />
         <DEPair index={1} add={this.add.bind(this)} />

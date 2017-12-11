@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import data from '../data/dol.json';
+import SimpleContentHeader from '../components/simpleContentHeader';
+import ExplanatoryBox from '../components/explanatoryBox';
 import Blockset from '../components/blockset';
 import TitleBlock from '../components/titleBlock';
 import ContentBlock from '../components/contentBlock';
+import FormObject from '../components/formObject';
 //import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
@@ -51,88 +54,44 @@ class DOL extends Component {
     }
     return (
       <div>
-        <section className="usa-section usa-section-black">
-          <div className="usa-grid">
-            <div className="container-title-b">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17<br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Drug Quantity Calculator<br />
-              </span>
-            </div>
-          </div>
-        </section>
-        <p>
+        <SimpleContentHeader title="Drug Quantity Calculator" />
+        <ExplanatoryBox>
           Use the Drug Quantity Calculator to find the offense level for the
           controlled substance involved in the offense. First, select the
           substance involved in the offense. Then, enter the weight of the
           substance and the appropriate unit of measurement. Results will
           display the offense level specified in the Drug Quantity Table set
           forth in §2D1.1(c).
-        </p>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              SUBSTANCE<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-search usa-search-small">
-                <select
-                  className="container-font-dark-B-4"
-                  onChange={e => this.getUOMList(e)}
-                  value={this.state.substance}
-                >
-                  <option>Select</option>
-                  {substanceList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-form">
-                <fieldset>
-                  <span className="container-font-dark-B-3">
-                    WEIGHT<br />
-                  </span>
-                  <input
-                    type="text"
-                    required=""
-                    aria-required="true"
-                    placeholder="Enter Number"
-                    className="container-font-dark-B-4"
-                    onChange={this.handleQtyChange.bind(this)}
-                  />
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              UNIT OF MEASURE<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole">
-              <form className="usa-search usa-search-small">
-                <select
-                  className="container-font-dark-B-4"
-                  onChange={this.handleUOMChange.bind(this)}
-                  value={this.state.uom}
-                >
-                  {this.state.uomList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
+        </ExplanatoryBox>
+        <FormObject label="Substance">
+          <select
+            className="container-font-dark-B-4"
+            onChange={e => this.getUOMList(e)}
+            value={this.state.substance}
+          >
+            <option>Select</option>
+            {substanceList}
+          </select>
+        </FormObject>
+        <FormObject label="Weight">
+          <input
+            type="text"
+            required=""
+            aria-required="true"
+            placeholder="Enter Number"
+            className="container-font-dark-B-4"
+            onChange={this.handleQtyChange.bind(this)}
+          />
+        </FormObject>
+        <FormObject label="Unit of Measure">
+          <select
+            className="container-font-dark-B-4"
+            onChange={this.handleUOMChange.bind(this)}
+            value={this.state.uom}
+          >
+            {this.state.uomList}
+          </select>
+        </FormObject>
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <div className="usa-width-one-whole">

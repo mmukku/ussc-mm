@@ -5,6 +5,8 @@ import ContentsLinkWrapper from '../components/contentsLinkWrapper';
 import Blockset from '../components/blockset';
 import TitleBlock from '../components/titleBlock';
 import ContentBlock from '../components/contentBlock';
+import ExplanatoryBox from '../components/explanatoryBox';
+import FormObject from '../components/formObject';
 import data from '../data/si.json';
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
@@ -96,74 +98,39 @@ class SI extends Component {
     return (
       <div>
         <SimpleContentHeader title="Appendix A" subtitle="Statutory Index" />
-        <section className="usa-section container-custom-result">
-          <div className="usa-grid">
-            <div className="container-03">
-              <div className="container-05-A1">
-                <div className="container-05-A1c container-font-light-Ea">
-                  This index specifies the offense guideline section(s) in
-                  Chapter Two (Offense Conduct) applicable to the statute of
-                  conviction. If more than one guideline section is referenced
-                  for the particular statute, use the guideline most appropriate
-                  for the offense conduct charged in the count of which the
-                  defendant was convicted. For the rules governing the
-                  determination of the offense guideline section(s) from Chapter
-                  Two, and for any exceptions to those rules, see §1B1.2
-                  (Applicable Guidelines).<br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <span className="container-font-dark-B-3">
-              TITLE<br />
-            </span>
-          </div>
-          <div className="usa-grid">
-            <div className="usa-width-one-whole search-box-global">
-              <form className="usa-search usa-search-small">
-                <select
-                  id="title"
-                  className="container-font-dark-B-4"
-                  onChange={this.cascadestatute.bind(this)}
-                  value={this.state.title}
-                >
-                  <option>Select</option>
-                  {titleOptionList}
-                </select>
-              </form>
-            </div>
-          </div>
-        </section>
-        <section className="usa-section search-global-B">
-          <div className="usa-grid">
-            <div className="usa-width-one-whole search-box-global">
-              <form className="usa-form">
-                <fieldset>
-                  <span className="container-font-dark-B-3">
-                    STATUTE<br />
-                  </span>
-                  <Autosuggest
-                    suggestions={statuteOptions}
-                    onSuggestionsFetchRequested={
-                      this.onSuggestionsFetchRequested
-                    }
-                    onSuggestionsClearRequested={
-                      this.onSuggestionsClearRequested
-                    }
-                    getSuggestionValue={getSuggestionValue}
-                    shouldRenderSuggestions={shouldRenderSuggestions}
-                    renderSuggestion={renderSuggestion}
-                    inputProps={inputProps}
-                    theme={theme}
-                  />
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </section>
+        <ExplanatoryBox>
+          This index specifies the offense guideline section(s) in Chapter Two
+          (Offense Conduct) applicable to the statute of conviction. If more
+          than one guideline section is referenced for the particular statute,
+          use the guideline most appropriate for the offense conduct charged in
+          the count of which the defendant was convicted. For the rules
+          governing the determination of the offense guideline section(s) from
+          Chapter Two, and for any exceptions to those rules, see §1B1.2
+          (Applicable Guidelines).<br />
+        </ExplanatoryBox>
+        <FormObject label="Title">
+          <select
+            id="title"
+            className="container-font-dark-B-4"
+            onChange={this.cascadestatute.bind(this)}
+            value={this.state.title}
+          >
+            <option>Select</option>
+            {titleOptionList}
+          </select>
+        </FormObject>
+        <FormObject label="Statute">
+          <Autosuggest
+            suggestions={statuteOptions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            shouldRenderSuggestions={shouldRenderSuggestions}
+            renderSuggestion={renderSuggestion}
+            inputProps={inputProps}
+            theme={theme}
+          />
+        </FormObject>
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <div className="usa-width-one-whole search-box-global">
