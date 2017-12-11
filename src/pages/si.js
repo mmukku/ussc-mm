@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import SimpleContentHeader from '../components/simpleContentHeader';
+import ContentsLinkWrapper from '../components/contentsLinkWrapper';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import ContentBlock from '../components/contentBlock';
 import data from '../data/si.json';
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
@@ -81,35 +87,15 @@ class SI extends Component {
     let results = '';
     if (this.state.guidelines.length > 0) {
       results = (
-        <section className="usa-section grc-header">
-          <div className="usa-grid">
-            <div className="container-05-title">
-              <div className="container-05-title-A">
-                <div className="container-05-title-A1">
-                  <span className="container-font-light-C">Results</span>
-                </div>
-              </div>
-            </div>
-            {this.state.guidelines}
-          </div>
-        </section>
+        <Blockset>
+          <TitleBlock>Results</TitleBlock>
+          <ContentBlock>{this.state.guidelines}</ContentBlock>
+        </Blockset>
       );
     }
     return (
       <div>
-        <section className="usa-section usa-section-black container-custom-result">
-          <div className="usa-grid">
-            <div className="container-title">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17<br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Appendix A<br />
-              </span>
-              <span className="container-font-dark-B-2">Statutory Index</span>
-            </div>
-          </div>
-        </section>
+        <SimpleContentHeader title="Appendix A" subtitle="Statutory Index" />
         <section className="usa-section container-custom-result">
           <div className="usa-grid">
             <div className="container-03">
@@ -246,20 +232,11 @@ class SI extends Component {
     if (results === undefined) return;
 
     let guidelines = results.Guidelines.split(',').map(gl => (
-      <div className="container-05">
-        <div className="container-05-A">
-          <a href={`/gl/§${gl}`}>
-            <div className="container-03-A-a">
-              <div className="container-03-A1">
-                <span className="container-font-light-D">{gl}</span>
-              </div>
-              <div className="container-03-A2">
-                <div className="chevron-right-icon" />
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      <Link to={`/gl/§${gl}`}>
+        <ContentsLinkWrapper>
+          <span className="container-font-light-D">{gl}</span>
+        </ContentsLinkWrapper>
+      </Link>
     ));
     this.setState({ guidelines: guidelines });
   };
