@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import data from '../data/dol.json';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import ContentBlock from '../components/contentBlock';
 //import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
@@ -25,35 +28,23 @@ class DOL extends Component {
     let result = <div />;
     if (this.state.offenseLevel !== null) {
       result = (
-        <section className="usa-section">
-          <div className="usa-grid">
-            <div className="container-05-title">
-              <div className="container-05-title-A">
-                <div className="container-05-title-A1">
-                  <span className="container-font-light-C">Results</span>
-                </div>
+        <Blockset>
+          <TitleBlock>Results</TitleBlock>
+          <ContentBlock>
+            <div className="container-05-A1b">
+              <div className="container-05-A1b-top">
+                <span className="container-font-light-C">
+                  Offense Level <br />
+                </span>
+              </div>
+              <div className="container-05-A1b-bottom">
+                <span className="container-font-light-D">
+                  {this.state.offenseLevel} <br />
+                </span>
               </div>
             </div>
-            <div className="container-05">
-              <div className="container-05-A">
-                <div className="container-05-A1">
-                  <div className="container-05-A1b">
-                    <div className="container-05-A1b-top">
-                      <span className="container-font-light-C">
-                        Offense Level <br />
-                      </span>
-                    </div>
-                    <div className="container-05-A1b-bottom">
-                      <span className="container-font-light-D">
-                        {this.state.offenseLevel} <br />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          </ContentBlock>
+        </Blockset>
       );
     } else {
       result = <div />;

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import data from '../data/sc.json';
+import SimpleContentHeader from '../components/simpleContentHeader';
+import Blockset from '../components/blockset';
+import TitleBlock from '../components/titleBlock';
+import ContentBlock from '../components/contentBlock';
 import alertIcon from '../img/icons/static_alert.svg';
 import _ from 'lodash';
 
@@ -48,58 +52,31 @@ class SC extends Component {
       description = `${description} imprisonment.`;
 
       results = (
-        <div>
-          <section className="usa-section grc-header">
-            <div className="usa-grid">
-              <div className="container-05-title">
-                <div className="container-05-title-A">
-                  <div className="container-05-title-A1">
-                    <span className="container-font-light-C">Results</span>
-                  </div>
-                </div>
+        <Blockset>
+          <TitleBlock>Results</TitleBlock>
+          <ContentBlock>
+            <div className="container-05-A1a">
+              <img className="alert-left-icon" src={alertIcon} alt="" />
+            </div>
+            <div className="container-05-A1b">
+              <div className="container-05-A1b-top">
+                <span className="container-font-light-C">{description}</span>
               </div>
-              <div className="container-05">
-                <div className="container-05-A">
-                  <div className="container-05-A1">
-                    <div className="container-05-A1a">
-                      <img className="alert-left-icon" src={alertIcon} alt="" />
-                    </div>
-                    <div className="container-05-A1b">
-                      <div className="container-05-A1b-top">
-                        <span className="container-font-light-C">
-                          {description}
-                        </span>
-                      </div>
-                      <div className="container-05-A1b-bottom">
-                        <span className="container-font-light-D">
-                          Zone {this.state.zone}.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="container-05-A1b-bottom">
+                <span className="container-font-light-D">
+                  Zone {this.state.zone}.
+                </span>
               </div>
             </div>
-          </section>
-        </div>
+          </ContentBlock>
+        </Blockset>
       );
     } else {
       results = <div />;
     }
     return (
       <div>
-        <section className="usa-section usa-section-black grc-header">
-          <div className="usa-grid">
-            <div className="container-title-b">
-              <span className="container-font-dark-B-2">
-                Version 3.14-17<br />
-              </span>
-              <span className="container-font-dark-A-2">
-                Guidelines Range<br />
-              </span>
-            </div>
-          </div>
-        </section>
+        <SimpleContentHeader title="Guidelines Range" />
         <section className="usa-section container-custom-result">
           <div className="usa-grid">
             <div className="container-03">
