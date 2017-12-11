@@ -40,7 +40,7 @@ class Search extends React.Component {
         }
 
         return (
-          <div className="container-03-A-a" key={r.ref}>
+          <div className="container-03-A" key={r.ref}>
             <a href={`/${type}/${r.ref}`}>
               <div className="container-03-A1">
                 <span className="container-font-light-C">{r.ref} - </span>

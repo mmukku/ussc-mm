@@ -56,7 +56,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -68,7 +68,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -91,7 +91,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -103,7 +103,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -124,7 +124,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -136,7 +136,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -157,7 +157,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -169,7 +169,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -190,7 +190,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -202,7 +202,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -223,7 +223,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -235,7 +235,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -256,7 +256,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -268,7 +268,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -289,7 +289,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -301,7 +301,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -322,7 +322,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -334,7 +334,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -355,7 +355,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -367,7 +367,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -388,7 +388,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -400,7 +400,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -421,7 +421,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -433,7 +433,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -454,7 +454,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -466,7 +466,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -487,7 +487,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -499,7 +499,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -520,7 +520,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -532,7 +532,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>
@@ -553,7 +553,7 @@ class LossTable extends Component {
               </div>
               <div className="container-05b">
                 <div className="container-05-A">
-                  <div className="container-03-A-a">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>LOSS (Apply the Greatest)</strong>{' '}
@@ -565,7 +565,7 @@ class LossTable extends Component {
                       </span>
                     </div>
                   </div>
-                  <div className="container-03-A-b">
+                  <div className="container-03-A">
                     <div className="container-03-C1">
                       <span className="container-font-light-D">
                         <strong>Increase in level</strong>

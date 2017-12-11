@@ -2317,7 +2317,7 @@ input:placeholder-shown {
   padding-bottom: 100px;
 }
 
-.container-03-A-a {
+.container-03-A {
   width: 100%;
   text-align: left;
   border-style: dotted;
@@ -2329,20 +2329,6 @@ input:placeholder-shown {
   display: inline-block;
   padding: 5px;
   background-color: #f2f9fe;
-}
-
-.container-03-A-b {
-  width: 100%;
-  text-align: left;
-  border-style: dotted;
-  border-top-width: 0px;
-  border-bottom-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 0px;
-  border-color: #000;
-  display: inline-block;
-  padding: 5px;
-  background-color: #ffffff;
 }
 
 .container-03-A1 {

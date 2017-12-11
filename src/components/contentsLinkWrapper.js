@@ -2,7 +2,7 @@ import React from 'react';
 
 export default props => {
   return (
-    <div key={props.key} className="container-03-A-b">
+    <div key={props.key} className="container-03-A">
       <div className="container-03-A1">{props.children}</div>
       <div className="container-03-A2">
         <div className="chevron-right-icon" />

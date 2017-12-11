@@ -51,9 +51,6 @@ class Amendments extends React.Component {
                   let labelResult = name;
 
                   let currentHref = '/ac/amendment/' + name;
-                  let divBoxColorClassName = 'container-03-A-b';
-                  if (index === 0 || !!(index && !(index % 2)))
-                    divBoxColorClassName = 'container-03-A-a';
 
                   return (
                     <Link to={currentHref}>
@@ -101,9 +98,6 @@ class Amendments extends React.Component {
               <div className="container-03">
                 {ammendmentArray.map(function(name, index) {
                   let currentHref = '/ac/amendment/' + name.Val;
-                  let divBoxColorClassName = 'container-03-A-b';
-                  if (index === 0 || !!(index && !(index % 2)))
-                    divBoxColorClassName = 'container-03-A-a';
 
                   return (
                     <Link to={currentHref}>
