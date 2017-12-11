@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import lunr from 'lunr';
 import SearchGuidelines from '../components/searchGuidelines';
+import ContentsLinkWrapper from '../components/contentsLinkWrapper';
 import idxData from '../data/gl_index.json';
 import gldata from '../data/guidelines.json';
 import bdata from '../data/appendix-b.json';
@@ -40,17 +42,12 @@ class Search extends React.Component {
         }
 
         return (
-          <div className="container-03-A" key={r.ref}>
-            <a href={`/${type}/${r.ref}`}>
-              <div className="container-03-A1">
-                <span className="container-font-light-C">{r.ref} - </span>
-                <span className="container-font-light-D">{title}</span>
-              </div>
-              <div className="container-03-A2">
-                <div className="chevron-right-icon" />
-              </div>
-            </a>
-          </div>
+          <Link to={`/${type}/${r.ref}`}>
+            <ContentsLinkWrapper key={r.ref}>
+              <span className="container-font-light-C">{r.ref} - </span>
+              <span className="container-font-light-D">{title}</span>
+            </ContentsLinkWrapper>
+          </Link>
         );
       });
       if (results.length === 0) {
