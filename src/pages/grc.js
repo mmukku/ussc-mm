@@ -121,7 +121,7 @@ class SC extends Component {
         <section className="usa-section search-global-B">
           <div className="usa-grid">
             <span className="container-font-dark-B-3">
-              CATOGORY<br />
+              CATEGORY<br />
             </span>
           </div>
           <div className="usa-grid">

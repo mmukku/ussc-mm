@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/de.json';
+import SimpleContentHeader from '../components/simpleContentHeader';
 import _ from 'lodash';
 
 import conversionTable from '../data/ct.json';
@@ -143,7 +144,7 @@ class DE extends Component {
     }
     return (
       <div>
-        <h2>Drug Equivalency Calculator</h2>
+        <SimpleContentHeader title="Drug Equivalency Calculator" />
         <p>
           Use the Drug Equivalency Calculator to convert the quantity of
           controlled substance involved in the offense to its equivalent
