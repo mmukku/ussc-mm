@@ -3,14 +3,32 @@ import { Link } from 'react-router-dom';
 import SimpleContentHeader from '../components/simpleContentHeader';
 import BreadcrumbsWrapper from '../components/breadcrumbsWrapper';
 import data from '../data/appendix-c';
-
+import FontSize from '../components/fontSize';
 import scrollToElment from 'scroll-to-element';
 import _ from 'lodash';
-
+const DefaultFontSize = 1.7;
 class AppendixCPart extends React.Component {
   state = {
     slug: '',
+    fontSize: DefaultFontSize,
     searchResults: [_.toNumber(this.props.match.params.id || 1)]
+  };
+
+  changeFontSize = direction => {
+    const factor = 0.625;
+
+    switch (direction) {
+      case '+':
+        this.setState(prevState => ({ fontSize: prevState.fontSize + factor }));
+        break;
+      case '-':
+        this.setState(prevState => ({ fontSize: prevState.fontSize - factor }));
+        break;
+      default:
+        this.setState({ fontSize: DefaultFontSize });
+        break;
+    }
+    console.log(this.state.fontSize);
   };
 
   filter = currentValue => {
@@ -133,13 +151,20 @@ class AppendixCPart extends React.Component {
           <div className="usa-grid container-04a">
             <div className="container-04">
               <div className="container-04-A">
-                <div className="container-04-A1 container-font-light-Ea">
+                <div
+                  className="container-04-A1 container-font-light-Ea"
+                  style={{
+                    fontSize: this.state.fontSize + 'rem',
+                    paddingBottom: '22%'
+                  }}
+                >
                   {content}
                 </div>
               </div>
             </div>
           </div>
         </section>
+
         <section className="usa-section footer custom-section">
           <div className="usa-grid">
             <div className="usa-width-one-half amendments-div">
@@ -147,6 +172,31 @@ class AppendixCPart extends React.Component {
             </div>
             <div className="usa-width-one-half amendments-div">
               <span>{this.nextButton()}</span>
+            </div>
+          </div>
+          <div className="usa-grid footer-B">
+            <div className="usa-width-one-whole footer-a">
+              <div className="usa-width-one-third">
+                <input
+                  type="button"
+                  value="A+"
+                  onClick={() => this.changeFontSize('+')}
+                />
+              </div>
+              <div class="usa-width-one-third">
+                <input
+                  type="button"
+                  value="A"
+                  onClick={() => this.changeFontSize()}
+                />
+              </div>
+              <div class="usa-width-one-third">
+                <input
+                  type="button"
+                  value="A-"
+                  onClick={() => this.changeFontSize('-')}
+                />
+              </div>
             </div>
           </div>
         </section>

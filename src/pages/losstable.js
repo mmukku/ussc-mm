@@ -200,9 +200,11 @@ class LossTable extends Component {
                 should have known, was a potential result of the offense.
               </p>
               <p className="container-font-light-Eb">
-                <span className="container-font-light-C">(v) </span> Actual
-                Loss.—“Actual loss” means the reasonably foreseeable pecuniary
-                harm that resulted from the offense.
+                <span className="container-font-light-C">(v) </span> Rules of
+                Construction in Certain Cases.—In the cases described in
+                subdivisions (I) through (III), reasonably foreseeable pecuniary
+                harm shall be considered to include the pecuniary harm specified
+                for those cases as follows:
               </p>
               <p className="container-font-light-Ec">
                 <span className="container-font-light-C">(i) </span> Product

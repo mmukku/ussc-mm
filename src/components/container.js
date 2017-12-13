@@ -34,7 +34,8 @@ class Container extends Component {
       pathname !== '/si' &&
       pathname !== '/grc' &&
       pathname !== '/dol' &&
-      pathname !== '/de'
+      pathname !== '/de' &&
+      !pathname.includes('/ac')
     ) {
       paddingBottomPage = '22%';
       footerResult = <FontSize changeFontSize={this.changeFontSize} />;
