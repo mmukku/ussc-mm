@@ -128,7 +128,7 @@ class DOL extends Component {
     let uomList = uoml.map(x => <option key={x}>{x}</option>);
     this.setState({
       offenseLevel: null,
-      uom: uoml[0].uom,
+      uom: uoml[0],
       substance: e.target.value,
       uomList: uomList
     });
@@ -137,7 +137,6 @@ class DOL extends Component {
   calculate(e) {
     let s = _.find(data, x => {
       if (x.substance !== this.state.substance) return false;
-      console.log(x);
       let qty = this.state.qty;
       if (x.uom !== this.state.uom) {
         let conversionFactor = _.find(
@@ -150,7 +149,6 @@ class DOL extends Component {
           return false;
         }
       }
-      console.log(this.state.qty, this.state.uom, qty, x.uom);
       if (x.min !== undefined) {
         if (qty < x.min) return false;
       }

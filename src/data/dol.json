@@ -345,7 +345,7 @@
   {
     "min": 500,
     "uom": "gm",
-    "max": 1.5,
+    "max": 1500,
     "substance": "Methamphetamine",
     "level": 30
   },
@@ -360,7 +360,7 @@
   {
     "min": 500,
     "uom": "gm",
-    "max": 1.5,
+    "max": 1500,
     "substance": "Amphetamine",
     "level": 30
   },
